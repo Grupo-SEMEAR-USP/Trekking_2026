@@ -12,9 +12,9 @@ void pwm_motors_init(){
     ledc_set_duty(LEDC_LOW_SPEED_MODE, channel_choose(ESQ), 0);
     ledc_update_duty(LEDC_LOW_SPEED_MODE, channel_choose(ESQ));
 
-    gpio_pad_select_gpio(motor_choose_in_primary(ESQ));
+    esp_rom_gpio_pad_select_gpio(motor_choose_in_primary(ESQ));
     gpio_set_direction(motor_choose_in_primary(ESQ), GPIO_MODE_OUTPUT);
-    gpio_pad_select_gpio(motor_choose_in_secundary(ESQ));
+    esp_rom_gpio_pad_select_gpio(motor_choose_in_secundary(ESQ));
     gpio_set_direction(motor_choose_in_secundary(ESQ), GPIO_MODE_OUTPUT);
 
     gpio_set_level(motor_choose_in_primary(ESQ), 0); 
@@ -30,9 +30,9 @@ void pwm_motors_init(){
     ledc_set_duty(LEDC_LOW_SPEED_MODE, channel_choose(DIR), 0);
     ledc_update_duty(LEDC_LOW_SPEED_MODE, channel_choose(DIR));
 
-    gpio_pad_select_gpio(motor_choose_in_primary(DIR));
+    esp_rom_gpio_pad_select_gpio(motor_choose_in_primary(DIR));
     gpio_set_direction(motor_choose_in_primary(DIR), GPIO_MODE_OUTPUT);
-    gpio_pad_select_gpio(motor_choose_in_secundary(DIR));
+    esp_rom_gpio_pad_select_gpio(motor_choose_in_secundary(DIR));
     gpio_set_direction(motor_choose_in_secundary(DIR), GPIO_MODE_OUTPUT);
 
     gpio_set_level(motor_choose_in_primary(DIR), 0); 

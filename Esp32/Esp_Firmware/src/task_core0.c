@@ -43,14 +43,14 @@ float angle = 0, real_angle = 0;
 int64_t t0 = 0, tf = 0, d_t = 0;
 
 //timer function to read encoder and calculate pid
-void monitor_encoder_pid_calc(void *params);
+void monitor_encoder_pid_calc(TimerHandle_t xTimer);
 
 //create timer handle
 TimerHandle_t monitor_encoder_pid_calc_timer_handle;
 
 //start motor interrupt function
-static void IRAM_ATTR monitor_encoder_pid_calc_start(void *args);
-static void IRAM_ATTR monitor_encoder_pid_calc_stop(void *args);
+static void monitor_encoder_pid_calc_start(void *args);
+static void monitor_encoder_pid_calc_stop(void *args);
 
 void interrupts_init();
 
@@ -121,7 +121,7 @@ void core0fuctions(void *params){
 }
 
 
-void monitor_encoder_pid_calc(void *params){
+void monitor_encoder_pid_calc(TimerHandle_t xTimer){
 
     if(count_get_real == ENCODER_COUNTER_WAIT_PID_OP){
             xSemaphoreTake(xSemaphore_getSpeed,portMAX_DELAY);
@@ -263,11 +263,11 @@ static void IRAM_ATTR monitor_encoder_pid_calc_stop(void *args)
 
 void interrupts_init(){
     //start interrupt pin
-    gpio_pad_select_gpio(START_MOTOR_INTERRUPT_PIN);
+    esp_rom_gpio_pad_select_gpio(START_MOTOR_INTERRUPT_PIN);
     gpio_set_direction(START_MOTOR_INTERRUPT_PIN, GPIO_MODE_INPUT);
 
     //stop interrupt pin
-    gpio_pad_select_gpio(STOP_MOTOR_INTERRUPT_PIN);
+    esp_rom_gpio_pad_select_gpio(STOP_MOTOR_INTERRUPT_PIN);
     gpio_set_direction(STOP_MOTOR_INTERRUPT_PIN, GPIO_MODE_INPUT);
 
     //disable pullup and pulldown for start pin

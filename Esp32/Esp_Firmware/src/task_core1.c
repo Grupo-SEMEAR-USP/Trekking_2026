@@ -47,7 +47,7 @@ void core1functions(void *params){
 
     if(ret != ESP_OK)
     {
-        ESP_LOGE(TAG, "Comunicação UART falhou, deletando a task...")
+        ESP_LOGE(TAG, "Comunicação UART falhou, deletando a task...");
         return;
     }
 
@@ -58,7 +58,7 @@ void core1functions(void *params){
     while(true){
 
         uart_read();
-        uart_send(double *total_x_displacement, double *total_y_displacement, double *total_angular_displacement);
+        uart_send(&global_total_x, &global_total_y, &global_total_theta);
         vTaskDelay(pdMS_TO_TICKS(UART_DELAY));
 
     }

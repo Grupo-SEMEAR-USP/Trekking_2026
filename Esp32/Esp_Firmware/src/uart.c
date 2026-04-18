@@ -25,7 +25,7 @@ static uint8_t s_data_index = 0;
 static union {
 
     uint8_t bytes[PAYLOAD_SIZE_RX];
-    data_t data;
+    data_to_receive_t data;
 
 } s_payload_buffer;
 
@@ -181,21 +181,21 @@ void uart_send(double *total_x_displacement, double *total_y_displacement, doubl
     total_y_micrometers = (int)((*total_y_displacement)*1000);
     total_theta_mmrad = (int)((*total_angular_displacement)*1000);
 
-    memcpy(data,&total_x_micrometers,4);
-    memcpy(data+4,&total_y_micrometers,4);
-    memcpy(data+8,&total_theta_mmrad,4);
-    memcpy(data+12,&timestamp,4);
+    memcpy(&data.total_x_micrometers,&total_x_micrometers,4);
+    memcpy(&data.total_y_micrometers,&total_y_micrometers,4);
+    memcpy(&data.total_theta_mmrad,&total_theta_mmrad,4);
+    memcpy(&data.timestamp,&timestamp,4);
 
     esp_err_t ret = uart_send_frame(&data, PAYLOAD_SIZE_TX);
 
-    xSemaphore_Give(xSemaphore_getSpeed);
+    xSemaphoreGive(xSemaphore_getSpeed);
 
 }
 
 
 void uart_read()
 {
-    xSemaphore_Take(xSemaphore_getRosSpeed, portMAX_DELAY);
+    xSemaphoreTake(xSemaphore_getRosSpeed, portMAX_DELAY);
 
     static uint8_t data[RD_BUF_SIZE];
 
@@ -208,5 +208,5 @@ void uart_read()
         }
     }
 
-    xSemaphore_Give(xSemaphore_getRosSpeed);
+    xSemaphoreGive(xSemaphore_getRosSpeed);
 }

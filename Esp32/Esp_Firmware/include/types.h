@@ -22,15 +22,15 @@
 
 
 //pwm gpio constants
-#define ENABLE_A GPIO_NUM_4
-#define INPUT_1 GPIO_NUM_25
+#define ENABLE_A GPIO_NUM_22
+#define INPUT_1 GPIO_NUM_21
 #define INPUT_2 GPIO_NUM_19
 
 #define ENABLE_DIR ENABLE_A
 
-#define ENABLE_B GPIO_NUM_32
-#define INPUT_3 GPIO_NUM_33
-#define INPUT_4 GPIO_NUM_18
+#define ENABLE_B GPIO_NUM_4
+#define INPUT_3 GPIO_NUM_16
+#define INPUT_4 GPIO_NUM_17
 
 #define ENABLE_ESQ ENABLE_B
 
@@ -77,6 +77,14 @@ typedef struct {
     uint32_t timestamp;
 
 } data_to_send_t;
+
+typedef struct {
+
+    int angular_speed_left;
+    int angular_speed_right;
+    int servo_angle;
+
+} data_to_receive_t;
 
 //i2c constants
 #define I2C_DELAY 4
@@ -126,11 +134,11 @@ typedef struct {
 #define NEG_GAP_REDUCTION_RIGHT -1400
 
 //encoder contasnts
-#define PCNT_CHA_LEFT 26
-#define PCNT_CHB_LEFT 27
+#define PCNT_CHA_LEFT 14
+#define PCNT_CHB_LEFT 15
 
-#define PCNT_CHA_RIGHT 5
-#define PCNT_CHB_RIGHT 14
+#define PCNT_CHA_RIGHT 33
+#define PCNT_CHB_RIGHT 32
 
 #define PI 3.14159
 

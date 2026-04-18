@@ -5,8 +5,8 @@
 #include "types.h"
 
 esp_err_t uart_init();
-esp_err_t uart_send_frame(data_t *cmd);
-void uart_send(float *angular_speed_left, float *angular_speed_right, float *servo_angle);
+esp_err_t uart_send_frame(data_to_send_t *cmd, size_t size);
+void uart_send(double *total_x_displacement, double *total_y_displacement, double *total_angular_displacement);
 void uart_read();
 
 #endif
