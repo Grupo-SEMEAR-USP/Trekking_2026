@@ -3,6 +3,8 @@
 #include "task_core1.h"
 #include "sycronization.h"
 #include "global_variables.h"
+#include "pwm.h"
+#include "initializers.h"
 
     //declaring locks
     SemaphoreHandle_t xSemaphore_getSpeed;
@@ -29,14 +31,21 @@
     uint32_t global_timer_miliseconds = 0;
     uint32_t global_time_stamp_miliseconds = 0;
 
+
 void app_main() {
+
+    gpio_set_direction(STAND_BY, GPIO_MODE_DEF_OUTPUT);
+
+    esp_err_t err = gpio_set_level(STAND_BY, 1);
+
     //initializing locks
     xSemaphore_getSpeed = xSemaphoreCreateMutex();
     xSemaphore_getRosSpeed = xSemaphoreCreateMutex();
     initialization_groupEvent = xEventGroupCreate(); //it's perhaps not necessary
 
-    //Inicializar as tasks
+    // //Inicializar as tasks
     xTaskCreatePinnedToCore(&core0fuctions, "task que inicializa pwm,encoders e pid no core 0", 2048, NULL, 1, NULL, 0);
-    xTaskCreatePinnedToCore(&core1functions, "task que inicializa o i2c no core 1", 2048, NULL, 1, NULL, 1);
+    // //xTaskCreatePinnedToCore(&core1functions, "task que inicializa o i2c no core 1", 2048, NULL, 1, NULL, 1);
+
 }
 

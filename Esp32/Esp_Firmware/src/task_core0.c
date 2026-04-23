@@ -2,9 +2,12 @@
 #include "initializers.h"
 #include "sycronization.h"
 #include "global_variables.h"
+#include "driver/gpio.h"
+#include "types.h"
 #include "pwm.h"
 #include "pid.h"
 #include "esp_timer.h"
+
 
 //variables for intializing encoder
 rotary_encoder_t *encoder_left;
@@ -42,6 +45,10 @@ float local_servo_angle;
 float angle = 0, real_angle = 0;
 int64_t t0 = 0, tf = 0, d_t = 0;
 
+//virtual timer
+#define ROS_TIMEOUT_CYCLES 50 
+int ros_timeout_counter = 0;
+
 //timer function to read encoder and calculate pid
 void monitor_encoder_pid_calc(TimerHandle_t xTimer);
 
@@ -49,10 +56,10 @@ void monitor_encoder_pid_calc(TimerHandle_t xTimer);
 TimerHandle_t monitor_encoder_pid_calc_timer_handle;
 
 //start motor interrupt function
-static void monitor_encoder_pid_calc_start(void *args);
-static void monitor_encoder_pid_calc_stop(void *args);
+//static void monitor_encoder_pid_calc_start(void *args);
+//static void monitor_encoder_pid_calc_stop(void *args);
 
-void interrupts_init();
+//void interrupts_init();
 
 void core0fuctions(void *params){
 
@@ -103,7 +110,7 @@ void core0fuctions(void *params){
     count_get_ros = 0;
 
     xEventGroupSetBits(initialization_groupEvent, task0_init_done);
-    xEventGroupWaitBits(initialization_groupEvent, task1_init_done, true, true, portMAX_DELAY);
+    //xEventGroupWaitBits(initialization_groupEvent, task1_init_done, true, true, portMAX_DELAY);
 
     //create timer for reading encoder and calculating pid
     monitor_encoder_pid_calc_timer_handle = xTimerCreate("Timer do encoder e pid",pdMS_TO_TICKS(PID_DELAY),pdTRUE,NULL,monitor_encoder_pid_calc);
@@ -124,7 +131,7 @@ void core0fuctions(void *params){
 void monitor_encoder_pid_calc(TimerHandle_t xTimer){
 
     if(count_get_real == ENCODER_COUNTER_WAIT_PID_OP){
-            xSemaphoreTake(xSemaphore_getSpeed,portMAX_DELAY);
+            xSemaphoreTake(xSemaphore_getSpeed,0);
             //global_motor_angular_speed_left = ((float) encoder_left->get_counter_value(encoder_left))*(ENCODER_RESOLUTION/((float)count));
             //global_motor_angular_speed_right = ((float) encoder_right->get_counter_value(encoder_right))*(ENCODER_RESOLUTION/((float)count));
             
@@ -168,7 +175,7 @@ void monitor_encoder_pid_calc(TimerHandle_t xTimer){
         }
 
         if(count_get_ros == GET_ROS_VAL_COUNTER_WAIT_PID_OP){
-            xSemaphoreTake(xSemaphore_getRosSpeed,portMAX_DELAY); //could be incremented in the first lock
+            xSemaphoreTake(xSemaphore_getRosSpeed,0); //could be incremented in the first lock
 
             local_ros_angular_speed_left = global_ros_angular_speed_left;
             local_ros_angular_speed_right = global_ros_angular_speed_right;
@@ -178,6 +185,15 @@ void monitor_encoder_pid_calc(TimerHandle_t xTimer){
             xSemaphoreGive(xSemaphore_getRosSpeed);
 
             count_get_ros = 0;
+        }
+
+        ros_timeout_counter++;
+        if(ros_timeout_counter >= ROS_TIMEOUT_CYCLES) {
+            // Se passou do tempo limite sem mensagens do ROS, força a parada
+            local_ros_angular_speed_left = 0.0f;
+            local_ros_angular_speed_right = 0.0f;
+            // Trava o contador no limite para não estourar a variável (overflow)
+            ros_timeout_counter = ROS_TIMEOUT_CYCLES; 
         }
         
         //Checking if the speed sent from ROS is 0. If it is, it must nullifie the integral error
@@ -222,71 +238,71 @@ void monitor_encoder_pid_calc(TimerHandle_t xTimer){
 
 }
 
-static void IRAM_ATTR monitor_encoder_pid_calc_start(void *args)
-{   
-    //reseting encoder stored ticks
-    encoder_left->reset_counter_value(encoder_left);
-    encoder_right->reset_counter_value(encoder_right);
+// static void IRAM_ATTR monitor_encoder_pid_calc_start(void *args)
+// {   
+//     //reseting encoder stored ticks
+//     encoder_left->reset_counter_value(encoder_left);
+//     encoder_right->reset_counter_value(encoder_right);
 
-    //starting encoder and pid timer 
+//     //starting encoder and pid timer 
 
-    xTimerStart(
-        monitor_encoder_pid_calc_timer_handle 
-        ,0);
+//     xTimerStart(
+//         monitor_encoder_pid_calc_timer_handle 
+//         ,0);
 
-    gpio_intr_disable(START_MOTOR_INTERRUPT_PIN);
-}
+//     //gpio_intr_disable(START_MOTOR_INTERRUPT_PIN);
+// }
 
-static void IRAM_ATTR monitor_encoder_pid_calc_stop(void *args)
-{   
-    //stopping encoder and pid timer 
+// static void IRAM_ATTR monitor_encoder_pid_calc_stop(void *args)
+// {   
+//     //stopping encoder and pid timer 
 
-    xTimerStop(
-        monitor_encoder_pid_calc_timer_handle 
-        ,0);
+//     xTimerStop(
+//         monitor_encoder_pid_calc_timer_handle 
+//         ,0);
 
-    //setting stop warning to hardware interface
-    global_time_stamp_miliseconds = 0x7fffffff;
-    //global_total_encoder_ticks_left = 0x7fffffff;
-    //global_total_encoder_ticks_right = 0x7fffffff;
+//     //setting stop warning to hardware interface
+//     global_time_stamp_miliseconds = 0x7fffffff;
+//     //global_total_encoder_ticks_left = 0x7fffffff;
+//     //global_total_encoder_ticks_right = 0x7fffffff;
 
-    //setting motors speed to zero
-    ledc_set_duty(LEDC_LOW_SPEED_MODE, channel_choose(ESQ), 0);
-    ledc_update_duty(LEDC_LOW_SPEED_MODE, channel_choose(ESQ));
+//     //setting motors speed to zero
+//     ledc_set_duty(LEDC_LOW_SPEED_MODE, channel_choose(ESQ), 0);
+//     ledc_update_duty(LEDC_LOW_SPEED_MODE, channel_choose(ESQ));
 
-    ledc_set_duty(LEDC_LOW_SPEED_MODE, channel_choose(DIR), 0);
-    ledc_update_duty(LEDC_LOW_SPEED_MODE, channel_choose(DIR));
+//     ledc_set_duty(LEDC_LOW_SPEED_MODE, channel_choose(DIR), 0);
+//     ledc_update_duty(LEDC_LOW_SPEED_MODE, channel_choose(DIR));
 
-    gpio_intr_disable(START_MOTOR_INTERRUPT_PIN);
+//     //gpio_intr_disable(START_MOTOR_INTERRUPT_PIN);
     
-}
+// }
 
-void interrupts_init(){
-    //start interrupt pin
-    esp_rom_gpio_pad_select_gpio(START_MOTOR_INTERRUPT_PIN);
-    gpio_set_direction(START_MOTOR_INTERRUPT_PIN, GPIO_MODE_INPUT);
+// void interrupts_init(){
+//     //start interrupt pin
+//     esp_rom_gpio_pad_select_gpio(START_MOTOR_INTERRUPT_PIN);
+//     gpio_set_direction(START_MOTOR_INTERRUPT_PIN, GPIO_MODE_INPUT);
 
-    //stop interrupt pin
-    esp_rom_gpio_pad_select_gpio(STOP_MOTOR_INTERRUPT_PIN);
-    gpio_set_direction(STOP_MOTOR_INTERRUPT_PIN, GPIO_MODE_INPUT);
+//     //stop interrupt pin
+//     esp_rom_gpio_pad_select_gpio(STOP_MOTOR_INTERRUPT_PIN);
+//     gpio_set_direction(STOP_MOTOR_INTERRUPT_PIN, GPIO_MODE_INPUT);
 
-    //disable pullup and pulldown for start pin
-    gpio_pullup_dis(START_MOTOR_INTERRUPT_PIN);
-    gpio_pulldown_dis(START_MOTOR_INTERRUPT_PIN);
+//     //disable pullup and pulldown for start pin
+//     gpio_pullup_dis(START_MOTOR_INTERRUPT_PIN);
+//     gpio_pulldown_dis(START_MOTOR_INTERRUPT_PIN);
 
-    //disable pullup and pulldown for stop pin
-    gpio_pullup_dis(STOP_MOTOR_INTERRUPT_PIN);
-    gpio_pulldown_dis(STOP_MOTOR_INTERRUPT_PIN);
+//     //disable pullup and pulldown for stop pin
+//     gpio_pullup_dis(STOP_MOTOR_INTERRUPT_PIN);
+//     gpio_pulldown_dis(STOP_MOTOR_INTERRUPT_PIN);
 
-    //installing gpio isr interrupt
-    gpio_install_isr_service(0);
+//     //installing gpio isr interrupt
+//     gpio_install_isr_service(0);
 
-    //install interrupt for start pin
-    gpio_set_intr_type(START_MOTOR_INTERRUPT_PIN, GPIO_INTR_POSEDGE);
-    gpio_isr_handler_add(START_MOTOR_INTERRUPT_PIN, monitor_encoder_pid_calc_start, (void *)START_MOTOR_INTERRUPT_PIN);
+//     //install interrupt for start pin
+//     gpio_set_intr_type(START_MOTOR_INTERRUPT_PIN, GPIO_INTR_POSEDGE);
+//     gpio_isr_handler_add(START_MOTOR_INTERRUPT_PIN, monitor_encoder_pid_calc_start, (void *)START_MOTOR_INTERRUPT_PIN);
 
-    //install interrupt for stop pin
-    gpio_set_intr_type(STOP_MOTOR_INTERRUPT_PIN, GPIO_INTR_POSEDGE);
-    gpio_isr_handler_add(STOP_MOTOR_INTERRUPT_PIN, monitor_encoder_pid_calc_stop, (void *)STOP_MOTOR_INTERRUPT_PIN);
+//     //install interrupt for stop pin
+//     gpio_set_intr_type(STOP_MOTOR_INTERRUPT_PIN, GPIO_INTR_POSEDGE);
+//     gpio_isr_handler_add(STOP_MOTOR_INTERRUPT_PIN, monitor_encoder_pid_calc_stop, (void *)STOP_MOTOR_INTERRUPT_PIN);
 
-}
+// }

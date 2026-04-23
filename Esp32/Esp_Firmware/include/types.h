@@ -17,9 +17,11 @@
 #include <math.h>
 
 //start and stop interrupts gpio constants
-#define START_MOTOR_INTERRUPT_PIN GPIO_NUM_34
-#define STOP_MOTOR_INTERRUPT_PIN GPIO_NUM_35
+// #define START_MOTOR_INTERRUPT_PIN GPIO_NUM_34
+// #define STOP_MOTOR_INTERRUPT_PIN GPIO_NUM_35
 
+//standby
+#define STAND_BY GPIO_NUM_18
 
 //pwm gpio constants
 #define ENABLE_A GPIO_NUM_22
@@ -37,7 +39,7 @@
 
 //servo pwm constants
 
-#define SERVO_DUTY_PIN 13
+#define SERVO_DUTY_PIN 3
 #define SERVO_PWM_TIMER LEDC_TIMER_2//pwm channel for servo
 #define SERVO_PWM_CHANNEL LEDC_CHANNEL_2
 #define SERVO_INITIAL_ANGLE 90.0
@@ -103,7 +105,7 @@ typedef struct {
 #define I2C_SLAVE_RX_BUF_LEN 128 //buffer for 32 receiving messages
 
 //pid constants
-#define PID_DELAY 8//8
+#define PID_DELAY 10//10
 
 #define MAX_PID_VALUE 8191.0
 #define MAX_INTEGRAL_VALUE 3880.0
