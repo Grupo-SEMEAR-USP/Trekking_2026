@@ -89,9 +89,9 @@ static void process_received_byte(uint8_t byte)
             
             if(byte == FRAME_EOF)
             {
-                memcpy(&global_ros_angular_speed_left, &s_payload_buffer.data.angular_speed_left, 4);
-                memcpy(&global_ros_angular_speed_right, &s_payload_buffer.data.angular_speed_right, 4);
-                memcpy(&global_ros_servo_angle, &s_payload_buffer.data.servo_angle, 4);
+                global_ros_angular_speed_left = s_payload_buffer.data.angular_speed_left;
+                global_ros_angular_speed_right = s_payload_buffer.data.angular_speed_right;
+                global_ros_servo_angle = s_payload_buffer.data.servo_angle;
 
                 ESP_LOGI(TAG, "Frame válido! V Angular E: %.2f | V Angular D: %.2f | Angulo Servo: %.2f", 
                          global_ros_angular_speed_left, global_ros_angular_speed_right, global_ros_servo_angle);
@@ -195,18 +195,26 @@ void uart_send(double *total_x_displacement, double *total_y_displacement, doubl
 
 void uart_read()
 {
+    ESP_LOGI("UART_DEBUG", "1. Tentando pegar o semaforo...");
+    if (xSemaphore_getRosSpeed == NULL) {
+        ESP_LOGE("UART_DEBUG", "ERRO FATAL: Semaforo eh NULL!");
+    }
     xSemaphoreTake(xSemaphore_getRosSpeed, portMAX_DELAY);
+    ESP_LOGI("UART_DEBUG", "2. Semaforo pego com sucesso!");
 
     static uint8_t data[RD_BUF_SIZE];
 
+    ESP_LOGI("UART_DEBUG", "3. Lendo UART...");
     int len = uart_read_bytes(UART_PORT_NUM, data, RD_BUF_SIZE, pdMS_TO_TICKS(20));
 
     if (len > 0) {
-        
+        ESP_LOGI("UART_DEBUG", "4. Recebeu %d bytes. Processando...", len);
         for (int i = 0; i < len; i++) {
             process_received_byte(data[i]);
         }
+        ESP_LOGI("UART_DEBUG", "5. Processamento concluido!");
     }
 
     xSemaphoreGive(xSemaphore_getRosSpeed);
+    ESP_LOGI("UART_DEBUG", "6. Semaforo devolvido.");
 }

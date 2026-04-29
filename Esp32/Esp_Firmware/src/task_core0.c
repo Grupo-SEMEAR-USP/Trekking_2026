@@ -131,7 +131,8 @@ void core0fuctions(void *params){
 void monitor_encoder_pid_calc(TimerHandle_t xTimer){
 
     if(count_get_real == ENCODER_COUNTER_WAIT_PID_OP){
-            xSemaphoreTake(xSemaphore_getSpeed,0);
+            
+        if(xSemaphoreTake(xSemaphore_getSpeed,0) == pdTRUE) {
             //global_motor_angular_speed_left = ((float) encoder_left->get_counter_value(encoder_left))*(ENCODER_RESOLUTION/((float)count));
             //global_motor_angular_speed_right = ((float) encoder_right->get_counter_value(encoder_right))*(ENCODER_RESOLUTION/((float)count));
             
@@ -171,11 +172,14 @@ void monitor_encoder_pid_calc(TimerHandle_t xTimer){
 
             xSemaphoreGive(xSemaphore_getSpeed);
 
+            }
+
             count_get_real = 0;
         }
 
         if(count_get_ros == GET_ROS_VAL_COUNTER_WAIT_PID_OP){
-            xSemaphoreTake(xSemaphore_getRosSpeed,0); //could be incremented in the first lock
+            
+            if(xSemaphoreTake(xSemaphore_getRosSpeed,0) == pdTRUE) { //could be incremented in the first lock
 
             local_ros_angular_speed_left = global_ros_angular_speed_left;
             local_ros_angular_speed_right = global_ros_angular_speed_right;
@@ -183,7 +187,9 @@ void monitor_encoder_pid_calc(TimerHandle_t xTimer){
             local_servo_angle = global_ros_servo_angle;
 
             xSemaphoreGive(xSemaphore_getRosSpeed);
-
+            
+            }
+            
             count_get_ros = 0;
         }
 

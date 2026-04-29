@@ -48,7 +48,7 @@ void core1functions(void *params){
     if(ret != ESP_OK)
     {
         ESP_LOGE(TAG, "Comunicação UART falhou, deletando a task...");
-        return;
+        vTaskDelete(NULL);
     }
 
     ESP_LOGI(TAG, "Comunicação serial iniciada");   
@@ -57,8 +57,13 @@ void core1functions(void *params){
 
     while(true){
 
+        ESP_LOGI(TAG, "Tentando ler UART...");
         uart_read();
+
+        ESP_LOGI(TAG, "Tentando enviar UART...");
         uart_send(&global_total_x, &global_total_y, &global_total_theta);
+
+        ESP_LOGI(TAG, "Delay da task...");
         vTaskDelay(pdMS_TO_TICKS(UART_DELAY));
 
     }
