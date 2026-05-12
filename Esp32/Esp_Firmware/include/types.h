@@ -24,15 +24,15 @@
 #define STAND_BY GPIO_NUM_26
 
 //pwm gpio constants
-#define ENABLE_A GPIO_NUM_13
+#define ENABLE_A GPIO_NUM_19
 #define INPUT_1 GPIO_NUM_27
-#define INPUT_2 GPIO_NUM_14
+#define INPUT_2 GPIO_NUM_23
 
 #define ENABLE_DIR ENABLE_A
 
 #define ENABLE_B GPIO_NUM_32
-#define INPUT_3 GPIO_NUM_25
-#define INPUT_4 GPIO_NUM_33
+#define INPUT_3 GPIO_NUM_33
+#define INPUT_4 GPIO_NUM_25
 
 #define ENABLE_ESQ ENABLE_B
 
@@ -96,8 +96,8 @@ typedef struct {
 #define RX_MENSAGE_SIZE 12
 #define TX_MENSAGE_SIZE 16
 
-#define I2C_SLAVE_SCL_IO GPIO_NUM_22 //gpio number for i2c slave clock 
-#define I2C_SLAVE_SDA_IO GPIO_NUM_21 //gpio number for i2c slave data
+// #define I2C_SLAVE_SCL_IO GPIO_NUM_22 //gpio number for i2c slave clock 
+// #define I2C_SLAVE_SDA_IO GPIO_NUM_21 //gpio number for i2c slave data
 #define ESP_SLAVE_ADDR 0x58
 
 // Testando i2c com buffers menores, valores antigos: 512 e 384
@@ -111,13 +111,13 @@ typedef struct {
 #define MAX_INTEGRAL_VALUE 3880.0
 
 // Kp,Ki,Kd constants
-#define KP_LEFT 300.0
+#define KP_LEFT 100.0
 #define KI_LEFT 5.0
-#define KD_LEFT 0.0
+#define KD_LEFT 0.5
 
-#define KP_RIGHT 300.0
+#define KP_RIGHT 100.0
 #define KI_RIGHT 5.0
-#define KD_RIGHT 0.0
+#define KD_RIGHT 0.5
 
 
 //limits of pwm duty cycle values to escape inertia
@@ -153,8 +153,8 @@ typedef struct {
 
 //defining calc parameters
 
-#define WHELL_RADIUS 50.0 //wheel radius in mm
-#define WHELL_REAR_SEPARATION 250.0 //back whell separation in mm
+#define WHELL_RADIUS 47.5 //wheel radius in mm
+#define WHELL_REAR_SEPARATION 195.0 //back whell separation in mm
 
 #define ENCODER_DISPLACEMENT (2*PI*WHELL_RADIUS)/(ENCODER_RESOLUTION_TICKS)
 

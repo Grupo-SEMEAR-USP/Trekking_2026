@@ -50,7 +50,7 @@ int64_t t0 = 0, tf = 0, d_t = 0;
 int ros_timeout_counter = 0;
 
 //timer function to read encoder and calculate pid
-void monitor_encoder_pid_calc(TimerHandle_t xTimer);
+void monitor_encoder_pid_calc();
 
 //create timer handle
 TimerHandle_t monitor_encoder_pid_calc_timer_handle;
@@ -112,29 +112,24 @@ void core0fuctions(void *params){
     xEventGroupSetBits(initialization_groupEvent, task0_init_done);
     //xEventGroupWaitBits(initialization_groupEvent, task1_init_done, true, true, portMAX_DELAY);
 
-    //create timer for reading encoder and calculating pid
-    monitor_encoder_pid_calc_timer_handle = xTimerCreate("Timer do encoder e pid",pdMS_TO_TICKS(PID_DELAY),pdTRUE,NULL,monitor_encoder_pid_calc);
+    TickType_t xLastWakeTime = xTaskGetTickCount();
 
-    //init interrupts
-    //interrupts_init();
-    xTimerStart(
-    monitor_encoder_pid_calc_timer_handle 
-    ,0);
+    while (true){
 
-    vTaskSuspend(NULL);
-
-    //vTaskDelay(pdMS_TO_TICKS(10000000));
+        monitor_encoder_pid_calc();
+        vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(PID_DELAY));
+    }
 
 }
 
 
-void monitor_encoder_pid_calc(TimerHandle_t xTimer){
+void monitor_encoder_pid_calc(){
 
     if(count_get_real == ENCODER_COUNTER_WAIT_PID_OP){
             
         if(xSemaphoreTake(xSemaphore_getSpeed,0) == pdTRUE) {
-            //global_motor_angular_speed_left = ((float) encoder_left->get_counter_value(encoder_left))*(ENCODER_RESOLUTION/((float)count));
-            //global_motor_angular_speed_right = ((float) encoder_right->get_counter_value(encoder_right))*(ENCODER_RESOLUTION/((float)count));
+            global_motor_angular_speed_left = ((float) encoder_left->get_counter_value(encoder_left))*(ENCODER_RESOLUTION/100);
+            global_motor_angular_speed_right = ((float) encoder_right->get_counter_value(encoder_right))*(ENCODER_RESOLUTION/100);
             
             local_delta_encoder_ticks_left = -encoder_left->get_counter_value(encoder_left);
             local_delta_encoder_ticks_right = encoder_right->get_counter_value(encoder_right);
@@ -157,12 +152,12 @@ void monitor_encoder_pid_calc(TimerHandle_t xTimer){
             //x and y displacements are given in milimeters
             global_total_x +=  (double)((local_delta_encoder_ticks_right+local_delta_encoder_ticks_left)*ENCODER_DISPLACEMENT*0.5*cos(global_total_theta));
             global_total_y +=  (double)((local_delta_encoder_ticks_right+local_delta_encoder_ticks_left)*ENCODER_DISPLACEMENT*0.5*sin(global_total_theta));
-            printf("Setpoint(L): %lf / Real(L): %lf / Setpoint(R): %lf / Real(R): %lf\n", 
-                local_ros_angular_speed_left,
-                ang_speed_left_wheel,
-                local_ros_angular_speed_right,
-                ang_speed_right_wheel
-            );
+            // printf("Setpoint(L): %lf / Real(L): %lf / Setpoint(R): %lf / Real(R): %lf\n", 
+            //     local_ros_angular_speed_left,
+            //     ang_speed_left_wheel,
+            //     local_ros_angular_speed_right,
+            //     ang_speed_right_wheel
+            // );
             global_total_theta += (double)(((local_delta_encoder_ticks_right-local_delta_encoder_ticks_left)*0.5*ENCODER_DISPLACEMENT)/WHELL_REAR_SEPARATION);//*ANGULAR_DISPLACEMENT);
 
             //printf("global_total_x: %lf, global_total_y: %lf, global_total_theta: %lf\n",global_total_x,global_total_y,global_total_theta);
@@ -187,20 +182,21 @@ void monitor_encoder_pid_calc(TimerHandle_t xTimer){
             local_servo_angle = global_ros_servo_angle;
 
             xSemaphoreGive(xSemaphore_getRosSpeed);
+
+            count_get_ros = 0;
             
             }
-            
-            count_get_ros = 0;
         }
 
         ros_timeout_counter++;
-        if(ros_timeout_counter >= ROS_TIMEOUT_CYCLES) {
+
+    if(ros_timeout_counter >= ROS_TIMEOUT_CYCLES) {
             // Se passou do tempo limite sem mensagens do ROS, força a parada
             local_ros_angular_speed_left = 0.0f;
             local_ros_angular_speed_right = 0.0f;
             // Trava o contador no limite para não estourar a variável (overflow)
             ros_timeout_counter = ROS_TIMEOUT_CYCLES; 
-        }
+    }
         
         //Checking if the speed sent from ROS is 0. If it is, it must nullifie the integral error
         if (fabsf(local_ros_angular_speed_left) < 1e-3f) {

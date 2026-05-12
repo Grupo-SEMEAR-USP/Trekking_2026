@@ -77,7 +77,7 @@ static void process_received_byte(uint8_t byte)
 
                 else
                 {
-                    ESP_LOGW(TAG, "Checksum falhou. Byte esperado: 0x%02X, Byte recebido: 0x%02X", calculated_chk, byte);
+                    //ESP_LOGW(TAG, "Checksum falhou. Byte esperado: 0x%02X, Byte recebido: 0x%02X", calculated_chk, byte);
                     s_current_state = STATE_WAIT_SOF;
                 }
             
@@ -89,17 +89,21 @@ static void process_received_byte(uint8_t byte)
             
             if(byte == FRAME_EOF)
             {
+                xSemaphoreTake(xSemaphore_getRosSpeed, portMAX_DELAY);
+
                 global_ros_angular_speed_left = s_payload_buffer.data.angular_speed_left;
                 global_ros_angular_speed_right = s_payload_buffer.data.angular_speed_right;
                 global_ros_servo_angle = s_payload_buffer.data.servo_angle;
 
-                ESP_LOGI(TAG, "Frame válido! V Angular E: %.2f | V Angular D: %.2f | Angulo Servo: %.2f", 
-                         global_ros_angular_speed_left, global_ros_angular_speed_right, global_ros_servo_angle);
+                xSemaphoreGive(xSemaphore_getRosSpeed);
+
+                //ESP_LOGI(TAG, "Frame válido! V Angular E: %.2f | V Angular D: %.2f | Angulo Servo: %.2f", 
+                        // global_ros_angular_speed_left, global_ros_angular_speed_right, global_ros_servo_angle);
             }
 
             else
             {
-                ESP_LOGW(TAG, "EOF falhou! Esperado: 0x%02X, Recebido: 0x%02X", FRAME_EOF, byte);
+                //ESP_LOGW(TAG, "EOF falhou! Esperado: 0x%02X, Recebido: 0x%02X", FRAME_EOF, byte);
             }
 
             s_current_state = STATE_WAIT_SOF;
@@ -123,7 +127,7 @@ esp_err_t uart_init()
     ESP_ERROR_CHECK(uart_param_config(UART_PORT_NUM, &uart_config));
     ESP_ERROR_CHECK(uart_driver_install(UART_PORT_NUM, BUF_SIZE * 2, 0, 0, NULL, 0));
     
-    ESP_LOGI(TAG, "Driver UART0 (USB) inicializado a 115200 bps.");
+    //ESP_LOGI(TAG, "Driver UART0 (USB) inicializado a 115200 bps.");
     return ESP_OK;
 
 }
@@ -158,7 +162,7 @@ esp_err_t uart_send_frame(data_to_send_t *cmd, size_t size)
     if (bytes_sent == frame_size) {
         return ESP_OK;
     } else {
-        ESP_LOGW(TAG, "Falha ao enviar frame, bytes_sent=%d (esperado %d)", bytes_sent, frame_size);
+        //ESP_LOGW(TAG, "Falha ao enviar frame, bytes_sent=%d (esperado %d)", bytes_sent, frame_size);
         return ESP_FAIL;
     }
 
@@ -167,7 +171,6 @@ esp_err_t uart_send_frame(data_to_send_t *cmd, size_t size)
 
 void uart_send(double *total_x_displacement, double *total_y_displacement, double *total_angular_displacement)
 {
-    xSemaphoreTake(xSemaphore_getSpeed,portMAX_DELAY);
 
     data_to_send_t data;
 
@@ -181,11 +184,15 @@ void uart_send(double *total_x_displacement, double *total_y_displacement, doubl
     total_y_micrometers = (int)((*total_y_displacement)*1000);
     total_theta_mmrad = (int)((*total_angular_displacement)*1000);
 
+    xSemaphoreTake(xSemaphore_getSpeed,portMAX_DELAY);
+
     memcpy(&data.total_x_micrometers,&total_x_micrometers,4);
     memcpy(&data.total_y_micrometers,&total_y_micrometers,4);
     memcpy(&data.total_theta_mmrad,&total_theta_mmrad,4);
     memcpy(&data.timestamp,&timestamp,4);
 
+    xSemaphoreGive(xSemaphore_getRosSpeed);
+    
     esp_err_t ret = uart_send_frame(&data, PAYLOAD_SIZE_TX);
 
     xSemaphoreGive(xSemaphore_getSpeed);
@@ -195,26 +202,23 @@ void uart_send(double *total_x_displacement, double *total_y_displacement, doubl
 
 void uart_read()
 {
-    ESP_LOGI("UART_DEBUG", "1. Tentando pegar o semaforo...");
+
     if (xSemaphore_getRosSpeed == NULL) {
-        ESP_LOGE("UART_DEBUG", "ERRO FATAL: Semaforo eh NULL!");
+        //ESP_LOGE("UART_DEBUG", "ERRO FATAL: Semaforo eh NULL!");
     }
-    xSemaphoreTake(xSemaphore_getRosSpeed, portMAX_DELAY);
-    ESP_LOGI("UART_DEBUG", "2. Semaforo pego com sucesso!");
 
     static uint8_t data[RD_BUF_SIZE];
 
-    ESP_LOGI("UART_DEBUG", "3. Lendo UART...");
+    //ESP_LOGI("UART_DEBUG", "3. Lendo UART...");
     int len = uart_read_bytes(UART_PORT_NUM, data, RD_BUF_SIZE, pdMS_TO_TICKS(20));
 
     if (len > 0) {
-        ESP_LOGI("UART_DEBUG", "4. Recebeu %d bytes. Processando...", len);
+        //ESP_LOGI("UART_DEBUG", "4. Recebeu %d bytes. Processando...", len);
         for (int i = 0; i < len; i++) {
             process_received_byte(data[i]);
         }
-        ESP_LOGI("UART_DEBUG", "5. Processamento concluido!");
+        //ESP_LOGI("UART_DEBUG", "5. Processamento concluido!");
     }
 
-    xSemaphoreGive(xSemaphore_getRosSpeed);
-    ESP_LOGI("UART_DEBUG", "6. Semaforo devolvido.");
+    //ESP_LOGI("UART_DEBUG", "6. Semaforo devolvido.");
 }

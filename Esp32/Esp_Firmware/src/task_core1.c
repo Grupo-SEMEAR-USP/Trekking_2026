@@ -51,19 +51,19 @@ void core1functions(void *params){
         vTaskDelete(NULL);
     }
 
-    ESP_LOGI(TAG, "Comunicação serial iniciada");   
+    //ESP_LOGI(TAG, "Comunicação serial iniciada");   
 
     xEventGroupSetBits(initialization_groupEvent, task1_init_done);
 
     while(true){
 
-        ESP_LOGI(TAG, "Tentando ler UART...");
+        //ESP_LOGI(TAG, "Tentando ler UART...");
         uart_read();
 
-        ESP_LOGI(TAG, "Tentando enviar UART...");
+        //ESP_LOGI(TAG, "Tentando enviar UART...");
         uart_send(&global_total_x, &global_total_y, &global_total_theta);
 
-        ESP_LOGI(TAG, "Delay da task...");
+        //ESP_LOGI(TAG, "Delay da task...");
         vTaskDelay(pdMS_TO_TICKS(UART_DELAY));
 
     }
