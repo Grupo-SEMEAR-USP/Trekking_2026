@@ -14,6 +14,9 @@ find_package(catkin REQUIRED COMPONENTS
   message_generation
   geometry_msgs
   tf
+  tf2
+  tf2_geometry_msgs
+  angles
   nav_msgs
   joy
 )

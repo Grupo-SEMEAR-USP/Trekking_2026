@@ -32,7 +32,7 @@
 class RobotHWInterface {
 public:
     RobotHWInterface(ros::NodeHandle& nh); // Ajustado para receber NodeHandle por referência
-    //void cmdVelCallback(const geometry_msgs::Twist::ConstPtr& msg);
+    void cmdVelCallback(const geometry_msgs::Twist::ConstPtr& msg);
     void imuDataCallback(const sensor_msgs::Imu::ConstPtr& msg);
     void AckermannDriveCallback(const ackermann_msgs::AckermannDrive::ConstPtr& msg);
     void publishWheelSpeeds(); // Publicando velocidades do cmd_vel
@@ -68,7 +68,7 @@ private:
     float left_wheel_angular_speed= 0.0;
     float right_wheel_angular_speed = 0.0;
 
-    // Parâmetros carregados do arquivo .yaml
+    // Parâmetros carregados do arquivo .yaml (/robot_control/config/wheel_control.yaml)
     float wheel_separation_width;
     float wheel_separation_length;
     float wheel_radius;
