@@ -37,7 +37,7 @@ int64_t current_time = 0;
 int64_t last_time = 0;
 int64_t delta_time = 0;
 
-double ang_speed_left_wheel = 0, ang_speed_right_wheel = 0;
+double ang_speed_left_wheel = 0.0, ang_speed_right_wheel = 0.0;
 
 //variables for servo
 float local_servo_angle;
@@ -53,7 +53,7 @@ int ros_timeout_counter = 0;
 void monitor_encoder_pid_calc();
 
 //create timer handle
-TimerHandle_t monitor_encoder_pid_calc_timer_handle;
+//TimerHandle_t monitor_encoder_pid_calc_timer_handle;
 
 //start motor interrupt function
 //static void monitor_encoder_pid_calc_start(void *args);
@@ -110,7 +110,7 @@ void core0fuctions(void *params){
     count_get_ros = 0;
 
     xEventGroupSetBits(initialization_groupEvent, task0_init_done);
-    //xEventGroupWaitBits(initialization_groupEvent, task1_init_done, true, true, portMAX_DELAY);
+    xEventGroupWaitBits(initialization_groupEvent, task1_init_done, true, true, portMAX_DELAY);
 
     TickType_t xLastWakeTime = xTaskGetTickCount();
 
@@ -118,6 +118,7 @@ void core0fuctions(void *params){
 
         monitor_encoder_pid_calc();
         vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(PID_DELAY));
+        
     }
 
 }
@@ -128,10 +129,8 @@ void monitor_encoder_pid_calc(){
     if(count_get_real == ENCODER_COUNTER_WAIT_PID_OP){
             
         if(xSemaphoreTake(xSemaphore_getSpeed,0) == pdTRUE) {
-            global_motor_angular_speed_left = ((float) encoder_left->get_counter_value(encoder_left))*(ENCODER_RESOLUTION/100);
-            global_motor_angular_speed_right = ((float) encoder_right->get_counter_value(encoder_right))*(ENCODER_RESOLUTION/100);
-            
-            local_delta_encoder_ticks_left = -encoder_left->get_counter_value(encoder_left);
+
+            local_delta_encoder_ticks_left = encoder_left->get_counter_value(encoder_left);
             local_delta_encoder_ticks_right = encoder_right->get_counter_value(encoder_right);
 
             //printf("left: %d, right: %d\n", local_delta_encoder_ticks_left, local_delta_encoder_ticks_right);
@@ -146,8 +145,13 @@ void monitor_encoder_pid_calc(){
             current_time = esp_timer_get_time();
             delta_time = current_time-last_time;
             last_time = current_time;
-            ang_speed_left_wheel = (((local_delta_encoder_ticks_left*2*PI)/ENCODER_RESOLUTION_TICKS)/(delta_time))*1000000;
-            ang_speed_right_wheel = (((local_delta_encoder_ticks_right*2*PI)/ENCODER_RESOLUTION_TICKS)/(delta_time))*1000000;
+
+            if(delta_time > 1e-3f) {
+
+                ang_speed_left_wheel = (((local_delta_encoder_ticks_left*2*PI)/ENCODER_RESOLUTION_TICKS)/(delta_time))*1000000;
+                ang_speed_right_wheel = (((local_delta_encoder_ticks_right*2*PI)/ENCODER_RESOLUTION_TICKS)/(delta_time))*1000000;
+            
+            }
             
             //x and y displacements are given in milimeters
             global_total_x +=  (double)((local_delta_encoder_ticks_right+local_delta_encoder_ticks_left)*ENCODER_DISPLACEMENT*0.5*cos(global_total_theta));
@@ -164,6 +168,28 @@ void monitor_encoder_pid_calc(){
             //global_servo_angle = local_servo_angle;
 
             global_time_stamp_miliseconds  = global_timer_miliseconds;
+
+            if (fabsf(local_ros_angular_speed_left) < 1e-3f) {
+            (pid_handle_left.pid_handle)->integral_err = 0.0f;
+            }
+            if (fabsf(local_ros_angular_speed_right) < 1e-3f) {
+                (pid_handle_right.pid_handle)->integral_err = 0.0f;
+            }
+
+            pid_handle_left.pid_calculate(
+                &pid_handle_left,
+                ang_speed_left_wheel/*local_motor_angular_speed_left*/,
+                local_ros_angular_speed_left,
+                &pid_result_duty_left);
+
+            pid_handle_right.pid_calculate(
+                &pid_handle_right,
+                ang_speed_right_wheel/*local_motor_angular_speed_right*/,
+                local_ros_angular_speed_right,
+                &pid_result_duty_right);
+     
+            pwm_actuate(ESQ,pid_result_duty_left);
+            pwm_actuate(DIR,pid_result_duty_right);
 
             xSemaphoreGive(xSemaphore_getSpeed);
 
@@ -183,12 +209,16 @@ void monitor_encoder_pid_calc(){
 
             xSemaphoreGive(xSemaphore_getRosSpeed);
 
-            count_get_ros = 0;
+            ros_timeout_counter = 0;
             
             }
+
+            count_get_ros = 0;
         }
 
-        ros_timeout_counter++;
+        else {
+            ros_timeout_counter++;
+        }
 
     if(ros_timeout_counter >= ROS_TIMEOUT_CYCLES) {
             // Se passou do tempo limite sem mensagens do ROS, força a parada
@@ -198,32 +228,9 @@ void monitor_encoder_pid_calc(){
             ros_timeout_counter = ROS_TIMEOUT_CYCLES; 
     }
         
-        //Checking if the speed sent from ROS is 0. If it is, it must nullifie the integral error
-        if (fabsf(local_ros_angular_speed_left) < 1e-3f) {
-            (pid_handle_left.pid_handle)->integral_err = 0.0f;
-        }
-        if (fabsf(local_ros_angular_speed_right) < 1e-3f) {
-            (pid_handle_right.pid_handle)->integral_err = 0.0f;
-        }
-
-        pid_handle_left.pid_calculate(
-            &pid_handle_left,
-            ang_speed_left_wheel/*local_motor_angular_speed_left*/,
-            local_ros_angular_speed_left,
-            &pid_result_duty_left);
-
-        pid_handle_right.pid_calculate(
-            &pid_handle_right,
-            ang_speed_right_wheel/*local_motor_angular_speed_right*/,
-            local_ros_angular_speed_right,
-            &pid_result_duty_right);
-     
-        //printf("duty_left: %lf, duty_right:%lf\n", pid_result_duty_left, pid_result_duty_right);
-        pwm_actuate(ESQ,pid_result_duty_left);
-        pwm_actuate(DIR,pid_result_duty_right);
         //pwm_actuate(ESQ,8191.0*(7.5/34));
         //pwm_actuate(DIR,8191.0*(22.0/37));
-        iot_servo_write_angle(LEDC_LOW_SPEED_MODE, SERVO_PWM_CHANNEL, local_servo_angle);
+        //iot_servo_write_angle(LEDC_LOW_SPEED_MODE, SERVO_PWM_CHANNEL, local_servo_angle);
         
         //printf("pwm_left: %f, pwm_right: %f / local_left: %f, local_right: %f\n", pid_result_duty_left, pid_result_duty_right, local_motor_angular_speed_left, local_motor_angular_speed_right);
 

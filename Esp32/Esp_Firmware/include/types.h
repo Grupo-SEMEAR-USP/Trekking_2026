@@ -31,8 +31,8 @@
 #define ENABLE_DIR ENABLE_A
 
 #define ENABLE_B GPIO_NUM_32
-#define INPUT_3 GPIO_NUM_33
-#define INPUT_4 GPIO_NUM_25
+#define INPUT_3 GPIO_NUM_25
+#define INPUT_4 GPIO_NUM_33
 
 #define ENABLE_ESQ ENABLE_B
 
@@ -111,12 +111,12 @@ typedef struct {
 #define MAX_INTEGRAL_VALUE 3880.0
 
 // Kp,Ki,Kd constants
-#define KP_LEFT 100.0
-#define KI_LEFT 5.0
+#define KP_LEFT 0.5
+#define KI_LEFT 1.0
 #define KD_LEFT 0.5
 
-#define KP_RIGHT 100.0
-#define KI_RIGHT 5.0
+#define KP_RIGHT 0.5
+#define KI_RIGHT 1.0
 #define KD_RIGHT 0.5
 
 
