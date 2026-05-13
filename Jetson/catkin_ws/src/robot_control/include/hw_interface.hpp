@@ -28,6 +28,7 @@
 #define HW_IF_TICK_PERIOD 1 / HW_IF_UPDATE_FREQ // diferente do da work
 #define CMD_VEL_TIMEOUT_DEACELERATION_PERIOD 0.05
 #define DECELERATION_RATE 0.5
+#define SERVO_INITIAL_ANGLE 90.0
 
 class RobotHWInterface {
 public:
@@ -49,9 +50,10 @@ private:
 
     // Hw Interface 
     ros::Publisher velocity_command_pub;
-    //ros::Subscriber cmd_vel_sub;
+    ros::Subscriber cmd_vel_sub;
     ros::Subscriber ack_drive_sub;
     ros::Subscriber imu_sub;
+    ros::Subscriber encoder_uart_sub;
 
     // Odometria
     ros::Subscriber encoder_sub;

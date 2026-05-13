@@ -113,7 +113,7 @@ void RobotHWInterface::cmdVelCallback(const geometry_msgs::Twist::ConstPtr& msg)
     // PARA DIFERENCIAL
 
     const float v = msg->linear.x;
-    const float omega = msg.angular.z;
+    const float omega = msg->angular.z;
 
     command_timeout_.stop();
     command_timeout_.setPeriod(ros::Duration(0.1), true);
@@ -126,8 +126,8 @@ void RobotHWInterface::cmdVelCallback(const geometry_msgs::Twist::ConstPtr& msg)
     float left_speed = v - (omega * wheel_separation_width / 2.0);
     float right_speed = v + (omega * wheel_separation_width / 2.0);
 
-    float left_wheel_angular_speed = left_speed / wheel_radius;
-    float right_wheel_angular_speed = right_speed / wheel_radius;
+    fleft_wheel_angular_speed = left_speed / wheel_radius;
+    right_wheel_angular_speed = right_speed / wheel_radius;
 
     servo_angle = SERVO_INITIAL_ANGLE;
 
@@ -163,7 +163,7 @@ void RobotHWInterface::imuDataCallback(const sensor_msgs::Imu::ConstPtr& msg) {
 
     imu_yaw = relative_yaw;
 
-    imu_angular_speed_z = msg->angular_velocity_z;
+    imu_angular_vel_z = msg->angular_velocity.z;
 
 }
 
@@ -318,7 +318,7 @@ void RobotHWInterface::updateOdometry() {
     if(imu_initialized) {
 
         odom_quat = tf::createQuaternionMsgFromYaw(yaw_for_calc);
-        angular_vel_for_odom = imu_angular_speed_z;
+        angular_vel_for_odom = imu_angular_vel_z;
 
     }   else {
 

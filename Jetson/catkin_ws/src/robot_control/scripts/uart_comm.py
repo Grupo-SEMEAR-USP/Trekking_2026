@@ -59,6 +59,8 @@ class UARTDevice:
         self.ackr_commands[1] = msg.angular_speed_right
         self.ackr_commands[2] = msg.servo_angle
 
+        rospy.loginfo(f"Valores recebidos do HW_interface: {self.ackr_commands[0]}, {self.ackr_commands[1]}, {self.ackr_commands[2]}")
+
     def read_loop(self):
         """
         Loop contínuo para ler dados vindos do ESP32
@@ -66,7 +68,7 @@ class UARTDevice:
         expected_sof = struct.pack('B', FRAME_SOF)
         expected_eof = struct.pack('B', FRAME_EOF)
 
-        while self.running and not rospy.is_shutdown():
+        while self.serial_port.in_waiting > 0 and self.running and not rospy.is_shutdown():
             try:
                 if self.serial_port.in_waiting > 0:
                     byte = self.serial_port.read(1)
@@ -91,11 +93,12 @@ class UARTDevice:
                                 continue
 
                             x, y, z, timestamp = struct.unpack('<iiiI', payload)
+                            rospy.loginfo(f"Recebido da ESP | x: {x}, y: {y}, z: {z}")
                             self.publish_encoders(x, y, z, timestamp)
                             
             except Exception as e:
                 rospy.logerr(f"Erro na leitura serial: {e}")
-                rospy.sleep(1)
+                break
 
     def publish_encoders(self, x, y, z, timestamp):
         msg = UARTData()
@@ -103,6 +106,7 @@ class UARTDevice:
         msg.y = y
         msg.z = z
         msg.timestamp = timestamp
+        rospy.loginfo(f"Publicado ao HW | x: {x}, y: {y}, z: {z}")
         self.pub_encoder.publish(msg)
 
     def write_data(self):
