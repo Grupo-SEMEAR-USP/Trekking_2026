@@ -24,9 +24,9 @@
 #define STAND_BY GPIO_NUM_26
 
 //pwm gpio constants
-#define ENABLE_A GPIO_NUM_19
+#define ENABLE_A GPIO_NUM_13
 #define INPUT_1 GPIO_NUM_27
-#define INPUT_2 GPIO_NUM_23
+#define INPUT_2 GPIO_NUM_14
 
 #define ENABLE_DIR ENABLE_A
 
@@ -96,8 +96,8 @@ typedef struct {
 #define RX_MENSAGE_SIZE 12
 #define TX_MENSAGE_SIZE 16
 
-// #define I2C_SLAVE_SCL_IO GPIO_NUM_22 //gpio number for i2c slave clock 
-// #define I2C_SLAVE_SDA_IO GPIO_NUM_21 //gpio number for i2c slave data
+#define I2C_SLAVE_SCL_IO GPIO_NUM_22 //gpio number for i2c slave clock 
+#define I2C_SLAVE_SDA_IO GPIO_NUM_21 //gpio number for i2c slave data
 #define ESP_SLAVE_ADDR 0x58
 
 // Testando i2c com buffers menores, valores antigos: 512 e 384
