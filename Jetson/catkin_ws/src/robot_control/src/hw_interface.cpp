@@ -310,12 +310,14 @@ void RobotHWInterface::encoderCallbackUart(const robot_control::UARTData::ConstP
         y_old = y;
         th_old = th;
         timestamp_old = timestamp;
-        delta = true;
+        delta = true;     
     } else if (delta && timestamp != timestamp_old){
-        vel_linear_x = (x - x_old)/(timestamp - timestamp_old);
-        vel_linear_y = (y - y_old)/(timestamp - timestamp_old);
-        vel_angular_z = (th - th_old)/(timestamp - timestamp_old);
 
+        double dt_seconds = (timestamp - timestamp_old) / 1000.0;
+
+        vel_linear_x = (x - x_old)/ dt_seconds;
+        vel_linear_y = (y - y_old)/ dt_seconds;
+        vel_angular_z = (th - th_old)/ dt_seconds;
         base_vel_linear = std::hypot(vel_linear_x, vel_linear_y);
         base_vel_angular = vel_angular_z;
 

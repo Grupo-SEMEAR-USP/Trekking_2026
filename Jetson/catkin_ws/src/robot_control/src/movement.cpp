@@ -35,12 +35,12 @@ void RobotMovement::moveStraight(double target, double speed) {
     geometry_msgs::Twist cmd; // Corrigido para geometry_msgs
     cmd.linear.x = speed;
     
-    double start_x, start_y, current_x, current_y;
+    double start_x, start_y;
 
     {
         std::lock_guard<std::mutex> lock(odom_mutex);
-        start_x = current_x;
-        start_y = current_y;
+        start_x = this->current_x;
+        start_y = this->current_y;
     }
 
     double traveled_distance = 0.0;
@@ -48,12 +48,14 @@ void RobotMovement::moveStraight(double target, double speed) {
 
     while(ros::ok() && traveled_distance < target) {
 
+        ros::spinOnce();
+
         double current_x_temp, current_y_temp;
 
         {
             std::lock_guard<std::mutex> lock(odom_mutex);
-            current_x_temp = current_x;
-            current_y_temp = current_y;
+            current_x_temp = this->current_x;
+            current_y_temp = this->current_y;
         }
 
         traveled_distance = std::sqrt(std::pow(current_x_temp - start_x, 2) + 
