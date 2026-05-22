@@ -7,7 +7,7 @@ import threading
 
 from robot_control.msg import UARTData, VelocityData
 
-SERIAL_PORT = "/dev/ttyACM0"                    # OU /ttyACM0
+SERIAL_PORT = "/dev/ttyACM0"                    # OU /ttyUSB0
 BAUD_RATE = 115200
 
 FRAME_SOF = 0xAA

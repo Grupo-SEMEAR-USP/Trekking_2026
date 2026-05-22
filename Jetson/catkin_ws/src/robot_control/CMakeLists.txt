@@ -130,6 +130,23 @@ include_directories(
   ${robot_control_INCLUDE_DIRS}
 )
 
+## Declare a C++ executable
+## With catkin_make all packages are built within a single CMake context
+## The recommended prefix ensures that target names across packages don't collide
+add_executable(hw_interface src/hw_interface.cpp)
+add_executable(joycontrol src/joycontrol.cpp)
+add_executable(movement src/movement.cpp)
+
+## Specify libraries to link a library or executable target against
+target_link_libraries(hw_interface
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(joycontrol
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(movement
+  ${catkin_LIBRARIES}
+)
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/hw_interface.cpp
@@ -140,12 +157,6 @@ include_directories(
 ## either from message generation or dynamic reconfigure
 add_dependencies(hw_interface ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
-## Declare a C++ executable
-## With catkin_make all packages are built within a single CMake context
-## The recommended prefix ensures that target names across packages don't collide
-add_executable(hw_interface src/hw_interface.cpp)
-add_executable(joycontrol src/joycontrol.cpp)
-
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
@@ -155,14 +166,6 @@ add_executable(joycontrol src/joycontrol.cpp)
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-
-## Specify libraries to link a library or executable target against
-target_link_libraries(hw_interface
-  ${catkin_LIBRARIES}
-)
-target_link_libraries(joycontrol
-  ${catkin_LIBRARIES}
-)
 
 #############
 ## Install ##
@@ -176,6 +179,7 @@ target_link_libraries(joycontrol
 catkin_install_python(PROGRAMS
   scripts/i2c_master.py
   scripts/uart_comm.py
+  scripts/imu.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

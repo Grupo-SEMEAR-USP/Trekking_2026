@@ -12,7 +12,8 @@ RobotHWInterface::RobotHWInterface(ros::NodeHandle& nh)
 
     cmd_vel_sub = nh.subscribe("cmd_vel", 10, &RobotHWInterface::cmdVelCallback, this);
     ack_drive_sub = nh.subscribe("/ackermann_cmd", 10, &RobotHWInterface::AckermannDriveCallback, this);
-    imu_sub = nh.subscribe("/imu/data_fused", 10, &RobotHWInterface::imuDataCallback, this);
+    realsense_imu_sub = nh.subscribe("/imu/data_fused", 10, &RobotHWInterface::realsenseImuDataCallback, this);
+    imu_sub = nh.subscribe("/imu/data", 10, &RobotHWInterface::imuDataCallback, this);
 
     velocity_command_pub = nh.advertise<robot_control::VelocityData>("velocity_command", 10);
 
@@ -40,7 +41,8 @@ RobotHWInterface::RobotHWInterface(ros::NodeHandle& nh)
 
 
 void RobotHWInterface::cmdVelCallback(const geometry_msgs::Twist::ConstPtr& msg) {
-    
+
+    std::lock_guard<std::mutex> lock(data_mutex);
 
     // PARA ACKERMAN 
     /*
@@ -126,14 +128,15 @@ void RobotHWInterface::cmdVelCallback(const geometry_msgs::Twist::ConstPtr& msg)
     float left_speed = v - (omega * wheel_separation_width / 2.0);
     float right_speed = v + (omega * wheel_separation_width / 2.0);
 
-    fleft_wheel_angular_speed = left_speed / wheel_radius;
+    left_wheel_angular_speed = left_speed / wheel_radius;
     right_wheel_angular_speed = right_speed / wheel_radius;
 
     servo_angle = SERVO_INITIAL_ANGLE;
 
 }
 
-void RobotHWInterface::imuDataCallback(const sensor_msgs::Imu::ConstPtr& msg) {
+void RobotHWInterface::realsenseImuDataCallback(const sensor_msgs::Imu::ConstPtr& msg) {
+    std::lock_guard<std::mutex> lock(data_mutex);
 
     tf::Quaternion q(
 
@@ -159,7 +162,7 @@ void RobotHWInterface::imuDataCallback(const sensor_msgs::Imu::ConstPtr& msg) {
     double relative_yaw = yaw - imu_initial_offset;
 
     while (relative_yaw > M_PI) relative_yaw -= 2 * M_PI;
-    while (relative_yaw < M_PI) relative_yaw += 2 * M_PI;
+    while (relative_yaw < -M_PI) relative_yaw += 2 * M_PI;
 
     imu_yaw = relative_yaw;
 
@@ -167,7 +170,35 @@ void RobotHWInterface::imuDataCallback(const sensor_msgs::Imu::ConstPtr& msg) {
 
 }
 
+void RobotHWInterface::imuDataCallback(const sensor_msgs::Imu::ConstPtr& msg) {
+
+    std::lock_guard<std::mutex> lock(data_mutex);
+
+    tf::Quaternion q(
+
+        msg->orientation.x,
+        msg->orientation.y,
+        msg->orientation.z,
+        msg->orientation.w
+    );
+
+    tf::Matrix3x3 m(q);
+
+    double roll, pitch, yaw;
+    m.getRPY(roll, pitch, yaw);
+
+    while (yaw > M_PI) yaw -= 2 * M_PI;
+    while (yaw < M_PI) yaw += 2 * M_PI;
+
+    imu_yaw = yaw;
+
+    imu_angular_vel_z = msg->angular_velocity.z;
+
+}
+
 void RobotHWInterface::AckermannDriveCallback(const ackermann_msgs::AckermannDrive::ConstPtr& msg) {
+
+    std::lock_guard<std::mutex> lock(data_mutex);
     
     double phi = msg->steering_angle;
     double v = msg->speed;
@@ -220,6 +251,7 @@ void RobotHWInterface::AckermannDriveCallback(const ackermann_msgs::AckermannDri
 }
 
 void RobotHWInterface::publishWheelSpeeds() {
+    std::lock_guard<std::mutex> lock(data_mutex);
     
     robot_control::VelocityData msg;
     msg.angular_speed_left = left_wheel_angular_speed;
@@ -231,6 +263,8 @@ void RobotHWInterface::publishWheelSpeeds() {
 
 
 void RobotHWInterface::encoderCallbackI2C(const robot_control::I2cData::ConstPtr& msg) {
+
+    std::lock_guard<std::mutex> lock(data_mutex);
 
     ROS_INFO("Callback do encoder ativado!");
     x = msg->x / 1000;
@@ -245,9 +279,12 @@ void RobotHWInterface::encoderCallbackI2C(const robot_control::I2cData::ConstPtr
         timestamp_old = timestamp;
         delta = true;
     } else if (delta && timestamp != timestamp_old){
-        vel_linear_x = (x - x_old)/(timestamp - timestamp_old);
-        vel_linear_y = (y - y_old)/(timestamp - timestamp_old);
-        vel_angular_z = (th - th_old)/(timestamp - timestamp_old);
+
+        double dt_seconds = (timestamp - timestamp_old) / 1000.0;
+
+        vel_linear_x = (x - x_old)/ dt_seconds;
+        vel_linear_y = (y - y_old)/ dt_seconds;
+        vel_angular_z = (th - th_old)/ dt_seconds;
 
         base_vel_linear = std::hypot(vel_linear_x, vel_linear_y);
         base_vel_angular = vel_angular_z;
@@ -259,6 +296,8 @@ void RobotHWInterface::encoderCallbackI2C(const robot_control::I2cData::ConstPtr
 }
 
 void RobotHWInterface::encoderCallbackUart(const robot_control::UARTData::ConstPtr& msg) {
+
+    std::lock_guard<std::mutex> lock(data_mutex);
 
     ROS_INFO("Callback do encoder ativado!");
     x = msg->x / 1000;
@@ -291,16 +330,19 @@ void RobotHWInterface::commandTimeoutCallback(const ros::TimerEvent&) {
 }
 
 void RobotHWInterface::updateWheelSpeedForDeceleration() {
+
+    std::lock_guard<std::mutex> lock(data_mutex);
+
     // Desacelera cada roda gradualmente até zero
 
-    if (std::abs(left_wheel_speed) > DECELERATION_RATE) left_wheel_speed -= DECELERATION_RATE * (left_wheel_speed > 0 ? 1 : -1);
+    if (std::abs(left_wheel_angular_speed) > DECELERATION_RATE) left_wheel_angular_speed -= DECELERATION_RATE * (left_wheel_angular_speed > 0 ? 1 : -1);
     else left_wheel_speed = 0;
 
-    if (std::abs(right_wheel_speed) > DECELERATION_RATE) right_wheel_speed -= DECELERATION_RATE * (right_wheel_speed > 0 ? 1 : -1);
+    if (std::abs(right_wheel_angular_speed) > DECELERATION_RATE) right_wheel_angular_speed -= DECELERATION_RATE * (right_wheel_angular_speed > 0 ? 1 : -1);
     else right_wheel_speed = 0;
 
     // Verifica se todas as velocidades chegaram a zero, se não, continua desacelerando
-    if (left_wheel_speed != 0 || right_wheel_speed != 0) {
+    if (left_wheel_angular_speed != 0 || right_wheel_angular_speed != 0) {
         command_timeout_.stop();
         command_timeout_.setPeriod(ros::Duration(CMD_VEL_TIMEOUT_DEACELERATION_PERIOD), true); // Use um intervalo mais curto para desaceleração suave
         command_timeout_.start();
@@ -308,6 +350,7 @@ void RobotHWInterface::updateWheelSpeedForDeceleration() {
 }
 
 void RobotHWInterface::updateOdometry() {
+    std::lock_guard<std::mutex> lock(data_mutex);
 
     current_time = ros::Time::now();
 
@@ -350,8 +393,8 @@ void RobotHWInterface::updateOdometry() {
     odom.pose.pose.orientation = odom_quat;
 
     odom.child_frame_id = "base_link";
-    odom.twist.twist.linear.x = 0;
-    odom.twist.twist.linear.y = base_vel_linear; 
+    odom.twist.twist.linear.x = base_vel_linear;
+    odom.twist.twist.linear.y = 0; 
     odom.twist.twist.angular.z = angular_vel_for_odom;
 
     odom_pub.publish(odom);

@@ -1,24 +1,23 @@
 #include "movement.hpp"
 
-
 RobotMovement::RobotMovement(ros::NodeHandle& nh)
-: nh(nh), 
-    command_timeout_(nh.createTimer(ros::Duration(0.1), 
-                                    &RobotHWInterface::commandTimeoutCallback, 
-                                    this, true, false))
+: nh(nh) 
+{
 
-    {
-
-    odom_sub = nh.subscribe("odom", 10, &RobotMovement::odomCallback, this)
+    odom_sub = nh.subscribe("odom", 10, &RobotMovement::odomCallback, this);
     cmd_vel_pub = nh.advertise<geometry_msgs::Twist>("cmd_vel", 10);
 
-    double current_x = 0.0;
-    double current_y = 0.0;
-    double current_angle = 0.0;
-
+   
+    current_x = 0.0;
+    current_y = 0.0;
+    current_angle = 0.0;
 }
 
-void odomCallback(const nav_msgs::Odometry::ConstPtr& msg) {
+
+void RobotMovement::odomCallback(const nav_msgs::Odometry::ConstPtr& msg) {
+
+    std::lock_guard<std::mutex> lock(odom_mutex);
+
     current_x = msg->pose.pose.position.x;
     current_y = msg->pose.pose.position.y;
     
@@ -31,77 +30,105 @@ void odomCallback(const nav_msgs::Odometry::ConstPtr& msg) {
     current_angle = tf2::getYaw(q);
 }
 
-void moveStraight(double target, double speed) {
-    
-    geometry::Twist cmd;
+
+void RobotMovement::moveStraight(double target, double speed) {
+    geometry_msgs::Twist cmd; // Corrigido para geometry_msgs
     cmd.linear.x = speed;
     
-    double start_x = current_x;
-    double start_y = current_y;
-    double traveled_distance = 0.0;
+    double start_x, start_y, current_x, current_y;
 
+    {
+        std::lock_guard<std::mutex> lock(odom_mutex);
+        start_x = current_x;
+        start_y = current_y;
+    }
+
+    double traveled_distance = 0.0;
     ros::Rate loop_rate(20);
 
     while(ros::ok() && traveled_distance < target) {
-        ros::spinOnce();
 
-        traveled_distance = std::sqrt(std::pow(current_x - start_x, 2) + 
-                                      std::pow(current_y - start_y, 2));
+        double current_x_temp, current_y_temp;
+
+        {
+            std::lock_guard<std::mutex> lock(odom_mutex);
+            current_x_temp = current_x;
+            current_y_temp = current_y;
+        }
+
+        traveled_distance = std::sqrt(std::pow(current_x_temp - start_x, 2) + 
+                                      std::pow(current_y_temp - start_y, 2));
 
         cmd_vel_pub.publish(cmd);
-        ROS_INFO("Distancia percorrida: %f", traveled_distance);
-
+        ROS_INFO("Distancia percorrida: %.3f / %.3f", traveled_distance, target);
         loop_rate.sleep();
-
     }
 
-        cmd.linear.x = 0.0;
-        cmd_vel_pub.publish(cmd);
-        ROS_INFO("Alvo atingido!");
+    cmd.linear.x = 0.0;
+    cmd_vel_pub.publish(cmd);
+    ROS_INFO("Alvo atingido!");
 }
 
 
-void turnAxial(double target, double speed) {
-
+void RobotMovement::turnAxial(double target, double speed) {
     geometry_msgs::Twist cmd;
-    cmd.angular.z = (target_rad > 0) ? std::abs(speed) : -std::abs(speed);
+   
+    cmd.linear.x = 0;   
+    cmd.angular.z = (target > 0) ? std::abs(speed) : -std::abs(speed);
     
-    double start_angle = current_angle;
-    double angle_turned = 0.0;
+    double previous_angle;
 
+    {
+        std::lock_guard<std::mutex> lock(odom_mutex);
+        previous_angle = current_angle;
+    }
+
+    double angle_turned;
     ros::Rate loop_rate(20);
 
-    while(ros::ok() && std::abs(angle_turned) < std::abs(target_rad)) {
-        ros::spinOnce();
+    while(ros::ok() && std::abs(angle_turned) < std::abs(target)) {
+        
+        double current_angle_temp;
 
-        angle_turned = angles::shortest_angular_distance(start_angle, current_angle);
+        {
+            std::lock_guard<std::mutex> lock(odom_mutex);
+            current_angle_temp = current_angle;
+        }
+
+        double delta_angle = angles::shortest_angular_distance(previous_angle, current_angle_temp);
+        angle_turned += delta_angle;
+        previous_angle = current_angle_temp;
 
         cmd_vel_pub.publish(cmd);
-        ROS_INFO("Distancia percorrida: %f", angle_turned);
+        ROS_INFO("Angulo percorrido: %.3f / %.3f", std::abs(angle_turned), std::abs(target));
 
         loop_rate.sleep();
-
     }
 
-        cmd.angular.z = 0.0;
-        cmd_vel_pub.publish(cmd);
-        ROS_INFO("Alvo atingido!");
+    cmd.angular.z = 0.0;
+    cmd_vel_pub.publish(cmd);
+    ROS_INFO("Giro finalizado!");
 }
+
 
 int main(int argc, char** argv) {
     ros::init(argc, argv, "movement_node");
-    ros::NodeHandle nh; // Cria um NodeHandle
+    ros::NodeHandle nh;
 
-    RobotMovement movement(nh); // Passa o NodeHandle como argumento
+    RobotMovement movement(nh);
 
-    ros::Rate rate(HW_IF_UPDATE_FREQ);
+    
     ros::AsyncSpinner spinner(4);
     spinner.start();
 
-    ros::Duration(1.0).sleep();
+    ROS_INFO("Aguardando calibração da IMU e ligar os motores...");
+    ros::topic::waitForMessage<std_msgs::Empty>("start_engines", nh);
+    ROS_INFO("Sinal 'start_engines' recebido! Iniciando missao.");
+
+    ros::Duration(0.5).sleep();
 
     ROS_INFO("Iniciando movimento reto...");
-    movement.moveStraight(0.5, 0.1);
+    movement.moveStraight(2, 0.1);
 
     ros::Duration(0.5).sleep();
 
@@ -109,7 +136,6 @@ int main(int argc, char** argv) {
     movement.turnAxial(DEG2RAD(90), 0.2);
 
     ROS_INFO("Sequencia finalizada.");
-
     ros::waitForShutdown();
 
     return 0;

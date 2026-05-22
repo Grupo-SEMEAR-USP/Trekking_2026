@@ -9,12 +9,15 @@
 #include <chrono>
 #include <tf2/utils.h>
 #include <angles/angles.h>
+#include <mutex>
 
+#include <std_msgs/Empty.h>
 #include <geometry_msgs/Twist.h>
 #include <nav_msgs/Odometry.h>
 #include <sensor_msgs/Imu.h>
 
 #define DEG2RAD(deg) (deg * M_PI / 180.0)
+#define HW_IF_UPDATE_FREQ   50
 
 class RobotMovement {
 
@@ -32,6 +35,8 @@ class RobotMovement {
 
         ros::Subscriber odom_sub;
         ros::Publisher cmd_vel_pub;
+
+        std::mutex odom_mutex;
 
         double current_x;
         double current_y;

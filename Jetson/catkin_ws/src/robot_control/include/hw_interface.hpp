@@ -9,6 +9,7 @@
 #include <iostream> 
 #include <string.h>
 #include <chrono>
+#include <mutex>
 
 #include <geometry_msgs/Twist.h>
 #include <geometry_msgs/Quaternion.h>
@@ -34,6 +35,7 @@ class RobotHWInterface {
 public:
     RobotHWInterface(ros::NodeHandle& nh); // Ajustado para receber NodeHandle por referência
     void cmdVelCallback(const geometry_msgs::Twist::ConstPtr& msg);
+    void realsenseImuDataCallback(const sensor_msgs::Imu::ConstPtr& msg);
     void imuDataCallback(const sensor_msgs::Imu::ConstPtr& msg);
     void AckermannDriveCallback(const ackermann_msgs::AckermannDrive::ConstPtr& msg);
     void publishWheelSpeeds(); // Publicando velocidades do cmd_vel
@@ -52,6 +54,7 @@ private:
     ros::Publisher velocity_command_pub;
     ros::Subscriber cmd_vel_sub;
     ros::Subscriber ack_drive_sub;
+    ros::Subscriber realsense_imu_sub;
     ros::Subscriber imu_sub;
     ros::Subscriber encoder_uart_sub;
 
@@ -61,6 +64,9 @@ private:
 
     // Temporizador para o timeout de comandos
     ros::Timer command_timeout_; 
+
+    // Mutex para segurança de escrita de dados
+    std::mutex data_mutex;
 
     // Variáveis membro para armazenar as velocidades lineares das rodas
     float left_wheel_speed = 0.0;
@@ -98,7 +104,7 @@ private:
     double imu_yaw = 0.0;
     double imu_angular_vel_z = 0.0;
     double imu_initial_offset = 0.0;
-    bool imu_initialized = false;
+    bool imu_initialized = true;
 
     // Angulo do servo
     double servo_angle;
