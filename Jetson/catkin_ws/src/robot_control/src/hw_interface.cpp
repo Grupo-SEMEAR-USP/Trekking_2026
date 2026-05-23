@@ -267,9 +267,9 @@ void RobotHWInterface::encoderCallbackI2C(const robot_control::I2cData::ConstPtr
     std::lock_guard<std::mutex> lock(data_mutex);
 
     ROS_INFO("Callback do encoder ativado!");
-    x = msg->x / 1000;
-    y = msg->y / 1000;
-    th = msg->z / 1000;
+    x = msg->x / 1000000.0;
+    y = msg->y / 1000000.0;
+    th = msg->z / 1000.0;
     timestamp = msg->timestamp;
     
     if (!delta){
@@ -299,10 +299,10 @@ void RobotHWInterface::encoderCallbackUart(const robot_control::UARTData::ConstP
 
     std::lock_guard<std::mutex> lock(data_mutex);
 
-    ROS_INFO("Callback do encoder ativado!");
-    x = msg->x / 1000;
-    y = msg->y / 1000;
-    th = msg->z / 1000;
+    //ROS_INFO("Callback do encoder ativado!");
+    x = msg->x / 1000000.0;
+    y = msg->y / 1000000.0;
+    th = msg->z / 1000.0;
     timestamp = msg->timestamp;
     
     if (!delta){
@@ -324,7 +324,7 @@ void RobotHWInterface::encoderCallbackUart(const robot_control::UARTData::ConstP
         delta = false;
     }
 
-    ROS_INFO("x: %f, y: %f, vel_linear_x: %f, vel_linear_y %f", x, y, vel_linear_x, vel_linear_y);
+    //ROS_INFO("x: %f, y: %f, vel_linear_x: %f, vel_linear_y %f", x, y, vel_linear_x, vel_linear_y);
 }
 
 void RobotHWInterface::commandTimeoutCallback(const ros::TimerEvent&) {

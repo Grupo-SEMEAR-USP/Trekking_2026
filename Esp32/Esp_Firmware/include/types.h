@@ -136,8 +136,8 @@ typedef struct {
 #define NEG_GAP_REDUCTION_RIGHT -1400
 
 //encoder contasnts
-#define PCNT_CHA_LEFT 15
-#define PCNT_CHB_LEFT 2
+#define PCNT_CHA_LEFT 2
+#define PCNT_CHB_LEFT 15
 
 #define PCNT_CHA_RIGHT 16
 #define PCNT_CHB_RIGHT 4

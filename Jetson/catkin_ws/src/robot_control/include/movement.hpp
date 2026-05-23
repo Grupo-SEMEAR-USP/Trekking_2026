@@ -40,7 +40,7 @@ class RobotMovement {
 
         double current_x;
         double current_y;
-        double current_angle;
+        double current_yaw;
 
 };
 

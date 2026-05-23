@@ -59,7 +59,7 @@ class UARTDevice:
         self.ackr_commands[1] = msg.angular_speed_right
         self.ackr_commands[2] = msg.servo_angle
 
-        rospy.loginfo(f"Valores recebidos do HW_interface: {self.ackr_commands[0]}, {self.ackr_commands[1]}, {self.ackr_commands[2]}")
+        #rospy.loginfo(f"Valores recebidos do HW_interface: {self.ackr_commands[0]}, {self.ackr_commands[1]}, {self.ackr_commands[2]}")
 
     def read_loop(self):
         """
@@ -68,37 +68,42 @@ class UARTDevice:
         expected_sof = struct.pack('B', FRAME_SOF)
         expected_eof = struct.pack('B', FRAME_EOF)
 
-        while self.serial_port.in_waiting > 0 and self.running and not rospy.is_shutdown():
-            try:
-                if self.serial_port.in_waiting > 0:
-                    byte = self.serial_port.read(1)
-                    
-                    if byte == expected_sof:
-                        rest_of_frame = self.serial_port.read(FRAME_SIZE_RX - 1)
+        try:
+
+            while self.serial_port.is_open and self.serial_port.in_waiting > 0 and self.running and not rospy.is_shutdown():
+                try:
+                    if self.serial_port.in_waiting > 0:
+                        byte = self.serial_port.read(1)
                         
-                        if len(rest_of_frame) == (FRAME_SIZE_RX - 1):
-                            payload = rest_of_frame[0:16]
-                            received_chk = rest_of_frame[16:17]
-                            received_eof = rest_of_frame[17:18]
+                        if byte == expected_sof:
+                            rest_of_frame = self.serial_port.read(FRAME_SIZE_RX - 1)
                             
-                            if received_eof != expected_eof:
-                                rospy.logwarn("Erro de EOF na serial")
-                                continue
+                            if len(rest_of_frame) == (FRAME_SIZE_RX - 1):
+                                payload = rest_of_frame[0:16]
+                                received_chk = rest_of_frame[16:17]
+                                received_eof = rest_of_frame[17:18]
+                                
+                                if received_eof != expected_eof:
+                                    rospy.logwarn("Erro de EOF na serial")
+                                    continue
 
-                            calculated_chk_int = self.calculate_checksum(payload)
-                            calculated_chk_byte = struct.pack('B', calculated_chk_int)
+                                calculated_chk_int = self.calculate_checksum(payload)
+                                calculated_chk_byte = struct.pack('B', calculated_chk_int)
 
-                            if received_chk != calculated_chk_byte:
-                                rospy.logwarn("Erro de Checksum na serial")
-                                continue
+                                if received_chk != calculated_chk_byte:
+                                    rospy.logwarn("Erro de Checksum na serial")
+                                    continue
 
-                            x, y, z, timestamp = struct.unpack('<iiiI', payload)
-                            rospy.loginfo(f"Recebido da ESP | x: {x}, y: {y}, z: {z}")
-                            self.publish_encoders(x, y, z, timestamp)
-                            
-            except Exception as e:
-                rospy.logerr(f"Erro na leitura serial: {e}")
-                break
+                                x, y, z, timestamp = struct.unpack('<iiiI', payload)
+                                #rospy.loginfo(f"Recebido da ESP | x: {x}, y: {y}, z: {z}")
+                                self.publish_encoders(x, y, z, timestamp)
+                                
+                except Exception as e:
+                    rospy.logerr(f"Erro na leitura serial: {e}")
+                    break
+        
+        except (TypeError, OSError, AttributeError):
+            pass
 
     def publish_encoders(self, x, y, z, timestamp):
         msg = UARTData()
@@ -106,7 +111,7 @@ class UARTDevice:
         msg.y = y
         msg.z = z
         msg.timestamp = timestamp
-        rospy.loginfo(f"Publicado ao HW | x: {x}, y: {y}, z: {z}")
+        #rospy.loginfo(f"Publicado ao HW | x: {x}, y: {y}, z: {z}")
         self.pub_encoder.publish(msg)
 
     def write_data(self):
@@ -120,7 +125,7 @@ class UARTDevice:
 
             self.serial_port.write(frame)
 
-            rospy.loginfo(f'Valores enviados: {self.ackr_commands}')
+            #rospy.loginfo(f'Valores enviados: {self.ackr_commands}')
 
 
         except Exception as e:
@@ -142,11 +147,24 @@ class UARTDevice:
             self.write_data()
             rate.sleep()
 
+    def shutdown(self):
+        rospy.loginfo("Encerrando ROS: Enviando parada de emergência para a ESP32...")
+        self.running = False
+        
+        self.ackr_commands = [0.0, 0.0, SERVO_INITIAL_ANGLE]
+        self.write_data()
+        
+        if self.serial_port.is_open:
+            self.serial_port.close()
+
 if __name__ == "__main__":
     
     try:
         rospy.init_node('uart_comm', anonymous=True)
         uart_communication = UARTDevice()
+
+        rospy.on_shutdown(uart_communication.shutdown)
+
         rospy.spin()
 
     except rospy.ROSInterruptException:

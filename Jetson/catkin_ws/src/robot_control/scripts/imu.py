@@ -66,7 +66,13 @@ class imuDevice():
         imu_msg.angular_velocity.y = 0.0
         imu_msg.angular_velocity.z = gyro_z_real_rad
 
-        self.pub_imu.publish(imu_msg)
+        try:
+            if not rospy.is_shutdown():
+                self.pub_imu.publish(imu_msg)
+                
+        except rospy.ROSException:
+
+            pass
 
 
     def update(self):
