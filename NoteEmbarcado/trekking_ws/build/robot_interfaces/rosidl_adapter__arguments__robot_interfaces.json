@@ -1,0 +1,7 @@
+{
+  "package_name": "robot_interfaces",
+  "non_idl_tuples": [
+    "/home/ascachetti/Documents/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_interfaces:msg/UARTData.msg",
+    "/home/ascachetti/Documents/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_interfaces:msg/VelocityData.msg"
+  ]
+}

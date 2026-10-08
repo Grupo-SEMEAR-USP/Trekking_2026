@@ -1,0 +1,9 @@
+/home/ascachetti/Documents/trekking_ws/build/robot_core/CMakeFiles/uninstall.dir
+/home/ascachetti/Documents/trekking_ws/build/robot_core/CMakeFiles/robot_core_uninstall.dir
+/home/ascachetti/Documents/trekking_ws/build/robot_core/CMakeFiles/test.dir
+/home/ascachetti/Documents/trekking_ws/build/robot_core/CMakeFiles/edit_cache.dir
+/home/ascachetti/Documents/trekking_ws/build/robot_core/CMakeFiles/rebuild_cache.dir
+/home/ascachetti/Documents/trekking_ws/build/robot_core/CMakeFiles/list_install_components.dir
+/home/ascachetti/Documents/trekking_ws/build/robot_core/CMakeFiles/install.dir
+/home/ascachetti/Documents/trekking_ws/build/robot_core/CMakeFiles/install/local.dir
+/home/ascachetti/Documents/trekking_ws/build/robot_core/CMakeFiles/install/strip.dir

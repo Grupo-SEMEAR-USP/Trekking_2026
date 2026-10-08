@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<robot name="Margarete">
+
+  <link name="base_link">
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_description/meshes/Chassi.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    
+    <collision name='base_link_collision'>
+      <geometry>
+        <box size="0.5 0.3 0.2"/> 
+      </geometry>
+    </collision>
+    
+    <inertial>
+      <mass value="1.0"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+    </inertial>
+  </link>
+
+  <!-- eixo traseiro-->
+
+  <link name="roda_traseira_esquerda">...</link>  <!-- PLACEHOLDER: COLOCAR ARQUIVOS DAS PARTES MOVEIS-->
+  <joint name="junta_roda_traseira_esquerda" type="continuous">
+    <parent link="base_link"/>
+    <child link="roda_traseira_esquerda"/>
+    <axis xyz="0 1 0"/> 
+    <origin xyz="-0.5 0.25 0" rpy="0 0 0"/> <!-- PLACEHOLDER -->
+  </joint>
+
+  <link name="roda_traseira_direita">...</link> <!-- PLACEHOLDER: COLOCAR ARQUIVOS DAS PARTES MOVEIS-->
+  <joint name="junta_roda_traseira_direita" type="continuous">
+    <parent link="base_link"/>
+    <child link="roda_traseira_direita"/>
+    <axis xyz="0 1 0"/>
+    <origin xyz="-0.5 -0.25 0" rpy="0 0 0"/> <!-- PLACEHOLDER -->
+  </joint>
+
+  <!-- eixo dianteiro -->
+
+  <!-- manga eixo esquerdo -->
+  <link name="manga_eixo_dianteira_esquerda">...</link> <!-- PLACEHOLDER: COLOCAR ARQUIVOS DAS PARTES MOVEIS-->
+  <joint name="junta_direcao_dianteira_esquerda" type="revolute">
+    <parent link="base_link"/>
+    <child link="manga_eixo_dianteira_esquerda"/>
+    <axis xyz="0 0 1"/> 
+    <origin xyz="0.5 0.25 0" rpy="0 0 0"/> <!-- PLACEHOLDER -->
+    <limit lower="-0.6" upper="0.6" effort="10" velocity="1"/> 
+  </joint>
+
+  <!-- roda dianteira esquerda -->
+  <link name="roda_dianteira_esquerda">...</link> <!-- PLACEHOLDER: COLOCAR ARQUIVOS DAS PARTES MOVEIS-->
+  <joint name="junta_roda_dianteira_esquerda" type="continuous">
+    <parent link="manga_eixo_dianteira_esquerda"/>
+    <child link="roda_dianteira_esquerda"/>
+    <axis xyz="0 1 0"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- manga de eixo direita -->
+  <link name="manga_eixo_dianteira_direita">...</link> <!-- PLACEHOLDER: COLOCAR ARQUIVOS DAS PARTES MOVEIS-->
+  <joint name="junta_direcao_dianteira_direita" type="revolute">
+    <parent link="base_link"/>
+    <child link="manga_eixo_dianteira_direita"/>
+    <axis xyz="0 0 1"/> 
+    <origin xyz="0.5 -0.25 0" rpy="0 0 0"/> <!-- PLACEHOLDER -->
+    <limit lower="-0.6" upper="0.6" effort="10" velocity="1"/>
+  </joint>
+
+  <!-- roda dianteira direita -->
+  <link name="roda_dianteira_direita">...</link> <!-- PLACEHOLDER: COLOCAR ARQUIVOS DAS PARTES MOVEIS-->
+  <joint name="junta_roda_dianteira_direita" type="continuous">
+    <parent link="manga_eixo_dianteira_direita"/>
+    <child link="roda_dianteira_direita"/>
+    <axis xyz="0 1 0"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+
+  <gazebo>
+
+    <!-- Plugin Ackermann -->
+    <plugin filename="gz-sim-ackermann-steering-system" name="gz::sim::systems::AckermannSteering">
+      
+      <left_joint>junta_roda_traseira_esquerda</left_joint>
+      <right_joint>junta_roda_traseira_direita</right_joint>
+
+      <left_steering_joint>junta_direcao_dianteira_esquerda</left_steering_joint>
+      <right_steering_joint>junta_direcao_dianteira_direita</right_steering_joint>
+      
+      <!-- Dimensões da Margarete -->
+      <wheel_base>1.0</wheel_base> <!-- Eixo traseiro - Eixo dianteiro -->
+      <wheel_separation>0.5</wheel_separation> <!-- Roda esquerda - Roda direita -->
+      <wheel_radius>0.1</wheel_radius>
+      <steering_limit>0.6</steering_limit> <!-- Limite de esterço em radianos -->
+
+      
+      <topic>/Margarete/cmd_vel</topic>
+      <odom_topic>/Margarete/odom</odom_topic>
+      <frame_id>odom</frame_id>
+      <child_frame_id>base_link</child_frame_id>
+
+    </plugin>
+
+    <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
+      <topic>/Margarete/joint_states</topic>
+    </plugin>
+
+  </gazebo>
+
+</robot>

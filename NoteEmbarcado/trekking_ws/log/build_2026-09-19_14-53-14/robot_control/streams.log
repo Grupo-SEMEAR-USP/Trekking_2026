@@ -1,0 +1,53 @@
+[0.020s] Invoking command in '/home/ascachetti/Documents/trekking_ws/build/robot_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/ascachetti/Documents/trekking_ws/src/robot_control -DCMAKE_INSTALL_PREFIX=/home/ascachetti/Documents/trekking_ws/install/robot_control
+[0.220s] -- The C compiler identification is GNU 13.3.0
+[0.370s] -- The CXX compiler identification is GNU 13.3.0
+[0.388s] -- Detecting C compiler ABI info
+[0.474s] -- Detecting C compiler ABI info - done
+[0.481s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.481s] -- Detecting C compile features
+[0.482s] -- Detecting C compile features - done
+[0.490s] -- Detecting CXX compiler ABI info
+[0.578s] -- Detecting CXX compiler ABI info - done
+[0.585s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.585s] -- Detecting CXX compile features
+[0.585s] -- Detecting CXX compile features - done
+[0.605s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.748s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.867s] -- Found rclcpp: 28.1.21 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.932s] -- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.953s] -- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.968s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.992s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.108s] -- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[1.113s] -- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[1.207s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[1.228s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[1.246s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.329s] -- Found hardware_interface: 4.45.2 (/opt/ros/jazzy/share/hardware_interface/cmake)
+[1.782s] -- Found ament_lint_auto: 0.17.5 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[1.864s] -- Added test 'lint_cmake' to check CMake code style
+[1.865s] -- Added test 'xmllint' to check XML markup files
+[1.866s] -- Configuring done (1.8s)
+[1.869s] -- Generating done (0.0s)
+[1.872s] -- Build files have been written to: /home/ascachetti/Documents/trekking_ws/build/robot_control
+[1.881s] Invoked command in '/home/ascachetti/Documents/trekking_ws/build/robot_control' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/ascachetti/Documents/trekking_ws/src/robot_control -DCMAKE_INSTALL_PREFIX=/home/ascachetti/Documents/trekking_ws/install/robot_control
+[1.882s] Invoking command in '/home/ascachetti/Documents/trekking_ws/build/robot_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/ascachetti/Documents/trekking_ws/build/robot_control -- -j12 -l12
+[1.913s] Invoked command in '/home/ascachetti/Documents/trekking_ws/build/robot_control' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/ascachetti/Documents/trekking_ws/build/robot_control -- -j12 -l12
+[1.914s] Invoking command in '/home/ascachetti/Documents/trekking_ws/build/robot_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/ascachetti/Documents/trekking_ws/build/robot_control
+[1.919s] -- Install configuration: ""
+[1.919s] -- Installing: /home/ascachetti/Documents/trekking_ws/install/robot_control/share/ament_index/resource_index/package_run_dependencies/robot_control
+[1.920s] -- Installing: /home/ascachetti/Documents/trekking_ws/install/robot_control/share/ament_index/resource_index/parent_prefix_path/robot_control
+[1.920s] -- Installing: /home/ascachetti/Documents/trekking_ws/install/robot_control/share/robot_control/environment/ament_prefix_path.sh
+[1.920s] -- Installing: /home/ascachetti/Documents/trekking_ws/install/robot_control/share/robot_control/environment/ament_prefix_path.dsv
+[1.920s] -- Installing: /home/ascachetti/Documents/trekking_ws/install/robot_control/share/robot_control/environment/path.sh
+[1.920s] -- Installing: /home/ascachetti/Documents/trekking_ws/install/robot_control/share/robot_control/environment/path.dsv
+[1.920s] -- Installing: /home/ascachetti/Documents/trekking_ws/install/robot_control/share/robot_control/local_setup.bash
+[1.920s] -- Installing: /home/ascachetti/Documents/trekking_ws/install/robot_control/share/robot_control/local_setup.sh
+[1.920s] -- Installing: /home/ascachetti/Documents/trekking_ws/install/robot_control/share/robot_control/local_setup.zsh
+[1.920s] -- Installing: /home/ascachetti/Documents/trekking_ws/install/robot_control/share/robot_control/local_setup.dsv
+[1.920s] -- Installing: /home/ascachetti/Documents/trekking_ws/install/robot_control/share/robot_control/package.dsv
+[1.920s] -- Installing: /home/ascachetti/Documents/trekking_ws/install/robot_control/share/ament_index/resource_index/packages/robot_control
+[1.920s] -- Installing: /home/ascachetti/Documents/trekking_ws/install/robot_control/share/robot_control/cmake/robot_controlConfig.cmake
+[1.920s] -- Installing: /home/ascachetti/Documents/trekking_ws/install/robot_control/share/robot_control/cmake/robot_controlConfig-version.cmake
+[1.920s] -- Installing: /home/ascachetti/Documents/trekking_ws/install/robot_control/share/robot_control/package.xml
+[1.922s] Invoked command in '/home/ascachetti/Documents/trekking_ws/build/robot_control' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/ascachetti/Documents/trekking_ws/build/robot_control
