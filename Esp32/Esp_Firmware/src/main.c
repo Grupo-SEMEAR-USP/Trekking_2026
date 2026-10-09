@@ -9,6 +9,7 @@
     //declaring locks
     SemaphoreHandle_t xSemaphore_getSpeed;
     SemaphoreHandle_t xSemaphore_getRosSpeed;
+    SemaphoreHandle_t xSemaphore_getLed;
     EventGroupHandle_t initialization_groupEvent;
 
     const int task0_init_done = 0b01;
@@ -20,6 +21,8 @@
 
     float global_motor_angular_speed_left = 0 ;
     float global_motor_angular_speed_right = 0;
+
+    bool global_led_state = 0;
 
     double global_total_x = 0;
     double global_total_y = 0;

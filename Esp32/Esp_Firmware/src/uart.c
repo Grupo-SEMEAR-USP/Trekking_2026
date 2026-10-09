@@ -40,6 +40,7 @@ static uint8_t calculate_checksum()
     return chk & 0xFF;
 }
 
+//checa byte a byte a mensagem
 static void process_received_byte(uint8_t byte)
 {
     switch(s_current_state)
@@ -169,10 +170,10 @@ esp_err_t uart_send_frame(data_to_send_t *cmd, size_t size)
 }
 
 
-void uart_send(double *total_x_displacement, double *total_y_displacement, double *total_angular_displacement)
+void uart_send_motors(double *total_x_displacement, double *total_y_displacement, double *total_angular_displacement)
 {
 
-    data_to_send_t data;
+    data_motors_to_send_t data;
 
     static int total_x_micrometers;
     static int total_y_micrometers;
@@ -200,7 +201,7 @@ void uart_send(double *total_x_displacement, double *total_y_displacement, doubl
 }
 
 
-void uart_read()
+void uart_read_motors()
 {
 
     if (xSemaphore_getRosSpeed == NULL) {
@@ -222,3 +223,18 @@ void uart_read()
 
     //ESP_LOGI("UART_DEBUG", "6. Semaforo devolvido.");
 }
+
+void uart_send_led(bool led_state)
+{
+    data_led_to_send_t data = {
+        .led = led_state ? 1 : 0
+    };
+
+    uart_send_frame(&data, sizeof(data));
+}
+
+void uart_read_led()
+{
+
+}
+
