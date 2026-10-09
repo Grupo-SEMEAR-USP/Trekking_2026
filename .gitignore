@@ -1,2 +1,6 @@
 /Jetson/catkin_ws/build
 /Jetson/catkin_ws/devel
+build/
+install/
+log/
+*.o

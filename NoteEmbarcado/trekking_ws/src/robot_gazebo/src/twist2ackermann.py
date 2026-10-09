@@ -7,7 +7,7 @@ import rclpy
 from rclpy.node import Node
 
 from geometry_msgs.msg import Twist
-from robot_control_interfaces.msg import VelocityCommand
+from robot_interfaces.msg import VelocityCommand
 
 
 class Twist2Ackermann(Node):
