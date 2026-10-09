@@ -1,5 +1,7 @@
 #include "movement.hpp"
 
+//bom dia
+
 RobotMovement::RobotMovement(ros::NodeHandle& nh)
 : nh(nh) 
 {
