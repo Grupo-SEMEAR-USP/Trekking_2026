@@ -1,0 +1,276 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-760ef34adfd5f5c6599e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						16,
+						17,
+						18,
+						19,
+						20
+					]
+				},
+				{
+					"build" : "robot_control__py",
+					"jsonFile" : "directory-robot_control__py-Release-94d879415a1c976be819.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/build/robot_control/robot_control__py",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "robot_control__rs",
+					"jsonFile" : "directory-robot_control__rs-Release-dff06b7f25c7dc28558d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/build/robot_control/robot_control__rs",
+					"targetIndexes" : 
+					[
+						15
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "robot_control",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_robot_control_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_robot_control_egg-Release-12c176752584a3c20726.json",
+					"name" : "ament_cmake_python_build_robot_control_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_robot_control::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_robot_control-Release-c942dd400c80cc947bd3.json",
+					"name" : "ament_cmake_python_copy_robot_control",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "movement::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-movement-Release-1bcefdefb3787650c776.json",
+					"name" : "movement",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_control::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_control-Release-495e9df2800250eb2703.json",
+					"name" : "robot_control",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_control__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_control__cpp-Release-32a2d061ded643a1dc31.json",
+					"name" : "robot_control__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "robot_control__py::@5987309b11a352b2dd4d",
+					"jsonFile" : "target-robot_control__py-Release-472f6320d4625256df3d.json",
+					"name" : "robot_control__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_control__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_control__rosidl_generator_c-Release-db07a055cc64dfc8d14b.json",
+					"name" : "robot_control__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_control__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_control__rosidl_generator_py-Release-6df0dce0430511c59d2e.json",
+					"name" : "robot_control__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_control__rosidl_generator_type_description::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_control__rosidl_generator_type_description-Release-5958add1a0126e09c4d3.json",
+					"name" : "robot_control__rosidl_generator_type_description",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_control__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_control__rosidl_typesupport_c-Release-b92e13755026e48da883.json",
+					"name" : "robot_control__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_control__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_control__rosidl_typesupport_cpp-Release-8405c57126fb755d6eb6.json",
+					"name" : "robot_control__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_control__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_control__rosidl_typesupport_fastrtps_c-Release-ed95bb4710a3555e311d.json",
+					"name" : "robot_control__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_control__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_control__rosidl_typesupport_fastrtps_cpp-Release-770ccb48aa403e171086.json",
+					"name" : "robot_control__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_control__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_control__rosidl_typesupport_introspection_c-Release-b24193fade17a833e53b.json",
+					"name" : "robot_control__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_control__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_control__rosidl_typesupport_introspection_cpp-Release-969ee7a1ae64787322f9.json",
+					"name" : "robot_control__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "robot_control__rs::@0d28a92a861d56e70f95",
+					"jsonFile" : "target-robot_control__rs-Release-05b2ede0140a2512ce1f.json",
+					"name" : "robot_control__rs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_control_s__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_control_s__rosidl_typesupport_c-Release-15de79901e3f1842d2ce.json",
+					"name" : "robot_control_s__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_control_s__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_control_s__rosidl_typesupport_fastrtps_c-Release-5c7e37aec08e80ce746f.json",
+					"name" : "robot_control_s__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_control_s__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_control_s__rosidl_typesupport_introspection_c-Release-acbde89319c4f41d5a42.json",
+					"name" : "robot_control_s__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_control_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_control_uninstall-Release-d4123c8b556585f96b6a.json",
+					"name" : "robot_control_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Release-7abd0b96c18ab746b69e.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/build/robot_control",
+		"source" : "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/src/robot_control"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

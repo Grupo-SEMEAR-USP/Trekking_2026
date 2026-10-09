@@ -1,0 +1,373 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Found rclcpp: 28.1.22 (/opt/ros/jazzy/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.3.4 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found std_msgs: 5.3.8 (/opt/ros/jazzy/share/std_msgs/cmake)
+-- Found geometry_msgs: 5.3.8 (/opt/ros/jazzy/share/geometry_msgs/cmake)
+-- Found nav_msgs: 5.3.8 (/opt/ros/jazzy/share/nav_msgs/cmake)
+-- Found tf2: 0.36.23 (/opt/ros/jazzy/share/tf2/cmake)
+-- Found tf2_geometry_msgs: 0.36.23 (/opt/ros/jazzy/share/tf2_geometry_msgs/cmake)
+-- Found eigen3_cmake_module: 0.3.1 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)
+-- Found Eigen3: TRUE (found version "3.4.0") 
+-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Found angles: 1.16.1 (/opt/ros/jazzy/share/angles/cmake)
+-- Found rosidl_default_generators: 1.6.1 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+-- Found rosidl_adapter: 4.6.9 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+-- Found ament_cmake_ros: 0.12.2 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+-- Found PythonExtra: /usr/bin/python3  
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Configuring done (5.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/build/robot_control
+[  1%] [34m[1mGenerating Rust code for ROS interfaces[0m
+[  3%] [32mBuilding CXX object CMakeFiles/movement.dir/src/movement.cpp.o[0m
+[  3%] Built target ament_cmake_python_copy_robot_control
+[  5%] [34m[1mGenerating type hashes for ROS interfaces[0m
+running egg_info
+creating robot_control.egg-info
+writing robot_control.egg-info/PKG-INFO
+writing dependency_links to robot_control.egg-info/dependency_links.txt
+writing top-level names to robot_control.egg-info/top_level.txt
+writing manifest file 'robot_control.egg-info/SOURCES.txt'
+[  5%] Built target robot_control__rosidl_generator_type_description
+[  7%] [34m[1mGenerating C code for ROS interfaces[0m
+[  8%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[  8%] Built target robot_control__rs
+reading manifest file 'robot_control.egg-info/SOURCES.txt'
+writing manifest file 'robot_control.egg-info/SOURCES.txt'
+[  8%] Built target ament_cmake_python_build_robot_control_egg
+[  8%] Built target robot_control__cpp
+[ 10%] [32mBuilding C object CMakeFiles/robot_control__rosidl_generator_c.dir/rosidl_generator_c/robot_control/msg/detail/i2c_data__functions.c.o[0m
+[ 12%] [32mBuilding C object CMakeFiles/robot_control__rosidl_generator_c.dir/rosidl_generator_c/robot_control/msg/detail/i2c_data__description.c.o[0m
+[ 14%] [32mBuilding C object CMakeFiles/robot_control__rosidl_generator_c.dir/rosidl_generator_c/robot_control/msg/detail/velocity_data__type_support.c.o[0m
+[ 15%] [32mBuilding C object CMakeFiles/robot_control__rosidl_generator_c.dir/rosidl_generator_c/robot_control/msg/detail/uart_data__description.c.o[0m
+[ 17%] [32mBuilding C object CMakeFiles/robot_control__rosidl_generator_c.dir/rosidl_generator_c/robot_control/msg/detail/uart_data__type_support.c.o[0m
+[ 19%] [32mBuilding C object CMakeFiles/robot_control__rosidl_generator_c.dir/rosidl_generator_c/robot_control/msg/detail/velocity_data__description.c.o[0m
+[ 21%] [32mBuilding C object CMakeFiles/robot_control__rosidl_generator_c.dir/rosidl_generator_c/robot_control/msg/detail/velocity_data__functions.c.o[0m
+[ 24%] [32mBuilding C object CMakeFiles/robot_control__rosidl_generator_c.dir/rosidl_generator_c/robot_control/msg/detail/i2c_data__type_support.c.o[0m
+[ 24%] [32mBuilding C object CMakeFiles/robot_control__rosidl_generator_c.dir/rosidl_generator_c/robot_control/msg/detail/uart_data__functions.c.o[0m
+[ 26%] [32m[1mLinking C shared library librobot_control__rosidl_generator_c.so[0m
+[ 26%] Built target robot_control__rosidl_generator_c
+[ 31%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[ 31%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[ 31%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[ 33%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[ 35%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[ 36%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[ 38%] [32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_c.dir/rosidl_typesupport_c/robot_control/msg/i2c_data__type_support.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_c.dir/rosidl_typesupport_c/robot_control/msg/velocity_data__type_support.cpp.o[0m
+[ 42%] [32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_c.dir/rosidl_typesupport_c/robot_control/msg/uart_data__type_support.cpp.o[0m
+[ 43%] [32mBuilding C object CMakeFiles/robot_control__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robot_control/msg/detail/i2c_data__type_support.c.o[0m
+[ 45%] [32mBuilding C object CMakeFiles/robot_control__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robot_control/msg/detail/uart_data__type_support.c.o[0m
+[ 47%] [32mBuilding C object CMakeFiles/robot_control__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robot_control/msg/detail/velocity_data__type_support.c.o[0m
+[ 49%] [32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robot_control/msg/i2c_data__type_support.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robot_control/msg/velocity_data__type_support.cpp.o[0m
+[ 52%] [32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robot_control/msg/uart_data__type_support.cpp.o[0m
+[ 54%] [32m[1mLinking C shared library librobot_control__rosidl_typesupport_introspection_c.so[0m
+[ 56%] [32m[1mLinking CXX shared library librobot_control__rosidl_typesupport_c.so[0m
+[ 57%] [32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robot_control/msg/detail/dds_fastrtps/uart_data__type_support.cpp.o[0m
+[ 59%] [32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robot_control/msg/detail/dds_fastrtps/i2c_data__type_support.cpp.o[0m
+[ 61%] [32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robot_control/msg/detail/dds_fastrtps/velocity_data__type_support.cpp.o[0m
+[ 61%] Built target robot_control__rosidl_typesupport_introspection_c
+[ 63%] [32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robot_control/msg/detail/i2c_data__type_support_c.cpp.o[0m
+[ 64%] [32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robot_control/msg/detail/uart_data__type_support_c.cpp.o[0m
+[ 66%] [32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robot_control/msg/detail/velocity_data__type_support_c.cpp.o[0m
+[ 66%] Built target robot_control__rosidl_typesupport_c
+[ 68%] [32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robot_control/msg/detail/i2c_data__type_support.cpp.o[0m
+[ 70%] [32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robot_control/msg/detail/velocity_data__type_support.cpp.o[0m
+[ 71%] [32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robot_control/msg/detail/uart_data__type_support.cpp.o[0m
+[ 73%] [32m[1mLinking CXX shared library librobot_control__rosidl_typesupport_introspection_cpp.so[0m
+[ 75%] [32m[1mLinking CXX shared library librobot_control__rosidl_typesupport_cpp.so[0m
+[ 75%] Built target robot_control__rosidl_typesupport_introspection_cpp
+[ 75%] Built target robot_control__rosidl_typesupport_cpp
+[ 77%] [32m[1mLinking CXX shared library librobot_control__rosidl_typesupport_fastrtps_c.so[0m
+[ 78%] [32m[1mLinking CXX shared library librobot_control__rosidl_typesupport_fastrtps_cpp.so[0m
+[ 78%] Built target robot_control__rosidl_typesupport_fastrtps_c
+[ 78%] Built target robot_control__rosidl_typesupport_fastrtps_cpp
+[ 78%] Built target robot_control
+[ 80%] [34m[1mGenerating Python code for ROS interfaces[0m
+[ 80%] Built target robot_control__py
+[ 82%] [32mBuilding C object CMakeFiles/robot_control__rosidl_generator_py.dir/rosidl_generator_py/robot_control/msg/_velocity_data_s.c.o[0m
+[ 84%] [32mBuilding C object CMakeFiles/robot_control__rosidl_generator_py.dir/rosidl_generator_py/robot_control/msg/_uart_data_s.c.o[0m
+[ 85%] [32mBuilding C object CMakeFiles/robot_control__rosidl_generator_py.dir/rosidl_generator_py/robot_control/msg/_i2c_data_s.c.o[0m
+[ 87%] [32m[1mLinking C shared library librobot_control__rosidl_generator_py.so[0m
+[ 87%] Built target robot_control__rosidl_generator_py
+[ 89%] [32mBuilding C object CMakeFiles/robot_control_s__rosidl_typesupport_c.dir/rosidl_generator_py/robot_control/_robot_control_s.ep.rosidl_typesupport_c.c.o[0m
+[ 91%] [32mBuilding C object CMakeFiles/robot_control_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/robot_control/_robot_control_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[ 92%] [32mBuilding C object CMakeFiles/robot_control_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/robot_control/_robot_control_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[ 94%] [32m[1mLinking C shared module rosidl_generator_py/robot_control/robot_control_s__rosidl_typesupport_introspection_c.so[0m
+[ 96%] [32m[1mLinking C shared module rosidl_generator_py/robot_control/robot_control_s__rosidl_typesupport_c.so[0m
+[ 98%] [32m[1mLinking C shared module rosidl_generator_py/robot_control/robot_control_s__rosidl_typesupport_fastrtps_c.so[0m
+[ 98%] Built target robot_control_s__rosidl_typesupport_introspection_c
+[ 98%] Built target robot_control_s__rosidl_typesupport_c
+[ 98%] Built target robot_control_s__rosidl_typesupport_fastrtps_c
+[100%] [32m[1mLinking CXX executable movement[0m
+[100%] Built target movement
+-- Install configuration: "Release"
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/ament_index/resource_index/rosidl_interfaces/robot_control
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/msg/I2cData.json
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/msg/UARTData.json
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/msg/VelocityData.json
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/velocity_data.h
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__type_support.c
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__type_support.c
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__type_support.h
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__functions.c
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__struct.h
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__type_support.c
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__description.c
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__description.c
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__struct.h
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__struct.h
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__functions.h
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__functions.c
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__type_support.h
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__functions.c
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__type_support.h
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__functions.h
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__functions.h
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__description.c
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/uart_data.h
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/i2c_data.h
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/rosidl_generator_c__visibility_control.h
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/environment/library_path.sh
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/environment/library_path.dsv
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_generator_c.so
+-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_generator_c.so" to ""
+-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control
+-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__rosidl_typesupport_fastrtps_c.h
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__rosidl_typesupport_fastrtps_c.h
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__rosidl_typesupport_fastrtps_c.h
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_typesupport_fastrtps_c.so
+-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_typesupport_fastrtps_c.so" to ""
+-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control
+-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/rosidl_generator_cpp__visibility_control.hpp
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/velocity_data.hpp
+-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__struct.hpp
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__type_support.hpp
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__struct.hpp
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__traits.hpp
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__traits.hpp
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__type_support.hpp
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__builder.hpp
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__builder.hpp
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__traits.hpp
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__struct.hpp
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__builder.hpp
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__type_support.hpp
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/i2c_data.hpp
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/uart_data.hpp
+-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control
+-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/dds_fastrtps
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_typesupport_fastrtps_cpp.so
+-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_typesupport_fastrtps_cpp.so" to ""
+-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control
+-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/rosidl_typesupport_introspection_c__visibility_control.h
+-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__type_support.c
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__type_support.c
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__type_support.c
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__rosidl_typesupport_introspection_c.h
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__rosidl_typesupport_introspection_c.h
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__rosidl_typesupport_introspection_c.h
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_typesupport_introspection_c.so
+-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_typesupport_introspection_c.so" to ""
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_typesupport_c.so
+-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_typesupport_c.so" to ""
+-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control
+-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg
+-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__type_support.cpp
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__type_support.cpp
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__type_support.cpp
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_typesupport_introspection_cpp.so
+-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_typesupport_introspection_cpp.so" to ""
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_typesupport_cpp.so
+-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_typesupport_cpp.so" to ""
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/environment/pythonpath.sh
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/environment/pythonpath.dsv
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control-0.0.0-py3.12.egg-info
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control-0.0.0-py3.12.egg-info/PKG-INFO
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control-0.0.0-py3.12.egg-info/SOURCES.txt
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control-0.0.0-py3.12.egg-info/dependency_links.txt
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control-0.0.0-py3.12.egg-info/top_level.txt
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/robot_control_s__rosidl_typesupport_fastrtps_c.so
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/robot_control_s__rosidl_typesupport_c.so
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/__init__.py
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/robot_control_s__rosidl_typesupport_introspection_c.so
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/_robot_control_s.ep.rosidl_typesupport_c.c
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/_robot_control_s.ep.rosidl_typesupport_introspection_c.c
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/msg
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/msg/_velocity_data.py
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/msg/_i2c_data_s.c
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/msg/__init__.py
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/msg/_uart_data.py
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/msg/_velocity_data_s.c
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/msg/_i2c_data.py
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/msg/_uart_data_s.c
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/_robot_control_s.ep.rosidl_typesupport_fastrtps_c.c
+Listing '/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control'...
+Compiling '/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/__init__.py'...
+Listing '/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/msg'...
+Compiling '/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/msg/__init__.py'...
+Compiling '/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/msg/_i2c_data.py'...
+Compiling '/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/msg/_uart_data.py'...
+Compiling '/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/msg/_velocity_data.py'...
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/robot_control_s__rosidl_typesupport_fastrtps_c.so
+-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/robot_control_s__rosidl_typesupport_fastrtps_c.so" to ""
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/robot_control_s__rosidl_typesupport_introspection_c.so
+-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/robot_control_s__rosidl_typesupport_introspection_c.so" to ""
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/robot_control_s__rosidl_typesupport_c.so
+-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/robot_control_s__rosidl_typesupport_c.so" to ""
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_generator_py.so
+-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_generator_py.so" to ""
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/rust
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/rust/build.rs
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/rust/Cargo.toml
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/rust/src
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/rust/src/lib.rs
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/rust/src/msg.rs
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/rust/src/msg
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/rust/src/msg/rmw.rs
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/msg/I2cData.idl
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/msg/UARTData.idl
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/msg/VelocityData.idl
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/msg/I2cData.msg
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/msg/UARTData.msg
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/msg/VelocityData.msg
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/robot_control/movement
+-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/robot_control/movement" to ""
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/robot_control/i2c_master.py
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/robot_control/uart_comm.py
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/robot_control/imu.py
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/launch
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/launch/hw_interface.launch
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/launch/joy_teleop.launch
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/config
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/config/ctrl_gains.yaml
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/config/joy.yaml
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/config/wheel_control.yaml
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/config/fourbar.yaml
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/config/ctrl_ackermann_steering_controller.yaml
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/config/ctrl_joint_state_publisher.yaml
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/config/ctrl_steer_bot_hardware_gazebo.yaml
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf/Ackermann_robot.gazebo.xml
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf/transmissions.xacro
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf/Ackermann_robot.urdf.xacro
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf/torno_arckermann_joints.xacro
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf/wheels_links.xacro
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf/Ackermann_robot.urdf
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf/lidar.xacro
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf/Ackermann_robo.urdf
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf/torno_arckermann_links.xacro
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf/imu.xacro
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf/Ackermann_robot.gv
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf/wheels_joints.xacro
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf/base.xacro
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf/Ackermann_robot.pdf
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/rviz
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/rviz/urdf.rviz
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/rviz/rviz_test_optim.rviz
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/config
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/config/joints.yaml
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf_teste
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf_teste/materials.xacro
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf_teste/steer_bot.urdf.xacro
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf_teste/wheel.xacro
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf_teste/lidar.xacro
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf_teste/imu.xacro
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf_teste/inertials.xacro
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/meshes
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/meshes/stl
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/meshes/stl/encaixe_front_left.stl
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/meshes/stl/encaixe_front_right.stl
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/meshes/stl/Base.stl
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/meshes/stl/wheel_rear_right.stl
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/meshes/stl/wheel_rear_left.stl
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/meshes/stl/wheel_front_left.stl
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/meshes/stl/wheel_front_right.stl
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/ament_index/resource_index/package_run_dependencies/robot_control
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/ament_index/resource_index/parent_prefix_path/robot_control
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/environment/ament_prefix_path.sh
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/environment/ament_prefix_path.dsv
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/environment/path.sh
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/environment/path.dsv
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/local_setup.bash
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/local_setup.sh
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/local_setup.zsh
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/local_setup.dsv
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/package.dsv
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/ament_index/resource_index/packages/robot_control
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/export_robot_control__rosidl_generator_cExport.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/export_robot_control__rosidl_generator_cExport-release.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/export_robot_control__rosidl_typesupport_fastrtps_cExport.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/export_robot_control__rosidl_typesupport_fastrtps_cExport-release.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/export_robot_control__rosidl_generator_cppExport.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/export_robot_control__rosidl_typesupport_fastrtps_cppExport.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/export_robot_control__rosidl_typesupport_fastrtps_cppExport-release.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/robot_control__rosidl_typesupport_introspection_cExport.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/robot_control__rosidl_typesupport_introspection_cExport-release.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/robot_control__rosidl_typesupport_cExport.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/robot_control__rosidl_typesupport_cExport-release.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/robot_control__rosidl_typesupport_introspection_cppExport.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/robot_control__rosidl_typesupport_introspection_cppExport-release.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/robot_control__rosidl_typesupport_cppExport.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/robot_control__rosidl_typesupport_cppExport-release.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/export_robot_control__rosidl_generator_pyExport.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/export_robot_control__rosidl_generator_pyExport-release.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/rosidl_cmake-extras.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/ament_cmake_export_libraries-extras.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/ament_cmake_export_targets-extras.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/rosidl_cmake_aggregate_target-extras.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/robot_controlConfig.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/robot_controlConfig-version.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/package.xml

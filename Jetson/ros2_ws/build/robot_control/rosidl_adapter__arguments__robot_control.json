@@ -1,0 +1,8 @@
+{
+  "package_name": "robot_control",
+  "non_idl_tuples": [
+    "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/src/robot_control:msg/I2cData.msg",
+    "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/src/robot_control:msg/UARTData.msg",
+    "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/src/robot_control:msg/VelocityData.msg"
+  ]
+}

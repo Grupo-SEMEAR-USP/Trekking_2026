@@ -1,0 +1,614 @@
+[0.000000] (-) TimerEvent: {}
+[0.000300] (robot_control) JobQueued: {'identifier': 'robot_control', 'dependencies': OrderedDict()}
+[0.000401] (robot_control) JobStarted: {'identifier': 'robot_control'}
+[0.010332] (robot_control) JobProgress: {'identifier': 'robot_control', 'progress': 'cmake'}
+[0.011584] (robot_control) Command: {'cmd': ['/usr/bin/cmake', '/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/src/robot_control', '-DCMAKE_BUILD_TYPE=Release', '-DCMAKE_INSTALL_PREFIX=/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control'], 'cwd': '/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/build/robot_control', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'diogo', 'LC_TIME': 'pt_BR.UTF-8', 'FONTCONFIG_PATH': '/etc/fonts', 'GIO_MODULE_DIR': '/home/diogo/snap/code/common/.cache/gio-modules', 'XDG_SESSION_TYPE': 'wayland', 'GIT_ASKPASS': '/snap/code/268/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'GTK_EXE_PREFIX_VSCODE_SNAP_ORIG': '', 'GDK_BACKEND_VSCODE_SNAP_ORIG': '', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/diogo', 'CHROME_DESKTOP': 'code_code.desktop', 'LOCPATH_VSCODE_SNAP_ORIG': '', 'OLDPWD': '/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws', 'TERM_PROGRAM_VERSION': '1.141.0', 'DESKTOP_SESSION': 'ubuntu', 'GTK_PATH': '/snap/code/268/usr/lib/x86_64-linux-gnu/gtk-3.0', 'GTK_IM_MODULE_FILE': '/home/diogo/snap/code/common/.cache/immodules/immodules.cache', 'GIO_LAUNCHED_DESKTOP_FILE': '/var/lib/snapd/desktop/applications/code_code.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'GSETTINGS_SCHEMA_DIR_VSCODE_SNAP_ORIG': '', 'VSCODE_GIT_ASKPASS_MAIN': '/snap/code/268/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'LC_MONETARY': 'pt_BR.UTF-8', 'VSCODE_GIT_ASKPASS_NODE': '/snap/code/268/usr/share/code/code', 'MANAGERPID': '2254', 'LC_CTYPE': 'pt_BR.UTF-8', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'SYSTEMD_EXEC_PID': '2524', 'BUNDLED_DEBUGPY_PATH': '/home/diogo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy', 'IM_CONFIG_CHECK_ENV': '1', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '4683', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'diogo', 'JOURNAL_STREAM': '8:22733', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_CONFIG_DIRS_VSCODE_SNAP_ORIG': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'XDG_DATA_DIRS_VSCODE_SNAP_ORIG': '/usr/share/ubuntu:/usr/share/gnome:/home/diogo/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'USERNAME': 'diogo', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'FC_FONTATIONS': '1', 'PATH': '/opt/ros/jazzy/bin:/home/diogo/.local/bin:/home/diogo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/diogo/.platformio/penv/bin:/home/diogo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts:/home/diogo/.platformio/penv/bin', 'SESSION_MANAGER': 'local/pcdodiogo:@/tmp/.ICE-unix/2482,unix/pcdodiogo:/tmp/.ICE-unix/2482', 'GTK_EXE_PREFIX': '/snap/code/268/usr', 'INVOCATION_ID': '2d37c13c343a45a8b3404794e6c58109', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'pt_BR.UTF-8', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LOCPATH': '/snap/code/268/usr/lib/locale', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/diogo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-f3f7ddb4bf8e14fe.txt', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'PYTHONSTARTUP': '/home/diogo/.config/Code/User/workspaceStorage/bb2c9a91c62374301cba5d92a4ccc28c/ms-python.python/pythonrc.py', 'LC_TELEPHONE': 'pt_BR.UTF-8', 'GIO_MODULE_DIR_VSCODE_SNAP_ORIG': '', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.UMD6W3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-b99a863fef.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'GSETTINGS_SCHEMA_DIR': '/home/diogo/snap/code/268/.local/share/glib-2.0/schemas', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LC_NAME': 'pt_BR.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GTK_PATH_VSCODE_SNAP_ORIG': '', 'FONTCONFIG_FILE': '/etc/fonts/fonts.conf', 'GTK_IM_MODULE_FILE_VSCODE_SNAP_ORIG': '', 'LC_MEASUREMENT': 'pt_BR.UTF-8', 'GJS_DEBUG_OUTPUT': 'stderr', 'LC_IDENTIFICATION': 'pt_BR.UTF-8', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/build/robot_control', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/home/diogo/snap/code/268/.local/share:/home/diogo/snap/code/268:/snap/code/268/usr/share:/usr/share/ubuntu:/usr/share/gnome:/home/diogo/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/opt/gz_math_vendor/lib/python:/opt/ros/jazzy/lib/python3.12/site-packages', 'LC_NUMERIC': 'pt_BR.UTF-8', 'LC_PAPER': 'pt_BR.UTF-8', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.092085] (robot_control) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[0.098898] (-) TimerEvent: {}
+[0.196017] (robot_control) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[0.199010] (-) TimerEvent: {}
+[0.231905] (robot_control) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.299142] (-) TimerEvent: {}
+[0.355681] (robot_control) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.366639] (robot_control) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.367161] (robot_control) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.367526] (robot_control) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.383271] (robot_control) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.399304] (-) TimerEvent: {}
+[0.499873] (-) TimerEvent: {}
+[0.543728] (robot_control) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.565927] (robot_control) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.566599] (robot_control) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.567645] (robot_control) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.572137] (robot_control) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.600063] (-) TimerEvent: {}
+[0.700516] (-) TimerEvent: {}
+[0.790716] (robot_control) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[0.800687] (-) TimerEvent: {}
+[0.901030] (-) TimerEvent: {}
+[0.918384] (robot_control) StdoutLine: {'line': b'-- Found rclcpp: 28.1.22 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[0.963242] (robot_control) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[0.978469] (robot_control) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[0.996747] (robot_control) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.001117] (-) TimerEvent: {}
+[1.017612] (robot_control) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.101242] (-) TimerEvent: {}
+[1.111728] (robot_control) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.4 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[1.114913] (robot_control) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.201389] (-) TimerEvent: {}
+[1.230963] (robot_control) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  \n'}
+[1.279108] (robot_control) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") \n'}
+[1.301602] (-) TimerEvent: {}
+[1.333566] (robot_control) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.401784] (-) TimerEvent: {}
+[1.448387] (robot_control) StdoutLine: {'line': b'-- Found std_msgs: 5.3.8 (/opt/ros/jazzy/share/std_msgs/cmake)\n'}
+[1.467100] (robot_control) StdoutLine: {'line': b'-- Found geometry_msgs: 5.3.8 (/opt/ros/jazzy/share/geometry_msgs/cmake)\n'}
+[1.487489] (robot_control) StdoutLine: {'line': b'-- Found nav_msgs: 5.3.8 (/opt/ros/jazzy/share/nav_msgs/cmake)\n'}
+[1.501886] (-) TimerEvent: {}
+[1.525747] (robot_control) StdoutLine: {'line': b'-- Found tf2: 0.36.23 (/opt/ros/jazzy/share/tf2/cmake)\n'}
+[1.531674] (robot_control) StdoutLine: {'line': b'-- Found tf2_geometry_msgs: 0.36.23 (/opt/ros/jazzy/share/tf2_geometry_msgs/cmake)\n'}
+[1.547563] (robot_control) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.3.1 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)\n'}
+[1.549199] (robot_control) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[1.549404] (robot_control) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[1.601971] (-) TimerEvent: {}
+[1.702276] (-) TimerEvent: {}
+[1.711924] (robot_control) StdoutLine: {'line': b'-- Found angles: 1.16.1 (/opt/ros/jazzy/share/angles/cmake)\n'}
+[1.714998] (robot_control) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.6.1 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)\n'}
+[1.734879] (robot_control) StdoutLine: {'line': b'-- Found rosidl_adapter: 4.6.9 (/opt/ros/jazzy/share/rosidl_adapter/cmake)\n'}
+[1.802396] (-) TimerEvent: {}
+[1.902796] (-) TimerEvent: {}
+[2.003090] (-) TimerEvent: {}
+[2.103379] (-) TimerEvent: {}
+[2.203821] (-) TimerEvent: {}
+[2.304116] (-) TimerEvent: {}
+[2.404547] (-) TimerEvent: {}
+[2.504903] (-) TimerEvent: {}
+[2.605300] (-) TimerEvent: {}
+[2.686218] (robot_control) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.12.2 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)\n'}
+[2.705418] (-) TimerEvent: {}
+[2.805753] (-) TimerEvent: {}
+[2.906161] (-) TimerEvent: {}
+[3.006551] (-) TimerEvent: {}
+[3.106896] (-) TimerEvent: {}
+[3.207294] (-) TimerEvent: {}
+[3.307583] (-) TimerEvent: {}
+[3.407962] (-) TimerEvent: {}
+[3.508256] (-) TimerEvent: {}
+[3.608585] (-) TimerEvent: {}
+[3.708948] (-) TimerEvent: {}
+[3.809236] (-) TimerEvent: {}
+[3.897663] (robot_control) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[3.909321] (-) TimerEvent: {}
+[4.009582] (-) TimerEvent: {}
+[4.109917] (-) TimerEvent: {}
+[4.210262] (-) TimerEvent: {}
+[4.310690] (-) TimerEvent: {}
+[4.403742] (robot_control) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[4.407120] (robot_control) StdoutLine: {'line': b'-- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)\n'}
+[4.410737] (-) TimerEvent: {}
+[4.511038] (-) TimerEvent: {}
+[4.601778] (robot_control) StdoutLine: {'line': b'-- Found PythonExtra: /usr/bin/python3  \n'}
+[4.611204] (-) TimerEvent: {}
+[4.711542] (-) TimerEvent: {}
+[4.811797] (-) TimerEvent: {}
+[4.912102] (-) TimerEvent: {}
+[5.012377] (-) TimerEvent: {}
+[5.112651] (-) TimerEvent: {}
+[5.183550] (robot_control) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed \n'}
+[5.212879] (-) TimerEvent: {}
+[5.313148] (-) TimerEvent: {}
+[5.316786] (robot_control) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[5.332269] (robot_control) StdoutLine: {'line': b'-- Configuring done (5.3s)\n'}
+[5.395223] (robot_control) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[5.412219] (robot_control) StdoutLine: {'line': b'-- Build files have been written to: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/build/robot_control\n'}
+[5.413227] (-) TimerEvent: {}
+[5.426424] (robot_control) CommandEnded: {'returncode': 0}
+[5.428303] (robot_control) JobProgress: {'identifier': 'robot_control', 'progress': 'build'}
+[5.428331] (robot_control) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/build/robot_control', '--', '-j16', '-l16'], 'cwd': '/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/build/robot_control', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'diogo', 'LC_TIME': 'pt_BR.UTF-8', 'FONTCONFIG_PATH': '/etc/fonts', 'GIO_MODULE_DIR': '/home/diogo/snap/code/common/.cache/gio-modules', 'XDG_SESSION_TYPE': 'wayland', 'GIT_ASKPASS': '/snap/code/268/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'GTK_EXE_PREFIX_VSCODE_SNAP_ORIG': '', 'GDK_BACKEND_VSCODE_SNAP_ORIG': '', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/diogo', 'CHROME_DESKTOP': 'code_code.desktop', 'LOCPATH_VSCODE_SNAP_ORIG': '', 'OLDPWD': '/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws', 'TERM_PROGRAM_VERSION': '1.141.0', 'DESKTOP_SESSION': 'ubuntu', 'GTK_PATH': '/snap/code/268/usr/lib/x86_64-linux-gnu/gtk-3.0', 'GTK_IM_MODULE_FILE': '/home/diogo/snap/code/common/.cache/immodules/immodules.cache', 'GIO_LAUNCHED_DESKTOP_FILE': '/var/lib/snapd/desktop/applications/code_code.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'GSETTINGS_SCHEMA_DIR_VSCODE_SNAP_ORIG': '', 'VSCODE_GIT_ASKPASS_MAIN': '/snap/code/268/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'LC_MONETARY': 'pt_BR.UTF-8', 'VSCODE_GIT_ASKPASS_NODE': '/snap/code/268/usr/share/code/code', 'MANAGERPID': '2254', 'LC_CTYPE': 'pt_BR.UTF-8', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'SYSTEMD_EXEC_PID': '2524', 'BUNDLED_DEBUGPY_PATH': '/home/diogo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy', 'IM_CONFIG_CHECK_ENV': '1', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '4683', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'diogo', 'JOURNAL_STREAM': '8:22733', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_CONFIG_DIRS_VSCODE_SNAP_ORIG': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'XDG_DATA_DIRS_VSCODE_SNAP_ORIG': '/usr/share/ubuntu:/usr/share/gnome:/home/diogo/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'USERNAME': 'diogo', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'FC_FONTATIONS': '1', 'PATH': '/opt/ros/jazzy/bin:/home/diogo/.local/bin:/home/diogo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/diogo/.platformio/penv/bin:/home/diogo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts:/home/diogo/.platformio/penv/bin', 'SESSION_MANAGER': 'local/pcdodiogo:@/tmp/.ICE-unix/2482,unix/pcdodiogo:/tmp/.ICE-unix/2482', 'GTK_EXE_PREFIX': '/snap/code/268/usr', 'INVOCATION_ID': '2d37c13c343a45a8b3404794e6c58109', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'pt_BR.UTF-8', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LOCPATH': '/snap/code/268/usr/lib/locale', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/diogo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-f3f7ddb4bf8e14fe.txt', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'PYTHONSTARTUP': '/home/diogo/.config/Code/User/workspaceStorage/bb2c9a91c62374301cba5d92a4ccc28c/ms-python.python/pythonrc.py', 'LC_TELEPHONE': 'pt_BR.UTF-8', 'GIO_MODULE_DIR_VSCODE_SNAP_ORIG': '', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.UMD6W3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-b99a863fef.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'GSETTINGS_SCHEMA_DIR': '/home/diogo/snap/code/268/.local/share/glib-2.0/schemas', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LC_NAME': 'pt_BR.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GTK_PATH_VSCODE_SNAP_ORIG': '', 'FONTCONFIG_FILE': '/etc/fonts/fonts.conf', 'GTK_IM_MODULE_FILE_VSCODE_SNAP_ORIG': '', 'LC_MEASUREMENT': 'pt_BR.UTF-8', 'GJS_DEBUG_OUTPUT': 'stderr', 'LC_IDENTIFICATION': 'pt_BR.UTF-8', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/build/robot_control', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/home/diogo/snap/code/268/.local/share:/home/diogo/snap/code/268:/snap/code/268/usr/share:/usr/share/ubuntu:/usr/share/gnome:/home/diogo/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/opt/gz_math_vendor/lib/python:/opt/ros/jazzy/lib/python3.12/site-packages', 'LC_NUMERIC': 'pt_BR.UTF-8', 'LC_PAPER': 'pt_BR.UTF-8', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[5.513366] (-) TimerEvent: {}
+[5.524211] (robot_control) StdoutLine: {'line': b'[  1%] \x1b[34m\x1b[1mGenerating Rust code for ROS interfaces\x1b[0m\n'}
+[5.526859] (robot_control) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding CXX object CMakeFiles/movement.dir/src/movement.cpp.o\x1b[0m\n'}
+[5.536636] (robot_control) StdoutLine: {'line': b'[  3%] Built target ament_cmake_python_copy_robot_control\n'}
+[5.537839] (robot_control) StdoutLine: {'line': b'[  5%] \x1b[34m\x1b[1mGenerating type hashes for ROS interfaces\x1b[0m\n'}
+[5.613461] (-) TimerEvent: {}
+[5.713745] (-) TimerEvent: {}
+[5.789540] (robot_control) StdoutLine: {'line': b'running egg_info\n'}
+[5.790790] (robot_control) StdoutLine: {'line': b'creating robot_control.egg-info\n'}
+[5.810637] (robot_control) StdoutLine: {'line': b'writing robot_control.egg-info/PKG-INFO\n'}
+[5.810927] (robot_control) StdoutLine: {'line': b'writing dependency_links to robot_control.egg-info/dependency_links.txt\n'}
+[5.811117] (robot_control) StdoutLine: {'line': b'writing top-level names to robot_control.egg-info/top_level.txt\n'}
+[5.811276] (robot_control) StdoutLine: {'line': b"writing manifest file 'robot_control.egg-info/SOURCES.txt'\n"}
+[5.811618] (robot_control) StdoutLine: {'line': b'[  5%] Built target robot_control__rosidl_generator_type_description\n'}
+[5.813850] (-) TimerEvent: {}
+[5.822644] (robot_control) StdoutLine: {'line': b'[  7%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[5.834321] (robot_control) StdoutLine: {'line': b'[  8%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[5.834900] (robot_control) StdoutLine: {'line': b'[  8%] Built target robot_control__rs\n'}
+[5.873046] (robot_control) StdoutLine: {'line': b"reading manifest file 'robot_control.egg-info/SOURCES.txt'\n"}
+[5.873632] (robot_control) StdoutLine: {'line': b"writing manifest file 'robot_control.egg-info/SOURCES.txt'\n"}
+[5.907609] (robot_control) StdoutLine: {'line': b'[  8%] Built target ament_cmake_python_build_robot_control_egg\n'}
+[5.913975] (-) TimerEvent: {}
+[6.014361] (-) TimerEvent: {}
+[6.114836] (-) TimerEvent: {}
+[6.208904] (robot_control) StdoutLine: {'line': b'[  8%] Built target robot_control__cpp\n'}
+[6.215150] (-) TimerEvent: {}
+[6.260763] (robot_control) StdoutLine: {'line': b'[ 10%] \x1b[32mBuilding C object CMakeFiles/robot_control__rosidl_generator_c.dir/rosidl_generator_c/robot_control/msg/detail/i2c_data__functions.c.o\x1b[0m\n'}
+[6.264739] (robot_control) StdoutLine: {'line': b'[ 12%] \x1b[32mBuilding C object CMakeFiles/robot_control__rosidl_generator_c.dir/rosidl_generator_c/robot_control/msg/detail/i2c_data__description.c.o\x1b[0m\n'}
+[6.265058] (robot_control) StdoutLine: {'line': b'[ 14%] \x1b[32mBuilding C object CMakeFiles/robot_control__rosidl_generator_c.dir/rosidl_generator_c/robot_control/msg/detail/velocity_data__type_support.c.o\x1b[0m\n'}
+[6.265265] (robot_control) StdoutLine: {'line': b'[ 15%] \x1b[32mBuilding C object CMakeFiles/robot_control__rosidl_generator_c.dir/rosidl_generator_c/robot_control/msg/detail/uart_data__description.c.o\x1b[0m\n'}
+[6.265456] (robot_control) StdoutLine: {'line': b'[ 17%] \x1b[32mBuilding C object CMakeFiles/robot_control__rosidl_generator_c.dir/rosidl_generator_c/robot_control/msg/detail/uart_data__type_support.c.o\x1b[0m\n'}
+[6.265642] (robot_control) StdoutLine: {'line': b'[ 19%] \x1b[32mBuilding C object CMakeFiles/robot_control__rosidl_generator_c.dir/rosidl_generator_c/robot_control/msg/detail/velocity_data__description.c.o\x1b[0m\n'}
+[6.265843] (robot_control) StdoutLine: {'line': b'[ 21%] \x1b[32mBuilding C object CMakeFiles/robot_control__rosidl_generator_c.dir/rosidl_generator_c/robot_control/msg/detail/velocity_data__functions.c.o\x1b[0m\n'}
+[6.268620] (robot_control) StdoutLine: {'line': b'[ 24%] \x1b[32mBuilding C object CMakeFiles/robot_control__rosidl_generator_c.dir/rosidl_generator_c/robot_control/msg/detail/i2c_data__type_support.c.o\x1b[0m\n'}
+[6.269046] (robot_control) StdoutLine: {'line': b'[ 24%] \x1b[32mBuilding C object CMakeFiles/robot_control__rosidl_generator_c.dir/rosidl_generator_c/robot_control/msg/detail/uart_data__functions.c.o\x1b[0m\n'}
+[6.315279] (-) TimerEvent: {}
+[6.404999] (robot_control) StdoutLine: {'line': b'[ 26%] \x1b[32m\x1b[1mLinking C shared library librobot_control__rosidl_generator_c.so\x1b[0m\n'}
+[6.415437] (-) TimerEvent: {}
+[6.455628] (robot_control) StdoutLine: {'line': b'[ 26%] Built target robot_control__rosidl_generator_c\n'}
+[6.467989] (robot_control) StdoutLine: {'line': b'[ 31%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[6.468326] (robot_control) StdoutLine: {'line': b'[ 31%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[6.468517] (robot_control) StdoutLine: {'line': b'[ 31%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[6.469077] (robot_control) StdoutLine: {'line': b'[ 33%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[6.472958] (robot_control) StdoutLine: {'line': b'[ 35%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[6.474500] (robot_control) StdoutLine: {'line': b'[ 36%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[6.515583] (-) TimerEvent: {}
+[6.615962] (-) TimerEvent: {}
+[6.716315] (-) TimerEvent: {}
+[6.809089] (robot_control) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_c.dir/rosidl_typesupport_c/robot_control/msg/i2c_data__type_support.cpp.o\x1b[0m\n'}
+[6.810764] (robot_control) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_c.dir/rosidl_typesupport_c/robot_control/msg/velocity_data__type_support.cpp.o\x1b[0m\n'}
+[6.813527] (robot_control) StdoutLine: {'line': b'[ 42%] \x1b[32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_c.dir/rosidl_typesupport_c/robot_control/msg/uart_data__type_support.cpp.o\x1b[0m\n'}
+[6.816414] (-) TimerEvent: {}
+[6.831845] (robot_control) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding C object CMakeFiles/robot_control__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robot_control/msg/detail/i2c_data__type_support.c.o\x1b[0m\n'}
+[6.833118] (robot_control) StdoutLine: {'line': b'[ 45%] \x1b[32mBuilding C object CMakeFiles/robot_control__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robot_control/msg/detail/uart_data__type_support.c.o\x1b[0m\n'}
+[6.833478] (robot_control) StdoutLine: {'line': b'[ 47%] \x1b[32mBuilding C object CMakeFiles/robot_control__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robot_control/msg/detail/velocity_data__type_support.c.o\x1b[0m\n'}
+[6.862830] (robot_control) StdoutLine: {'line': b'[ 49%] \x1b[32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robot_control/msg/i2c_data__type_support.cpp.o\x1b[0m\n'}
+[6.863086] (robot_control) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robot_control/msg/velocity_data__type_support.cpp.o\x1b[0m\n'}
+[6.863196] (robot_control) StdoutLine: {'line': b'[ 52%] \x1b[32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robot_control/msg/uart_data__type_support.cpp.o\x1b[0m\n'}
+[6.894379] (robot_control) StdoutLine: {'line': b'[ 54%] \x1b[32m\x1b[1mLinking C shared library librobot_control__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[6.900620] (robot_control) StdoutLine: {'line': b'[ 56%] \x1b[32m\x1b[1mLinking CXX shared library librobot_control__rosidl_typesupport_c.so\x1b[0m\n'}
+[6.904048] (robot_control) StdoutLine: {'line': b'[ 57%] \x1b[32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robot_control/msg/detail/dds_fastrtps/uart_data__type_support.cpp.o\x1b[0m\n'}
+[6.906142] (robot_control) StdoutLine: {'line': b'[ 59%] \x1b[32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robot_control/msg/detail/dds_fastrtps/i2c_data__type_support.cpp.o\x1b[0m\n'}
+[6.906420] (robot_control) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robot_control/msg/detail/dds_fastrtps/velocity_data__type_support.cpp.o\x1b[0m\n'}
+[6.916668] (-) TimerEvent: {}
+[6.937252] (robot_control) StdoutLine: {'line': b'[ 61%] Built target robot_control__rosidl_typesupport_introspection_c\n'}
+[6.950519] (robot_control) StdoutLine: {'line': b'[ 63%] \x1b[32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robot_control/msg/detail/i2c_data__type_support_c.cpp.o\x1b[0m\n'}
+[6.950817] (robot_control) StdoutLine: {'line': b'[ 64%] \x1b[32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robot_control/msg/detail/uart_data__type_support_c.cpp.o\x1b[0m\n'}
+[6.952936] (robot_control) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robot_control/msg/detail/velocity_data__type_support_c.cpp.o\x1b[0m\n'}
+[6.959567] (robot_control) StdoutLine: {'line': b'[ 66%] Built target robot_control__rosidl_typesupport_c\n'}
+[7.016776] (-) TimerEvent: {}
+[7.074795] (robot_control) StdoutLine: {'line': b'[ 68%] \x1b[32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robot_control/msg/detail/i2c_data__type_support.cpp.o\x1b[0m\n'}
+[7.075086] (robot_control) StdoutLine: {'line': b'[ 70%] \x1b[32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robot_control/msg/detail/velocity_data__type_support.cpp.o\x1b[0m\n'}
+[7.075227] (robot_control) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding CXX object CMakeFiles/robot_control__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robot_control/msg/detail/uart_data__type_support.cpp.o\x1b[0m\n'}
+[7.116895] (-) TimerEvent: {}
+[7.217245] (-) TimerEvent: {}
+[7.318142] (-) TimerEvent: {}
+[7.418498] (-) TimerEvent: {}
+[7.518790] (-) TimerEvent: {}
+[7.589472] (robot_control) StdoutLine: {'line': b'[ 73%] \x1b[32m\x1b[1mLinking CXX shared library librobot_control__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[7.601764] (robot_control) StdoutLine: {'line': b'[ 75%] \x1b[32m\x1b[1mLinking CXX shared library librobot_control__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[7.618908] (-) TimerEvent: {}
+[7.650255] (robot_control) StdoutLine: {'line': b'[ 75%] Built target robot_control__rosidl_typesupport_introspection_cpp\n'}
+[7.654383] (robot_control) StdoutLine: {'line': b'[ 75%] Built target robot_control__rosidl_typesupport_cpp\n'}
+[7.719046] (-) TimerEvent: {}
+[7.819452] (-) TimerEvent: {}
+[7.839045] (robot_control) StdoutLine: {'line': b'[ 77%] \x1b[32m\x1b[1mLinking CXX shared library librobot_control__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[7.894918] (robot_control) StdoutLine: {'line': b'[ 78%] \x1b[32m\x1b[1mLinking CXX shared library librobot_control__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[7.904551] (robot_control) StdoutLine: {'line': b'[ 78%] Built target robot_control__rosidl_typesupport_fastrtps_c\n'}
+[7.919574] (-) TimerEvent: {}
+[7.968150] (robot_control) StdoutLine: {'line': b'[ 78%] Built target robot_control__rosidl_typesupport_fastrtps_cpp\n'}
+[7.993083] (robot_control) StdoutLine: {'line': b'[ 78%] Built target robot_control\n'}
+[8.019757] (-) TimerEvent: {}
+[8.024177] (robot_control) StdoutLine: {'line': b'[ 80%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[8.119896] (-) TimerEvent: {}
+[8.220257] (-) TimerEvent: {}
+[8.320717] (-) TimerEvent: {}
+[8.421059] (-) TimerEvent: {}
+[8.498913] (robot_control) StdoutLine: {'line': b'[ 80%] Built target robot_control__py\n'}
+[8.521187] (-) TimerEvent: {}
+[8.528260] (robot_control) StdoutLine: {'line': b'[ 82%] \x1b[32mBuilding C object CMakeFiles/robot_control__rosidl_generator_py.dir/rosidl_generator_py/robot_control/msg/_velocity_data_s.c.o\x1b[0m\n'}
+[8.528913] (robot_control) StdoutLine: {'line': b'[ 84%] \x1b[32mBuilding C object CMakeFiles/robot_control__rosidl_generator_py.dir/rosidl_generator_py/robot_control/msg/_uart_data_s.c.o\x1b[0m\n'}
+[8.534005] (robot_control) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/robot_control__rosidl_generator_py.dir/rosidl_generator_py/robot_control/msg/_i2c_data_s.c.o\x1b[0m\n'}
+[8.621329] (-) TimerEvent: {}
+[8.699813] (robot_control) StdoutLine: {'line': b'[ 87%] \x1b[32m\x1b[1mLinking C shared library librobot_control__rosidl_generator_py.so\x1b[0m\n'}
+[8.721544] (-) TimerEvent: {}
+[8.766015] (robot_control) StdoutLine: {'line': b'[ 87%] Built target robot_control__rosidl_generator_py\n'}
+[8.796531] (robot_control) StdoutLine: {'line': b'[ 89%] \x1b[32mBuilding C object CMakeFiles/robot_control_s__rosidl_typesupport_c.dir/rosidl_generator_py/robot_control/_robot_control_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[8.801407] (robot_control) StdoutLine: {'line': b'[ 91%] \x1b[32mBuilding C object CMakeFiles/robot_control_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/robot_control/_robot_control_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[8.804440] (robot_control) StdoutLine: {'line': b'[ 92%] \x1b[32mBuilding C object CMakeFiles/robot_control_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/robot_control/_robot_control_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[8.821787] (-) TimerEvent: {}
+[8.922045] (-) TimerEvent: {}
+[8.990602] (robot_control) StdoutLine: {'line': b'[ 94%] \x1b[32m\x1b[1mLinking C shared module rosidl_generator_py/robot_control/robot_control_s__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[8.991264] (robot_control) StdoutLine: {'line': b'[ 96%] \x1b[32m\x1b[1mLinking C shared module rosidl_generator_py/robot_control/robot_control_s__rosidl_typesupport_c.so\x1b[0m\n'}
+[8.996926] (robot_control) StdoutLine: {'line': b'[ 98%] \x1b[32m\x1b[1mLinking C shared module rosidl_generator_py/robot_control/robot_control_s__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[9.022158] (-) TimerEvent: {}
+[9.030521] (robot_control) StdoutLine: {'line': b'[ 98%] Built target robot_control_s__rosidl_typesupport_introspection_c\n'}
+[9.032224] (robot_control) StdoutLine: {'line': b'[ 98%] Built target robot_control_s__rosidl_typesupport_c\n'}
+[9.041213] (robot_control) StdoutLine: {'line': b'[ 98%] Built target robot_control_s__rosidl_typesupport_fastrtps_c\n'}
+[9.122352] (-) TimerEvent: {}
+[9.222839] (-) TimerEvent: {}
+[9.323296] (-) TimerEvent: {}
+[9.423746] (-) TimerEvent: {}
+[9.524101] (-) TimerEvent: {}
+[9.624558] (-) TimerEvent: {}
+[9.724926] (-) TimerEvent: {}
+[9.825329] (-) TimerEvent: {}
+[9.925707] (-) TimerEvent: {}
+[10.026104] (-) TimerEvent: {}
+[10.126495] (-) TimerEvent: {}
+[10.226936] (-) TimerEvent: {}
+[10.327413] (-) TimerEvent: {}
+[10.427809] (-) TimerEvent: {}
+[10.528194] (-) TimerEvent: {}
+[10.628623] (-) TimerEvent: {}
+[10.729111] (-) TimerEvent: {}
+[10.829533] (-) TimerEvent: {}
+[10.930054] (-) TimerEvent: {}
+[11.030526] (-) TimerEvent: {}
+[11.130983] (-) TimerEvent: {}
+[11.231428] (-) TimerEvent: {}
+[11.331819] (-) TimerEvent: {}
+[11.432252] (-) TimerEvent: {}
+[11.532666] (-) TimerEvent: {}
+[11.633090] (-) TimerEvent: {}
+[11.733562] (-) TimerEvent: {}
+[11.834041] (-) TimerEvent: {}
+[11.934507] (-) TimerEvent: {}
+[12.034885] (-) TimerEvent: {}
+[12.135278] (-) TimerEvent: {}
+[12.235770] (-) TimerEvent: {}
+[12.336154] (-) TimerEvent: {}
+[12.436629] (-) TimerEvent: {}
+[12.536993] (-) TimerEvent: {}
+[12.637454] (-) TimerEvent: {}
+[12.737991] (-) TimerEvent: {}
+[12.838493] (-) TimerEvent: {}
+[12.938879] (-) TimerEvent: {}
+[13.039252] (-) TimerEvent: {}
+[13.139621] (-) TimerEvent: {}
+[13.240086] (-) TimerEvent: {}
+[13.340470] (-) TimerEvent: {}
+[13.440831] (-) TimerEvent: {}
+[13.541203] (-) TimerEvent: {}
+[13.641563] (-) TimerEvent: {}
+[13.742007] (-) TimerEvent: {}
+[13.842437] (-) TimerEvent: {}
+[13.942986] (-) TimerEvent: {}
+[14.043421] (-) TimerEvent: {}
+[14.143935] (-) TimerEvent: {}
+[14.244327] (-) TimerEvent: {}
+[14.344803] (-) TimerEvent: {}
+[14.445175] (-) TimerEvent: {}
+[14.545639] (-) TimerEvent: {}
+[14.646070] (-) TimerEvent: {}
+[14.746528] (-) TimerEvent: {}
+[14.846973] (-) TimerEvent: {}
+[14.947479] (-) TimerEvent: {}
+[15.048042] (-) TimerEvent: {}
+[15.148442] (-) TimerEvent: {}
+[15.248923] (-) TimerEvent: {}
+[15.349425] (-) TimerEvent: {}
+[15.449927] (-) TimerEvent: {}
+[15.550339] (-) TimerEvent: {}
+[15.650973] (-) TimerEvent: {}
+[15.751417] (-) TimerEvent: {}
+[15.851909] (-) TimerEvent: {}
+[15.952293] (-) TimerEvent: {}
+[16.052771] (-) TimerEvent: {}
+[16.153136] (-) TimerEvent: {}
+[16.253512] (-) TimerEvent: {}
+[16.353925] (-) TimerEvent: {}
+[16.454290] (-) TimerEvent: {}
+[16.554766] (-) TimerEvent: {}
+[16.655113] (-) TimerEvent: {}
+[16.755569] (-) TimerEvent: {}
+[16.855978] (-) TimerEvent: {}
+[16.956427] (-) TimerEvent: {}
+[17.056789] (-) TimerEvent: {}
+[17.157348] (-) TimerEvent: {}
+[17.257754] (-) TimerEvent: {}
+[17.358014] (-) TimerEvent: {}
+[17.458375] (-) TimerEvent: {}
+[17.558753] (-) TimerEvent: {}
+[17.659057] (-) TimerEvent: {}
+[17.759419] (-) TimerEvent: {}
+[17.859782] (-) TimerEvent: {}
+[17.960147] (-) TimerEvent: {}
+[18.060509] (-) TimerEvent: {}
+[18.160874] (-) TimerEvent: {}
+[18.261235] (-) TimerEvent: {}
+[18.361597] (-) TimerEvent: {}
+[18.462024] (-) TimerEvent: {}
+[18.562387] (-) TimerEvent: {}
+[18.662762] (-) TimerEvent: {}
+[18.763135] (-) TimerEvent: {}
+[18.863503] (-) TimerEvent: {}
+[18.963877] (-) TimerEvent: {}
+[19.064235] (-) TimerEvent: {}
+[19.164604] (-) TimerEvent: {}
+[19.265010] (-) TimerEvent: {}
+[19.365370] (-) TimerEvent: {}
+[19.465743] (-) TimerEvent: {}
+[19.566102] (-) TimerEvent: {}
+[19.666465] (-) TimerEvent: {}
+[19.766868] (-) TimerEvent: {}
+[19.867230] (-) TimerEvent: {}
+[19.967594] (-) TimerEvent: {}
+[20.067966] (-) TimerEvent: {}
+[20.168325] (-) TimerEvent: {}
+[20.268689] (-) TimerEvent: {}
+[20.369067] (-) TimerEvent: {}
+[20.469363] (-) TimerEvent: {}
+[20.569730] (-) TimerEvent: {}
+[20.670110] (-) TimerEvent: {}
+[20.770464] (-) TimerEvent: {}
+[20.870809] (-) TimerEvent: {}
+[20.971174] (-) TimerEvent: {}
+[21.071535] (-) TimerEvent: {}
+[21.171892] (-) TimerEvent: {}
+[21.272257] (-) TimerEvent: {}
+[21.372617] (-) TimerEvent: {}
+[21.472900] (-) TimerEvent: {}
+[21.573262] (-) TimerEvent: {}
+[21.673617] (-) TimerEvent: {}
+[21.774003] (-) TimerEvent: {}
+[21.874355] (-) TimerEvent: {}
+[21.974736] (-) TimerEvent: {}
+[22.075154] (-) TimerEvent: {}
+[22.175514] (-) TimerEvent: {}
+[22.275908] (-) TimerEvent: {}
+[22.358104] (robot_control) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable movement\x1b[0m\n'}
+[22.376003] (-) TimerEvent: {}
+[22.476306] (-) TimerEvent: {}
+[22.576713] (-) TimerEvent: {}
+[22.615087] (robot_control) StdoutLine: {'line': b'[100%] Built target movement\n'}
+[22.633011] (robot_control) CommandEnded: {'returncode': 0}
+[22.634331] (robot_control) JobProgress: {'identifier': 'robot_control', 'progress': 'install'}
+[22.649538] (robot_control) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/build/robot_control'], 'cwd': '/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/build/robot_control', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'diogo', 'LC_TIME': 'pt_BR.UTF-8', 'FONTCONFIG_PATH': '/etc/fonts', 'GIO_MODULE_DIR': '/home/diogo/snap/code/common/.cache/gio-modules', 'XDG_SESSION_TYPE': 'wayland', 'GIT_ASKPASS': '/snap/code/268/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'GTK_EXE_PREFIX_VSCODE_SNAP_ORIG': '', 'GDK_BACKEND_VSCODE_SNAP_ORIG': '', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/diogo', 'CHROME_DESKTOP': 'code_code.desktop', 'LOCPATH_VSCODE_SNAP_ORIG': '', 'OLDPWD': '/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws', 'TERM_PROGRAM_VERSION': '1.141.0', 'DESKTOP_SESSION': 'ubuntu', 'GTK_PATH': '/snap/code/268/usr/lib/x86_64-linux-gnu/gtk-3.0', 'GTK_IM_MODULE_FILE': '/home/diogo/snap/code/common/.cache/immodules/immodules.cache', 'GIO_LAUNCHED_DESKTOP_FILE': '/var/lib/snapd/desktop/applications/code_code.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'GSETTINGS_SCHEMA_DIR_VSCODE_SNAP_ORIG': '', 'VSCODE_GIT_ASKPASS_MAIN': '/snap/code/268/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'LC_MONETARY': 'pt_BR.UTF-8', 'VSCODE_GIT_ASKPASS_NODE': '/snap/code/268/usr/share/code/code', 'MANAGERPID': '2254', 'LC_CTYPE': 'pt_BR.UTF-8', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'SYSTEMD_EXEC_PID': '2524', 'BUNDLED_DEBUGPY_PATH': '/home/diogo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy', 'IM_CONFIG_CHECK_ENV': '1', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '4683', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'diogo', 'JOURNAL_STREAM': '8:22733', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_CONFIG_DIRS_VSCODE_SNAP_ORIG': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'XDG_DATA_DIRS_VSCODE_SNAP_ORIG': '/usr/share/ubuntu:/usr/share/gnome:/home/diogo/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'USERNAME': 'diogo', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'FC_FONTATIONS': '1', 'PATH': '/opt/ros/jazzy/bin:/home/diogo/.local/bin:/home/diogo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/diogo/.platformio/penv/bin:/home/diogo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts:/home/diogo/.platformio/penv/bin', 'SESSION_MANAGER': 'local/pcdodiogo:@/tmp/.ICE-unix/2482,unix/pcdodiogo:/tmp/.ICE-unix/2482', 'GTK_EXE_PREFIX': '/snap/code/268/usr', 'INVOCATION_ID': '2d37c13c343a45a8b3404794e6c58109', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'pt_BR.UTF-8', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LOCPATH': '/snap/code/268/usr/lib/locale', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/diogo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-f3f7ddb4bf8e14fe.txt', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'PYTHONSTARTUP': '/home/diogo/.config/Code/User/workspaceStorage/bb2c9a91c62374301cba5d92a4ccc28c/ms-python.python/pythonrc.py', 'LC_TELEPHONE': 'pt_BR.UTF-8', 'GIO_MODULE_DIR_VSCODE_SNAP_ORIG': '', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.UMD6W3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-b99a863fef.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'GSETTINGS_SCHEMA_DIR': '/home/diogo/snap/code/268/.local/share/glib-2.0/schemas', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LC_NAME': 'pt_BR.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GTK_PATH_VSCODE_SNAP_ORIG': '', 'FONTCONFIG_FILE': '/etc/fonts/fonts.conf', 'GTK_IM_MODULE_FILE_VSCODE_SNAP_ORIG': '', 'LC_MEASUREMENT': 'pt_BR.UTF-8', 'GJS_DEBUG_OUTPUT': 'stderr', 'LC_IDENTIFICATION': 'pt_BR.UTF-8', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/build/robot_control', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/home/diogo/snap/code/268/.local/share:/home/diogo/snap/code/268:/snap/code/268/usr/share:/usr/share/ubuntu:/usr/share/gnome:/home/diogo/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/opt/gz_math_vendor/lib/python:/opt/ros/jazzy/lib/python3.12/site-packages', 'LC_NUMERIC': 'pt_BR.UTF-8', 'LC_PAPER': 'pt_BR.UTF-8', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[22.664141] (robot_control) StdoutLine: {'line': b'-- Install configuration: "Release"\n'}
+[22.664463] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/ament_index/resource_index/rosidl_interfaces/robot_control\n'}
+[22.664598] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/msg/I2cData.json\n'}
+[22.664713] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/msg/UARTData.json\n'}
+[22.665089] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/msg/VelocityData.json\n'}
+[22.665401] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control\n'}
+[22.665507] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg\n'}
+[22.665639] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/velocity_data.h\n'}
+[22.665759] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail\n'}
+[22.665874] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__type_support.c\n'}
+[22.665952] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__type_support.c\n'}
+[22.666032] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__type_support.h\n'}
+[22.666106] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__functions.c\n'}
+[22.666209] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__struct.h\n'}
+[22.666316] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__type_support.c\n'}
+[22.666396] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__description.c\n'}
+[22.666498] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__description.c\n'}
+[22.666652] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__struct.h\n'}
+[22.666861] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__struct.h\n'}
+[22.667026] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__functions.h\n'}
+[22.667105] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__functions.c\n'}
+[22.667268] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__type_support.h\n'}
+[22.667375] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__functions.c\n'}
+[22.667460] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__type_support.h\n'}
+[22.667566] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__functions.h\n'}
+[22.667674] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__functions.h\n'}
+[22.667810] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__description.c\n'}
+[22.667890] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/uart_data.h\n'}
+[22.667989] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/i2c_data.h\n'}
+[22.668090] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/rosidl_generator_c__visibility_control.h\n'}
+[22.668264] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/environment/library_path.sh\n'}
+[22.668415] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/environment/library_path.dsv\n'}
+[22.668572] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_generator_c.so\n'}
+[22.669257] (robot_control) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_generator_c.so" to ""\n'}
+[22.669459] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control\n'}
+[22.669570] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg\n'}
+[22.669659] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[22.669760] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail\n'}
+[22.669882] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__rosidl_typesupport_fastrtps_c.h\n'}
+[22.669962] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__rosidl_typesupport_fastrtps_c.h\n'}
+[22.670038] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__rosidl_typesupport_fastrtps_c.h\n'}
+[22.670166] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_typesupport_fastrtps_c.so\n'}
+[22.670613] (robot_control) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[22.670865] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control\n'}
+[22.670973] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg\n'}
+[22.671059] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[22.671141] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/velocity_data.hpp\n'}
+[22.671273] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail\n'}
+[22.671387] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__struct.hpp\n'}
+[22.671470] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__type_support.hpp\n'}
+[22.671550] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__struct.hpp\n'}
+[22.671652] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__traits.hpp\n'}
+[22.671829] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__traits.hpp\n'}
+[22.671936] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__type_support.hpp\n'}
+[22.672013] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__builder.hpp\n'}
+[22.672086] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__builder.hpp\n'}
+[22.672205] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__traits.hpp\n'}
+[22.672335] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__struct.hpp\n'}
+[22.672409] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__builder.hpp\n'}
+[22.672484] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__type_support.hpp\n'}
+[22.672590] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/i2c_data.hpp\n'}
+[22.672667] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/uart_data.hpp\n'}
+[22.672785] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control\n'}
+[22.672864] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg\n'}
+[22.672934] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[22.673023] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail\n'}
+[22.673120] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/dds_fastrtps\n'}
+[22.673192] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[22.673283] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[22.673375] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[22.673466] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_typesupport_fastrtps_cpp.so\n'}
+[22.673810] (robot_control) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[22.673934] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control\n'}
+[22.674007] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg\n'}
+[22.674104] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[22.674184] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail\n'}
+[22.674272] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__type_support.c\n'}
+[22.674379] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__type_support.c\n'}
+[22.674494] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__type_support.c\n'}
+[22.674613] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__rosidl_typesupport_introspection_c.h\n'}
+[22.674739] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__rosidl_typesupport_introspection_c.h\n'}
+[22.674894] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__rosidl_typesupport_introspection_c.h\n'}
+[22.675043] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_typesupport_introspection_c.so\n'}
+[22.675284] (robot_control) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_typesupport_introspection_c.so" to ""\n'}
+[22.675367] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_typesupport_c.so\n'}
+[22.675620] (robot_control) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_typesupport_c.so" to ""\n'}
+[22.675711] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control\n'}
+[22.675806] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg\n'}
+[22.675908] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail\n'}
+[22.675971] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__type_support.cpp\n'}
+[22.676060] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__type_support.cpp\n'}
+[22.676166] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__type_support.cpp\n'}
+[22.676257] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/i2c_data__rosidl_typesupport_introspection_cpp.hpp\n'}
+[22.676337] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/uart_data__rosidl_typesupport_introspection_cpp.hpp\n'}
+[22.676421] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/include/robot_control/robot_control/msg/detail/velocity_data__rosidl_typesupport_introspection_cpp.hpp\n'}
+[22.676582] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_typesupport_introspection_cpp.so\n'}
+[22.676709] (-) TimerEvent: {}
+[22.676953] (robot_control) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[22.677050] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_typesupport_cpp.so\n'}
+[22.677381] (robot_control) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_typesupport_cpp.so" to ""\n'}
+[22.677444] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/environment/pythonpath.sh\n'}
+[22.677532] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/environment/pythonpath.dsv\n'}
+[22.677629] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control-0.0.0-py3.12.egg-info\n'}
+[22.677717] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control-0.0.0-py3.12.egg-info/PKG-INFO\n'}
+[22.677859] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control-0.0.0-py3.12.egg-info/SOURCES.txt\n'}
+[22.677935] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control-0.0.0-py3.12.egg-info/dependency_links.txt\n'}
+[22.678008] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control-0.0.0-py3.12.egg-info/top_level.txt\n'}
+[22.678121] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control\n'}
+[22.678191] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/robot_control_s__rosidl_typesupport_fastrtps_c.so\n'}
+[22.678301] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/robot_control_s__rosidl_typesupport_c.so\n'}
+[22.678406] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/__init__.py\n'}
+[22.678495] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/robot_control_s__rosidl_typesupport_introspection_c.so\n'}
+[22.678603] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/_robot_control_s.ep.rosidl_typesupport_c.c\n'}
+[22.678711] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/_robot_control_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[22.678820] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/msg\n'}
+[22.678894] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/msg/_velocity_data.py\n'}
+[22.678985] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/msg/_i2c_data_s.c\n'}
+[22.679082] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/msg/__init__.py\n'}
+[22.679174] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/msg/_uart_data.py\n'}
+[22.679272] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/msg/_velocity_data_s.c\n'}
+[22.679367] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/msg/_i2c_data.py\n'}
+[22.679463] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/msg/_uart_data_s.c\n'}
+[22.679561] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/_robot_control_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[22.745302] (robot_control) StdoutLine: {'line': b"Listing '/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control'...\n"}
+[22.745486] (robot_control) StdoutLine: {'line': b"Compiling '/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/__init__.py'...\n"}
+[22.745556] (robot_control) StdoutLine: {'line': b"Listing '/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/msg'...\n"}
+[22.745619] (robot_control) StdoutLine: {'line': b"Compiling '/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/msg/__init__.py'...\n"}
+[22.745678] (robot_control) StdoutLine: {'line': b"Compiling '/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/msg/_i2c_data.py'...\n"}
+[22.745755] (robot_control) StdoutLine: {'line': b"Compiling '/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/msg/_uart_data.py'...\n"}
+[22.745825] (robot_control) StdoutLine: {'line': b"Compiling '/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/msg/_velocity_data.py'...\n"}
+[22.752900] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/robot_control_s__rosidl_typesupport_fastrtps_c.so\n'}
+[22.753225] (robot_control) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/robot_control_s__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[22.753423] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/robot_control_s__rosidl_typesupport_introspection_c.so\n'}
+[22.753514] (robot_control) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/robot_control_s__rosidl_typesupport_introspection_c.so" to ""\n'}
+[22.753689] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/robot_control_s__rosidl_typesupport_c.so\n'}
+[22.754269] (robot_control) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/python3.12/site-packages/robot_control/robot_control_s__rosidl_typesupport_c.so" to ""\n'}
+[22.754431] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_generator_py.so\n'}
+[22.754589] (robot_control) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/librobot_control__rosidl_generator_py.so" to ""\n'}
+[22.754685] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/rust\n'}
+[22.754783] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/rust/build.rs\n'}
+[22.754851] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/rust/Cargo.toml\n'}
+[22.754937] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/rust/src\n'}
+[22.754996] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/rust/src/lib.rs\n'}
+[22.755071] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/rust/src/msg.rs\n'}
+[22.755152] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/rust/src/msg\n'}
+[22.755231] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/rust/src/msg/rmw.rs\n'}
+[22.755372] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/msg/I2cData.idl\n'}
+[22.755505] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/msg/UARTData.idl\n'}
+[22.755631] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/msg/VelocityData.idl\n'}
+[22.755709] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/msg/I2cData.msg\n'}
+[22.755836] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/msg/UARTData.msg\n'}
+[22.755951] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/msg/VelocityData.msg\n'}
+[22.756220] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/robot_control/movement\n'}
+[22.760014] (robot_control) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/robot_control/movement" to ""\n'}
+[22.760291] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/robot_control/i2c_master.py\n'}
+[22.760546] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/robot_control/uart_comm.py\n'}
+[22.760748] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/lib/robot_control/imu.py\n'}
+[22.761207] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/launch\n'}
+[22.761353] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/launch/hw_interface.launch\n'}
+[22.761451] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/launch/joy_teleop.launch\n'}
+[22.761572] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/config\n'}
+[22.761903] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/config/ctrl_gains.yaml\n'}
+[22.762074] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/config/joy.yaml\n'}
+[22.762301] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/config/wheel_control.yaml\n'}
+[22.762463] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/config/fourbar.yaml\n'}
+[22.762674] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/config/ctrl_ackermann_steering_controller.yaml\n'}
+[22.763044] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/config/ctrl_joint_state_publisher.yaml\n'}
+[22.763230] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/config/ctrl_steer_bot_hardware_gazebo.yaml\n'}
+[22.763462] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description\n'}
+[22.763667] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf\n'}
+[22.763757] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf/Ackermann_robot.gazebo.xml\n'}
+[22.764014] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf/transmissions.xacro\n'}
+[22.764216] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf/Ackermann_robot.urdf.xacro\n'}
+[22.764368] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf/torno_arckermann_joints.xacro\n'}
+[22.764656] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf/wheels_links.xacro\n'}
+[22.765019] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf/Ackermann_robot.urdf\n'}
+[22.765224] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf/lidar.xacro\n'}
+[22.765412] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf/Ackermann_robo.urdf\n'}
+[22.765656] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf/torno_arckermann_links.xacro\n'}
+[22.766023] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf/imu.xacro\n'}
+[22.766242] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf/Ackermann_robot.gv\n'}
+[22.766422] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf/wheels_joints.xacro\n'}
+[22.766711] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf/base.xacro\n'}
+[22.767118] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf/Ackermann_robot.pdf\n'}
+[22.767383] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/rviz\n'}
+[22.767511] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/rviz/urdf.rviz\n'}
+[22.767868] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/rviz/rviz_test_optim.rviz\n'}
+[22.768108] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/config\n'}
+[22.768278] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/config/joints.yaml\n'}
+[22.768451] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf_teste\n'}
+[22.768593] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf_teste/materials.xacro\n'}
+[22.769305] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf_teste/steer_bot.urdf.xacro\n'}
+[22.769599] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf_teste/wheel.xacro\n'}
+[22.769734] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf_teste/lidar.xacro\n'}
+[22.769889] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf_teste/imu.xacro\n'}
+[22.770005] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/urdf_teste/inertials.xacro\n'}
+[22.770170] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/meshes\n'}
+[22.770311] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/meshes/stl\n'}
+[22.770451] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/meshes/stl/encaixe_front_left.stl\n'}
+[22.770550] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/meshes/stl/encaixe_front_right.stl\n'}
+[22.770675] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/meshes/stl/Base.stl\n'}
+[22.774174] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/meshes/stl/wheel_rear_right.stl\n'}
+[22.774440] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/meshes/stl/wheel_rear_left.stl\n'}
+[22.774586] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/meshes/stl/wheel_front_left.stl\n'}
+[22.774932] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/robot_description/meshes/stl/wheel_front_right.stl\n'}
+[22.775447] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/ament_index/resource_index/package_run_dependencies/robot_control\n'}
+[22.775684] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/ament_index/resource_index/parent_prefix_path/robot_control\n'}
+[22.775855] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/environment/ament_prefix_path.sh\n'}
+[22.776003] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/environment/ament_prefix_path.dsv\n'}
+[22.776126] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/environment/path.sh\n'}
+[22.776251] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/environment/path.dsv\n'}
+[22.776435] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/local_setup.bash\n'}
+[22.776562] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/local_setup.sh\n'}
+[22.776778] (-) TimerEvent: {}
+[22.776942] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/local_setup.zsh\n'}
+[22.777155] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/local_setup.dsv\n'}
+[22.777325] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/package.dsv\n'}
+[22.777460] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/ament_index/resource_index/packages/robot_control\n'}
+[22.777610] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/export_robot_control__rosidl_generator_cExport.cmake\n'}
+[22.777935] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/export_robot_control__rosidl_generator_cExport-release.cmake\n'}
+[22.778082] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/export_robot_control__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[22.778301] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/export_robot_control__rosidl_typesupport_fastrtps_cExport-release.cmake\n'}
+[22.778462] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/export_robot_control__rosidl_generator_cppExport.cmake\n'}
+[22.778589] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/export_robot_control__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[22.778740] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/export_robot_control__rosidl_typesupport_fastrtps_cppExport-release.cmake\n'}
+[22.778942] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/robot_control__rosidl_typesupport_introspection_cExport.cmake\n'}
+[22.779085] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/robot_control__rosidl_typesupport_introspection_cExport-release.cmake\n'}
+[22.779329] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/robot_control__rosidl_typesupport_cExport.cmake\n'}
+[22.779497] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/robot_control__rosidl_typesupport_cExport-release.cmake\n'}
+[22.779628] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/robot_control__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[22.779849] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/robot_control__rosidl_typesupport_introspection_cppExport-release.cmake\n'}
+[22.780010] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/robot_control__rosidl_typesupport_cppExport.cmake\n'}
+[22.780158] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/robot_control__rosidl_typesupport_cppExport-release.cmake\n'}
+[22.780323] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/export_robot_control__rosidl_generator_pyExport.cmake\n'}
+[22.780437] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/export_robot_control__rosidl_generator_pyExport-release.cmake\n'}
+[22.780604] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/rosidl_cmake-extras.cmake\n'}
+[22.780752] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[22.780917] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[22.781065] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[22.781211] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[22.781359] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[22.781516] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[22.781663] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/rosidl_cmake_aggregate_target-extras.cmake\n'}
+[22.781832] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/robot_controlConfig.cmake\n'}
+[22.781962] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/cmake/robot_controlConfig-version.cmake\n'}
+[22.782101] (robot_control) StdoutLine: {'line': b'-- Installing: /home/diogo/Documents/Github/Trekking_2026/Jetson/ros2_ws/install/robot_control/share/robot_control/package.xml\n'}
+[22.785497] (robot_control) CommandEnded: {'returncode': 0}
+[22.814111] (robot_control) JobEnded: {'identifier': 'robot_control', 'rc': 0}
+[22.814955] (-) EventReactorShutdown: {}
