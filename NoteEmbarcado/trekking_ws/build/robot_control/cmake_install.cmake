@@ -1,8 +1,8 @@
-# Install script for directory: /home/ascachetti/Documents/trekking_ws/src/robot_control
+# Install script for directory: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_control
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ascachetti/Documents/trekking_ws/install/robot_control")
+  set(CMAKE_INSTALL_PREFIX "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -43,11 +43,15 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/ascachetti/Documents/trekking_ws/build/robot_control/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/robot_control")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/robot_control" TYPE PROGRAM FILES "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_control/scripts/movement.py")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/ascachetti/Documents/trekking_ws/build/robot_control/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/robot_control")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_control/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/robot_control")
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_control/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/robot_control")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -55,7 +59,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_control/environment" TYPE FILE FILES "/home/ascachetti/Documents/trekking_ws/build/robot_control/ament_cmake_environment_hooks/ament_prefix_path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_control/environment" TYPE FILE FILES "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_control/ament_cmake_environment_hooks/ament_prefix_path.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -63,42 +67,42 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_control/environment" TYPE FILE FILES "/home/ascachetti/Documents/trekking_ws/build/robot_control/ament_cmake_environment_hooks/path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_control/environment" TYPE FILE FILES "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_control/ament_cmake_environment_hooks/path.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_control" TYPE FILE FILES "/home/ascachetti/Documents/trekking_ws/build/robot_control/ament_cmake_environment_hooks/local_setup.bash")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_control" TYPE FILE FILES "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_control/ament_cmake_environment_hooks/local_setup.bash")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_control" TYPE FILE FILES "/home/ascachetti/Documents/trekking_ws/build/robot_control/ament_cmake_environment_hooks/local_setup.sh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_control" TYPE FILE FILES "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_control/ament_cmake_environment_hooks/local_setup.sh")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_control" TYPE FILE FILES "/home/ascachetti/Documents/trekking_ws/build/robot_control/ament_cmake_environment_hooks/local_setup.zsh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_control" TYPE FILE FILES "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_control/ament_cmake_environment_hooks/local_setup.zsh")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_control" TYPE FILE FILES "/home/ascachetti/Documents/trekking_ws/build/robot_control/ament_cmake_environment_hooks/local_setup.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_control" TYPE FILE FILES "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_control/ament_cmake_environment_hooks/local_setup.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_control" TYPE FILE FILES "/home/ascachetti/Documents/trekking_ws/build/robot_control/ament_cmake_environment_hooks/package.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_control" TYPE FILE FILES "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_control/ament_cmake_environment_hooks/package.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/ascachetti/Documents/trekking_ws/build/robot_control/ament_cmake_index/share/ament_index/resource_index/packages/robot_control")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_control/ament_cmake_index/share/ament_index/resource_index/packages/robot_control")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_control/cmake" TYPE FILE FILES
-    "/home/ascachetti/Documents/trekking_ws/build/robot_control/ament_cmake_core/robot_controlConfig.cmake"
-    "/home/ascachetti/Documents/trekking_ws/build/robot_control/ament_cmake_core/robot_controlConfig-version.cmake"
+    "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_control/ament_cmake_core/robot_controlConfig.cmake"
+    "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_control/ament_cmake_core/robot_controlConfig-version.cmake"
     )
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_control" TYPE FILE FILES "/home/ascachetti/Documents/trekking_ws/src/robot_control/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_control" TYPE FILE FILES "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_control/package.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -109,5 +113,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ascachetti/Documents/trekking_ws/build/robot_control/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_control/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -1,1 +1,1 @@
-rclcpp;hardware_interface;pluginlib;rclcpp_lifecycle;ament_lint_auto;ament_lint_common
+rclpy;geometry_msgs;nav_msgs;std_msgs

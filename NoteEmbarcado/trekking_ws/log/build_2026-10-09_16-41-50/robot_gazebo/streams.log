@@ -1,0 +1,29 @@
+[0.012s] Invoking command in '/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_gazebo -DCMAKE_INSTALL_PREFIX=/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo
+[0.022s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.240s] -- Found ros_gz_sim: 1.0.24 (/opt/ros/jazzy/share/ros_gz_sim/cmake)
+[0.263s] -- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.274s] -- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.284s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.295s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.343s] -- Found rmw_implementation_cmake: 7.3.4 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.345s] -- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.401s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.570s] [31mCMake Error at CMakeLists.txt:11 (find_package):
+[0.571s]   By not providing "Findros_gz_bridge.cmake" in CMAKE_MODULE_PATH this
+[0.571s]   project has asked CMake to find a package configuration file provided by
+[0.571s]   "ros_gz_bridge", but CMake did not find one.
+[0.571s] 
+[0.571s]   Could not find a package configuration file provided by "ros_gz_bridge"
+[0.571s]   with any of the following names:
+[0.571s] 
+[0.571s]     ros_gz_bridgeConfig.cmake
+[0.571s]     ros_gz_bridge-config.cmake
+[0.571s] 
+[0.571s]   Add the installation prefix of "ros_gz_bridge" to CMAKE_PREFIX_PATH or set
+[0.571s]   "ros_gz_bridge_DIR" to a directory containing one of the above files.  If
+[0.571s]   "ros_gz_bridge" provides a separate development package or SDK, be sure it
+[0.571s]   has been installed.
+[0.571s] 
+[0.571s] [0m
+[0.571s] -- Configuring incomplete, errors occurred!
+[0.576s] Invoked command in '/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_gazebo' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_gazebo -DCMAKE_INSTALL_PREFIX=/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo

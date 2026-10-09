@@ -1,0 +1,1 @@
+Invoking command in '/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces -- -j16 -l16

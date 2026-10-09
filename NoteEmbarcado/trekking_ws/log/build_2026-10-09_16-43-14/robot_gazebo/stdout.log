@@ -1,0 +1,84 @@
+-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found ros_gz_sim: 1.0.24 (/opt/ros/jazzy/share/ros_gz_sim/cmake)
+-- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.3.4 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found ros_gz_bridge: 1.0.24 (/opt/ros/jazzy/share/ros_gz_bridge/cmake)
+-- Looking for gz-msgs10 -- found version 10.4.0
+-- Searching for dependencies of gz-msgs10
+-- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.21.12") 
+-- Looking for gz-utils2 -- found version 2.2.1
+-- Searching for dependencies of gz-utils2
+-- Looking for gz-math7 -- found version 7.7.0
+-- Searching for dependencies of gz-math7
+-- Looking for gz-utils2 -- found version 2.2.1
+-- Checking for module 'tinyxml2'
+--   Found tinyxml2, version 10.0.0
+-- Looking for gz-transport13 -- found version 13.6.0
+-- Searching for dependencies of gz-transport13
+-- Config-file not installed for ZeroMQ -- checking for pkg-config
+-- Checking for module 'libzmq >= 4'
+--   Found libzmq, version 4.3.5
+-- Found ZeroMQ: TRUE (Required is at least version "4") 
+-- Checking for module 'uuid'
+--   Found uuid, version 2.39.3
+-- Found UUID: TRUE  
+-- Looking for gz-utils2 -- found version 2.2.1
+-- Searching for dependencies of gz-utils2
+-- Searching for <gz-utils2> component [cli]
+-- Looking for gz-utils2-cli -- found version 2.2.1
+-- Searching for dependencies of gz-utils2-cli
+-- Looking for gz-msgs10 -- found version 10.4.0
+-- Found ament_lint_auto: 0.17.5 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Configured 'flake8' exclude dirs and/or files: 
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done (1.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_gazebo
+-- Install configuration: ""
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/launch
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/launch/environment.launch.py
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/launch/master.launch.py
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/launch/spawn_robot.launch.py
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/worlds
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/worlds/world.sdf
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/config
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/config/rviz.rviz
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/src
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/src/best.pt
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/src/vision_node.py
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/src/best_openvino_model
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/src/best_openvino_model/best.bin
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/src/best_openvino_model/metadata.yaml
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/src/best_openvino_model/best.xml
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/src/twist2ackermann.py
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/src/perception_node.py
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/src/uart_comm.py
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/src/odom_node.py
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/lib/robot_gazebo/vision_node.py
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/lib/robot_gazebo/perception_node.py
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/lib/robot_gazebo/twist2ackermann.py
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/lib/robot_gazebo/odom_node.py
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/lib/robot_gazebo/uart_comm.py
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/ament_index/resource_index/package_run_dependencies/robot_gazebo
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/ament_index/resource_index/parent_prefix_path/robot_gazebo
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/environment/ament_prefix_path.sh
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/environment/ament_prefix_path.dsv
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/environment/path.sh
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/environment/path.dsv
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/local_setup.bash
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/local_setup.sh
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/local_setup.zsh
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/local_setup.dsv
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/package.dsv
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/ament_index/resource_index/packages/robot_gazebo
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/cmake/robot_gazeboConfig.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/cmake/robot_gazeboConfig-version.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo/share/robot_gazebo/package.xml

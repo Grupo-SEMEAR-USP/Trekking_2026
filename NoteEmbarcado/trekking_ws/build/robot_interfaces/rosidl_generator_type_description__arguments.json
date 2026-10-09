@@ -1,0 +1,8 @@
+{
+  "package_name": "robot_interfaces",
+  "output_dir": "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces/rosidl_generator_type_description/robot_interfaces",
+  "idl_tuples": [
+    "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces/rosidl_adapter/robot_interfaces:msg/UARTData.idl",
+    "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces/rosidl_adapter/robot_interfaces:msg/VelocityData.idl"
+  ]
+}

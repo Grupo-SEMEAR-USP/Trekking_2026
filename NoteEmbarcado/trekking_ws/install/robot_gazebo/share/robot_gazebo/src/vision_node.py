@@ -5,9 +5,13 @@ import cv2
 from ultralytics import YOLO
 import pyrealsense2 as realsense
 import numpy as np
+
 import rclpy
 from rclpy.node import Node
+
 from geometry_msgs.msg import PolygonStamped, Point32
+from sensor_msgs.msg import Imu
+
 from ament_index_python.packages import get_package_share_directory
 
 class VisionNode(Node):
@@ -16,7 +20,8 @@ class VisionNode(Node):
         super().__init__('vision')
 
         pkg_path  = get_package_share_directory('robot_gazebo')
-        model_path = os.path.join(pkg_path, 'best.pt')
+
+        model_path = os.path.join(pkg_path, 'best_openvino_model')
 
         self.declare_parameter('cam_type', 'cv2')
         self.cam_type = self.get_parameter('cam_type').get_parameter_value().string_value
@@ -30,10 +35,13 @@ class VisionNode(Node):
 
             self.pipeline = realsense.pipeline()
             config = realsense.config()
-            config.enable_stream(realsense.stream.depth, 640, 480, realsense.format.z16, 30)
-            config.enable_stream(realsense.stream.color, 640, 480, realsense.format.bgr8, 30)
+
+            config.enable_stream(realsense.stream.depth, 424, 240, realsense.format.z16, 15)
+            config.enable_stream(realsense.stream.color, 424, 240, realsense.format.bgr8, 15)
 
             profile = self.pipeline.start(config)
+
+            self.imu_pub = self.create_publisher(Imu, '/imu/data', 10)
 
             align_to = realsense.stream.color
             self.align = realsense.align(align_to)
@@ -57,6 +65,28 @@ class VisionNode(Node):
         cone_vector = PolygonStamped()
 
         frame = self.pipeline.wait_for_frames()
+
+        accelerometer_frame = frame.first_or_default(realsense.stream.accel)
+        gyroscope_frame = frame.first_or_default(realsense.stream.gyro)
+
+        if accelerometer_frame and gyroscope_frame:
+
+            accel_data = accelerometer_frame.as_motion_frame().get_motion_data()
+            gyro_data = gyroscope_frame.as_motion_frame().get_motion_data()
+
+            imu_msg = Imu()
+            imu_msg.header.stamp = self.get_clock().now().to_msg()
+            imu_msg.header.frame_id = "camera_imu_link"
+
+            imu_msg.linear_acceleration.x = accel_data.x
+            imu_msg.linear_acceleration.y = accel_data.y
+            imu_msg.linear_acceleration.z = accel_data.z
+
+            imu_msg.angular_velocity.x = gyro_data.x
+            imu_msg.angular_velocity.y = gyro_data.y
+            imu_msg.angular_velocity.z = gyro_data.z
+
+            self.imu_pub.publish(imu_msg)
 
         aligned_frames = self.align.process(frame)
         depth_frame = aligned_frames.get_depth_frame()

@@ -1,0 +1,267 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-de5e8012f28a438668e4.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				},
+				{
+					"build" : "robot_interfaces__py",
+					"jsonFile" : "directory-robot_interfaces__py-db7c331a22530318d740.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces/robot_interfaces__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "robot_interfaces__rs",
+					"jsonFile" : "directory-robot_interfaces__rs-359b604897b8b44d316e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces/robot_interfaces__rs",
+					"targetIndexes" : 
+					[
+						14
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "robot_interfaces",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_robot_interfaces_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_robot_interfaces_egg-4779450ee717d0b2da5b.json",
+					"name" : "ament_cmake_python_build_robot_interfaces_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_robot_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_robot_interfaces-3be47bf99c58db7a60e7.json",
+					"name" : "ament_cmake_python_copy_robot_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_interfaces-b8baa1786e70273a408f.json",
+					"name" : "robot_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_interfaces__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_interfaces__cpp-c55d447ab28c72537047.json",
+					"name" : "robot_interfaces__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "robot_interfaces__py::@80777fe7b33b24fbec8d",
+					"jsonFile" : "target-robot_interfaces__py-96ed7023692022a6b0a7.json",
+					"name" : "robot_interfaces__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_interfaces__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_interfaces__rosidl_generator_c-b018b80c9caab7059298.json",
+					"name" : "robot_interfaces__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_interfaces__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_interfaces__rosidl_generator_py-b64abbe5d4ca3a1d3ada.json",
+					"name" : "robot_interfaces__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_interfaces__rosidl_generator_type_description::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_interfaces__rosidl_generator_type_description-2d90f46311f0dded2e56.json",
+					"name" : "robot_interfaces__rosidl_generator_type_description",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_interfaces__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_interfaces__rosidl_typesupport_c-e6ddc89c252ac2d332e1.json",
+					"name" : "robot_interfaces__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_interfaces__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_interfaces__rosidl_typesupport_cpp-58dd252730a535011ec3.json",
+					"name" : "robot_interfaces__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_interfaces__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_interfaces__rosidl_typesupport_fastrtps_c-12eb85181c1b0ffd4bf4.json",
+					"name" : "robot_interfaces__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_interfaces__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_interfaces__rosidl_typesupport_fastrtps_cpp-075e21985ae8f6bad74c.json",
+					"name" : "robot_interfaces__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_interfaces__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_interfaces__rosidl_typesupport_introspection_c-0de388caefc18e32ef4e.json",
+					"name" : "robot_interfaces__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_interfaces__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_interfaces__rosidl_typesupport_introspection_cpp-1f20d5082500e349aa5d.json",
+					"name" : "robot_interfaces__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "robot_interfaces__rs::@d574095575c1f6254f6b",
+					"jsonFile" : "target-robot_interfaces__rs-355ec45eb75a644cd90b.json",
+					"name" : "robot_interfaces__rs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_interfaces_s__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_interfaces_s__rosidl_typesupport_c-aaccd5a89db54ed35a52.json",
+					"name" : "robot_interfaces_s__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_interfaces_s__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_interfaces_s__rosidl_typesupport_fastrtps_c-f4a90915a6edac76b9ca.json",
+					"name" : "robot_interfaces_s__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_interfaces_s__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_interfaces_s__rosidl_typesupport_introspection_c-9bf0bb1d67b6f1cbf4c2.json",
+					"name" : "robot_interfaces_s__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_interfaces_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_interfaces_uninstall-b997e9641115cf1d3923.json",
+					"name" : "robot_interfaces_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-01fe7eff55ab674b7f6c.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces",
+		"source" : "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_interfaces"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

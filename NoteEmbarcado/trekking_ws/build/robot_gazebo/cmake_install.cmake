@@ -1,8 +1,8 @@
-# Install script for directory: /home/ascachetti/Documents/trekking_ws/src/robot_gazebo
+# Install script for directory: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_gazebo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ascachetti/Documents/trekking_ws/install/robot_gazebo")
+  set(CMAKE_INSTALL_PREFIX "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -44,27 +44,29 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_gazebo" TYPE DIRECTORY FILES
-    "/home/ascachetti/Documents/trekking_ws/src/robot_gazebo/launch"
-    "/home/ascachetti/Documents/trekking_ws/src/robot_gazebo/worlds"
-    "/home/ascachetti/Documents/trekking_ws/src/robot_gazebo/config"
-    "/home/ascachetti/Documents/trekking_ws/src/robot_gazebo/src"
+    "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_gazebo/launch"
+    "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_gazebo/worlds"
+    "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_gazebo/config"
+    "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_gazebo/src"
     )
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/robot_gazebo" TYPE PROGRAM FILES "/home/ascachetti/Documents/trekking_ws/src/robot_gazebo/src/vision_node.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/robot_gazebo" TYPE PROGRAM FILES
+    "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_gazebo/src/vision_node.py"
+    "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_gazebo/src/perception_node.py"
+    "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_gazebo/src/twist2ackermann.py"
+    "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_gazebo/src/odom_node.py"
+    "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_gazebo/src/uart_comm.py"
+    )
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_gazebo" TYPE FILE FILES "/home/ascachetti/Documents/trekking_ws/src/robot_gazebo/src/best.pt")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_gazebo/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/robot_gazebo")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/ascachetti/Documents/trekking_ws/build/robot_gazebo/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/robot_gazebo")
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/ascachetti/Documents/trekking_ws/build/robot_gazebo/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/robot_gazebo")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_gazebo/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/robot_gazebo")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -72,7 +74,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_gazebo/environment" TYPE FILE FILES "/home/ascachetti/Documents/trekking_ws/build/robot_gazebo/ament_cmake_environment_hooks/ament_prefix_path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_gazebo/environment" TYPE FILE FILES "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_gazebo/ament_cmake_environment_hooks/ament_prefix_path.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -80,42 +82,42 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_gazebo/environment" TYPE FILE FILES "/home/ascachetti/Documents/trekking_ws/build/robot_gazebo/ament_cmake_environment_hooks/path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_gazebo/environment" TYPE FILE FILES "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_gazebo/ament_cmake_environment_hooks/path.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_gazebo" TYPE FILE FILES "/home/ascachetti/Documents/trekking_ws/build/robot_gazebo/ament_cmake_environment_hooks/local_setup.bash")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_gazebo" TYPE FILE FILES "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_gazebo/ament_cmake_environment_hooks/local_setup.bash")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_gazebo" TYPE FILE FILES "/home/ascachetti/Documents/trekking_ws/build/robot_gazebo/ament_cmake_environment_hooks/local_setup.sh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_gazebo" TYPE FILE FILES "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_gazebo/ament_cmake_environment_hooks/local_setup.sh")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_gazebo" TYPE FILE FILES "/home/ascachetti/Documents/trekking_ws/build/robot_gazebo/ament_cmake_environment_hooks/local_setup.zsh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_gazebo" TYPE FILE FILES "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_gazebo/ament_cmake_environment_hooks/local_setup.zsh")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_gazebo" TYPE FILE FILES "/home/ascachetti/Documents/trekking_ws/build/robot_gazebo/ament_cmake_environment_hooks/local_setup.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_gazebo" TYPE FILE FILES "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_gazebo/ament_cmake_environment_hooks/local_setup.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_gazebo" TYPE FILE FILES "/home/ascachetti/Documents/trekking_ws/build/robot_gazebo/ament_cmake_environment_hooks/package.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_gazebo" TYPE FILE FILES "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_gazebo/ament_cmake_environment_hooks/package.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/ascachetti/Documents/trekking_ws/build/robot_gazebo/ament_cmake_index/share/ament_index/resource_index/packages/robot_gazebo")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_gazebo/ament_cmake_index/share/ament_index/resource_index/packages/robot_gazebo")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_gazebo/cmake" TYPE FILE FILES
-    "/home/ascachetti/Documents/trekking_ws/build/robot_gazebo/ament_cmake_core/robot_gazeboConfig.cmake"
-    "/home/ascachetti/Documents/trekking_ws/build/robot_gazebo/ament_cmake_core/robot_gazeboConfig-version.cmake"
+    "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_gazebo/ament_cmake_core/robot_gazeboConfig.cmake"
+    "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_gazebo/ament_cmake_core/robot_gazeboConfig-version.cmake"
     )
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_gazebo" TYPE FILE FILES "/home/ascachetti/Documents/trekking_ws/src/robot_gazebo/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_gazebo" TYPE FILE FILES "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_gazebo/package.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -126,5 +128,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ascachetti/Documents/trekking_ws/build/robot_gazebo/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_gazebo/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

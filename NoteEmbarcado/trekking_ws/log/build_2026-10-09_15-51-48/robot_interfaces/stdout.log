@@ -1,0 +1,71 @@
+[  4%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[  4%] [34m[1mGenerating Rust code for ROS interfaces[0m
+[  4%] Built target ament_cmake_python_copy_robot_interfaces
+running egg_info
+creating robot_interfaces.egg-info
+[  4%] Built target robot_interfaces__rosidl_generator_type_description
+writing robot_interfaces.egg-info/PKG-INFO
+writing dependency_links to robot_interfaces.egg-info/dependency_links.txt
+writing top-level names to robot_interfaces.egg-info/top_level.txt
+writing manifest file 'robot_interfaces.egg-info/SOURCES.txt'
+[  4%] Built target robot_interfaces__rs
+[  6%] [34m[1mGenerating C code for ROS interfaces[0m
+[  8%] [34m[1mGenerating C++ code for ROS interfaces[0m
+reading manifest file 'robot_interfaces.egg-info/SOURCES.txt'
+writing manifest file 'robot_interfaces.egg-info/SOURCES.txt'
+[  8%] Built target ament_cmake_python_build_robot_interfaces_egg
+[ 11%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robot_interfaces/msg/detail/uart_data__description.c.o[0m
+[ 13%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robot_interfaces/msg/detail/velocity_data__description.c.o[0m
+[ 15%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robot_interfaces/msg/detail/uart_data__type_support.c.o[0m
+[ 15%] Built target robot_interfaces__cpp
+[ 20%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robot_interfaces/msg/detail/uart_data__functions.c.o[0m
+[ 20%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robot_interfaces/msg/detail/velocity_data__functions.c.o[0m
+[ 22%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robot_interfaces/msg/detail/velocity_data__type_support.c.o[0m
+[ 24%] [32m[1mLinking C shared library librobot_interfaces__rosidl_generator_c.so[0m
+[ 24%] Built target robot_interfaces__rosidl_generator_c
+[ 28%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[ 31%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[ 31%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[ 33%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[ 35%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[ 37%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/robot_interfaces/msg/velocity_data__type_support.cpp.o[0m
+[ 42%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robot_interfaces/msg/uart_data__type_support.cpp.o[0m
+[ 44%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robot_interfaces/msg/velocity_data__type_support.cpp.o[0m
+[ 46%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/robot_interfaces/msg/uart_data__type_support.cpp.o[0m
+[ 48%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robot_interfaces/msg/detail/uart_data__type_support.cpp.o[0m
+[ 51%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robot_interfaces/msg/detail/velocity_data__type_support.cpp.o[0m
+[ 53%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robot_interfaces/msg/detail/dds_fastrtps/velocity_data__type_support.cpp.o[0m
+[ 55%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robot_interfaces/msg/detail/dds_fastrtps/uart_data__type_support.cpp.o[0m
+[ 57%] [32m[1mLinking CXX shared library librobot_interfaces__rosidl_typesupport_c.so[0m
+[ 60%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robot_interfaces/msg/detail/uart_data__type_support_c.cpp.o[0m
+[ 62%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robot_interfaces/msg/detail/velocity_data__type_support_c.cpp.o[0m
+[ 62%] Built target robot_interfaces__rosidl_typesupport_c
+[ 64%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robot_interfaces/msg/detail/velocity_data__type_support.c.o[0m
+[ 66%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robot_interfaces/msg/detail/uart_data__type_support.c.o[0m
+[ 68%] [32m[1mLinking C shared library librobot_interfaces__rosidl_typesupport_introspection_c.so[0m
+[ 68%] Built target robot_interfaces__rosidl_typesupport_introspection_c
+[ 71%] [32m[1mLinking CXX shared library librobot_interfaces__rosidl_typesupport_introspection_cpp.so[0m
+[ 73%] [32m[1mLinking CXX shared library librobot_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[ 75%] [32m[1mLinking CXX shared library librobot_interfaces__rosidl_typesupport_cpp.so[0m
+[ 75%] Built target robot_interfaces__rosidl_typesupport_introspection_cpp
+[ 75%] Built target robot_interfaces__rosidl_typesupport_fastrtps_cpp
+[ 75%] Built target robot_interfaces__rosidl_typesupport_cpp
+[ 77%] [32m[1mLinking CXX shared library librobot_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[ 77%] Built target robot_interfaces__rosidl_typesupport_fastrtps_c
+[ 77%] Built target robot_interfaces
+[ 80%] [34m[1mGenerating Python code for ROS interfaces[0m
+[ 80%] Built target robot_interfaces__py
+[ 82%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/robot_interfaces/msg/_velocity_data_s.c.o[0m
+[ 84%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/robot_interfaces/msg/_uart_data_s.c.o[0m
+[ 86%] [32m[1mLinking C shared library librobot_interfaces__rosidl_generator_py.so[0m
+[ 86%] Built target robot_interfaces__rosidl_generator_py
+[ 88%] [32mBuilding C object CMakeFiles/robot_interfaces_s__rosidl_typesupport_c.dir/rosidl_generator_py/robot_interfaces/_robot_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[ 91%] [32mBuilding C object CMakeFiles/robot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/robot_interfaces/_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[ 93%] [32mBuilding C object CMakeFiles/robot_interfaces_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/robot_interfaces/_robot_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[ 95%] [32m[1mLinking C shared module rosidl_generator_py/robot_interfaces/robot_interfaces_s__rosidl_typesupport_fastrtps_c.so[0m
+[ 97%] [32m[1mLinking C shared module rosidl_generator_py/robot_interfaces/robot_interfaces_s__rosidl_typesupport_c.so[0m
+[100%] [32m[1mLinking C shared module rosidl_generator_py/robot_interfaces/robot_interfaces_s__rosidl_typesupport_introspection_c.so[0m
+[100%] Built target robot_interfaces_s__rosidl_typesupport_fastrtps_c
+[100%] Built target robot_interfaces_s__rosidl_typesupport_c
+[100%] Built target robot_interfaces_s__rosidl_typesupport_introspection_c

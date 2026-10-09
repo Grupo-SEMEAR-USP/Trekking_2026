@@ -1,0 +1,29 @@
+[0.016s] Invoking command in '/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_control -DCMAKE_INSTALL_PREFIX=/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control
+[0.029s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.203s] -- Found rclcpp: 28.1.22 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.230s] -- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.238s] -- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.248s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.259s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.312s] -- Found rmw_implementation_cmake: 7.3.4 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.313s] -- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.380s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.453s] [31mCMake Error at CMakeLists.txt:11 (find_package):
+[0.453s]   By not providing "Findhardware_interface.cmake" in CMAKE_MODULE_PATH this
+[0.453s]   project has asked CMake to find a package configuration file provided by
+[0.453s]   "hardware_interface", but CMake did not find one.
+[0.453s] 
+[0.453s]   Could not find a package configuration file provided by
+[0.454s]   "hardware_interface" with any of the following names:
+[0.454s] 
+[0.454s]     hardware_interfaceConfig.cmake
+[0.454s]     hardware_interface-config.cmake
+[0.454s] 
+[0.454s]   Add the installation prefix of "hardware_interface" to CMAKE_PREFIX_PATH or
+[0.454s]   set "hardware_interface_DIR" to a directory containing one of the above
+[0.454s]   files.  If "hardware_interface" provides a separate development package or
+[0.454s]   SDK, be sure it has been installed.
+[0.454s] 
+[0.455s] [0m
+[0.455s] -- Configuring incomplete, errors occurred!
+[0.459s] Invoked command in '/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_control' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_control -DCMAKE_INSTALL_PREFIX=/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control

@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "robot_interfaces__rs",
+		"source" : "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces/robot_interfaces__rs"
+	}
+}
