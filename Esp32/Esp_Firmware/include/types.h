@@ -43,7 +43,7 @@
 #define SERVO_PWM_TIMER LEDC_TIMER_2//pwm channel for servo
 #define SERVO_PWM_CHANNEL LEDC_CHANNEL_2
 #define SERVO_INITIAL_ANGLE 90.0
-#define SERVO_OFFSET 0.0
+#define SERVO_OFFSET 34.0
 
 //hardware definitions for pwm 
 #define PWM_FREQ 2000
