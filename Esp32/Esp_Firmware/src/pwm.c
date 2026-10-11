@@ -3,6 +3,10 @@
 
 void pwm_motors_init(){
     //initializing pwm for left motor 
+    esp_rom_gpio_pad_select_gpio(STAND_BY);
+    ESP_ERROR_CHECK(gpio_set_level(STAND_BY, 0));
+    ESP_ERROR_CHECK(gpio_set_direction(STAND_BY, GPIO_MODE_OUTPUT));
+    
     ledc_timer_config_t timer_config = ledc_timer_config_info(timer_choose(ESQ));
     ledc_channel_config_t channel_config = ledc_channel_config_info(ENABLE_ESQ,channel_choose(ESQ),timer_choose(ESQ));
     
@@ -59,6 +63,7 @@ void pwm_motors_init(){
 
     //// Set angle to 45 degree
     //iot_servo_write_angle(LEDC_LOW_SPEED_MODE, 0, angle);
+    ESP_ERROR_CHECK(gpio_set_level(STAND_BY, 1));
 
 
 }

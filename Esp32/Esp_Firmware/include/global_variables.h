@@ -1,4 +1,8 @@
 #pragma once
+#include <stdint.h>
+
+extern int64_t global_last_command_us;
+
 extern float global_ros_angular_speed_left;
 extern float global_ros_angular_speed_right;
 

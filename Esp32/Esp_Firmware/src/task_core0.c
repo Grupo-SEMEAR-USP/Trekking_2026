@@ -1,333 +1,276 @@
+#include "types.h"
 #include "task_core0.h"
 #include "initializers.h"
 #include "sycronization.h"
 #include "global_variables.h"
-#include "driver/gpio.h"
-#include "types.h"
 #include "pwm.h"
 #include "pid.h"
 #include "esp_timer.h"
+#include "esp_err.h"
+#include "freertos/semphr.h"
 
+#define COMMAND_TIMEOUT_US 500000LL
 
-//variables for intializing encoder
-rotary_encoder_t *encoder_left;
-rotary_encoder_t *encoder_right;
+rotary_encoder_t *encoder_left = NULL;
+rotary_encoder_t *encoder_right = NULL;
 
-//variables for initializing pid
 pid_handle_v2 pid_handle_left;
 pid_handle_v2 pid_handle_right;
 
-float pid_result_duty_left;
-float pid_result_duty_right;
+static float pid_result_duty_left = 0.0f;
+static float pid_result_duty_right = 0.0f;
 
-float local_ros_angular_speed_left;
-float local_ros_angular_speed_right;
+static float local_ros_angular_speed_left = 0.0f;
+static float local_ros_angular_speed_right = 0.0f;
+static float local_servo_angle = SERVO_INITIAL_ANGLE;
 
-float local_motor_angular_speed_left; 
-float local_motor_angular_speed_right;
+static int64_t local_last_command_us = 0;
+static int64_t last_encoder_time_us = 0;
 
-int local_delta_encoder_ticks_left;
-int local_delta_encoder_ticks_right;
-    
-int count_get_real;
-int count_get_ros;
+static int count_get_real = 0;
 
-//Teste PID - speed from both wheels
-int64_t current_time = 0;
-int64_t last_time = 0;
-int64_t delta_time = 0;
+void monitor_encoder_pid_calc(void);
 
-double ang_speed_left_wheel = 0.0, ang_speed_right_wheel = 0.0;
+static void reset_pid_state(pid_handle_v2 *handle)
+{
+    handle->pid_handle->integral_err = 0.0f;
+    handle->pid_handle->previous_err1 = 0.0f;
+    handle->pid_handle->previous_err2 = 0.0f;
+    handle->pid_handle->last_output = 0.0f;
+}
 
-//variables for servo
-float local_servo_angle;
-
-float angle = 0, real_angle = 0;
-int64_t t0 = 0, tf = 0, d_t = 0;
-
-//virtual timer
-#define ROS_TIMEOUT_CYCLES 50 
-int ros_timeout_counter = 0;
-
-// ultimo angulo escrito no servo (evita reescrever o PWM a cada 10 ms sem necessidade)
-static float last_written_servo_angle = -1000.0f;
-
-//timer function to read encoder and calculate pid
-void monitor_encoder_pid_calc();
-
-//create timer handle
-//TimerHandle_t monitor_encoder_pid_calc_timer_handle;
-
-//start motor interrupt function
-//static void monitor_encoder_pid_calc_start(void *args);
-//static void monitor_encoder_pid_calc_stop(void *args);
-
-//void interrupts_init();
-
-void core0fuctions(void *params){
+void core0fuctions(void *params)
+{
+    (void)params;
 
     pwm_motors_init();
 
-    //selecting pcnt units
-    uint32_t pcnt_unit_0 = 0;
-    uint32_t pcnt_unit_1 = 1;
+    rotary_encoder_config_t config_encoder_left =
+        ROTARY_ENCODER_DEFAULT_CONFIG(
+            (rotary_encoder_dev_t)0,
+            PCNT_CHA_LEFT,
+            PCNT_CHB_LEFT
+        );
 
-    // Create rotary encoder instances
-    rotary_encoder_config_t config_encoder_left = ROTARY_ENCODER_DEFAULT_CONFIG((rotary_encoder_dev_t)pcnt_unit_0, PCNT_CHA_LEFT, PCNT_CHB_LEFT);
-    encoder_left = NULL;
-    ESP_ERROR_CHECK(rotary_encoder_new_ec11(&config_encoder_left, &encoder_left));
+    ESP_ERROR_CHECK(
+        rotary_encoder_new_ec11(
+            &config_encoder_left,
+            &encoder_left
+        )
+    );
 
-    rotary_encoder_config_t config_encoder_right = ROTARY_ENCODER_DEFAULT_CONFIG((rotary_encoder_dev_t)pcnt_unit_1, PCNT_CHA_RIGHT, PCNT_CHB_RIGHT);
-    encoder_right = NULL;
-    ESP_ERROR_CHECK(rotary_encoder_new_ec11(&config_encoder_right, &encoder_right));
+    rotary_encoder_config_t config_encoder_right =
+        ROTARY_ENCODER_DEFAULT_CONFIG(
+            (rotary_encoder_dev_t)1,
+            PCNT_CHA_RIGHT,
+            PCNT_CHB_RIGHT
+        );
 
-    // Filter out glitch (1us)
-    // ATENCAO: a unidade PCNT ja foi habilitada dentro de rotary_encoder_new_ec11(),
-    // entao o glitch filter retorna ESP_ERR_INVALID_STATE. Com ESP_ERROR_CHECK isso
-    // dava abort() e a ESP ficava reiniciando. Agora e apenas um aviso.
-    if (encoder_left->set_glitch_filter(encoder_left, 10) != ESP_OK ||
-        encoder_right->set_glitch_filter(encoder_right, 10) != ESP_OK) {
-        ESP_LOGW("TASK_0", "glitch filter dos encoders nao aplicado (ignorado)");
-    }
+    ESP_ERROR_CHECK(
+        rotary_encoder_new_ec11(
+            &config_encoder_right,
+            &encoder_right
+        )
+    );
 
-    // Start encoder
+    ESP_ERROR_CHECK(
+        encoder_left->set_glitch_filter(encoder_left, 10)
+    );
+    ESP_ERROR_CHECK(
+        encoder_right->set_glitch_filter(encoder_right, 10)
+    );
+
     ESP_ERROR_CHECK(encoder_left->start(encoder_left));
     ESP_ERROR_CHECK(encoder_right->start(encoder_right));
-    
-    //initializing pid
 
-    pid_result_duty_left = 0.0;
-    pid_result_duty_right = 0.0;
+    pid_init(&pid_handle_left, &pid_handle_right);
 
-    local_ros_angular_speed_left = 0.0;
-    local_ros_angular_speed_right = 0.0;
+    configASSERT(pid_handle_left.pid_handle != NULL);
+    configASSERT(pid_handle_right.pid_handle != NULL);
 
-    local_motor_angular_speed_left = 0.0; 
-    local_motor_angular_speed_right = 0.0;
+    pwm_actuate(ESQ, 0);
+    pwm_actuate(DIR, 0);
 
-    pid_init(&pid_handle_left,&pid_handle_right);
-    
-    //initializing servo
-    local_servo_angle = (float) SERVO_INITIAL_ANGLE;
+    xEventGroupSetBits(
+        initialization_groupEvent,
+        task0_init_done
+    );
 
-    //initializing variables for encoder and pid loop
-    local_delta_encoder_ticks_left = 0;
-    local_delta_encoder_ticks_right = 0;
+    xEventGroupWaitBits(
+        initialization_groupEvent,
+        task1_init_done,
+        pdTRUE,
+        pdTRUE,
+        portMAX_DELAY
+    );
+
+    encoder_left->reset_counter_value(encoder_left);
+    encoder_right->reset_counter_value(encoder_right);
+
+    last_encoder_time_us = esp_timer_get_time();
+
+    TickType_t last_wake_time = xTaskGetTickCount();
+
+    while (true) {
+        monitor_encoder_pid_calc();
+
+        vTaskDelayUntil(
+            &last_wake_time,
+            pdMS_TO_TICKS(PID_DELAY)
+        );
+    }
+}
+
+void monitor_encoder_pid_calc(void)
+{
+    // Copia os comandos e o horário de recepção sob o mesmo mutex.
+    if (xSemaphoreTake(xSemaphore_getRosSpeed, 0) == pdTRUE) {
+        local_ros_angular_speed_left =
+            global_ros_angular_speed_left;
+
+        local_ros_angular_speed_right =
+            global_ros_angular_speed_right;
+
+        local_servo_angle = global_ros_servo_angle;
+        local_last_command_us = global_last_command_us;
+
+        xSemaphoreGive(xSemaphore_getRosSpeed);
+    }
+
+    int64_t now_us = esp_timer_get_time();
+
+    bool command_expired =
+        local_last_command_us == 0 ||
+        now_us - local_last_command_us >= COMMAND_TIMEOUT_US;
+
+    bool command_invalid =
+        !isfinite(local_ros_angular_speed_left) ||
+        !isfinite(local_ros_angular_speed_right) ||
+        !isfinite(local_servo_angle);
+
+    bool stop_motors = command_expired || command_invalid;
+
+    // Para imediatamente, mesmo fora do ciclo de cálculo do PID.
+    if (stop_motors) {
+        local_ros_angular_speed_left = 0.0f;
+        local_ros_angular_speed_right = 0.0f;
+
+        pid_result_duty_left = 0.0f;
+        pid_result_duty_right = 0.0f;
+
+        reset_pid_state(&pid_handle_left);
+        reset_pid_state(&pid_handle_right);
+
+        pwm_actuate(ESQ, 0);
+        pwm_actuate(DIR, 0);
+    }
+
+    // Mantém a última posição do servo quando o comando expira.
+    if (!stop_motors) {
+        ESP_ERROR_CHECK(
+            iot_servo_write_angle(
+                LEDC_LOW_SPEED_MODE,
+                SERVO_PWM_CHANNEL,
+                local_servo_angle
+            )
+        );
+    }
+
+    count_get_real++;
+    global_timer_miliseconds += PID_DELAY;
+
+    if (count_get_real < ENCODER_COUNTER_WAIT_PID_OP) {
+        return;
+    }
+
+    if (xSemaphoreTake(xSemaphore_getSpeed, 0) != pdTRUE) {
+        return;
+    }
 
     count_get_real = 0;
-    count_get_ros = 0;
 
-    xEventGroupSetBits(initialization_groupEvent, task0_init_done);
-    xEventGroupWaitBits(initialization_groupEvent, task1_init_done, true, true, portMAX_DELAY);
+    int ticks_left =
+        encoder_left->get_counter_value(encoder_left);
 
-    TickType_t xLastWakeTime = xTaskGetTickCount();
+    int ticks_right =
+        encoder_right->get_counter_value(encoder_right);
 
-    while (true){
+    encoder_left->reset_counter_value(encoder_left);
+    encoder_right->reset_counter_value(encoder_right);
 
-        monitor_encoder_pid_calc();
-        vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(PID_DELAY));
-        
+    int64_t encoder_time_us = esp_timer_get_time();
+    int64_t delta_time_us =
+        encoder_time_us - last_encoder_time_us;
+
+    last_encoder_time_us = encoder_time_us;
+
+    float speed_left = 0.0f;
+    float speed_right = 0.0f;
+
+    if (delta_time_us > 0) {
+        float delta_time_s = (float)delta_time_us / 1000000.0f;
+
+        speed_left =
+            ((float)ticks_left * 2.0f * PI) /
+            ((float)ENCODER_RESOLUTION_TICKS * delta_time_s);
+
+        speed_right =
+            ((float)ticks_right * 2.0f * PI) /
+            ((float)ENCODER_RESOLUTION_TICKS * delta_time_s);
     }
 
-}
+    global_motor_angular_speed_left = speed_left;
+    global_motor_angular_speed_right = speed_right;
 
+    // Mantém as equações de odometria do projeto original.
+    global_total_x +=
+        ((double)ticks_right + (double)ticks_left) *
+        ENCODER_DISPLACEMENT * 0.5 *
+        cos(global_total_theta);
 
-void monitor_encoder_pid_calc(){
+    global_total_y +=
+        ((double)ticks_right + (double)ticks_left) *
+        ENCODER_DISPLACEMENT * 0.5 *
+        sin(global_total_theta);
 
-    if(count_get_real == ENCODER_COUNTER_WAIT_PID_OP){
-            
-        if(xSemaphoreTake(xSemaphore_getSpeed,0) == pdTRUE) {
+    global_total_theta +=
+        (((double)ticks_right - (double)ticks_left) *
+         0.5 * ENCODER_DISPLACEMENT) /
+        WHELL_REAR_SEPARATION;
 
-            local_delta_encoder_ticks_left = encoder_left->get_counter_value(encoder_left);
-            local_delta_encoder_ticks_right = encoder_right->get_counter_value(encoder_right);
+    global_time_stamp_miliseconds =
+        global_timer_miliseconds;
 
-            //printf("left: %d, right: %d\n", local_delta_encoder_ticks_left, local_delta_encoder_ticks_right);
+    if (!stop_motors) {
+        if (fabsf(local_ros_angular_speed_left) < 1e-3f) {
+            pid_handle_left.pid_handle->integral_err = 0.0f;
+        }
 
-            //reseting encoder stored ticks
-            encoder_left->reset_counter_value(encoder_left);
-            encoder_right->reset_counter_value(encoder_right);
+        if (fabsf(local_ros_angular_speed_right) < 1e-3f) {
+            pid_handle_right.pid_handle->integral_err = 0.0f;
+        }
 
-            local_motor_angular_speed_left = (((float) local_delta_encoder_ticks_left)*ENCODER_RESOLUTION);
-            local_motor_angular_speed_right = (((float) local_delta_encoder_ticks_right)*ENCODER_RESOLUTION);
-
-            current_time = esp_timer_get_time();
-            delta_time = current_time-last_time;
-            last_time = current_time;
-
-            if(delta_time > 1e-3f) {
-
-                ang_speed_left_wheel = (((local_delta_encoder_ticks_left*2*PI)/ENCODER_RESOLUTION_TICKS)/(delta_time))*1000000;
-                ang_speed_right_wheel = (((local_delta_encoder_ticks_right*2*PI)/ENCODER_RESOLUTION_TICKS)/(delta_time))*1000000;
-            
-            }
-            
-            //x and y displacements are given in milimeters
-            global_total_x +=  (double)((local_delta_encoder_ticks_right+local_delta_encoder_ticks_left)*ENCODER_DISPLACEMENT*0.5*cos(global_total_theta));
-            global_total_y +=  (double)((local_delta_encoder_ticks_right+local_delta_encoder_ticks_left)*ENCODER_DISPLACEMENT*0.5*sin(global_total_theta));
-            // printf("Setpoint(L): %lf / Real(L): %lf / Setpoint(R): %lf / Real(R): %lf\n", 
-            //     local_ros_angular_speed_left,
-            //     ang_speed_left_wheel,
-            //     local_ros_angular_speed_right,
-            //     ang_speed_right_wheel
-            // );
-            global_total_theta += (double)(((local_delta_encoder_ticks_right-local_delta_encoder_ticks_left)*0.5*ENCODER_DISPLACEMENT)/WHELL_REAR_SEPARATION);//*ANGULAR_DISPLACEMENT);
-
-            //printf("global_total_x: %lf, global_total_y: %lf, global_total_theta: %lf\n",global_total_x,global_total_y,global_total_theta);
-            //global_servo_angle = local_servo_angle;
-
-            global_time_stamp_miliseconds  = global_timer_miliseconds;
-
-            if (fabsf(local_ros_angular_speed_left) < 1e-3f) {
-            (pid_handle_left.pid_handle)->integral_err = 0.0f;
-            }
-            if (fabsf(local_ros_angular_speed_right) < 1e-3f) {
-                (pid_handle_right.pid_handle)->integral_err = 0.0f;
-            }
-
+        ESP_ERROR_CHECK(
             pid_handle_left.pid_calculate(
                 &pid_handle_left,
-                ang_speed_left_wheel/*local_motor_angular_speed_left*/,
+                speed_left,
                 local_ros_angular_speed_left,
-                &pid_result_duty_left);
+                &pid_result_duty_left
+            )
+        );
 
+        ESP_ERROR_CHECK(
             pid_handle_right.pid_calculate(
                 &pid_handle_right,
-                ang_speed_right_wheel/*local_motor_angular_speed_right*/,
+                speed_right,
                 local_ros_angular_speed_right,
-                &pid_result_duty_right);
-     
-            pwm_actuate(ESQ,pid_result_duty_left);
-            pwm_actuate(DIR,pid_result_duty_right);
+                &pid_result_duty_right
+            )
+        );
 
-            xSemaphoreGive(xSemaphore_getSpeed);
-
-            }
-
-            count_get_real = 0;
-        }
-
-        if(count_get_ros == GET_ROS_VAL_COUNTER_WAIT_PID_OP){
-            
-            if(xSemaphoreTake(xSemaphore_getRosSpeed,0) == pdTRUE) { //could be incremented in the first lock
-
-            local_ros_angular_speed_left = global_ros_angular_speed_left;
-            local_ros_angular_speed_right = global_ros_angular_speed_right;
-
-            local_servo_angle = global_ros_servo_angle;
-
-            xSemaphoreGive(xSemaphore_getRosSpeed);
-            
-            }
-
-            count_get_ros = 0;
-        }
-
-    // Failsafe baseado em TEMPO desde o ultimo frame valido recebido do ROS.
-    // (antes o contador era zerado a cada 2 ciclos mesmo sem dado novo, nunca disparava)
-    if ((xTaskGetTickCount() - global_last_ros_rx_tick) > pdMS_TO_TICKS(ROS_RX_TIMEOUT_MS)) {
-            // Se passou do tempo limite sem mensagens do ROS, força a parada
-            local_ros_angular_speed_left = 0.0f;
-            local_ros_angular_speed_right = 0.0f;
-            local_servo_angle = (float) SERVO_INITIAL_ANGLE;
+        pwm_actuate(ESQ, pid_result_duty_left);
+        pwm_actuate(DIR, pid_result_duty_right);
     }
 
-        // Protecao contra valores invalidos (NaN) vindos da serial
-        if (isnan(local_servo_angle)) local_servo_angle = (float) SERVO_INITIAL_ANGLE;
-        if (isnan(local_ros_angular_speed_left))  local_ros_angular_speed_left = 0.0f;
-        if (isnan(local_ros_angular_speed_right)) local_ros_angular_speed_right = 0.0f;
-        if (local_servo_angle < SERVO_MIN_ANGLE) local_servo_angle = SERVO_MIN_ANGLE;
-        if (local_servo_angle > SERVO_MAX_ANGLE) local_servo_angle = SERVO_MAX_ANGLE;
-
-        // Aciona o servo de direcao (antes estava comentado -> servo nunca se movia)
-        if (fabsf(local_servo_angle - last_written_servo_angle) > 0.2f) {
-            iot_servo_write_angle(LEDC_LOW_SPEED_MODE, SERVO_PWM_CHANNEL, local_servo_angle + SERVO_OFFSET);
-            last_written_servo_angle = local_servo_angle;
-        }
-        
-        //pwm_actuate(ESQ,8191.0*(7.5/34));
-        //pwm_actuate(DIR,8191.0*(22.0/37));
-        //iot_servo_write_angle(LEDC_LOW_SPEED_MODE, SERVO_PWM_CHANNEL, local_servo_angle);
-        
-        //printf("pwm_left: %f, pwm_right: %f / local_left: %f, local_right: %f\n", pid_result_duty_left, pid_result_duty_right, local_motor_angular_speed_left, local_motor_angular_speed_right);
-
-        /*
-        xSemaphoreTake(xSemaphore_getRosSpeed,portMAX_DELAY);
-        printf("Deslocamento total em X: %f e em Y: %f \n", global_total_x, global_total_y);
-        xSemaphoreGive(xSemaphore_getRosSpeed);
-        //vTaskDelay(pdMS_TO_TICKS(PID_DELAY));
-        */
-        count_get_real++;
-        count_get_ros++;
-
-        global_timer_miliseconds += PID_DELAY;
-
+    xSemaphoreGive(xSemaphore_getSpeed);
 }
-
-// static void IRAM_ATTR monitor_encoder_pid_calc_start(void *args)
-// {   
-//     //reseting encoder stored ticks
-//     encoder_left->reset_counter_value(encoder_left);
-//     encoder_right->reset_counter_value(encoder_right);
-
-//     //starting encoder and pid timer 
-
-//     xTimerStart(
-//         monitor_encoder_pid_calc_timer_handle 
-//         ,0);
-
-//     //gpio_intr_disable(START_MOTOR_INTERRUPT_PIN);
-// }
-
-// static void IRAM_ATTR monitor_encoder_pid_calc_stop(void *args)
-// {   
-//     //stopping encoder and pid timer 
-
-//     xTimerStop(
-//         monitor_encoder_pid_calc_timer_handle 
-//         ,0);
-
-//     //setting stop warning to hardware interface
-//     global_time_stamp_miliseconds = 0x7fffffff;
-//     //global_total_encoder_ticks_left = 0x7fffffff;
-//     //global_total_encoder_ticks_right = 0x7fffffff;
-
-//     //setting motors speed to zero
-//     ledc_set_duty(LEDC_LOW_SPEED_MODE, channel_choose(ESQ), 0);
-//     ledc_update_duty(LEDC_LOW_SPEED_MODE, channel_choose(ESQ));
-
-//     ledc_set_duty(LEDC_LOW_SPEED_MODE, channel_choose(DIR), 0);
-//     ledc_update_duty(LEDC_LOW_SPEED_MODE, channel_choose(DIR));
-
-//     //gpio_intr_disable(START_MOTOR_INTERRUPT_PIN);
-    
-// }
-
-// void interrupts_init(){
-//     //start interrupt pin
-//     esp_rom_gpio_pad_select_gpio(START_MOTOR_INTERRUPT_PIN);
-//     gpio_set_direction(START_MOTOR_INTERRUPT_PIN, GPIO_MODE_INPUT);
-
-//     //stop interrupt pin
-//     esp_rom_gpio_pad_select_gpio(STOP_MOTOR_INTERRUPT_PIN);
-//     gpio_set_direction(STOP_MOTOR_INTERRUPT_PIN, GPIO_MODE_INPUT);
-
-//     //disable pullup and pulldown for start pin
-//     gpio_pullup_dis(START_MOTOR_INTERRUPT_PIN);
-//     gpio_pulldown_dis(START_MOTOR_INTERRUPT_PIN);
-
-//     //disable pullup and pulldown for stop pin
-//     gpio_pullup_dis(STOP_MOTOR_INTERRUPT_PIN);
-//     gpio_pulldown_dis(STOP_MOTOR_INTERRUPT_PIN);
-
-//     //installing gpio isr interrupt
-//     gpio_install_isr_service(0);
-
-//     //install interrupt for start pin
-//     gpio_set_intr_type(START_MOTOR_INTERRUPT_PIN, GPIO_INTR_POSEDGE);
-//     gpio_isr_handler_add(START_MOTOR_INTERRUPT_PIN, monitor_encoder_pid_calc_start, (void *)START_MOTOR_INTERRUPT_PIN);
-
-//     //install interrupt for stop pin
-//     gpio_set_intr_type(STOP_MOTOR_INTERRUPT_PIN, GPIO_INTR_POSEDGE);
-//     gpio_isr_handler_add(STOP_MOTOR_INTERRUPT_PIN, monitor_encoder_pid_calc_stop, (void *)STOP_MOTOR_INTERRUPT_PIN);
-
-// }

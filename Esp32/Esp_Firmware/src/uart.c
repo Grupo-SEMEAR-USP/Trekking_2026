@@ -94,6 +94,8 @@ static void process_received_byte(uint8_t byte)
                 global_ros_angular_speed_left = s_payload_buffer.data.angular_speed_left;
                 global_ros_angular_speed_right = s_payload_buffer.data.angular_speed_right;
                 global_ros_servo_angle = s_payload_buffer.data.servo_angle;
+                
+                global_last_command_us = esp_timer_get_time();
 
                 xSemaphoreGive(xSemaphore_getRosSpeed);
 

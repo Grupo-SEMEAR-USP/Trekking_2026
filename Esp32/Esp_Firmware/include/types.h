@@ -73,9 +73,9 @@
 
 typedef struct {
 
-    int total_x_micrometers;
-    int total_y_micrometers;
-    int total_theta_mmrad;
+    float total_x_micrometers;
+    float total_y_micrometers;
+    float total_theta_mmrad;
     uint32_t timestamp;
 
 } data_to_send_t;

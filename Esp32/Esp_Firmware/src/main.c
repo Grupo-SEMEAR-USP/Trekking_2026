@@ -5,6 +5,8 @@
 #include "global_variables.h"
 #include "pwm.h"
 #include "initializers.h"
+    
+    int64_t global_last_command_us = 0;
 
     //declaring locks
     SemaphoreHandle_t xSemaphore_getSpeed;
@@ -35,31 +37,38 @@
     volatile TickType_t global_last_ros_rx_tick = 0;
 
 
-void app_main() {
-
-    // Driver de motor (TB6612): STBY precisa ficar em nivel ALTO, senao os motores NAO giram
-    gpio_reset_pin(STAND_BY);
-    gpio_set_direction(STAND_BY, GPIO_MODE_OUTPUT);
-    gpio_set_level(STAND_BY, 1);
-
-    //initializing locks
-    xSemaphore_getSpeed = xSemaphoreCreateMutex(); 
+void app_main(void)
+{
+    xSemaphore_getSpeed = xSemaphoreCreateMutex();
     xSemaphore_getRosSpeed = xSemaphoreCreateMutex();
-
     initialization_groupEvent = xEventGroupCreate();
 
-    //Inicializar as tasks
-    // core 0: pwm, encoders, pid e servo | core 1: comunicacao UART com o ROS
-    xTaskCreatePinnedToCore(&core0fuctions, "task que inicializa pwm,encoders e pid no core 0", 4096, NULL, 2, NULL, 0);
-    xTaskCreatePinnedToCore(&core1functions, "task que inicializa a uart no core 1", 8192, NULL, 1, NULL, 1);
+    configASSERT(xSemaphore_getSpeed != NULL);
+    configASSERT(xSemaphore_getRosSpeed != NULL);
+    configASSERT(initialization_groupEvent != NULL);
 
-    /*
-     * Firmware de TESTE de bancada (motores girando direto, sem ROS) que estava aqui antes:
-     *
-     *   pwm_motors_init(); ... encoders ...
-     *   while(1){ vTaskDelay(pdMS_TO_TICKS(100)); pwm_actuate(ESQ,1023); pwm_actuate(DIR,1023); }
-     *
-     * Ele ignorava completamente os comandos vindos do ROS pela UART.
-     */
+    BaseType_t result;
+
+    result = xTaskCreatePinnedToCore(
+        core0fuctions,
+        "motor_control",
+        4096,
+        NULL,
+        1,
+        NULL,
+        0
+    );
+    configASSERT(result == pdPASS);
+
+    result = xTaskCreatePinnedToCore(
+        core1functions,
+        "uart_comm",
+        4096,
+        NULL,
+        1,
+        NULL,
+        1
+    );
+    configASSERT(result == pdPASS);
 }
 
