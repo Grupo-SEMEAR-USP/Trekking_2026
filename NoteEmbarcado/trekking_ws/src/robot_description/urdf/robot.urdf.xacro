@@ -1,8 +1,14 @@
 <?xml version="1.0"?>
-<robot name="Margarete">
+<robot name="Margarete" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Dummy link to fix KDL warning -->
+  <link name="dummy_link"/>
+  <joint name="dummy_joint" type="fixed">
+    <parent link="dummy_link"/>
+    <child link="base_link"/>
+  </joint>
 
   <link name="base_link">
-    
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -11,8 +17,9 @@
     </visual>
     
     <collision name='base_link_collision'>
+      <origin xyz="0 0 0.05" rpy="0 0 0"/>
       <geometry>
-        <box size="0.5 0.3 0.2"/> 
+        <box size="0.5 0.3 0.15"/> 
       </geometry>
     </collision>
     
@@ -24,7 +31,24 @@
 
   <!-- eixo traseiro-->
 
-  <link name="roda_traseira_esquerda">...</link>  <!-- PLACEHOLDER: COLOCAR ARQUIVOS DAS PARTES MOVEIS-->
+  <link name="roda_traseira_esquerda">
+    <inertial>
+      <mass value="0.5"/>
+      <inertia ixx="0.00135" ixy="0.0" ixz="0.0" iyy="0.0025" iyz="0.0" izz="0.00135"/>
+    </inertial>
+    <collision>
+      <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.05"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>  <!-- PLACEHOLDER: COLOCAR ARQUIVOS DAS PARTES MOVEIS-->
   <joint name="junta_roda_traseira_esquerda" type="continuous">
     <parent link="base_link"/>
     <child link="roda_traseira_esquerda"/>
@@ -32,7 +56,24 @@
     <origin xyz="-0.5 0.25 0" rpy="0 0 0"/> <!-- PLACEHOLDER -->
   </joint>
 
-  <link name="roda_traseira_direita">...</link> <!-- PLACEHOLDER: COLOCAR ARQUIVOS DAS PARTES MOVEIS-->
+  <link name="roda_traseira_direita">
+    <inertial>
+      <mass value="0.5"/>
+      <inertia ixx="0.00135" ixy="0.0" ixz="0.0" iyy="0.0025" iyz="0.0" izz="0.00135"/>
+    </inertial>
+    <collision>
+      <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.05"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.05"/>
+      </geometry>
+    </visual>
+  </link> <!-- PLACEHOLDER: COLOCAR ARQUIVOS DAS PARTES MOVEIS-->
   <joint name="junta_roda_traseira_direita" type="continuous">
     <parent link="base_link"/>
     <child link="roda_traseira_direita"/>
@@ -43,7 +84,12 @@
   <!-- eixo dianteiro -->
 
   <!-- manga eixo esquerdo -->
-  <link name="manga_eixo_dianteira_esquerda">...</link> <!-- PLACEHOLDER: COLOCAR ARQUIVOS DAS PARTES MOVEIS-->
+  <link name="manga_eixo_dianteira_esquerda">
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
+    </inertial>
+  </link> <!-- PLACEHOLDER: COLOCAR ARQUIVOS DAS PARTES MOVEIS-->
   <joint name="junta_direcao_dianteira_esquerda" type="revolute">
     <parent link="base_link"/>
     <child link="manga_eixo_dianteira_esquerda"/>
@@ -53,7 +99,24 @@
   </joint>
 
   <!-- roda dianteira esquerda -->
-  <link name="roda_dianteira_esquerda">...</link> <!-- PLACEHOLDER: COLOCAR ARQUIVOS DAS PARTES MOVEIS-->
+  <link name="roda_dianteira_esquerda">
+    <inertial>
+      <mass value="0.5"/>
+      <inertia ixx="0.00135" ixy="0.0" ixz="0.0" iyy="0.0025" iyz="0.0" izz="0.00135"/>
+    </inertial>
+    <collision>
+      <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.05"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.05"/>
+      </geometry>
+    </visual>
+  </link> <!-- PLACEHOLDER: COLOCAR ARQUIVOS DAS PARTES MOVEIS-->
   <joint name="junta_roda_dianteira_esquerda" type="continuous">
     <parent link="manga_eixo_dianteira_esquerda"/>
     <child link="roda_dianteira_esquerda"/>
@@ -62,7 +125,12 @@
   </joint>
 
   <!-- manga de eixo direita -->
-  <link name="manga_eixo_dianteira_direita">...</link> <!-- PLACEHOLDER: COLOCAR ARQUIVOS DAS PARTES MOVEIS-->
+  <link name="manga_eixo_dianteira_direita">
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
+    </inertial>
+  </link> <!-- PLACEHOLDER: COLOCAR ARQUIVOS DAS PARTES MOVEIS-->
   <joint name="junta_direcao_dianteira_direita" type="revolute">
     <parent link="base_link"/>
     <child link="manga_eixo_dianteira_direita"/>
@@ -72,7 +140,24 @@
   </joint>
 
   <!-- roda dianteira direita -->
-  <link name="roda_dianteira_direita">...</link> <!-- PLACEHOLDER: COLOCAR ARQUIVOS DAS PARTES MOVEIS-->
+  <link name="roda_dianteira_direita">
+    <inertial>
+      <mass value="0.5"/>
+      <inertia ixx="0.00135" ixy="0.0" ixz="0.0" iyy="0.0025" iyz="0.0" izz="0.00135"/>
+    </inertial>
+    <collision>
+      <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.05"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.05"/>
+      </geometry>
+    </visual>
+  </link> <!-- PLACEHOLDER: COLOCAR ARQUIVOS DAS PARTES MOVEIS-->
   <joint name="junta_roda_dianteira_direita" type="continuous">
     <parent link="manga_eixo_dianteira_direita"/>
     <child link="roda_dianteira_direita"/>
@@ -80,8 +165,97 @@
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </joint>
 
+  <!-- ============================================================== -->
+  <!--  Intel RealSense D435i : corpo da camera + IMU (BMI055)         -->
+  <!-- ============================================================== -->
+  <!-- Posicao de montagem igual a usada no robo real
+       (robot_navigation/launch/nav_launch.py: base_link -> camera_imu_link). -->
+  <xacro:property name="cam_x" value="0.165"/>
+  <xacro:property name="cam_y" value="0.0"/>
+  <xacro:property name="cam_z" value="0.13"/>
+
+  <!-- Extrinseca aproximada de fabrica camera_link -> IMU da D435i -->
+  <xacro:property name="imu_off_x" value="-0.01174"/>
+  <xacro:property name="imu_off_y" value="-0.00552"/>
+  <xacro:property name="imu_off_z" value="0.0051"/>
+
+  <!-- camera_link: corpo fisico da D435i (90 x 25 x 25 mm, 72 g) -->
+  <link name="camera_link">
+    <visual>
+      <geometry>
+        <box size="0.025 0.090 0.025"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.025 0.090 0.025"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.072"/>
+      <inertia ixx="5.24e-5" ixy="0.0" ixz="0.0" iyy="7.5e-6" iyz="0.0" izz="5.24e-5"/>
+    </inertial>
+  </link>
+  <joint name="camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+    <origin xyz="${cam_x} ${cam_y} ${cam_z}" rpy="0 0 0"/>
+  </joint>
+
+  <!-- camera_imu_frame: frame do corpo da IMU no padrao REP-103
+       (X para frente, Y para a esquerda, Z para cima).
+       E neste link que o sensor do Gazebo e montado, entao os dados
+       de /camera/imu/data ja saem no padrao ROS. -->
+  <link name="camera_imu_frame"/>
+  <joint name="camera_imu_joint" type="fixed">
+    <parent link="camera_link"/>
+    <child link="camera_imu_frame"/>
+    <origin xyz="${imu_off_x} ${imu_off_y} ${imu_off_z}" rpy="0 0 0"/>
+  </joint>
+
+  <!-- camera_imu_optical_frame: mesmo ponto, convencao optica
+       (Z para frente, X para a direita, Y para baixo). Mantido apenas
+       para compatibilidade com a arvore TF do realsense2_camera. -->
+  <link name="camera_imu_optical_frame"/>
+  <joint name="camera_imu_optical_joint" type="fixed">
+    <parent link="camera_imu_frame"/>
+    <child link="camera_imu_optical_frame"/>
+    <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}"/>
+  </joint>
+
+  <!-- Sensor IMU do Gazebo Sim. O ruido segue a folha de dados do BMI055:
+       giro ~0.014 deg/s/sqrt(Hz), acel ~150 ug/sqrt(Hz) a 200 Hz. -->
+  <gazebo reference="camera_imu_frame">
+    <sensor name="realsense_imu" type="imu">
+      <always_on>true</always_on>
+      <update_rate>200</update_rate>
+      <visualize>false</visualize>
+      <!-- Topico nativo do Gazebo (a bridge converte para /camera/imu/data) -->
+      <topic>/Margarete/realsense/imu</topic>
+      <!-- frame_id do header da msg ROS (sem isso viria "Margarete::dummy_link::realsense_imu") -->
+      <gz_frame_id>camera_imu_frame</gz_frame_id>
+      <imu>
+        <angular_velocity>
+          <x><noise type="gaussian"><mean>0.0</mean><stddev>2.4e-3</stddev><bias_mean>5e-5</bias_mean><bias_stddev>1e-5</bias_stddev></noise></x>
+          <y><noise type="gaussian"><mean>0.0</mean><stddev>2.4e-3</stddev><bias_mean>5e-5</bias_mean><bias_stddev>1e-5</bias_stddev></noise></y>
+          <z><noise type="gaussian"><mean>0.0</mean><stddev>2.4e-3</stddev><bias_mean>5e-5</bias_mean><bias_stddev>1e-5</bias_stddev></noise></z>
+        </angular_velocity>
+        <linear_acceleration>
+          <x><noise type="gaussian"><mean>0.0</mean><stddev>1.5e-2</stddev><bias_mean>1e-3</bias_mean><bias_stddev>1e-4</bias_stddev></noise></x>
+          <y><noise type="gaussian"><mean>0.0</mean><stddev>1.5e-2</stddev><bias_mean>1e-3</bias_mean><bias_stddev>1e-4</bias_stddev></noise></y>
+          <z><noise type="gaussian"><mean>0.0</mean><stddev>1.5e-2</stddev><bias_mean>1e-3</bias_mean><bias_stddev>1e-4</bias_stddev></noise></z>
+        </linear_acceleration>
+      </imu>
+    </sensor>
+  </gazebo>
+
 
   <gazebo>
+
+    <!-- Sistema que atualiza TODOS os sensores <sensor type="imu"> da simulacao.
+         Fica no modelo porque os mundos (world.sdf / trekking.sdf) nao o carregam.
+         Nao adicione tambem no mundo, senao cada IMU publica em dobro. -->
+    <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"/>
 
     <!-- Plugin Ackermann -->
     <plugin filename="gz-sim-ackermann-steering-system" name="gz::sim::systems::AckermannSteering">
@@ -110,6 +284,24 @@
       <topic>/Margarete/joint_states</topic>
     </plugin>
 
+  </gazebo>
+
+  <!-- Atrito das rodas para o Gazebo -->
+  <gazebo reference="roda_traseira_esquerda">
+    <mu1>1.5</mu1>
+    <mu2>1.5</mu2>
+  </gazebo>
+  <gazebo reference="roda_traseira_direita">
+    <mu1>1.5</mu1>
+    <mu2>1.5</mu2>
+  </gazebo>
+  <gazebo reference="roda_dianteira_esquerda">
+    <mu1>1.5</mu1>
+    <mu2>1.5</mu2>
+  </gazebo>
+  <gazebo reference="roda_dianteira_direita">
+    <mu1>1.5</mu1>
+    <mu2>1.5</mu2>
   </gazebo>
 
 </robot>

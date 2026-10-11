@@ -26,8 +26,19 @@ endif()
 install(DIRECTORY
   config
   launch
-  maps
   DESTINATION share/${PROJECT_NAME}
+)
+
+# A pasta maps/ (usada pelo nav_launch.py / Nav2) ainda nao existe no repo;
+# so instala se existir para nao quebrar o colcon build.
+if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/maps)
+  install(DIRECTORY maps DESTINATION share/${PROJECT_NAME})
+endif()
+
+# Nos Python executaveis (ros2 run robot_navigation waypoint_navigator.py)
+install(PROGRAMS
+  scripts/waypoint_navigator.py
+  DESTINATION lib/${PROJECT_NAME}
 )
 
 ament_package()
