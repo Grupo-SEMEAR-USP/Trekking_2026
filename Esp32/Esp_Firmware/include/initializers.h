@@ -19,13 +19,6 @@ ledc_channel_config_t ledc_channel_config_info(
 
 pid_ctrl_config_t pid_ctrl_config_info(float *k_values,float max_duty_value, float max_integral);
 
-//i2c initializers
-
-i2c_config_t i2c_slave_config_info(
-    gpio_num_t sda_pin,
-    gpio_num_t slc_pin,
-    uint16_t slave_addr);
-
 //gpio pin default config
 extern gpio_config_t gpio_default_config;
 

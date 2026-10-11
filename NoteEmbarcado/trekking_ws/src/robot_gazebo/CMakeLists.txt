@@ -1,42 +1,20 @@
 cmake_minimum_required(VERSION 3.8)
 project(robot_gazebo)
-
-if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  add_compile_options(-Wall -Wextra -Wpedantic)
-endif()
-
-# find dependencies
 find_package(ament_cmake REQUIRED)
-find_package(ros_gz_sim REQUIRED)
-find_package(ros_gz_bridge REQUIRED)
-
-if(BUILD_TESTING)
-  find_package(ament_lint_auto REQUIRED)
-  # the following line skips the linter which checks for copyrights
-  # comment the line when a copyright and license is added to all source files
-  set(ament_cmake_copyright_FOUND TRUE)
-  # the following line skips cpplint (only works in a git repo)
-  # comment the line when this package is in a git repo and when
-  # a copyright and license is added to all source files
-  set(ament_cmake_cpplint_FOUND TRUE)
-  ament_lint_auto_find_test_dependencies()
-endif()
-
-install(DIRECTORY
-  launch
-  worlds
-  config
-  src
-  DESTINATION share/${PROJECT_NAME}
-)
-
+install(DIRECTORY launch worlds config DESTINATION share/${PROJECT_NAME})
+install(DIRECTORY src/best_openvino_model DESTINATION share/${PROJECT_NAME})
+install(FILES requirements-vision.txt DESTINATION share/${PROJECT_NAME})
 install(PROGRAMS
-  src/vision_node.py
-  src/perception_node.py
-  src/twist2ackermann.py
-  src/odom_node.py
-  src/uart_comm.py
-  DESTINATION lib/${PROJECT_NAME}
-)
-
+  src/vision_node.py src/perception_node.py src/twist2ackermann.py
+  src/odom_node.py src/uart_comm.py src/centraliza_cone.py src/detecta_cor_ros.py
+  src/orange_mission_node.py
+  DESTINATION lib/${PROJECT_NAME})
+install(FILES src/control_core.py src/orange_core.py DESTINATION lib/${PROJECT_NAME})
+install(DIRECTORY scripts docs DESTINATION share/${PROJECT_NAME})
+if(BUILD_TESTING)
+  find_package(ament_cmake_pytest REQUIRED)
+  ament_add_pytest_test(control_core_tests test/test_control.py)
+  ament_add_pytest_test(centering_tests test/test_centraliza_cone.py)
+  ament_add_pytest_test(orange_tests test/test_orange.py)
+endif()
 ament_package()

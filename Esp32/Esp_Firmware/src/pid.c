@@ -27,6 +27,6 @@ void pid_init(pid_handle_v2 *pid_handle_left,pid_handle_v2 *pid_handle_right){
     pid_handle_left->pid_set_operation_config = set_operation_info_left;
     pid_handle_right->pid_set_operation_config = set_operation_info_right;
 
-    set_pid_operation(pid_handle_left);
-    set_pid_operation(pid_handle_right);
+    ESP_ERROR_CHECK(set_pid_operation(pid_handle_left));
+    ESP_ERROR_CHECK(set_pid_operation(pid_handle_right));
 }

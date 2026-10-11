@@ -1,3 +1,4 @@
+#include <stdlib.h>
 /*
  * SPDX-FileCopyrightText: 2015-2021 Espressif Systems (Shanghai) CO LTD
  *
@@ -15,7 +16,7 @@ static const char *TAG = "pid_ctrl";
 static float pid_calc_positional_delta_time(pid_ctrl_block_t *pid, float error)
 {   
     int64_t curr_ts = esp_timer_get_time();
-    float t  = (float)((curr_ts - pid->prev_ts)*((int64_t)1000000));
+    float t = pid->prev_ts ? (float)(curr_ts - pid->prev_ts) / 1000000.0f : 0.04f;
     pid->prev_ts = curr_ts;
 
     if (t <= 1e-5) {

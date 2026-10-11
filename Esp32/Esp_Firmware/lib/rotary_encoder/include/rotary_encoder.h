@@ -18,6 +18,7 @@ extern "C" {
 #endif
 
 #include "esp_err.h"
+#include <stdint.h>
 
 /**
  * @brief Type of Rotary underlying device handle

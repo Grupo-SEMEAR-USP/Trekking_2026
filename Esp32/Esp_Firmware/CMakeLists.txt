@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16.0)
+list(APPEND EXTRA_COMPONENT_DIRS "${CMAKE_CURRENT_LIST_DIR}/src" "${CMAKE_CURRENT_LIST_DIR}/lib/servo" "${CMAKE_CURRENT_LIST_DIR}/lib/pid_ctrl" "${CMAKE_CURRENT_LIST_DIR}/lib/rotary_encoder")
+list(REMOVE_DUPLICATES EXTRA_COMPONENT_DIRS)
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 project(Esp_Firmware)
-
-

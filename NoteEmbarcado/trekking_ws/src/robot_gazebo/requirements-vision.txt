@@ -1,0 +1,5 @@
+# Versão registrada no metadata.yaml do modelo fornecido.
+ultralytics==8.4.156
+# Versões destes runtimes precisam ser homologadas no computador embarcado.
+openvino
+pyrealsense2

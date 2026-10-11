@@ -2,6 +2,10 @@
 
 // Incluir esta lib antes de timers.h
 #include "freertos/FreeRTOS.h"
+#include "freertos/semphr.h"
+#include <stdint.h>
+#include <stdbool.h>
+#include "hardware_config.h"
 #include "freertos/timers.h"
 #include "freertos/task.h"
 #include "driver/gpio.h"
@@ -11,7 +15,6 @@
 #include "rotary_encoder.h"
 #include "pid_ctrl.h"
 #include "pid_ctrl_v2.h"
-#include "driver/i2c.h"
 #include "iot_servo.h"
 #include <string.h>
 #include <math.h>
@@ -42,8 +45,8 @@
 #define SERVO_DUTY_PIN 17
 #define SERVO_PWM_TIMER LEDC_TIMER_2//pwm channel for servo
 #define SERVO_PWM_CHANNEL LEDC_CHANNEL_2
-#define SERVO_INITIAL_ANGLE 90.0
-#define SERVO_OFFSET 34.0
+#define SERVO_INITIAL_ANGLE SERVO_CENTER_DEG
+#define SERVO_OFFSET 0.0
 
 //hardware definitions for pwm 
 #define PWM_FREQ 2000
@@ -68,8 +71,8 @@
 
 #define FRAME_SOF            0xAA
 #define FRAME_EOF            0xBB
-#define PAYLOAD_SIZE_RX      12
-#define PAYLOAD_SIZE_TX      16
+#define PAYLOAD_SIZE_RX 13  // Raspberry Pi -> ESP32
+#define PAYLOAD_SIZE_TX 16  // ESP32 -> Raspberry Pi
 
 typedef struct {
 

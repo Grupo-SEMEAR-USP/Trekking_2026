@@ -5,8 +5,6 @@
 #include "driver/pulse_cnt.h"
 #include "rotary_encoder.h"
 
-static const char *TAG = "rotary_encoder";
-
 #define EC11_PCNT_DEFAULT_HIGH_LIMIT (30000)
 #define EC11_PCNT_DEFAULT_LOW_LIMIT  (-30000)
 
@@ -24,7 +22,10 @@ static esp_err_t ec11_set_glitch_filter(rotary_encoder_t *encoder, uint32_t max_
     pcnt_glitch_filter_config_t filter_config = {
         .max_glitch_ns = max_glitch_us * 1000,
     };
-    return pcnt_unit_set_glitch_filter(ec11->pcnt_unit, &filter_config);
+    ESP_ERROR_CHECK(pcnt_unit_disable(ec11->pcnt_unit));
+    esp_err_t ret = pcnt_unit_set_glitch_filter(ec11->pcnt_unit, &filter_config);
+    ESP_ERROR_CHECK(pcnt_unit_enable(ec11->pcnt_unit));
+    return ret;
 }
 
 static esp_err_t ec11_start(rotary_encoder_t *encoder)
@@ -43,8 +44,8 @@ static int ec11_get_counter_value(rotary_encoder_t *encoder)
 {
     ec11_t *ec11 = __containerof(encoder, ec11_t, parent);
     int count = 0;
-    pcnt_unit_get_count(ec11->pcnt_unit, &count);
-    return count + ec11->accumu_count;
+    ESP_ERROR_CHECK(pcnt_unit_get_count(ec11->pcnt_unit, &count));
+    return count;
 }
 
 static esp_err_t ec11_reset_counter_value(rotary_encoder_t *encoder)
@@ -66,17 +67,6 @@ static esp_err_t ec11_del(rotary_encoder_t *encoder)
     return ESP_OK;
 }
 
-static bool ec11_pcnt_on_reach(pcnt_unit_handle_t unit, const pcnt_watch_event_data_t *edata, void *user_ctx)
-{
-    ec11_t *ec11 = (ec11_t *)user_ctx;
-    if (edata->watch_point_value == EC11_PCNT_DEFAULT_HIGH_LIMIT) {
-        ec11->accumu_count += EC11_PCNT_DEFAULT_HIGH_LIMIT;
-    } else if (edata->watch_point_value == EC11_PCNT_DEFAULT_LOW_LIMIT) {
-        ec11->accumu_count += EC11_PCNT_DEFAULT_LOW_LIMIT;
-    }
-    return false;
-}
-
 esp_err_t rotary_encoder_new_ec11(const rotary_encoder_config_t *config, rotary_encoder_t **ret_encoder)
 {
     esp_err_t ret = ESP_OK;
@@ -89,6 +79,7 @@ esp_err_t rotary_encoder_new_ec11(const rotary_encoder_config_t *config, rotary_
     pcnt_unit_config_t unit_config = {
         .high_limit = EC11_PCNT_DEFAULT_HIGH_LIMIT,
         .low_limit = EC11_PCNT_DEFAULT_LOW_LIMIT,
+        .flags.accum_count = 1,
     };
     ret = pcnt_new_unit(&unit_config, &ec11->pcnt_unit);
     if (ret != ESP_OK) goto err;
@@ -109,21 +100,17 @@ esp_err_t rotary_encoder_new_ec11(const rotary_encoder_config_t *config, rotary_
     if (ret != ESP_OK) goto err;
 
     // Definição das ações para decodificação em quadratura
-    pcnt_channel_set_edge_action(ec11->chan_a, PCNT_CHANNEL_EDGE_ACTION_DECREASE, PCNT_CHANNEL_EDGE_ACTION_INCREASE);
-    pcnt_channel_set_level_action(ec11->chan_a, PCNT_CHANNEL_LEVEL_ACTION_KEEP, PCNT_CHANNEL_LEVEL_ACTION_INVERSE);
-    pcnt_channel_set_edge_action(ec11->chan_b, PCNT_CHANNEL_EDGE_ACTION_INCREASE, PCNT_CHANNEL_EDGE_ACTION_DECREASE);
-    pcnt_channel_set_level_action(ec11->chan_b, PCNT_CHANNEL_LEVEL_ACTION_KEEP, PCNT_CHANNEL_LEVEL_ACTION_INVERSE);
+    ESP_ERROR_CHECK(pcnt_channel_set_edge_action(ec11->chan_a, PCNT_CHANNEL_EDGE_ACTION_DECREASE, PCNT_CHANNEL_EDGE_ACTION_INCREASE));
+    ESP_ERROR_CHECK(pcnt_channel_set_level_action(ec11->chan_a, PCNT_CHANNEL_LEVEL_ACTION_KEEP, PCNT_CHANNEL_LEVEL_ACTION_INVERSE));
+    ESP_ERROR_CHECK(pcnt_channel_set_edge_action(ec11->chan_b, PCNT_CHANNEL_EDGE_ACTION_INCREASE, PCNT_CHANNEL_EDGE_ACTION_DECREASE));
+    ESP_ERROR_CHECK(pcnt_channel_set_level_action(ec11->chan_b, PCNT_CHANNEL_LEVEL_ACTION_KEEP, PCNT_CHANNEL_LEVEL_ACTION_INVERSE));
 
     // Callbacks para eventos de limite (overflow)
-    pcnt_event_callbacks_t cbs = {
-        .on_reach = ec11_pcnt_on_reach,
-    };
-    pcnt_unit_add_watch_point(ec11->pcnt_unit, EC11_PCNT_DEFAULT_HIGH_LIMIT);
-    pcnt_unit_add_watch_point(ec11->pcnt_unit, EC11_PCNT_DEFAULT_LOW_LIMIT);
-    pcnt_unit_register_event_callbacks(ec11->pcnt_unit, &cbs, ec11);
+    ESP_ERROR_CHECK(pcnt_unit_add_watch_point(ec11->pcnt_unit, EC11_PCNT_DEFAULT_HIGH_LIMIT));
+    ESP_ERROR_CHECK(pcnt_unit_add_watch_point(ec11->pcnt_unit, EC11_PCNT_DEFAULT_LOW_LIMIT));
 
-    pcnt_unit_enable(ec11->pcnt_unit);
-    pcnt_unit_clear_count(ec11->pcnt_unit);
+    ESP_ERROR_CHECK(pcnt_unit_enable(ec11->pcnt_unit));
+    ESP_ERROR_CHECK(pcnt_unit_clear_count(ec11->pcnt_unit));
 
     ec11->parent.del = ec11_del;
     ec11->parent.start = ec11_start;

@@ -1,0 +1,45 @@
+# Geometria: raio e bitola herdados da ESP; entre-eixos ainda precisa ser medido.
+# O servo é configurado em Esp32/Esp_Firmware/include/hardware_config.h.
+"/**":
+  ros__parameters:
+    use_sim_time: false
+centraliza_cone:
+  ros__parameters:
+    image_width: 424
+    image_height: 240
+    wheelbase_m: 0.30
+    forward_speed_m_s: 0.10
+    steering_gain_rad: 0.8
+    max_steering_rad: 0.35
+    tolerance_px: 12.0
+    resume_tolerance_px: 20.0
+    confirmation_frames: 3
+    detection_timeout_s: 0.4
+    publish_rate_hz: 20.0
+twist2ackermann:
+  ros__parameters:
+    wheelbase: 0.30
+    rear_track_width: 0.195
+    wheel_radius: 0.0475
+    max_steering_angle: 0.35
+    max_wheel_speed: 10.0
+    command_timeout: 0.3
+uart_comm:
+  ros__parameters:
+    port: /dev/ttyACM0
+    baud: 115200
+    command_timeout: 0.3
+    telemetry_timeout: 0.5
+    max_wheel_speed: 10.0
+    max_steering_angle: 0.35
+vision:
+  ros__parameters:
+    cam_type: realsense
+    image_width: 424
+    image_height: 240
+    fps: 15
+    confidence: 0.75
+    target_class: -1
+    target_gate_px: 80.0
+    target_lost_s: 0.5
+    show_image: false

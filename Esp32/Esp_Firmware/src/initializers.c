@@ -79,7 +79,7 @@ pid_ctrl_config_t pid_ctrl_config_info(float *k_values,float max_duty_value, flo
     pid_ctrl_parameter_t config_parameter = {
         .kp = k_values[0],
         .ki = k_values[1],
-        .kd = k_values[3],
+        .kd = k_values[2],
         .max_output = max_duty_value,
         .min_output = -max_duty_value,
         .max_integral = max_integral,
@@ -94,28 +94,6 @@ pid_ctrl_config_t pid_ctrl_config_info(float *k_values,float max_duty_value, flo
 
     return config;
 
-}
-
-// Testando sem os pull_ups internos da esp
-//i2c initializers
-i2c_config_t i2c_slave_config_info(
-    gpio_num_t sda_pin,
-    gpio_num_t slc_pin,
-    uint16_t slave_addr){
-
-    i2c_config_t conf_slave;
-        conf_slave.mode = I2C_MODE_SLAVE;
-        conf_slave.sda_io_num = (int) sda_pin;
-        conf_slave.scl_io_num = (int) slc_pin;          
-        conf_slave.sda_pullup_en = GPIO_PULLUP_DISABLE;           
-        conf_slave.scl_pullup_en = GPIO_PULLUP_DISABLE;
-        conf_slave.slave.addr_10bit_en = 0;
-        conf_slave.slave.slave_addr = slave_addr;       
-        conf_slave.slave.maximum_speed = 100000;
-        conf_slave.clk_flags = 0;
-
-    return  conf_slave;                          
-    
 }
 
 //gpio pin default config

@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "pid_ctrl_v2.h"
 #include <stdbool.h>
 #include <sys/param.h>
@@ -61,7 +62,7 @@ static esp_err_t chicao_compute(pid_handle_v2 *pid_handle_2, float real_value,fl
  
 static esp_err_t pid_delete(pid_handle_v2 *pid_handle_2){
     pid_del_control_block(pid_handle_2->pid_handle);
-    free(pid_handle_2);
+    pid_handle_2->pid_handle = NULL; /* O wrapper pertence ao chamador. */
     return ESP_OK;
 }
 
@@ -70,7 +71,7 @@ esp_err_t set_pid_operation( pid_handle_v2 *pid_v2){
 
     switch (pid_v2->pid_set_operation_config.operation_mode) {
     case DEFAULT_IMPLEMENTATION:
-        pid_new_control_block(&(pid_v2->pid_set_operation_config.pid_config_info), &(pid_v2->pid_handle));
+        ESP_RETURN_ON_ERROR(pid_new_control_block(&(pid_v2->pid_set_operation_config.pid_config_info), &(pid_v2->pid_handle)), TAGR, "PID allocation failed");
         pid_v2->pid_calculate = default_compute;
         break;
     case GAP_DECREASED:
@@ -81,12 +82,12 @@ esp_err_t set_pid_operation( pid_handle_v2 *pid_v2){
         pid_v2->pid_set_operation_config.pid_config_info.init_param.min_output -= 
         pid_v2->pid_set_operation_config.neg_gap_reduction;
 
-        pid_new_control_block(&(pid_v2->pid_set_operation_config.pid_config_info), &(pid_v2->pid_handle));
+        ESP_RETURN_ON_ERROR(pid_new_control_block(&(pid_v2->pid_set_operation_config.pid_config_info), &(pid_v2->pid_handle)), TAGR, "PID allocation failed");
 
         pid_v2->pid_calculate = gap_decreased_compute;
         break;
     case CHICAO_METHOD:
-        pid_new_control_block(&(pid_v2->pid_set_operation_config.pid_config_info), &(pid_v2->pid_handle));
+        ESP_RETURN_ON_ERROR(pid_new_control_block(&(pid_v2->pid_set_operation_config.pid_config_info), &(pid_v2->pid_handle)), TAGR, "PID allocation failed");
         pid_v2->pid_calculate = chicao_compute;
         break;
     default:

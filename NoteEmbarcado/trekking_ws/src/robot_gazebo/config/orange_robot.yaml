@@ -1,0 +1,80 @@
+"/**":
+  ros__parameters:
+    use_sim_time: false
+vision:
+  ros__parameters:
+    cam_type: realsense
+    image_width: 640
+    image_height: 480
+    fps: 30
+    confidence: 0.65
+    target_gate_px: 90.0
+    target_lost_s: 2.0
+    show_image: false
+    publish_debug_image: true
+    depth_min_m: 0.10
+    depth_max_m: 10.0
+    depth_min_samples: 8
+orange_mission:
+  ros__parameters:
+    mode: preview
+    image_width: 640
+    image_height: 480
+    max_cones: 4
+    auto_start: true
+    publish_rate_hz: 20.0
+    # Confirmados pelo usuário:
+    camera_to_front_m: 0.08
+    arrival_gap_m: 0.20
+    # Medir no robô. base = centro do eixo traseiro; X para frente, Y para esquerda.
+    wheelbase_m: 0.30
+    robot_front_m: 0.22
+    robot_rear_m: 0.10
+    robot_half_width_m: 0.12
+    lidar_x_m: 0.0
+    lidar_y_m: 0.0
+    lidar_yaw_rad: 0.0  # Cabo para trás; conferir frente=0 no scan antes de mover.
+    camera_lateral_m: 0.0
+    lidar_range_tolerance_m: 0.25
+    lidar_zero_is_clear: true
+    max_steering_rad: 0.35
+    steering_gain_rad: 0.8
+    forward_speed_m_s: 0.10
+    minimum_speed_m_s: 0.025
+    reverse_speed_m_s: 0.08
+    distance_gain: 0.6
+    tolerance_px: 12.0
+    resume_tolerance_px: 20.0
+    confirmation_frames: 3
+    arrival_tolerance_m: 0.015
+    minimum_gap_m: 0.10
+    retreat_gap_m: 0.90
+    next_cone_min_gap_m: 1.10
+    detection_timeout_s: 0.4
+    scan_timeout_s: 0.35
+    target_lost_timeout_s: 2.0
+    acquire_timeout_s: 30.0
+    approach_timeout_s: 120.0
+    retreat_timeout_s: 20.0
+    search_timeout_s: 17.0
+    blocked_timeout_s: 8.0
+    blink_count: 3
+    blink_period_s: 0.4
+    safety_margin_m: 0.04
+    reaction_time_s: 0.3
+    braking_deceleration_m_s2: 0.25
+twist2ackermann:
+  ros__parameters:
+    wheelbase: 0.30  # Igual ao wheelbase_m da missão.
+    rear_track_width: 0.195
+    wheel_radius: 0.0475
+    max_steering_angle: 0.35
+    max_wheel_speed: 10.0
+    command_timeout: 0.3
+uart_comm:
+  ros__parameters:
+    baud: 115200
+    command_timeout: 0.3
+    telemetry_timeout: 0.5
+    max_wheel_speed: 10.0
+    max_steering_angle: 0.35

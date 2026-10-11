@@ -5,6 +5,7 @@
  */
 
 #include "esp_log.h"
+#include <math.h>
 #include "esp_err.h"
 #include "driver/ledc.h"
 #include "iot_servo.h"
@@ -72,7 +73,7 @@ esp_err_t iot_servo_init(ledc_mode_t speed_mode, const servo_config_t *config)
         ledc_channel_config_t ledc_ch = {
             .intr_type  = LEDC_INTR_DISABLE,
             .channel    = config->channels.ch[i],
-            .duty       = calculate_duty(speed_mode, 0),
+            .duty       = 0,
             .gpio_num   = config->channels.servo_pin[i],
             .speed_mode = speed_mode,
             .timer_sel  = config->timer_number,
@@ -102,7 +103,7 @@ esp_err_t iot_servo_write_angle(ledc_mode_t speed_mode, uint8_t channel, float a
 {
     SERVO_CHECK(speed_mode < LEDC_SPEED_MODE_MAX, "LEDC speed mode invalid", ESP_ERR_INVALID_ARG);
     SERVO_CHECK(channel < LEDC_CHANNEL_MAX, "LEDC channel number too large", ESP_ERR_INVALID_ARG);
-    SERVO_CHECK(angle >= 0.0f, "Angle can't to be negative", ESP_ERR_INVALID_ARG);
+    SERVO_CHECK(isfinite(angle) && angle >= 0.0f && angle <= g_cfg[speed_mode].max_angle, "Angle outside servo range", ESP_ERR_INVALID_ARG);
     esp_err_t ret;
     uint32_t duty = calculate_duty(speed_mode, angle);
     ret = ledc_set_duty(speed_mode, (ledc_channel_t)channel, duty);

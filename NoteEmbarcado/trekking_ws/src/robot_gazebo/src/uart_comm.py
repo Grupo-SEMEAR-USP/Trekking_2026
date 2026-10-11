@@ -1,338 +1,114 @@
-```python
 #!/usr/bin/env python3
-
+import math
+import time
+import serial
 import rclpy
 from rclpy.node import Node
+from rclpy.clock import Clock, ClockType
+from rcl_interfaces.msg import ParameterDescriptor
 from std_msgs.msg import Bool
-
-import serial
-import struct
-
-from robot_interfaces.msg import UARTData, VelocityData
-
-
-# Configuracao da UART
-SERIAL_PORT = "/dev/ttyACM0"
-BAUD_RATE = 115200
-
-# Delimitadores dos frames
-FRAME_SOF = 0xAA
-FRAME_EOF = 0xBB
-
-# Payload recebido da ESP32:
-# x, y, z: 3 inteiros de 32 bits
-# timestamp: 1 inteiro sem sinal de 32 bits
-PAYLOAD_SIZE_RX = 16
-FRAME_SIZE_RX = 1 + PAYLOAD_SIZE_RX + 1 + 1
-
-# Payload enviado para a ESP32:
-# 3 floats + 1 byte para o LED
-PAYLOAD_SIZE_TX = 13
-FRAME_SIZE_TX = 1 + PAYLOAD_SIZE_TX + 1 + 1
-
-SERVO_INITIAL_ANGLE = 90.0
-
+from robot_interfaces.msg import UARTData, VelocityCommand
+from control_core import TelemetryParser, CommandLease, command_frame
 
 class UARTDevice(Node):
-
     def __init__(self):
-
         super().__init__('uart_comm')
-
-        # Comandos Ackermann:
-        # [velocidade esquerda, velocidade direita, angulo servo]
-        self.ackr_commands = [
-            0.0,
-            0.0,
-            SERVO_INITIAL_ANGLE
-        ]
-
-        # Estado inicial do LED: desligado
-        self.led_status = False
-
-        # Publisher: dados recebidos da ESP32
-        self.pub_encoder = self.create_publisher(
-            UARTData,
-            '/uart_data',
-            10
-        )
-
-        # Subscriber: comandos de velocidade
-        self.sub_velocity = self.create_subscription(
-            VelocityData,
-            '/velocity_command',
-            self.callback_vel,
-            10
-        )
-
-        # Subscriber: deteccao de amarelo
-        self.sub_visao = self.create_subscription(
-            Bool,
-            '/amarelo_detectado',
-            self.callback_visao,
-            10
-        )
-
-        # Inicializacao da comunicacao serial
-        try:
-            self.serial_port = serial.Serial(
-                port=SERIAL_PORT,
-                baudrate=BAUD_RATE,
-                timeout=0.1
-            )
-
-        except serial.SerialException as e:
-            self.get_logger().error(
-                f"Falha ao abrir porta serial: {e}"
-            )
-            raise
-
-        # Loop de comunicacao a cada 20 ms (50 Hz)
-        self.timer = self.create_timer(
-            0.02,
-            self.update_loop
-        )
-
-        self.get_logger().info(
-            "Comunicacao UART iniciada!"
-        )
-
-    def calculate_checksum(self, data_bytes):
-        """
-        Calcula o checksum pela soma dos bytes,
-        mantendo somente os 8 bits menos significativos.
-        """
-        return sum(data_bytes) & 0xFF
-
-    def callback_visao(self, msg):
-        """
-        Atualiza o estado do LED conforme a deteccao de amarelo.
-        True = ligado; False = desligado.
-        """
-        self.led_status = msg.data
-
-    def callback_vel(self, msg):
-        """
-        Atualiza os tres comandos Ackermann recebidos pelo ROS 2.
-        """
-        self.ackr_commands[0] = msg.angular_speed_left
-        self.ackr_commands[1] = msg.angular_speed_right
-        self.ackr_commands[2] = msg.servo_angle
-
-    def read_loop(self):
-        """
-        Recebe frames da ESP32.
-
-        Formato:
-        SOF + payload de 16 bytes + checksum + EOF
-        """
-
-        expected_sof = struct.pack('B', FRAME_SOF)
-        expected_eof = struct.pack('B', FRAME_EOF)
-
-        try:
-
-            if not self.serial_port.is_open:
-                return
-
-            if self.serial_port.in_waiting == 0:
-                return
-
-            # Procura o inicio do frame
-            byte = self.serial_port.read(1)
-
-            if byte != expected_sof:
-                return
-
-            # Le o restante do frame
-            rest_of_frame = self.serial_port.read(
-                FRAME_SIZE_RX - 1
-            )
-
-            if len(rest_of_frame) != FRAME_SIZE_RX - 1:
-                self.get_logger().warning(
-                    "Frame UART incompleto"
-                )
-                return
-
-            # Separa payload, checksum e EOF
-            payload = rest_of_frame[:PAYLOAD_SIZE_RX]
-
-            received_chk = rest_of_frame[
-                PAYLOAD_SIZE_RX:PAYLOAD_SIZE_RX + 1
-            ]
-
-            received_eof = rest_of_frame[
-                PAYLOAD_SIZE_RX + 1:PAYLOAD_SIZE_RX + 2
-            ]
-
-            # Verifica EOF
-            if received_eof != expected_eof:
-                self.get_logger().warning(
-                    "Erro de EOF na serial"
-                )
-                return
-
-            # Verifica checksum
-            calculated_chk = self.calculate_checksum(payload)
-
-            calculated_chk_byte = struct.pack(
-                'B',
-                calculated_chk
-            )
-
-            if received_chk != calculated_chk_byte:
-                self.get_logger().warning(
-                    "Erro de Checksum na serial"
-                )
-                return
-
-            # Interpreta os dados recebidos
-            x, y, z, timestamp = struct.unpack(
-                '<iiiI',
-                payload
-            )
-
-            self.publish_encoders(
-                x,
-                y,
-                z,
-                timestamp
-            )
-
-        except (serial.SerialException, OSError) as e:
-            self.get_logger().error(
-                f"Erro na leitura serial: {e}"
-            )
-
-    def publish_encoders(self, x, y, z, timestamp):
-        """
-        Publica os dados recebidos da ESP32 no ROS 2.
-        """
-
-        msg = UARTData()
-
-        msg.x = x
-        msg.y = y
-        msg.z = z
-        msg.timestamp = timestamp
-
-        self.pub_encoder.publish(msg)
-
-    def write_data(self):
-
-        try:
-
-            if not self.serial_port.is_open:
-                return
-
-            # Converte o estado do LED em um byte
-            led_byte = 1 if self.led_status else 0
-
-            # Monta o payload:
-            # 0-3:   velocidade angular esquerda
-            # 4-7:   velocidade angular direita
-            # 8-11:  angulo do servo
-            # 12:    estado do LED
-            payload = struct.pack(
-                '<fffB',
-                self.ackr_commands[0],
-                self.ackr_commands[1],
-                self.ackr_commands[2],
-                led_byte
-            )
-
-            # Verifica o tamanho do payload
-            if len(payload) != PAYLOAD_SIZE_TX:
-                self.get_logger().error(
-                    "Tamanho incorreto do payload TX"
-                )
-                return
-
-            # Calcula checksum sobre os 13 bytes do payload
-            checksum = self.calculate_checksum(payload)
-
-            # Monta o frame UART completo
-            frame = (
-                struct.pack('B', FRAME_SOF)
-                + payload
-                + struct.pack('B', checksum)
-                + struct.pack('B', FRAME_EOF)
-            )
-
-            # Envia o frame para a ESP32
-            self.serial_port.write(frame)
-
-        except (serial.SerialException, OSError) as e:
-            self.get_logger().error(
-                f"Erro na escrita serial: {e}"
-            )
-
-    def update_loop(self):
-
-        # Recebe dados da ESP32
-        self.read_loop()
-
-        # Envia comandos para a ESP32
-        self.write_data()
-
-    def destroy_node(self):
-        """
-        Tenta enviar comandos seguros antes de encerrar.
-        """
-
-        # Zera as velocidades e retorna o servo a 90 graus
-        self.ackr_commands = [
-            0.0,
-            0.0,
-            SERVO_INITIAL_ANGLE
-        ]
-
-        # Solicita o desligamento do LED
-        self.led_status = False
-
-        # Envia os comandos finais antes de fechar a serial
-        if (
-            hasattr(self, 'serial_port')
-            and self.serial_port.is_open
-        ):
+        defaults = dict(port='/dev/ttyACM0', baud=115200, command_timeout=0.3,
+                        telemetry_timeout=0.5, max_wheel_speed=10., max_steering_angle=0.35)
+        for name, value in defaults.items():
+            self.declare_parameter(name, value, ParameterDescriptor(read_only=True))
+        self.p = {name: self.get_parameter(name).value for name in defaults}
+        for name in ('command_timeout','telemetry_timeout','max_wheel_speed','max_steering_angle'):
+            if not math.isfinite(self.p[name]) or self.p[name] <= 0:
+                raise ValueError(f'{name} inválido')
+        self.lease = CommandLease(self.p['command_timeout'])
+        self.parser = TelemetryParser()
+        self.port = None
+        self.last_telemetry = self.last_stamp = self.telemetry_stamp = None
+        self.next_reconnect = 0.
+        self.led = False
+        self.pub = self.create_publisher(UARTData, 'uart_data', 1)
+        self.sub = self.create_subscription(VelocityCommand, 'velocity_command', self.on_command, 1)
+        self.led_sub = self.create_subscription(Bool, 'led_command', self.on_led, 1)
+        self.clock = Clock(clock_type=ClockType.STEADY_TIME)
+        self.timer = self.create_timer(0.02, self.tick, clock=self.clock)
+    def on_led(self, msg):
+        self.led = bool(msg.data)
+    def on_command(self, msg):
+        stamp = msg.header.stamp.sec + msg.header.stamp.nanosec / 1e9
+        age = self.get_clock().now().nanoseconds / 1e9 - stamp
+        values = (msg.angular_speed_left, msg.angular_speed_right, msg.servo_angle)
+        if (stamp <= 0 or not -0.05 <= age <= self.p['command_timeout']
+                or not all(math.isfinite(v) for v in values)
+                or max(abs(values[0]),abs(values[1])) > self.p['max_wheel_speed'] + 1e-5
+                or abs(values[2]) > self.p['max_steering_angle'] + 1e-5):
+            self.lease.clear()
+            return
+        if self.last_stamp is not None and stamp <= self.last_stamp:
+            return
+        self.last_stamp = stamp
+        if self.port is not None and self.last_telemetry is not None:
+            self.lease.update(values, time.monotonic())
+    def disconnect(self):
+        self.lease.clear()
+        self.last_telemetry = self.last_stamp = self.telemetry_stamp = None
+        self.parser = TelemetryParser()
+        if self.port is not None:
             try:
-                self.write_data()
-                self.serial_port.close()
-
-            except (serial.SerialException, OSError) as e:
-                self.get_logger().error(
-                    f"Erro ao encerrar a UART: {e}"
-                )
-
-        super().destroy_node()
-
+                self.port.close()
+            except (OSError, serial.SerialException):
+                pass
+        self.port = None
+        self.next_reconnect = time.monotonic() + 1.
+    def tick(self):
+        now = time.monotonic()
+        try:
+            if self.port is None:
+                if now < self.next_reconnect:
+                    return
+                self.port = serial.Serial(self.p['port'], self.p['baud'], timeout=0, write_timeout=0.05)
+                self.lease.clear()
+                self.port.reset_input_buffer()
+                self.get_logger().info('UART conectada; aguardando telemetria e comando novos.')
+            data = self.port.read(min(self.port.in_waiting,4096))
+            for x,y,z,stamp in self.parser.feed(data):
+                # Only a new control sample renews the heartbeat.
+                if stamp == self.telemetry_stamp:
+                    continue
+                self.telemetry_stamp = stamp
+                msg = UARTData()
+                msg.x,msg.y,msg.z,msg.timestamp = x,y,z,stamp
+                self.pub.publish(msg)
+                self.last_telemetry = now
+            if self.last_telemetry is None or now-self.last_telemetry > self.p['telemetry_timeout']:
+                self.lease.clear()
+            frame = command_frame(*self.lease.get(now), self.led)
+            if self.port.write(frame) != len(frame):
+                raise serial.SerialException('Escrita UART parcial')
+        except (serial.SerialException,OSError) as error:
+            self.get_logger().error(str(error))
+            self.disconnect()
+    def stop(self):
+        self.lease.clear()
+        if self.port is not None:
+            try:
+                self.port.write(command_frame(0.,0.,0.,False))
+            except (serial.SerialException,OSError):
+                pass
+        self.disconnect()
 
 def main(args=None):
-
     rclpy.init(args=args)
-
-    node = None
-
+    node = UARTDevice()
     try:
-        node = UARTDevice()
         rclpy.spin(node)
-
     except KeyboardInterrupt:
         pass
-
-    except (RuntimeError, serial.SerialException) as e:
-        print(f"Erro ao iniciar uart_comm: {e}")
-
     finally:
-
-        if node is not None:
-            node.destroy_node()
-
+        node.stop()
+        node.destroy_node()
         if rclpy.ok():
             rclpy.shutdown()
 
-
 if __name__ == '__main__':
     main()
-```
