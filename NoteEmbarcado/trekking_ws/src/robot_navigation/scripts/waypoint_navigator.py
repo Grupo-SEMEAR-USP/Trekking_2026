@@ -95,9 +95,9 @@ class WaypointNavigator(Node):
         self.declare_parameter('dwell_time', 2.0)
         self.declare_parameter('loop', False)
 
-        self.declare_parameter('odom_topic', '/Margarete/odom')
+        self.declare_parameter('odom_topic', '/odom')
         self.declare_parameter('imu_topic', '/camera/imu/data')
-        self.declare_parameter('cmd_vel_topic', '/Margarete/cmd_vel')
+        self.declare_parameter('cmd_vel_topic', '/cmd_vel')
         self.declare_parameter('frame_id', 'odom')
 
         self.declare_parameter('origin_x', 0.0)

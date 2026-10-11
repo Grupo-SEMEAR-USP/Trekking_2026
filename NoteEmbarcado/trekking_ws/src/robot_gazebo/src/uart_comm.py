@@ -56,12 +56,19 @@ class UARTDevice(Node):
                 baudrate=baud_to_use,
                 timeout=0.1 
             )
+            try:
+                self.serial_port.dtr = True
+                self.serial_port.rts = False
+            except Exception:
+                pass
             self.get_logger().info(f"Conexão serial com a ESP32 estabelecida com sucesso!")
         except serial.SerialException as e:
             self.get_logger().error(f"Falha ao abrir porta serial {port_to_use}: {e}")
             self.get_logger().error("Dica: verifique se a ESP32 está plugada e rode: sudo chmod 666 /dev/tty*")
             exit(1)
 
+        self.rx_buffer = bytearray()
+        self.first_packet_received = False
         self.timer = self.create_timer(0.02, self.update_loop)
 
     def calculate_checksum(self, data_bytes):
@@ -74,38 +81,50 @@ class UARTDevice(Node):
         self.ackr_commands[2] = msg.servo_angle
 
     def read_loop(self):
-
-        expected_sof = struct.pack('B', FRAME_SOF)
-        expected_eof = struct.pack('B', FRAME_EOF)
-
         try:
+            if not self.serial_port.is_open:
+                return
 
-            if self.serial_port.is_open and self.serial_port.in_waiting > 0:
-                byte = self.serial_port.read(1)
-                
-                if byte == expected_sof:
-                    rest_of_frame = self.serial_port.read(FRAME_SIZE_RX - 1)
-                    
-                    if len(rest_of_frame) == (FRAME_SIZE_RX - 1):
+            in_waiting = self.serial_port.in_waiting
+            if in_waiting > 0:
+                self.rx_buffer.extend(self.serial_port.read(in_waiting))
 
-                        payload = rest_of_frame[0:16]
-                        received_chk = rest_of_frame[16:17]
-                        received_eof = rest_of_frame[17:18]
-                        
-                        if received_eof != expected_eof:
-                            self.get_logger().warn("Erro de EOF na serial")
-                            return
+            while len(self.rx_buffer) >= FRAME_SIZE_RX:
+                try:
+                    sof_idx = self.rx_buffer.index(FRAME_SOF)
+                except ValueError:
+                    self.rx_buffer.clear()
+                    break
 
-                        calculated_chk_int = self.calculate_checksum(payload)
-                        calculated_chk_byte = struct.pack('B', calculated_chk_int)
+                if sof_idx > 0:
+                    del self.rx_buffer[:sof_idx]
 
-                        if received_chk != calculated_chk_byte:
-                            self.get_logger().warn("Erro de Checksum na serial")
-                            return
+                if len(self.rx_buffer) < FRAME_SIZE_RX:
+                    break
 
-                        x, y, z, timestamp = struct.unpack('<iiiI', payload)
-                        self.publish_encoders(x, y, z, timestamp)
-                        
+                payload = bytes(self.rx_buffer[1:17])
+                received_chk = self.rx_buffer[17]
+                received_eof = self.rx_buffer[18]
+
+                if received_eof != FRAME_EOF:
+                    self.get_logger().warn(f"Erro de EOF: esperado 0x{FRAME_EOF:02X}, recebido 0x{received_eof:02X}")
+                    del self.rx_buffer[0]
+                    continue
+
+                calculated_chk = self.calculate_checksum(payload)
+                if received_chk != calculated_chk:
+                    self.get_logger().warn(f"Erro de Checksum: calculado 0x{calculated_chk:02X}, recebido 0x{received_chk:02X}")
+                    del self.rx_buffer[0]
+                    continue
+
+                # Frame válido!
+                del self.rx_buffer[:FRAME_SIZE_RX]
+                x, y, z, timestamp = struct.unpack('<iiiI', payload)
+                if not self.first_packet_received:
+                    self.get_logger().info(f"Primeiro pacote recebido da ESP32! x={x}, y={y}, z={z}, t={timestamp}")
+                    self.first_packet_received = True
+                self.publish_encoders(x, y, z, timestamp)
+
         except Exception as e:
             self.get_logger().error(f"Erro na leitura serial: {e}")
 

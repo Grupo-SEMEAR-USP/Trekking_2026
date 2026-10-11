@@ -82,6 +82,8 @@ def generate_launch_description():
         ],
         remappings=[
             ('/Margarete/realsense/imu', '/camera/imu/data'),
+            ('/Margarete/cmd_vel', '/cmd_vel'),
+            ('/Margarete/odom', '/odom'),
         ],
         parameters=[{'use_sim_time': True}],
         output='screen'

@@ -16,10 +16,10 @@ waypoint_navigator:
     dwell_time: 2.0           # [s] parada completa sobre cada base
     loop: false
 
-    # Tópicos da simulação (bridge em trekking_gazebo/launch/spawn_robot.launch.py)
-    odom_topic: /Margarete/odom
+    # Tópicos padrão (compatíveis tanto com o robô real quanto com o Gazebo)
+    odom_topic: /odom
     imu_topic: /camera/imu/data
-    cmd_vel_topic: /Margarete/cmd_vel
+    cmd_vel_topic: /cmd_vel
     frame_id: odom
 
     # Pose de spawn do robô no mundo (odom local -> referencial das bases na arena)
