@@ -1,0 +1,24 @@
+-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found rclpy: 7.1.12 (/opt/ros/jazzy/share/rclpy/cmake)
+-- Configuring done (0.4s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_control
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/lib/robot_control/movement.py
+-- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/ament_index/resource_index/package_run_dependencies/robot_control
+-- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/ament_index/resource_index/parent_prefix_path/robot_control
+-- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/robot_control/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/robot_control/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/robot_control/environment/path.sh
+-- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/robot_control/environment/path.dsv
+-- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/robot_control/local_setup.bash
+-- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/robot_control/local_setup.sh
+-- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/robot_control/local_setup.zsh
+-- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/robot_control/local_setup.dsv
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/robot_control/package.dsv
+-- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/ament_index/resource_index/packages/robot_control
+-- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/robot_control/cmake/robot_controlConfig.cmake
+-- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/robot_control/cmake/robot_controlConfig-version.cmake
+-- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/robot_control/package.xml

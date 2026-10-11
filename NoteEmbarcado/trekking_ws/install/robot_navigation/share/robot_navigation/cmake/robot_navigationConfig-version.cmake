@@ -1,0 +1,1 @@
+/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation/ament_cmake_core/robot_navigationConfig-version.cmake

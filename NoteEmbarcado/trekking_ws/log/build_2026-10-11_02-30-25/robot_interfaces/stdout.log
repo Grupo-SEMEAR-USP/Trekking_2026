@@ -1,0 +1,262 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found rosidl_default_generators: 1.6.1 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rosidl_adapter: 4.6.9 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+-- Found ament_cmake_ros: 0.12.2 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+-- Found PythonExtra: /usr/bin/python3  
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Found ament_lint_auto: 0.17.5 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done (3.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces
+[  1%] [34m[1mGenerating Rust code for ROS interfaces[0m
+[  3%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[  3%] Built target ament_cmake_python_symlink_robot_interfaces
+[  3%] Built target robot_interfaces__rosidl_generator_type_description
+[  5%] [34m[1mGenerating C code for ROS interfaces[0m
+running egg_info
+creating robot_interfaces.egg-info
+[  7%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[  7%] Built target robot_interfaces__rs
+writing robot_interfaces.egg-info/PKG-INFO
+writing dependency_links to robot_interfaces.egg-info/dependency_links.txt
+writing top-level names to robot_interfaces.egg-info/top_level.txt
+writing manifest file 'robot_interfaces.egg-info/SOURCES.txt'
+reading manifest file 'robot_interfaces.egg-info/SOURCES.txt'
+writing manifest file 'robot_interfaces.egg-info/SOURCES.txt'
+[  7%] Built target ament_cmake_python_build_robot_interfaces_egg
+[  7%] Built target robot_interfaces__cpp
+[  9%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robot_interfaces/msg/detail/velocity_data__description.c.o[0m
+[ 10%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robot_interfaces/msg/detail/velocity_data__functions.c.o[0m
+[ 14%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robot_interfaces/msg/detail/velocity_data__type_support.c.o[0m
+[ 14%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robot_interfaces/msg/detail/velocity_command__description.c.o[0m
+[ 16%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robot_interfaces/msg/detail/uart_data__type_support.c.o[0m
+[ 20%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robot_interfaces/msg/detail/uart_data__description.c.o[0m
+[ 20%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robot_interfaces/msg/detail/uart_data__functions.c.o[0m
+[ 21%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robot_interfaces/msg/detail/velocity_command__type_support.c.o[0m
+[ 23%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robot_interfaces/msg/detail/velocity_command__functions.c.o[0m
+[ 25%] [32m[1mLinking C shared library librobot_interfaces__rosidl_generator_c.so[0m
+[ 25%] Built target robot_interfaces__rosidl_generator_c
+[ 27%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[ 29%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[ 30%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[ 32%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[ 34%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[ 36%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[ 38%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/robot_interfaces/msg/uart_data__type_support.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/robot_interfaces/msg/velocity_command__type_support.cpp.o[0m
+[ 41%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/robot_interfaces/msg/velocity_data__type_support.cpp.o[0m
+[ 43%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robot_interfaces/msg/velocity_data__type_support.cpp.o[0m
+[ 45%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robot_interfaces/msg/uart_data__type_support.cpp.o[0m
+[ 47%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robot_interfaces/msg/velocity_command__type_support.cpp.o[0m
+[ 49%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robot_interfaces/msg/detail/velocity_data__type_support.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robot_interfaces/msg/detail/uart_data__type_support.cpp.o[0m
+[ 52%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robot_interfaces/msg/detail/velocity_command__type_support.cpp.o[0m
+[ 54%] [32m[1mLinking CXX shared library librobot_interfaces__rosidl_typesupport_c.so[0m
+[ 56%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robot_interfaces/msg/detail/velocity_data__type_support.c.o[0m
+[ 58%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robot_interfaces/msg/detail/uart_data__type_support.c.o[0m
+[ 60%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robot_interfaces/msg/detail/velocity_command__type_support.c.o[0m
+[ 61%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robot_interfaces/msg/detail/dds_fastrtps/velocity_data__type_support.cpp.o[0m
+[ 63%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robot_interfaces/msg/detail/dds_fastrtps/uart_data__type_support.cpp.o[0m
+[ 65%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robot_interfaces/msg/detail/dds_fastrtps/velocity_command__type_support.cpp.o[0m
+[ 65%] Built target robot_interfaces__rosidl_typesupport_c
+[ 67%] [32m[1mLinking C shared library librobot_interfaces__rosidl_typesupport_introspection_c.so[0m
+[ 69%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robot_interfaces/msg/detail/velocity_command__type_support_c.cpp.o[0m
+[ 70%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robot_interfaces/msg/detail/velocity_data__type_support_c.cpp.o[0m
+[ 72%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robot_interfaces/msg/detail/uart_data__type_support_c.cpp.o[0m
+[ 72%] Built target robot_interfaces__rosidl_typesupport_introspection_c
+[ 74%] [32m[1mLinking CXX shared library librobot_interfaces__rosidl_typesupport_cpp.so[0m
+[ 76%] [32m[1mLinking CXX shared library librobot_interfaces__rosidl_typesupport_introspection_cpp.so[0m
+[ 76%] Built target robot_interfaces__rosidl_typesupport_cpp
+[ 76%] Built target robot_interfaces__rosidl_typesupport_introspection_cpp
+[ 78%] [32m[1mLinking CXX shared library librobot_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[ 78%] Built target robot_interfaces__rosidl_typesupport_fastrtps_cpp
+[ 80%] [32m[1mLinking CXX shared library librobot_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[ 80%] Built target robot_interfaces__rosidl_typesupport_fastrtps_c
+[ 80%] Built target robot_interfaces
+[ 81%] [34m[1mGenerating Python code for ROS interfaces[0m
+[ 81%] Built target robot_interfaces__py
+[ 83%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/robot_interfaces/msg/_uart_data_s.c.o[0m
+[ 85%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/robot_interfaces/msg/_velocity_command_s.c.o[0m
+[ 87%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/robot_interfaces/msg/_velocity_data_s.c.o[0m
+[ 89%] [32m[1mLinking C shared library librobot_interfaces__rosidl_generator_py.so[0m
+[ 89%] Built target robot_interfaces__rosidl_generator_py
+[ 90%] [32mBuilding C object CMakeFiles/robot_interfaces_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/robot_interfaces/_robot_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[ 92%] [32mBuilding C object CMakeFiles/robot_interfaces_s__rosidl_typesupport_c.dir/rosidl_generator_py/robot_interfaces/_robot_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[ 94%] [32mBuilding C object CMakeFiles/robot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/robot_interfaces/_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[ 96%] [32m[1mLinking C shared module rosidl_generator_py/robot_interfaces/robot_interfaces_s__rosidl_typesupport_introspection_c.so[0m
+[ 98%] [32m[1mLinking C shared module rosidl_generator_py/robot_interfaces/robot_interfaces_s__rosidl_typesupport_c.so[0m
+[100%] [32m[1mLinking C shared module rosidl_generator_py/robot_interfaces/robot_interfaces_s__rosidl_typesupport_fastrtps_c.so[0m
+[100%] Built target robot_interfaces_s__rosidl_typesupport_introspection_c
+[100%] Built target robot_interfaces_s__rosidl_typesupport_c
+[100%] Built target robot_interfaces_s__rosidl_typesupport_fastrtps_c
+-- Install configuration: ""
+-- Execute custom install script
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/ament_index/resource_index/rosidl_interfaces/robot_interfaces
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/msg/UARTData.json
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/msg/VelocityData.json
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/msg/VelocityCommand.json
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/uart_data__functions.h
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/uart_data__struct.h
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/uart_data__type_support.h
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_command__functions.h
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_command__struct.h
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_command__type_support.h
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_data__functions.h
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_data__struct.h
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_data__type_support.h
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/rosidl_generator_c__visibility_control.h
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/uart_data.h
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/velocity_command.h
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/velocity_data.h
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/environment/library_path.sh
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/environment/library_path.dsv
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/uart_data__rosidl_typesupport_fastrtps_c.h
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_command__rosidl_typesupport_fastrtps_c.h
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_data__rosidl_typesupport_fastrtps_c.h
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/uart_data__rosidl_typesupport_introspection_c.h
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_command__rosidl_typesupport_introspection_c.h
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_data__rosidl_typesupport_introspection_c.h
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/uart_data__builder.hpp
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/uart_data__struct.hpp
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/uart_data__traits.hpp
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/uart_data__type_support.hpp
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_command__builder.hpp
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_command__struct.hpp
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_command__traits.hpp
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_command__type_support.hpp
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_data__builder.hpp
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_data__struct.hpp
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_data__traits.hpp
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_data__type_support.hpp
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/uart_data.hpp
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/velocity_command.hpp
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/velocity_data.hpp
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/uart_data__rosidl_typesupport_fastrtps_cpp.hpp
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_command__rosidl_typesupport_fastrtps_cpp.hpp
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_data__rosidl_typesupport_fastrtps_cpp.hpp
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/uart_data__rosidl_typesupport_introspection_cpp.hpp
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_command__rosidl_typesupport_introspection_cpp.hpp
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_data__rosidl_typesupport_introspection_cpp.hpp
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/environment/pythonpath.sh
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/environment/pythonpath.dsv
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces-0.0.0-py3.12.egg-info/PKG-INFO
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces-0.0.0-py3.12.egg-info/SOURCES.txt
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces-0.0.0-py3.12.egg-info/dependency_links.txt
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces-0.0.0-py3.12.egg-info/top_level.txt
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/__init__.py
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/_robot_interfaces_s.ep.rosidl_typesupport_c.c
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/_robot_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/msg/__init__.py
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/msg/_uart_data.py
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/msg/_uart_data_s.c
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/msg/_velocity_command.py
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/msg/_velocity_command_s.c
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/msg/_velocity_data.py
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/msg/_velocity_data_s.c
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/robot_interfaces_s__rosidl_typesupport_c.so
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/robot_interfaces_s__rosidl_typesupport_fastrtps_c.so
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/robot_interfaces_s__rosidl_typesupport_introspection_c.so
+-- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/robot_interfaces_s__rosidl_typesupport_fastrtps_c.so
+-- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/robot_interfaces_s__rosidl_typesupport_introspection_c.so
+-- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/robot_interfaces_s__rosidl_typesupport_c.so
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/rust/Cargo.toml
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/rust/build.rs
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/rust/src/lib.rs
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/rust/src/msg.rs
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/rust/src/msg/rmw.rs
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/msg/UARTData.idl
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/msg/VelocityData.idl
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/msg/VelocityCommand.idl
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/msg/UARTData.msg
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/msg/VelocityData.msg
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/msg/VelocityCommand.msg
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/ament_index/resource_index/package_run_dependencies/robot_interfaces
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/ament_index/resource_index/parent_prefix_path/robot_interfaces
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/environment/ament_prefix_path.sh
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/environment/ament_prefix_path.dsv
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/environment/path.sh
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/environment/path.dsv
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/local_setup.bash
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/local_setup.sh
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/local_setup.zsh
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/local_setup.dsv
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/package.dsv
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/ament_index/resource_index/packages/robot_interfaces
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/rosidl_cmake-extras.cmake
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/rosidl_cmake_aggregate_target-extras.cmake
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfacesConfig.cmake
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfacesConfig-version.cmake
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/package.xml
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_generator_c.so
+-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_generator_c.so" to ""
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_fastrtps_c.so
+-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_fastrtps_c.so" to ""
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_introspection_c.so
+-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_introspection_c.so" to ""
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_c.so
+-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_c.so" to ""
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_fastrtps_cpp.so
+-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_introspection_cpp.so
+-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_introspection_cpp.so" to ""
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_cpp.so
+-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_cpp.so" to ""
+Listing '/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces'...
+Compiling '/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/__init__.py'...
+Listing '/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/msg'...
+Compiling '/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/msg/__init__.py'...
+Compiling '/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/msg/_uart_data.py'...
+Compiling '/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/msg/_velocity_command.py'...
+Compiling '/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/msg/_velocity_data.py'...
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_generator_py.so
+-- Set non-toolchain portion of runtime path of "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_generator_py.so" to ""
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/export_robot_interfaces__rosidl_generator_cExport.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/export_robot_interfaces__rosidl_generator_cExport-noconfig.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/export_robot_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/export_robot_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfaces__rosidl_typesupport_introspection_cExport.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfaces__rosidl_typesupport_cExport.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/export_robot_interfaces__rosidl_generator_cppExport.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/export_robot_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/export_robot_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfaces__rosidl_typesupport_cppExport.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/export_robot_interfaces__rosidl_generator_pyExport.cmake
+-- Installing: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/export_robot_interfaces__rosidl_generator_pyExport-noconfig.cmake

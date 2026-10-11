@@ -1,0 +1,19 @@
+[0.008s] Invoking command in '/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_gazebo': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_gazebo -DCMAKE_INSTALL_PREFIX=/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo
+[0.017s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.806s] Traceback (most recent call last):
+[1.806s]   File "/opt/ros/jazzy/share/ament_cmake_core/cmake/package_templates/templates_2_cmake.py", line 21, in <module>
+[1.806s]     from ament_package.templates import get_environment_hook_template_path
+[1.806s] ModuleNotFoundError: No module named 'ament_package'
+[1.833s] -- Configuring incomplete, errors occurred!
+[1.833s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_core/cmake/ament_cmake_package_templates-extras.cmake:41 (message):
+[1.833s]   execute_process(/usr/bin/python3
+[1.833s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/package_templates/templates_2_cmake.py
+[1.833s]   /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_gazebo/ament_cmake_package_templates/templates.cmake)
+[1.833s]   returned error code 1
+[1.833s] Call Stack (most recent call first):
+[1.834s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/ament_cmake_coreConfig.cmake:41 (include)
+[1.834s]   /opt/ros/jazzy/share/ament_cmake/cmake/ament_cmake_export_dependencies-extras.cmake:15 (find_package)
+[1.834s]   /opt/ros/jazzy/share/ament_cmake/cmake/ament_cmakeConfig.cmake:41 (include)
+[1.834s]   CMakeLists.txt:9 (find_package)
+[1.834s] 
+[1.834s] [0m

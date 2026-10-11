@@ -1,0 +1,1 @@
+/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_description/ament_cmake_environment_hooks/local_setup.sh

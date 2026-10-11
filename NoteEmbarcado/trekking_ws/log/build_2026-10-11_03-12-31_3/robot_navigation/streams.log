@@ -1,0 +1,16 @@
+[0.037s] Invoking command in '/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation -- -j16 -l16
+[0.098s] Invoked command in '/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation -- -j16 -l16
+[0.098s] Invoking command in '/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation
+[0.113s] [31mCMake Error at ament_cmake_symlink_install/ament_cmake_symlink_install.cmake:105 (message):
+[0.114s]   ament_cmake_symlink_install_directory() can't find
+[0.114s]   '/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_navigation/maps'
+[0.114s] Call Stack (most recent call first):
+[0.114s]   ament_cmake_symlink_install/ament_cmake_symlink_install.cmake:319 (ament_cmake_symlink_install_directory)
+[0.114s]   cmake_install.cmake:46 (include)
+[0.114s] 
+[0.114s] [0m
+[0.114s] -- Install configuration: ""
+[0.114s] -- Execute custom install script
+[0.114s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/config/nav2_params.yaml
+[0.114s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/launch/nav_launch.py
+[0.119s] Invoked command in '/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation

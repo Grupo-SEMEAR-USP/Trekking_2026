@@ -1,0 +1,1 @@
+/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces/rosidl_generator_c/robot_interfaces/msg/detail/uart_data__type_support.h

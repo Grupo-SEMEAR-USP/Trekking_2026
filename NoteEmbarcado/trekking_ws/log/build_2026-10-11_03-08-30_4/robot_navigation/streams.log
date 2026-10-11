@@ -1,0 +1,42 @@
+[0.037s] Invoking command in '/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_navigation -DCMAKE_INSTALL_PREFIX=/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation
+[0.337s] [31mCMake Error at /usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:1049 (file):
+[0.337s]   file failed to open for reading (No such file or directory):
+[0.337s] 
+[0.337s]     /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation/CMakeFiles/3.28.3/CompilerIdC/CMakeCCompilerId.o
+[0.337s] Call Stack (most recent call first):
+[0.337s]   /usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:13 (CMAKE_DETERMINE_COMPILER_ID_CHECK)
+[0.337s]   /usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)
+[0.337s]   /usr/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)
+[0.337s]   CMakeLists.txt:2 (project)
+[0.337s] 
+[0.337s] [0m
+[0.338s] -- The C compiler identification is GNU 13.3.0
+[0.555s] -- The CXX compiler identification is unknown
+[0.565s] -- Detecting C compiler ABI info
+[0.650s] -- Detecting C compiler ABI info - done
+[0.661s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.661s] -- Detecting C compile features
+[0.661s] -- Detecting C compile features - done
+[0.664s] -- Detecting CXX compiler ABI info
+[0.752s] -- Detecting CXX compiler ABI info - done
+[0.753s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.753s] -- Detecting CXX compile features
+[0.753s] -- Detecting CXX compile features - done
+[0.762s] [31mCMake Error at CMakeLists.txt:9 (find_package):
+[0.762s]   By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project
+[0.762s]   has asked CMake to find a package configuration file provided by
+[0.762s]   "ament_cmake", but CMake did not find one.
+[0.762s] 
+[0.762s]   Could not find a package configuration file provided by "ament_cmake" with
+[0.762s]   any of the following names:
+[0.762s] 
+[0.762s]     ament_cmakeConfig.cmake
+[0.762s]     ament_cmake-config.cmake
+[0.762s] 
+[0.762s]   Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set
+[0.762s]   "ament_cmake_DIR" to a directory containing one of the above files.  If
+[0.762s]   "ament_cmake" provides a separate development package or SDK, be sure it
+[0.762s]   has been installed.
+[0.762s] 
+[0.762s] [0m
+[0.763s] -- Configuring incomplete, errors occurred!

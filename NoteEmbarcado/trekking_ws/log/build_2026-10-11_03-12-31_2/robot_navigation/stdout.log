@@ -1,0 +1,4 @@
+-- Install configuration: ""
+-- Execute custom install script
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/config/nav2_params.yaml
+-- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/launch/nav_launch.py

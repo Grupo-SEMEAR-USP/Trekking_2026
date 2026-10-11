@@ -1,0 +1,78 @@
+[0.034s] Invoking command in '/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation -- -j16 -l16
+[0.100s] Invoked command in '/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation -- -j16 -l16
+[0.100s] Invoking command in '/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation
+[0.116s] -- Install configuration: ""
+[0.117s] -- Execute custom install script
+[0.117s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/config/nav2_params.yaml
+[0.117s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/launch/nav_launch.py
+[0.118s] -- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/maps/.gitkeep
+[0.139s] -- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/ament_index/resource_index/package_run_dependencies/robot_navigation
+[0.159s] -- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/ament_index/resource_index/parent_prefix_path/robot_navigation
+[0.166s] -- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/environment/ament_prefix_path.sh
+[0.188s] -- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/environment/ament_prefix_path.dsv
+[0.210s] -- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/environment/path.sh
+[0.231s] -- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/environment/path.dsv
+[0.243s] -- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/local_setup.bash
+[0.257s] -- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/local_setup.sh
+[0.267s] -- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/local_setup.zsh
+[0.278s] -- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/local_setup.dsv
+[0.289s] -- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/package.dsv
+[0.299s] -- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/ament_index/resource_index/packages/robot_navigation
+[0.310s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/config/nav2_params.yaml
+[0.310s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/launch/nav_launch.py
+[0.310s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/maps/.gitkeep
+[0.310s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/ament_index/resource_index/package_run_dependencies/robot_navigation
+[0.311s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/ament_index/resource_index/parent_prefix_path/robot_navigation
+[0.311s] -- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/cmake/robot_navigationConfig.cmake
+[0.321s] -- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/cmake/robot_navigationConfig-version.cmake
+[0.335s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/environment/ament_prefix_path.sh
+[0.335s] -- Symlinking: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/package.xml
+[0.348s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/environment/ament_prefix_path.dsv
+[0.349s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/environment/path.sh
+[0.349s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/environment/path.dsv
+[0.350s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/local_setup.bash
+[0.350s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/local_setup.sh
+[0.351s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/local_setup.zsh
+[0.351s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/local_setup.dsv
+[0.351s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/package.dsv
+[0.352s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/ament_index/resource_index/packages/robot_navigation
+[0.352s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/cmake/robot_navigationConfig.cmake
+[0.353s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/cmake/robot_navigationConfig-version.cmake
+[0.354s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/package.xml
+[0.355s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/config/nav2_params.yaml
+[0.355s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/launch/nav_launch.py
+[0.356s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/maps/.gitkeep
+[0.356s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/ament_index/resource_index/package_run_dependencies/robot_navigation
+[0.357s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/ament_index/resource_index/parent_prefix_path/robot_navigation
+[0.357s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/environment/ament_prefix_path.sh
+[0.358s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/environment/ament_prefix_path.dsv
+[0.359s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/environment/path.sh
+[0.359s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/environment/path.dsv
+[0.360s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/local_setup.bash
+[0.360s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/local_setup.sh
+[0.361s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/local_setup.zsh
+[0.361s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/local_setup.dsv
+[0.362s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/package.dsv
+[0.362s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/ament_index/resource_index/packages/robot_navigation
+[0.363s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/cmake/robot_navigationConfig.cmake
+[0.363s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/cmake/robot_navigationConfig-version.cmake
+[0.364s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/package.xml
+[0.367s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/config/nav2_params.yaml
+[0.367s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/launch/nav_launch.py
+[0.367s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/maps/.gitkeep
+[0.367s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/ament_index/resource_index/package_run_dependencies/robot_navigation
+[0.367s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/ament_index/resource_index/parent_prefix_path/robot_navigation
+[0.367s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/environment/ament_prefix_path.sh
+[0.367s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/environment/ament_prefix_path.dsv
+[0.368s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/environment/path.sh
+[0.368s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/environment/path.dsv
+[0.368s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/local_setup.bash
+[0.368s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/local_setup.sh
+[0.368s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/local_setup.zsh
+[0.369s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/local_setup.dsv
+[0.369s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/package.dsv
+[0.369s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/ament_index/resource_index/packages/robot_navigation
+[0.370s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/cmake/robot_navigationConfig.cmake
+[0.370s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/cmake/robot_navigationConfig-version.cmake
+[0.370s] -- Up-to-date symlink: /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/package.xml
+[0.388s] Invoked command in '/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation

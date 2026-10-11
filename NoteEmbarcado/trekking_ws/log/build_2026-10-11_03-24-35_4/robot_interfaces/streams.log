@@ -1,0 +1,25 @@
+[0.031s] Invoking command in '/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces -- -j16 -l16
+[0.126s] [  3%] Built target ament_cmake_python_symlink_robot_interfaces
+[0.127s] [  3%] Built target robot_interfaces__rosidl_generator_type_description
+[0.128s] [ 25%] Built target robot_interfaces__rs
+[0.149s] [ 25%] Built target robot_interfaces__rosidl_generator_c
+[0.172s] [ 25%] Built target robot_interfaces__cpp
+[0.212s] [ 70%] Built target robot_interfaces__rosidl_typesupport_c
+[0.219s] [ 70%] Built target robot_interfaces__rosidl_typesupport_introspection_c
+[0.220s] [ 80%] Built target robot_interfaces__rosidl_typesupport_cpp
+[0.230s] [ 80%] Built target robot_interfaces__rosidl_typesupport_fastrtps_cpp
+[0.232s] [ 80%] Built target robot_interfaces__rosidl_typesupport_fastrtps_c
+[0.232s] [ 80%] Built target robot_interfaces__rosidl_typesupport_introspection_cpp
+[0.256s] [ 80%] Built target robot_interfaces
+[0.297s] [ 81%] Built target robot_interfaces__py
+[0.335s] [ 89%] Built target robot_interfaces__rosidl_generator_py
+[0.382s] [ 96%] Built target robot_interfaces_s__rosidl_typesupport_introspection_c
+[0.395s] [100%] Built target robot_interfaces_s__rosidl_typesupport_fastrtps_c
+[0.399s] [100%] Built target robot_interfaces_s__rosidl_typesupport_c
+[0.442s] running egg_info
+[0.455s] writing robot_interfaces.egg-info/PKG-INFO
+[0.455s] writing dependency_links to robot_interfaces.egg-info/dependency_links.txt
+[0.455s] writing top-level names to robot_interfaces.egg-info/top_level.txt
+[0.501s] reading manifest file 'robot_interfaces.egg-info/SOURCES.txt'
+[0.501s] writing manifest file 'robot_interfaces.egg-info/SOURCES.txt'
+[0.531s] [100%] Built target ament_cmake_python_build_robot_interfaces_egg

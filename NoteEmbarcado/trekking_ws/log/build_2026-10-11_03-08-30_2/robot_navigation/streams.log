@@ -1,0 +1,31 @@
+[0.012s] Invoking command in '/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_navigation -DCMAKE_INSTALL_PREFIX=/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation
+[0.391s] -- The C compiler identification is GNU 13.3.0
+[0.577s] -- The CXX compiler identification is GNU 13.3.0
+[0.593s] -- Detecting C compiler ABI info
+[0.665s] -- Detecting C compiler ABI info - done
+[0.673s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.673s] -- Detecting C compile features
+[0.674s] -- Detecting C compile features - done
+[0.682s] -- Detecting CXX compiler ABI info
+[0.767s] -- Detecting CXX compiler ABI info - done
+[0.774s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.775s] -- Detecting CXX compile features
+[0.775s] -- Detecting CXX compile features - done
+[0.781s] [31mCMake Error at CMakeLists.txt:9 (find_package):
+[0.781s]   By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project
+[0.781s]   has asked CMake to find a package configuration file provided by
+[0.782s]   "ament_cmake", but CMake did not find one.
+[0.782s] 
+[0.782s]   Could not find a package configuration file provided by "ament_cmake" with
+[0.782s]   any of the following names:
+[0.782s] 
+[0.782s]     ament_cmakeConfig.cmake
+[0.782s]     ament_cmake-config.cmake
+[0.782s] 
+[0.782s]   Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set
+[0.782s]   "ament_cmake_DIR" to a directory containing one of the above files.  If
+[0.782s]   "ament_cmake" provides a separate development package or SDK, be sure it
+[0.782s]   has been installed.
+[0.782s] 
+[0.782s] [0m
+[0.782s] -- Configuring incomplete, errors occurred!

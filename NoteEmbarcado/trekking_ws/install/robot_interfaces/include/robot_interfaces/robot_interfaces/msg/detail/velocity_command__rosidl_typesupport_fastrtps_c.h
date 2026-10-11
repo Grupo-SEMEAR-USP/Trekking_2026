@@ -1,0 +1,1 @@
+/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces/rosidl_typesupport_fastrtps_c/robot_interfaces/msg/detail/velocity_command__rosidl_typesupport_fastrtps_c.h

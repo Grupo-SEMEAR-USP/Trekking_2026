@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/diogo/Documents/Github/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces/rosidl_generator_py/robot_interfaces/robot_interfaces_s__rosidl_typesupport_c.so" "TARGETS" "robot_interfaces_s__rosidl_typesupport_c" "DESTINATION" "lib/python3.12/site-packages/robot_interfaces")
