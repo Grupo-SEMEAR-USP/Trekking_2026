@@ -6,9 +6,11 @@ import serial
 import struct
 
 from std_msgs.msg import Bool
-from robot_interfaces.msg import UARTData, VelocityData
+from robot_interfaces.msg import UARTData, VelocityCommand
 
-SERIAL_PORT = "/dev/ttyACM0"
+#SERIAL_PORT = "/dev/ttyACM0"
+SERIAL_PORT = "/dev/ttyUSB0"
+
 BAUD_RATE = 115200
 
 FRAME_SOF = 0xAA
@@ -18,6 +20,7 @@ PAYLOAD_SIZE_RX = 16
 FRAME_SIZE_RX = 1 + PAYLOAD_SIZE_RX + 1 + 1
 
 SERVO_INITIAL_ANGLE = 90.0
+SERVO_SIGN = 1.0      # use -1.0 se o servo virar para o lado errado
 
 
 class UARTDevice(Node):
@@ -31,7 +34,7 @@ class UARTDevice(Node):
         self.pub_encoder = self.create_publisher(UARTData, '/uart_data', 10)
 
         self.sub_velocity = self.create_subscription(
-            VelocityData,
+            VelocityCommand,
             '/velocity_command',
             self.callback_vel,
             10

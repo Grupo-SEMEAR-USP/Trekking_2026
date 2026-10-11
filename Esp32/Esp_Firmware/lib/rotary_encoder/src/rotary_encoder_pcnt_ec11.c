@@ -24,7 +24,19 @@ static esp_err_t ec11_set_glitch_filter(rotary_encoder_t *encoder, uint32_t max_
     pcnt_glitch_filter_config_t filter_config = {
         .max_glitch_ns = max_glitch_us * 1000,
     };
-    return pcnt_unit_set_glitch_filter(ec11->pcnt_unit, &filter_config);
+
+    // O filtro só pode ser configurado com a unidade desabilitada
+    esp_err_t ret = pcnt_unit_disable(ec11->pcnt_unit);
+    if (ret != ESP_OK) {
+        return ret;
+    }
+
+    ret = pcnt_unit_set_glitch_filter(ec11->pcnt_unit, &filter_config);
+
+    // Reabilita sempre, mesmo se o filtro falhar
+    esp_err_t en = pcnt_unit_enable(ec11->pcnt_unit);
+
+    return (ret != ESP_OK) ? ret : en;
 }
 
 static esp_err_t ec11_start(rotary_encoder_t *encoder)
