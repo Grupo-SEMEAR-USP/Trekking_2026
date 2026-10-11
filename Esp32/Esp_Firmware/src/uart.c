@@ -97,6 +97,8 @@ static void process_received_byte(uint8_t byte)
 
                 xSemaphoreGive(xSemaphore_getRosSpeed);
 
+                global_last_ros_rx_tick = xTaskGetTickCount();
+
                 //ESP_LOGI(TAG, "Frame válido! V Angular E: %.2f | V Angular D: %.2f | Angulo Servo: %.2f", 
                         // global_ros_angular_speed_left, global_ros_angular_speed_right, global_ros_servo_angle);
             }
@@ -191,9 +193,10 @@ void uart_send(double *total_x_displacement, double *total_y_displacement, doubl
     memcpy(&data.total_theta_mmrad,&total_theta_mmrad,4);
     memcpy(&data.timestamp,&timestamp,4);
 
-    xSemaphoreGive(xSemaphore_getRosSpeed);
+    // (removido) xSemaphoreGive(xSemaphore_getRosSpeed); -> devolvia um mutex que esta task nunca pegou
     
     esp_err_t ret = uart_send_frame(&data, PAYLOAD_SIZE_TX);
+    (void) ret;
 
     xSemaphoreGive(xSemaphore_getSpeed);
 

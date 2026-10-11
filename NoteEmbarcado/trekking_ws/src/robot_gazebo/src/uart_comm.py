@@ -7,7 +7,7 @@ import struct
 
 from robot_interfaces.msg import UARTData, VelocityData
 
-SERIAL_PORT = "/dev/ttyACM0"
+SERIAL_PORT = "/dev/ttyUSB0"
 BAUD_RATE = 115200
 
 FRAME_SOF = 0xAA
@@ -51,16 +51,17 @@ class UARTDevice(Node):
 
         try:
             self.get_logger().info(f"Conectando à ESP32 em {port_to_use} @ {baud_to_use} baud...")
-            self.serial_port = serial.Serial(
-                port=port_to_use,
-                baudrate=baud_to_use,
-                timeout=0.1 
-            )
-            try:
-                self.serial_port.dtr = True
-                self.serial_port.rts = False
-            except Exception:
-                pass
+            # Configura DTR/RTS ANTES de abrir: no circuito de auto-reset da ESP32,
+            # DTR=1/RTS=0 segura o GPIO0 em nivel baixo -> se a ESP resetar (ex.: queda
+            # de tensao na partida do motor) ela entra em modo bootloader e para de rodar.
+            self.serial_port = serial.Serial()
+            self.serial_port.port = port_to_use
+            self.serial_port.baudrate = baud_to_use
+            self.serial_port.timeout = 0.1
+            self.serial_port.dtr = False
+            self.serial_port.rts = False
+            self.serial_port.open()
+            self.serial_port.reset_input_buffer()
             self.get_logger().info(f"Conexão serial com a ESP32 estabelecida com sucesso!")
         except serial.SerialException as e:
             self.get_logger().error(f"Falha ao abrir porta serial {port_to_use}: {e}")
@@ -69,7 +70,22 @@ class UARTDevice(Node):
 
         self.rx_buffer = bytearray()
         self.first_packet_received = False
+        self.rx_frames = 0
+        self.tx_frames = 0
         self.timer = self.create_timer(0.02, self.update_loop)
+        self.diag_timer = self.create_timer(2.0, self.diag_loop)
+
+    def diag_loop(self):
+        # Log de diagnostico: mostra o que esta indo para a ESP e quantos frames voltaram
+        l, r, s = self.ackr_commands
+        self.get_logger().info(
+            f"[TX] {self.tx_frames} frames | w_esq={l:.2f} rad/s w_dir={r:.2f} rad/s servo={s:.1f} deg  "
+            f"[RX] {self.rx_frames} frames validos da ESP"
+        )
+        if self.rx_frames == 0:
+            self.get_logger().warn("Nenhum frame valido da ESP32! O firmware correto (com core1functions/uart) foi gravado?")
+        self.rx_frames = 0
+        self.tx_frames = 0
 
     def calculate_checksum(self, data_bytes):
         return sum(data_bytes) & 0xFF
@@ -107,7 +123,7 @@ class UARTDevice(Node):
                 received_eof = self.rx_buffer[18]
 
                 if received_eof != FRAME_EOF:
-                    self.get_logger().warn(f"Erro de EOF: esperado 0x{FRAME_EOF:02X}, recebido 0x{received_eof:02X}")
+                    # Bytes de log da ESP (ESP_LOG/printf) tambem saem pela UART0; so descarta
                     del self.rx_buffer[0]
                     continue
 
@@ -123,6 +139,7 @@ class UARTDevice(Node):
                 if not self.first_packet_received:
                     self.get_logger().info(f"Primeiro pacote recebido da ESP32! x={x}, y={y}, z={z}, t={timestamp}")
                     self.first_packet_received = True
+                self.rx_frames += 1
                 self.publish_encoders(x, y, z, timestamp)
 
         except Exception as e:
@@ -150,6 +167,7 @@ class UARTDevice(Node):
             frame = struct.pack('B', FRAME_SOF) + payload + struct.pack('B', checksum) + struct.pack('B', FRAME_EOF)
             
             self.serial_port.write(frame)
+            self.tx_frames += 1
             
         except Exception as e:
             self.get_logger().error(f"Erro na escrita: {str(e)}")

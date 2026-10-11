@@ -80,13 +80,22 @@ typedef struct {
 
 } data_to_send_t;
 
-typedef struct {
+// IMPORTANTE: o ROS (uart_comm.py) envia struct.pack('<fff', ...) -> 3 x float32.
+// Antes estava 'int', o que fazia 9.0 rad/s virar ~1090519040 na ESP (lixo).
+typedef struct __attribute__((packed)) {
 
-    int angular_speed_left;
-    int angular_speed_right;
-    int servo_angle;
+    float angular_speed_left;   // rad/s
+    float angular_speed_right;  // rad/s
+    float servo_angle;          // graus (90 = centro)
 
 } data_to_receive_t;
+
+// Failsafe: se ficar este tempo sem frame valido do ROS, para os motores
+#define ROS_RX_TIMEOUT_MS   500
+
+// Limites do servo de direcao (graus)
+#define SERVO_MIN_ANGLE     0.0f
+#define SERVO_MAX_ANGLE     180.0f
 
 //i2c constants
 #define I2C_DELAY 4
@@ -108,16 +117,19 @@ typedef struct {
 #define PID_DELAY 10//10
 
 #define MAX_PID_VALUE 8191.0
-#define MAX_INTEGRAL_VALUE 3880.0
+#define MAX_INTEGRAL_VALUE 6000.0
 
 // Kp,Ki,Kd constants
-#define KP_LEFT 0.5
-#define KI_LEFT 1.0
-#define KD_LEFT 0.5
+// Erro em rad/s -> saida em duty (0..8191). Com Kp=0.5 um erro de 9 rad/s dava
+// duty ~4 (0.05%), insuficiente para vencer a inercia do motor.
+// Valores iniciais para AJUSTE FINO em bancada:
+#define KP_LEFT 250.0
+#define KI_LEFT 20.0
+#define KD_LEFT 0.0
 
-#define KP_RIGHT 0.5
-#define KI_RIGHT 1.0
-#define KD_RIGHT 0.5
+#define KP_RIGHT 250.0
+#define KI_RIGHT 20.0
+#define KD_RIGHT 0.0
 
 
 //limits of pwm duty cycle values to escape inertia

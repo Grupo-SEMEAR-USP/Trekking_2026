@@ -31,55 +31,35 @@
     uint32_t global_timer_miliseconds = 0;
     uint32_t global_time_stamp_miliseconds = 0;
 
+    // tick (FreeRTOS) do ultimo frame valido recebido do ROS (usado no failsafe)
+    volatile TickType_t global_last_ros_rx_tick = 0;
+
 
 void app_main() {
 
-    // gpio_set_direction(STAND_BY, GPIO_MODE_DEF_OUTPUT);
+    // Driver de motor (TB6612): STBY precisa ficar em nivel ALTO, senao os motores NAO giram
+    gpio_reset_pin(STAND_BY);
+    gpio_set_direction(STAND_BY, GPIO_MODE_OUTPUT);
+    gpio_set_level(STAND_BY, 1);
 
-    // esp_err_t err = gpio_set_level(STAND_BY, 1);
+    //initializing locks
+    xSemaphore_getSpeed = xSemaphoreCreateMutex(); 
+    xSemaphore_getRosSpeed = xSemaphoreCreateMutex();
 
-    // //initializing locks
-    // xSemaphore_getSpeed = xSemaphoreCreateMutex(); 
-    // xSemaphore_getRosSpeed = xSemaphoreCreateMutex();
+    initialization_groupEvent = xEventGroupCreate();
 
-    // initialization_groupEvent = xEventGroupCreate(); //it's perhaps not necessary
+    //Inicializar as tasks
+    // core 0: pwm, encoders, pid e servo | core 1: comunicacao UART com o ROS
+    xTaskCreatePinnedToCore(&core0fuctions, "task que inicializa pwm,encoders e pid no core 0", 4096, NULL, 2, NULL, 0);
+    xTaskCreatePinnedToCore(&core1functions, "task que inicializa a uart no core 1", 8192, NULL, 1, NULL, 1);
 
-    // // //Inicializar as tasks
-    // xTaskCreatePinnedToCore(&core0fuctions, "task que inicializa pwm,encoders e pid no core 0", 2048, NULL, 1, NULL, 0);
-    // xTaskCreatePinnedToCore(&core1functions, "task que inicializa o i2c no core 1", 8192, NULL, 1, NULL, 1);
-
-    //variables for intializing encoder
-    rotary_encoder_t *encoder_left;
-    rotary_encoder_t *encoder_right;
-
-    pwm_motors_init();
-
-        //selecting pcnt units
-        uint32_t pcnt_unit_0 = 0;
-        uint32_t pcnt_unit_1 = 1;
-
-        // Create rotary encoder instances
-        rotary_encoder_config_t config_encoder_left = ROTARY_ENCODER_DEFAULT_CONFIG((rotary_encoder_dev_t)pcnt_unit_0, PCNT_CHA_LEFT, PCNT_CHB_LEFT);
-        encoder_left = NULL;
-        ESP_ERROR_CHECK(rotary_encoder_new_ec11(&config_encoder_left, &encoder_left));
-
-        rotary_encoder_config_t config_encoder_right = ROTARY_ENCODER_DEFAULT_CONFIG((rotary_encoder_dev_t)pcnt_unit_1, PCNT_CHA_RIGHT, PCNT_CHB_RIGHT);
-        encoder_right = NULL;
-        ESP_ERROR_CHECK(rotary_encoder_new_ec11(&config_encoder_right, &encoder_right));
-
-        // Filter out glitch (1us)
-        // ESP_ERROR_CHECK(encoder_left->set_glitch_filter(encoder_left, 10));
-        // ESP_ERROR_CHECK(encoder_right->set_glitch_filter(encoder_right, 10));
-
-        // Start encoder
-        ESP_ERROR_CHECK(encoder_left->start(encoder_left));
-        ESP_ERROR_CHECK(encoder_right->start(encoder_right));
-    
-    while(1){
-        vTaskDelay(pdMS_TO_TICKS(100));
-        pwm_actuate(ESQ,1023);
-        pwm_actuate(DIR,1023);
-        
-    }
+    /*
+     * Firmware de TESTE de bancada (motores girando direto, sem ROS) que estava aqui antes:
+     *
+     *   pwm_motors_init(); ... encoders ...
+     *   while(1){ vTaskDelay(pdMS_TO_TICKS(100)); pwm_actuate(ESQ,1023); pwm_actuate(DIR,1023); }
+     *
+     * Ele ignorava completamente os comandos vindos do ROS pela UART.
+     */
 }
 

@@ -14,3 +14,6 @@ extern float global_ros_servo_angle;
 
 extern uint32_t global_timer_miliseconds;
 extern uint32_t global_time_stamp_miliseconds;
+
+#include "freertos/FreeRTOS.h"
+extern volatile TickType_t global_last_ros_rx_tick;

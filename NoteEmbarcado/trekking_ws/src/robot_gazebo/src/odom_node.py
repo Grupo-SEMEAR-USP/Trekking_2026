@@ -48,9 +48,10 @@ class OdomPublisher(Node):
 
     def uart_callback(self, msg):
 
-        current_x = msg.x / 1000.0
-        current_y = msg.y / 1000.0
-        current_theta = msg.z / 1000.0
+        # ESP32 envia: x,y em MICROMETROS (mm*1000) e theta em mili-radianos
+        current_x = msg.x / 1_000_000.0   # um -> m
+        current_y = msg.y / 1_000_000.0   # um -> m
+        current_theta = msg.z / 1000.0    # mrad -> rad
 
         dt_s = (msg.timestamp - self.last_timestamp) / 1000.0
         self.last_timestamp = msg.timestamp
@@ -72,8 +73,8 @@ class OdomPublisher(Node):
 
     def odom_callback(self):
         
-        vx = 0.0 
-        vth = 0.0
+        vx = getattr(self, 'vx', 0.0)
+        vth = getattr(self, 'vth', 0.0)
 
         current_time = self.get_clock().now().to_msg()
         quat = self.yaw_to_quaternion(self.theta)

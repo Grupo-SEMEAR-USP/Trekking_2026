@@ -49,6 +49,9 @@ int64_t t0 = 0, tf = 0, d_t = 0;
 #define ROS_TIMEOUT_CYCLES 50 
 int ros_timeout_counter = 0;
 
+// ultimo angulo escrito no servo (evita reescrever o PWM a cada 10 ms sem necessidade)
+static float last_written_servo_angle = -1000.0f;
+
 //timer function to read encoder and calculate pid
 void monitor_encoder_pid_calc();
 
@@ -79,8 +82,13 @@ void core0fuctions(void *params){
     ESP_ERROR_CHECK(rotary_encoder_new_ec11(&config_encoder_right, &encoder_right));
 
     // Filter out glitch (1us)
-    ESP_ERROR_CHECK(encoder_left->set_glitch_filter(encoder_left, 10));
-    ESP_ERROR_CHECK(encoder_right->set_glitch_filter(encoder_right, 10));
+    // ATENCAO: a unidade PCNT ja foi habilitada dentro de rotary_encoder_new_ec11(),
+    // entao o glitch filter retorna ESP_ERR_INVALID_STATE. Com ESP_ERROR_CHECK isso
+    // dava abort() e a ESP ficava reiniciando. Agora e apenas um aviso.
+    if (encoder_left->set_glitch_filter(encoder_left, 10) != ESP_OK ||
+        encoder_right->set_glitch_filter(encoder_right, 10) != ESP_OK) {
+        ESP_LOGW("TASK_0", "glitch filter dos encoders nao aplicado (ignorado)");
+    }
 
     // Start encoder
     ESP_ERROR_CHECK(encoder_left->start(encoder_left));
@@ -208,25 +216,33 @@ void monitor_encoder_pid_calc(){
             local_servo_angle = global_ros_servo_angle;
 
             xSemaphoreGive(xSemaphore_getRosSpeed);
-
-            ros_timeout_counter = 0;
             
             }
 
             count_get_ros = 0;
         }
 
-        else {
-            ros_timeout_counter++;
-        }
-
-    if(ros_timeout_counter >= ROS_TIMEOUT_CYCLES) {
+    // Failsafe baseado em TEMPO desde o ultimo frame valido recebido do ROS.
+    // (antes o contador era zerado a cada 2 ciclos mesmo sem dado novo, nunca disparava)
+    if ((xTaskGetTickCount() - global_last_ros_rx_tick) > pdMS_TO_TICKS(ROS_RX_TIMEOUT_MS)) {
             // Se passou do tempo limite sem mensagens do ROS, força a parada
             local_ros_angular_speed_left = 0.0f;
             local_ros_angular_speed_right = 0.0f;
-            // Trava o contador no limite para não estourar a variável (overflow)
-            ros_timeout_counter = ROS_TIMEOUT_CYCLES; 
+            local_servo_angle = (float) SERVO_INITIAL_ANGLE;
     }
+
+        // Protecao contra valores invalidos (NaN) vindos da serial
+        if (isnan(local_servo_angle)) local_servo_angle = (float) SERVO_INITIAL_ANGLE;
+        if (isnan(local_ros_angular_speed_left))  local_ros_angular_speed_left = 0.0f;
+        if (isnan(local_ros_angular_speed_right)) local_ros_angular_speed_right = 0.0f;
+        if (local_servo_angle < SERVO_MIN_ANGLE) local_servo_angle = SERVO_MIN_ANGLE;
+        if (local_servo_angle > SERVO_MAX_ANGLE) local_servo_angle = SERVO_MAX_ANGLE;
+
+        // Aciona o servo de direcao (antes estava comentado -> servo nunca se movia)
+        if (fabsf(local_servo_angle - last_written_servo_angle) > 0.2f) {
+            iot_servo_write_angle(LEDC_LOW_SPEED_MODE, SERVO_PWM_CHANNEL, local_servo_angle + SERVO_OFFSET);
+            last_written_servo_angle = local_servo_angle;
+        }
         
         //pwm_actuate(ESQ,8191.0*(7.5/34));
         //pwm_actuate(DIR,8191.0*(22.0/37));
