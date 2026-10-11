@@ -1,2 +1,4 @@
 /Jetson/catkin_ws/build
 /Jetson/catkin_ws/devel
+__pycache__/
+*.pyc

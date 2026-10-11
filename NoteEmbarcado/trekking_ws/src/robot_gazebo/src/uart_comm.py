@@ -34,16 +34,32 @@ class UARTDevice(Node):
             10
         )
 
-        try:
+        self.declare_parameter('port', SERIAL_PORT)
+        self.declare_parameter('baud_rate', BAUD_RATE)
 
+        port_to_use = self.get_parameter('port').value
+        baud_to_use = int(self.get_parameter('baud_rate').value)
+
+        import os
+        if not os.path.exists(port_to_use):
+            if os.path.exists('/dev/ttyUSB0'):
+                self.get_logger().warn(f"Porta {port_to_use} não encontrada. Usando /dev/ttyUSB0 automaticamente!")
+                port_to_use = '/dev/ttyUSB0'
+            elif os.path.exists('/dev/ttyACM0'):
+                self.get_logger().warn(f"Porta {port_to_use} não encontrada. Usando /dev/ttyACM0 automaticamente!")
+                port_to_use = '/dev/ttyACM0'
+
+        try:
+            self.get_logger().info(f"Conectando à ESP32 em {port_to_use} @ {baud_to_use} baud...")
             self.serial_port = serial.Serial(
-                port=SERIAL_PORT,
-                baudrate=BAUD_RATE,
+                port=port_to_use,
+                baudrate=baud_to_use,
                 timeout=0.1 
             )
-            
+            self.get_logger().info(f"Conexão serial com a ESP32 estabelecida com sucesso!")
         except serial.SerialException as e:
-            self.get_logger().error(f"Falha ao abrir porta serial: {e}")
+            self.get_logger().error(f"Falha ao abrir porta serial {port_to_use}: {e}")
+            self.get_logger().error("Dica: verifique se a ESP32 está plugada e rode: sudo chmod 666 /dev/tty*")
             exit(1)
 
         self.timer = self.create_timer(0.02, self.update_loop)
