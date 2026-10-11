@@ -5,6 +5,7 @@ from rclpy.node import Node
 import serial
 import struct
 
+from std_msgs.msg import Bool
 from robot_interfaces.msg import UARTData, VelocityData
 
 SERIAL_PORT = "/dev/ttyACM0"
@@ -18,19 +19,28 @@ FRAME_SIZE_RX = 1 + PAYLOAD_SIZE_RX + 1 + 1
 
 SERVO_INITIAL_ANGLE = 90.0
 
+
 class UARTDevice(Node):
     def __init__(self):
-        
+
         super().__init__('uart_comm')
 
         self.ackr_commands = [0.0, 0.0, SERVO_INITIAL_ANGLE]
+        self.led_byte = 0
 
         self.pub_encoder = self.create_publisher(UARTData, '/uart_data', 10)
 
         self.sub_velocity = self.create_subscription(
-            VelocityData, 
-            '/velocity_command', 
-            self.callback_vel, 
+            VelocityData,
+            '/velocity_command',
+            self.callback_vel,
+            10
+        )
+
+        self.sub_amarelo = self.create_subscription(
+            Bool,
+            '/amarelo_detectado',
+            self.callback_amarelo,
             10
         )
 
@@ -39,9 +49,9 @@ class UARTDevice(Node):
             self.serial_port = serial.Serial(
                 port=SERIAL_PORT,
                 baudrate=BAUD_RATE,
-                timeout=0.1 
+                timeout=0.1
             )
-            
+
         except serial.SerialException as e:
             self.get_logger().error(f"Falha ao abrir porta serial: {e}")
             exit(1)
@@ -56,6 +66,9 @@ class UARTDevice(Node):
         self.ackr_commands[0] = msg.angular_speed_left
         self.ackr_commands[1] = msg.angular_speed_right
         self.ackr_commands[2] = msg.servo_angle
+
+    def callback_amarelo(self, msg):
+        self.led_byte = 1 if msg.data else 0
 
     def read_loop(self):
         expected_sof = struct.pack('B', FRAME_SOF)
@@ -104,30 +117,41 @@ class UARTDevice(Node):
 
         try:
 
-            payload = struct.pack('<fff', self.ackr_commands[0], self.ackr_commands[1], self.ackr_commands[2])
+            payload = struct.pack(
+                '<fffB',
+                self.ackr_commands[0],
+                self.ackr_commands[1],
+                self.ackr_commands[2],
+                self.led_byte
+            )
 
             checksum = self.calculate_checksum(payload)
 
-            frame = struct.pack('B', FRAME_SOF) + payload + struct.pack('B', checksum) + struct.pack('B', FRAME_EOF)
-            
+            frame = (
+                struct.pack('B', FRAME_SOF)
+                + payload
+                + struct.pack('B', checksum)
+                + struct.pack('B', FRAME_EOF)
+            )
+
             self.serial_port.write(frame)
-            
+
         except Exception as e:
             self.get_logger().error(f"Erro na escrita: {str(e)}")
 
     def update_loop(self):
-        
+
         self.read_loop()
         self.write_data()
 
     def destroy_node(self):
-        
+
         self.ackr_commands = [0.0, 0.0, SERVO_INITIAL_ANGLE]
         self.write_data()
-        
+
         if hasattr(self, 'serial_port') and self.serial_port.is_open:
             self.serial_port.close()
-            
+
         super().destroy_node()
 
 
@@ -141,11 +165,12 @@ def main(args=None):
 
     except KeyboardInterrupt:
         pass
-    
+
     finally:
 
         node.destroy_node()
         rclpy.shutdown()
+
 
 if __name__ == "__main__":
     main()

@@ -1,5 +1,6 @@
 #include "pwm.h"
 #include "initializers.h"
+#include "esp_err.h"
 
 void pwm_motors_init(){
     //initializing pwm for left motor 
@@ -51,8 +52,8 @@ void pwm_motors_init(){
 
     servo_config_t servo_config = servo_config_info(SERVO_PWM_TIMER,SERVO_PWM_CHANNEL,SERVO_DUTY_PIN);
 
-    iot_servo_init(LEDC_LOW_SPEED_MODE, &servo_config);
-    iot_servo_write_angle(LEDC_LOW_SPEED_MODE, SERVO_PWM_CHANNEL, (float) (SERVO_INITIAL_ANGLE+SERVO_OFFSET));
+    ESP_ERROR_CHECK(iot_servo_init(LEDC_LOW_SPEED_MODE, &servo_config));
+    ESP_ERROR_CHECK(iot_servo_write_angle(LEDC_LOW_SPEED_MODE, SERVO_PWM_CHANNEL, (float)(SERVO_INITIAL_ANGLE + SERVO_OFFSET)));
     //iot_servo_init(LEDC_LOW_SPEED_MODE, &servo_config);
 
     //float angle = 45.0f;

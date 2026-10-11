@@ -1,4 +1,3 @@
-```c
 #include "types.h"
 #include "task_core0.h"
 #include "task_core1.h"
@@ -9,6 +8,8 @@
 
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include "freertos/semphr.h"
+#include <stdlib.h>
 #include "esp_err.h"
 
 // Declaração dos semáforos
@@ -35,84 +36,31 @@ double global_total_theta = 0;
 
 float global_servo_angle = (float)SERVO_INITIAL_ANGLE;
 float global_ros_servo_angle = (float)SERVO_INITIAL_ANGLE;
+uint8_t led_byte = 0;
+uint32_t global_ros_last_rx_ms = 0;
 
 uint32_t global_timer_miliseconds = 0;
 uint32_t global_time_stamp_miliseconds = 0;
 
 void app_main(void)
 {
-    // Inicializa PWM dos motores e do servo
-    pwm_motors_init();
+    xSemaphore_getSpeed = xSemaphoreCreateMutex();
+    xSemaphore_getRosSpeed = xSemaphoreCreateMutex();
+    initialization_groupEvent = xEventGroupCreate();
 
-    // Inicialização do encoder esquerdo
-    rotary_encoder_t *encoder_left = NULL;
+    if (xSemaphore_getSpeed == NULL || xSemaphore_getRosSpeed == NULL ||
+        initialization_groupEvent == NULL) {
+        ESP_LOGE("MAIN", "Falha ao criar sincronizacao");
+        abort();
+    }
 
-    rotary_encoder_config_t config_encoder_left =
-        ROTARY_ENCODER_DEFAULT_CONFIG(
-            (rotary_encoder_dev_t)0,
-            PCNT_CHA_LEFT,
-            PCNT_CHB_LEFT
-        );
+    if (xTaskCreatePinnedToCore(core0fuctions, "motor_control", 8192, NULL, 5, NULL, 0) != pdPASS) {
+        ESP_LOGE("MAIN", "Falha ao criar tarefa dos motores");
+        abort();
+    }
 
-    ESP_ERROR_CHECK(
-        rotary_encoder_new_ec11(
-            &config_encoder_left,
-            &encoder_left
-        )
-    );
-
-    // Inicialização do encoder direito
-    rotary_encoder_t *encoder_right = NULL;
-
-    rotary_encoder_config_t config_encoder_right =
-        ROTARY_ENCODER_DEFAULT_CONFIG(
-            (rotary_encoder_dev_t)1,
-            PCNT_CHA_RIGHT,
-            PCNT_CHB_RIGHT
-        );
-
-    ESP_ERROR_CHECK(
-        rotary_encoder_new_ec11(
-            &config_encoder_right,
-            &encoder_right
-        )
-    );
-
-    // Inicia os encoders
-    ESP_ERROR_CHECK(encoder_left->start(encoder_left));
-    ESP_ERROR_CHECK(encoder_right->start(encoder_right));
-
-    // Mantém os motores inicialmente parados
-    pwm_actuate(ESQ, 0);
-    pwm_actuate(DIR, 0);
-
-    while (1)
-    {
-        // Servo na posição de 45 graus
-        iot_servo_write_angle(
-            LEDC_LOW_SPEED_MODE,
-            SERVO_PWM_CHANNEL,
-            -30.0f + SERVO_OFFSET
-        );
-
-        // Aciona os dois motores
-        pwm_actuate(ESQ, 512);
-        pwm_actuate(DIR, 512);
-
-        vTaskDelay(pdMS_TO_TICKS(3000));
-
-        // Para os motores
-        pwm_actuate(ESQ, 0);
-        pwm_actuate(DIR, 0);
-
-        // Servo na posição de 135 graus
-        iot_servo_write_angle(
-            LEDC_LOW_SPEED_MODE,
-            SERVO_PWM_CHANNEL,
-            30.0f + SERVO_OFFSET
-        );
-
-        vTaskDelay(pdMS_TO_TICKS(2000));
+    if (xTaskCreatePinnedToCore(core1functions, "uart", 4096, NULL, 5, NULL, 1) != pdPASS) {
+        ESP_LOGE("MAIN", "Falha ao criar tarefa UART");
+        abort();
     }
 }
-```

@@ -6,6 +6,7 @@
 #include <string.h>
 #include "esp_log.h"
 #include "driver/uart.h"
+#include "driver/gpio.h"
 #include "esp_timer.h"
 
 typedef enum {
@@ -95,6 +96,9 @@ static void process_received_byte(uint8_t byte)
                 global_ros_angular_speed_left = s_payload_buffer.data.angular_speed_left;
                 global_ros_angular_speed_right = s_payload_buffer.data.angular_speed_right;
                 global_ros_servo_angle = s_payload_buffer.data.servo_angle;
+                led_byte = s_payload_buffer.data.led_byte;
+                global_ros_last_rx_ms = (uint32_t)(esp_timer_get_time() / 1000);
+                ESP_ERROR_CHECK(gpio_set_level(LED_GPIO_PIN, led_byte));
 
                 xSemaphoreGive(xSemaphore_getRosSpeed);
 
@@ -115,6 +119,10 @@ static void process_received_byte(uint8_t byte)
 
 esp_err_t uart_init()
 { 
+    ESP_ERROR_CHECK(gpio_reset_pin(LED_GPIO_PIN));
+    ESP_ERROR_CHECK(gpio_set_direction(LED_GPIO_PIN, GPIO_MODE_OUTPUT));
+    ESP_ERROR_CHECK(gpio_set_level(LED_GPIO_PIN, 0));
+
     const uart_config_t uart_config = {
 
         .baud_rate = 115200,
@@ -173,7 +181,7 @@ esp_err_t uart_send_frame(data_to_send_t *cmd, size_t size)
 void uart_send_motors(double *total_x_displacement, double *total_y_displacement, double *total_angular_displacement)
 {
 
-    data_motors_to_send_t data;
+    data_to_send_t data;
 
     static int total_x_micrometers;
     static int total_y_micrometers;
@@ -192,8 +200,6 @@ void uart_send_motors(double *total_x_displacement, double *total_y_displacement
     memcpy(&data.total_theta_mmrad,&total_theta_mmrad,4);
     memcpy(&data.timestamp,&timestamp,4);
 
-    xSemaphoreGive(xSemaphore_getRosSpeed);
-    
     esp_err_t ret = uart_send_frame(&data, PAYLOAD_SIZE_TX);
 
     xSemaphoreGive(xSemaphore_getSpeed);
@@ -224,17 +230,4 @@ void uart_read_motors()
     //ESP_LOGI("UART_DEBUG", "6. Semaforo devolvido.");
 }
 
-void uart_send_led(bool led_state)
-{
-    data_led_to_send_t data = {
-        .led = led_state ? 1 : 0
-    };
-
-    uart_send_frame(&data, sizeof(data));
-}
-
-void uart_read_led()
-{
-
-}
 

@@ -22,6 +22,7 @@
 
 //standby
 #define STAND_BY GPIO_NUM_26
+#define LED_GPIO_PIN GPIO_NUM_23
 
 //pwm gpio constants
 #define ENABLE_A GPIO_NUM_13
@@ -68,7 +69,7 @@
 
 #define FRAME_SOF            0xAA
 #define FRAME_EOF            0xBB
-#define PAYLOAD_SIZE_RX      12
+#define PAYLOAD_SIZE_RX      13
 #define PAYLOAD_SIZE_TX      16
 
 typedef struct {
@@ -80,11 +81,12 @@ typedef struct {
 
 } data_to_send_t;
 
-typedef struct {
+typedef struct __attribute__((packed)) {
 
-    int angular_speed_left;
-    int angular_speed_right;
-    int servo_angle;
+    float angular_speed_left;
+    float angular_speed_right;
+    float servo_angle;
+    uint8_t led_byte;
 
 } data_to_receive_t;
 

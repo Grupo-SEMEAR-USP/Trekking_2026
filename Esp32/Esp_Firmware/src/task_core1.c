@@ -58,10 +58,10 @@ void core1functions(void *params){
     while(true){
 
         //ESP_LOGI(TAG, "Tentando ler UART...");
-        uart_read();
+        uart_read_motors();
 
         //ESP_LOGI(TAG, "Tentando enviar UART...");
-        uart_send(&global_total_x, &global_total_y, &global_total_theta);
+        uart_send_motors(&global_total_x, &global_total_y, &global_total_theta);
 
         //ESP_LOGI(TAG, "Delay da task...");
         vTaskDelay(pdMS_TO_TICKS(UART_DELAY));
