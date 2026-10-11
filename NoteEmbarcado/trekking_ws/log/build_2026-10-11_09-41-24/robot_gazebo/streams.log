@@ -1,0 +1,34 @@
+[0.029s] Invoking command in '/home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_gazebo -DCMAKE_INSTALL_PREFIX=/home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo
+[0.177s] -- The C compiler identification is GNU 13.3.0
+[0.281s] -- The CXX compiler identification is GNU 13.3.0
+[0.313s] -- Detecting C compiler ABI info
+[0.507s] -- Detecting C compiler ABI info - done
+[0.538s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.539s] -- Detecting C compile features
+[0.540s] -- Detecting C compile features - done
+[0.558s] -- Detecting CXX compiler ABI info
+[0.719s] -- Detecting CXX compiler ABI info - done
+[0.741s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.742s] -- Detecting CXX compile features
+[0.743s] -- Detecting CXX compile features - done
+[0.748s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.008s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.183s] [31mCMake Error at CMakeLists.txt:10 (find_package):
+[1.183s]   By not providing "Findros_gz_sim.cmake" in CMAKE_MODULE_PATH this project
+[1.183s]   has asked CMake to find a package configuration file provided by
+[1.183s]   "ros_gz_sim", but CMake did not find one.
+[1.183s] 
+[1.183s]   Could not find a package configuration file provided by "ros_gz_sim" with
+[1.183s]   any of the following names:
+[1.184s] 
+[1.184s]     ros_gz_simConfig.cmake
+[1.184s]     ros_gz_sim-config.cmake
+[1.184s] 
+[1.184s]   Add the installation prefix of "ros_gz_sim" to CMAKE_PREFIX_PATH or set
+[1.184s]   "ros_gz_sim_DIR" to a directory containing one of the above files.  If
+[1.184s]   "ros_gz_sim" provides a separate development package or SDK, be sure it has
+[1.184s]   been installed.
+[1.184s] 
+[1.185s] [0m
+[1.185s] -- Configuring incomplete, errors occurred!
+[1.188s] Invoked command in '/home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_gazebo' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_gazebo -DCMAKE_INSTALL_PREFIX=/home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo

@@ -1,0 +1,36 @@
+[0.018s] Invoking command in '/home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_gazebo -DCMAKE_INSTALL_PREFIX=/home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo
+[0.039s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.453s] -- Found ros_gz_sim: 1.0.24 (/opt/ros/jazzy/share/ros_gz_sim/cmake)
+[0.539s] -- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.566s] -- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.592s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.612s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.703s] -- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.706s] -- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.813s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[0.844s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[0.881s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.312s] -- Found ros_gz_bridge: 1.0.24 (/opt/ros/jazzy/share/ros_gz_bridge/cmake)
+[1.341s] [31mCMake Error at /opt/ros/jazzy/opt/gz_msgs_vendor/extra_cmake/lib/cmake/gz-msgs/gz-msgs-config.cmake:3 (find_package):
+[1.342s]   By not providing "Findgz-msgs10.cmake" in CMAKE_MODULE_PATH this project
+[1.342s]   has asked CMake to find a package configuration file provided by
+[1.342s]   "gz-msgs10", but CMake did not find one.
+[1.342s] 
+[1.342s]   Could not find a package configuration file provided by "gz-msgs10" with
+[1.342s]   any of the following names:
+[1.343s] 
+[1.343s]     gz-msgs10Config.cmake
+[1.343s]     gz-msgs10-config.cmake
+[1.343s] 
+[1.343s]   Add the installation prefix of "gz-msgs10" to CMAKE_PREFIX_PATH or set
+[1.343s]   "gz-msgs10_DIR" to a directory containing one of the above files.  If
+[1.343s]   "gz-msgs10" provides a separate development package or SDK, be sure it has
+[1.344s]   been installed.
+[1.344s] Call Stack (most recent call first):
+[1.344s]   /opt/ros/jazzy/share/ros_gz_bridge/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+[1.344s]   /opt/ros/jazzy/share/ros_gz_bridge/cmake/ros_gz_bridgeConfig.cmake:41 (include)
+[1.344s]   CMakeLists.txt:11 (find_package)
+[1.344s] 
+[1.344s] [0m
+[1.345s] -- Configuring incomplete, errors occurred!
+[1.351s] Invoked command in '/home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_gazebo' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_gazebo -DCMAKE_INSTALL_PREFIX=/home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_gazebo

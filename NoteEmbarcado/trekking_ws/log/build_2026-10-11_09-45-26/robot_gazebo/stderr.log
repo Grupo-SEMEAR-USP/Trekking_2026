@@ -1,0 +1,21 @@
+[31mCMake Error at /opt/ros/jazzy/opt/gz_msgs_vendor/extra_cmake/lib/cmake/gz-msgs/gz-msgs-config.cmake:3 (find_package):
+  By not providing "Findgz-msgs10.cmake" in CMAKE_MODULE_PATH this project
+  has asked CMake to find a package configuration file provided by
+  "gz-msgs10", but CMake did not find one.
+
+  Could not find a package configuration file provided by "gz-msgs10" with
+  any of the following names:
+
+    gz-msgs10Config.cmake
+    gz-msgs10-config.cmake
+
+  Add the installation prefix of "gz-msgs10" to CMAKE_PREFIX_PATH or set
+  "gz-msgs10_DIR" to a directory containing one of the above files.  If
+  "gz-msgs10" provides a separate development package or SDK, be sure it has
+  been installed.
+Call Stack (most recent call first):
+  /opt/ros/jazzy/share/ros_gz_bridge/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+  /opt/ros/jazzy/share/ros_gz_bridge/cmake/ros_gz_bridgeConfig.cmake:41 (include)
+  CMakeLists.txt:11 (find_package)
+
+[0m

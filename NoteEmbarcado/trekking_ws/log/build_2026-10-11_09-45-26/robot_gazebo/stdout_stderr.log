@@ -1,0 +1,34 @@
+-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found ros_gz_sim: 1.0.24 (/opt/ros/jazzy/share/ros_gz_sim/cmake)
+-- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found ros_gz_bridge: 1.0.24 (/opt/ros/jazzy/share/ros_gz_bridge/cmake)
+[31mCMake Error at /opt/ros/jazzy/opt/gz_msgs_vendor/extra_cmake/lib/cmake/gz-msgs/gz-msgs-config.cmake:3 (find_package):
+  By not providing "Findgz-msgs10.cmake" in CMAKE_MODULE_PATH this project
+  has asked CMake to find a package configuration file provided by
+  "gz-msgs10", but CMake did not find one.
+
+  Could not find a package configuration file provided by "gz-msgs10" with
+  any of the following names:
+
+    gz-msgs10Config.cmake
+    gz-msgs10-config.cmake
+
+  Add the installation prefix of "gz-msgs10" to CMAKE_PREFIX_PATH or set
+  "gz-msgs10_DIR" to a directory containing one of the above files.  If
+  "gz-msgs10" provides a separate development package or SDK, be sure it has
+  been installed.
+Call Stack (most recent call first):
+  /opt/ros/jazzy/share/ros_gz_bridge/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+  /opt/ros/jazzy/share/ros_gz_bridge/cmake/ros_gz_bridgeConfig.cmake:41 (include)
+  CMakeLists.txt:11 (find_package)
+
+[0m
+-- Configuring incomplete, errors occurred!

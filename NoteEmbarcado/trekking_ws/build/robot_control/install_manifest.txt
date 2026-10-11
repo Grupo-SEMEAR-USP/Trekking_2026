@@ -1,0 +1,16 @@
+/home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/lib/robot_control/movement.py
+/home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/ament_index/resource_index/package_run_dependencies/robot_control
+/home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/ament_index/resource_index/parent_prefix_path/robot_control
+/home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/robot_control/environment/ament_prefix_path.sh
+/home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/robot_control/environment/ament_prefix_path.dsv
+/home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/robot_control/environment/path.sh
+/home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/robot_control/environment/path.dsv
+/home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/robot_control/local_setup.bash
+/home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/robot_control/local_setup.sh
+/home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/robot_control/local_setup.zsh
+/home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/robot_control/local_setup.dsv
+/home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/robot_control/package.dsv
+/home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/ament_index/resource_index/packages/robot_control
+/home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/robot_control/cmake/robot_controlConfig.cmake
+/home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/robot_control/cmake/robot_controlConfig-version.cmake
+/home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control/share/robot_control/package.xml

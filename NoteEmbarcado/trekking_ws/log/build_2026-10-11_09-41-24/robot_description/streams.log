@@ -1,0 +1,35 @@
+[0.029s] Invoking command in '/home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_description -DCMAKE_INSTALL_PREFIX=/home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_description
+[0.176s] -- The C compiler identification is GNU 13.3.0
+[0.266s] -- The CXX compiler identification is GNU 13.3.0
+[0.298s] -- Detecting C compiler ABI info
+[0.488s] -- Detecting C compiler ABI info - done
+[0.512s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.513s] -- Detecting C compile features
+[0.513s] -- Detecting C compile features - done
+[0.536s] -- Detecting CXX compiler ABI info
+[0.692s] -- Detecting CXX compiler ABI info - done
+[0.713s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.716s] -- Detecting CXX compile features
+[0.716s] -- Detecting CXX compile features - done
+[0.721s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.941s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.102s] -- Found urdf: 2.10.1 (/opt/ros/jazzy/share/urdf/cmake)
+[1.188s] -- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+[1.222s] [31mCMake Error at CMakeLists.txt:11 (find_package):
+[1.223s]   By not providing "Findxacro.cmake" in CMAKE_MODULE_PATH this project has
+[1.223s]   asked CMake to find a package configuration file provided by "xacro", but
+[1.223s]   CMake did not find one.
+[1.223s] 
+[1.223s]   Could not find a package configuration file provided by "xacro" with any of
+[1.223s]   the following names:
+[1.223s] 
+[1.223s]     xacroConfig.cmake
+[1.224s]     xacro-config.cmake
+[1.224s] 
+[1.224s]   Add the installation prefix of "xacro" to CMAKE_PREFIX_PATH or set
+[1.224s]   "xacro_DIR" to a directory containing one of the above files.  If "xacro"
+[1.224s]   provides a separate development package or SDK, be sure it has been
+[1.224s]   installed.
+[1.224s] 
+[1.224s] [0m
+[1.224s] -- Configuring incomplete, errors occurred!

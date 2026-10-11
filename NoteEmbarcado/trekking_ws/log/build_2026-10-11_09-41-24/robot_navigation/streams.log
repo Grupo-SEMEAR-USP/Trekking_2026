@@ -1,0 +1,24 @@
+[0.036s] Invoking command in '/home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_navigation -DCMAKE_INSTALL_PREFIX=/home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation
+[0.159s] -- The C compiler identification is GNU 13.3.0
+[0.253s] -- The CXX compiler identification is GNU 13.3.0
+[0.286s] -- Detecting C compiler ABI info
+[0.451s] -- Detecting C compiler ABI info - done
+[0.465s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.466s] -- Detecting C compile features
+[0.466s] -- Detecting C compile features - done
+[0.488s] -- Detecting CXX compiler ABI info
+[0.650s] -- Detecting CXX compiler ABI info - done
+[0.671s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.672s] -- Detecting CXX compile features
+[0.673s] -- Detecting CXX compile features - done
+[0.685s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.930s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.087s] -- Found ament_lint_auto: 0.17.5 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[1.251s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.251s] -- Configured 'flake8' exclude dirs and/or files: 
+[1.252s] -- Added test 'lint_cmake' to check CMake code style
+[1.253s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.254s] -- Added test 'xmllint' to check XML markup files
+[1.255s] -- Configuring done (1.2s)
+[1.258s] -- Generating done (0.0s)
+[1.261s] -- Build files have been written to: /home/dudu/Trekking_2026/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation
