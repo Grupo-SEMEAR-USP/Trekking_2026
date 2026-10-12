@@ -31,6 +31,8 @@ class OdomPublisher(Node):
         self.x = 0.0
         self.y = 0.0
         self.theta = 0.0
+        self.vx = 0.0
+        self.vth = 0.0
 
         self.dt = 0.0
         self.last_timestamp = 0.0
@@ -48,8 +50,8 @@ class OdomPublisher(Node):
 
     def uart_callback(self, msg):
 
-        current_x = msg.x / 1000.0
-        current_y = msg.y / 1000.0
+        current_x = msg.x / 1000000.0
+        current_y = msg.y / 1000000.0
         current_theta = msg.z / 1000.0
 
         dt_s = (msg.timestamp - self.last_timestamp) / 1000.0
@@ -72,9 +74,6 @@ class OdomPublisher(Node):
 
     def odom_callback(self):
         
-        vx = 0.0 
-        vth = 0.0
-
         current_time = self.get_clock().now().to_msg()
         quat = self.yaw_to_quaternion(self.theta)
 
@@ -100,8 +99,8 @@ class OdomPublisher(Node):
         odom.pose.pose.position.z = 0.0
         odom.pose.pose.orientation = quat
 
-        odom.twist.twist.linear.x = vx
-        odom.twist.twist.angular.z = vth
+        odom.twist.twist.linear.x = float(self.vx)
+        odom.twist.twist.angular.z = float(self.vth)
 
         self.odom_pub.publish(odom)
 

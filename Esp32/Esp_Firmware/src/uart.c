@@ -94,6 +94,7 @@ static void process_received_byte(uint8_t byte)
                 global_ros_angular_speed_left = s_payload_buffer.data.angular_speed_left;
                 global_ros_angular_speed_right = s_payload_buffer.data.angular_speed_right;
                 global_ros_servo_angle = s_payload_buffer.data.servo_angle;
+                global_last_ros_cmd_time_us = esp_timer_get_time();
 
                 xSemaphoreGive(xSemaphore_getRosSpeed);
 
@@ -190,8 +191,6 @@ void uart_send(double *total_x_displacement, double *total_y_displacement, doubl
     memcpy(&data.total_y_micrometers,&total_y_micrometers,4);
     memcpy(&data.total_theta_mmrad,&total_theta_mmrad,4);
     memcpy(&data.timestamp,&timestamp,4);
-
-    xSemaphoreGive(xSemaphore_getRosSpeed);
     
     esp_err_t ret = uart_send_frame(&data, PAYLOAD_SIZE_TX);
 

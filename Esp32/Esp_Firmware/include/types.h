@@ -82,9 +82,9 @@ typedef struct {
 
 typedef struct {
 
-    int angular_speed_left;
-    int angular_speed_right;
-    int servo_angle;
+    float angular_speed_left;
+    float angular_speed_right;
+    float servo_angle;
 
 } data_to_receive_t;
 
@@ -111,12 +111,12 @@ typedef struct {
 #define MAX_INTEGRAL_VALUE 3880.0
 
 // Kp,Ki,Kd constants
-#define KP_LEFT 0.5
-#define KI_LEFT 1.0
+#define KP_LEFT 100.0
+#define KI_LEFT 5.0
 #define KD_LEFT 0.5
 
-#define KP_RIGHT 0.5
-#define KI_RIGHT 1.0
+#define KP_RIGHT 100.0
+#define KI_RIGHT 5.0
 #define KD_RIGHT 0.5
 
 
@@ -153,8 +153,8 @@ typedef struct {
 
 //defining calc parameters
 
-#define WHELL_RADIUS 47.5 //wheel radius in mm
-#define WHELL_REAR_SEPARATION 195.0 //back whell separation in mm
+#define WHELL_RADIUS 33.0 //wheel radius in mm
+#define WHELL_REAR_SEPARATION 168.0 //back whell separation in mm
 
 #define ENCODER_DISPLACEMENT (2*PI*WHELL_RADIUS)/(ENCODER_RESOLUTION_TICKS)
 

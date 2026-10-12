@@ -12,15 +12,18 @@ def generate_launch_description():
     default_params = os.path.join(pkg_nav, 'config', 'waypoints.yaml')
 
     params_file = LaunchConfiguration('params_file')
+    use_sim_time = LaunchConfiguration('use_sim_time')
 
     return LaunchDescription([
         DeclareLaunchArgument('params_file', default_value=default_params,
                               description='YAML com waypoints e ganhos'),
+        DeclareLaunchArgument('use_sim_time', default_value='false',
+                              description='Usar tempo de simulacao (true para Gazebo, false para robo real)'),
         Node(
             package='robot_navigation',
             executable='waypoint_navigator.py',
             name='waypoint_navigator',
-            parameters=[params_file],
+            parameters=[params_file, {'use_sim_time': use_sim_time}],
             output='screen',
         ),
     ])

@@ -1,6 +1,6 @@
 waypoint_navigator:
   ros__parameters:
-    use_sim_time: true
+    use_sim_time: false
 
     # Bases reais medidas do croqui (Mapa Trekking):
     # Dimensões da arena: ~34m (largura) x ~28m (altura)

@@ -1,0 +1,44 @@
+[0.033s] Invoking command in '/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_control -DCMAKE_INSTALL_PREFIX=/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control
+[0.146s] -- The C compiler identification is GNU 13.3.0
+[0.248s] -- The CXX compiler identification is GNU 13.3.0
+[0.282s] -- Detecting C compiler ABI info
+[0.433s] -- Detecting C compiler ABI info - done
+[0.465s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.466s] -- Detecting C compile features
+[0.467s] -- Detecting C compile features - done
+[0.484s] -- Detecting CXX compiler ABI info
+[0.663s] -- Detecting CXX compiler ABI info - done
+[0.682s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.683s] -- Detecting CXX compile features
+[0.685s] -- Detecting CXX compile features - done
+[0.692s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.991s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.226s] -- Found rclcpp: 28.1.22 (/opt/ros/jazzy/share/rclcpp/cmake)
+[1.291s] -- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[1.319s] -- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[1.345s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.378s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.534s] -- Found rmw_implementation_cmake: 7.3.4 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[1.543s] -- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[1.706s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[1.746s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[1.782s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.969s] CMake Error at CMakeLists.txt:11 (find_package):
+[1.969s]   By not providing "Findhardware_interface.cmake" in CMAKE_MODULE_PATH this
+[1.969s]   project has asked CMake to find a package configuration file provided by
+[1.970s]   "hardware_interface", but CMake did not find one.
+[1.970s] 
+[1.970s]   Could not find a package configuration file provided by
+[1.970s]   "hardware_interface" with any of the following names:
+[1.970s] 
+[1.970s]     hardware_interfaceConfig.cmake
+[1.970s]     hardware_interface-config.cmake
+[1.970s] 
+[1.970s]   Add the installation prefix of "hardware_interface" to CMAKE_PREFIX_PATH or
+[1.970s]   set "hardware_interface_DIR" to a directory containing one of the above
+[1.970s]   files.  If "hardware_interface" provides a separate development package or
+[1.970s]   SDK, be sure it has been installed.
+[1.970s] 
+[1.971s] 
+[1.971s] -- Configuring incomplete, errors occurred!
+[1.982s] Invoked command in '/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_control' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_control -DCMAKE_INSTALL_PREFIX=/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_control

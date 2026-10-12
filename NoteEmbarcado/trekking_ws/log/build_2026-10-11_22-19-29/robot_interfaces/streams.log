@@ -1,0 +1,275 @@
+[0.024s] Invoking command in '/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_interfaces -DCMAKE_INSTALL_PREFIX=/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces
+[0.120s] -- The C compiler identification is GNU 13.3.0
+[0.217s] -- The CXX compiler identification is GNU 13.3.0
+[0.242s] -- Detecting C compiler ABI info
+[0.370s] -- Detecting C compiler ABI info - done
+[0.383s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.384s] -- Detecting C compile features
+[0.384s] -- Detecting C compile features - done
+[0.397s] -- Detecting CXX compiler ABI info
+[0.559s] -- Detecting CXX compiler ABI info - done
+[0.577s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.577s] -- Detecting CXX compile features
+[0.578s] -- Detecting CXX compile features - done
+[0.585s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.841s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.025s] -- Found rosidl_default_generators: 1.6.1 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[1.034s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.127s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.207s] -- Found rosidl_adapter: 4.6.9 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[1.999s] -- Found ament_cmake_ros: 0.12.2 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[2.549s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[3.183s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[3.186s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[3.337s] -- Found PythonExtra: /usr/bin/python3  
+[3.803s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[3.864s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[3.869s] -- Found ament_lint_auto: 0.17.5 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[3.895s] -- Added test 'lint_cmake' to check CMake code style
+[3.897s] -- Added test 'xmllint' to check XML markup files
+[3.900s] -- Configuring done (3.9s)
+[3.940s] -- Generating done (0.0s)
+[3.953s] -- Build files have been written to: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces
+[3.960s] Invoked command in '/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_interfaces -DCMAKE_INSTALL_PREFIX=/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces
+[3.962s] Invoking command in '/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces -- -j8 -l8
+[4.019s] [  4%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[4.020s] [  4%] [34m[1mGenerating Rust code for ROS interfaces[0m
+[4.029s] [  4%] Built target ament_cmake_python_copy_robot_interfaces
+[4.276s] [  4%] Built target robot_interfaces__rosidl_generator_type_description
+[4.291s] [  6%] [34m[1mGenerating C code for ROS interfaces[0m
+[4.302s] [  8%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[4.307s] [  8%] Built target robot_interfaces__rs
+[4.307s] running egg_info
+[4.309s] creating robot_interfaces.egg-info
+[4.331s] writing robot_interfaces.egg-info/PKG-INFO
+[4.332s] writing dependency_links to robot_interfaces.egg-info/dependency_links.txt
+[4.332s] writing top-level names to robot_interfaces.egg-info/top_level.txt
+[4.333s] writing manifest file 'robot_interfaces.egg-info/SOURCES.txt'
+[4.394s] reading manifest file 'robot_interfaces.egg-info/SOURCES.txt'
+[4.395s] writing manifest file 'robot_interfaces.egg-info/SOURCES.txt'
+[4.437s] [  8%] Built target ament_cmake_python_build_robot_interfaces_egg
+[4.639s] [  8%] Built target robot_interfaces__cpp
+[4.693s] [ 13%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robot_interfaces/msg/detail/velocity_data__description.c.o[0m
+[4.693s] [ 13%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robot_interfaces/msg/detail/uart_data__functions.c.o[0m
+[4.694s] [ 15%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robot_interfaces/msg/detail/uart_data__description.c.o[0m
+[4.695s] [ 17%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robot_interfaces/msg/detail/uart_data__type_support.c.o[0m
+[4.695s] [ 20%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robot_interfaces/msg/detail/velocity_data__functions.c.o[0m
+[4.695s] [ 22%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robot_interfaces/msg/detail/velocity_data__type_support.c.o[0m
+[4.762s] [ 24%] [32m[1mLinking C shared library librobot_interfaces__rosidl_generator_c.so[0m
+[4.805s] [ 24%] Built target robot_interfaces__rosidl_generator_c
+[4.822s] [ 28%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[4.822s] [ 28%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[4.822s] [ 31%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[4.822s] [ 33%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[4.823s] [ 37%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[4.823s] [ 37%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[5.181s] [ 42%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/robot_interfaces/msg/velocity_data__type_support.cpp.o[0m
+[5.181s] [ 42%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/robot_interfaces/msg/uart_data__type_support.cpp.o[0m
+[5.264s] [ 44%] [32m[1mLinking CXX shared library librobot_interfaces__rosidl_typesupport_c.so[0m
+[5.282s] [ 46%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robot_interfaces/msg/uart_data__type_support.cpp.o[0m
+[5.282s] [ 48%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robot_interfaces/msg/detail/uart_data__type_support_c.cpp.o[0m
+[5.284s] [ 51%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robot_interfaces/msg/velocity_data__type_support.cpp.o[0m
+[5.286s] [ 53%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robot_interfaces/msg/detail/velocity_data__type_support_c.cpp.o[0m
+[5.348s] [ 53%] Built target robot_interfaces__rosidl_typesupport_c
+[5.384s] [ 57%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robot_interfaces/msg/detail/uart_data__type_support.cpp.o[0m
+[5.384s] [ 57%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robot_interfaces/msg/detail/velocity_data__type_support.cpp.o[0m
+[5.401s] [ 60%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robot_interfaces/msg/detail/uart_data__type_support.c.o[0m
+[5.471s] [ 64%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robot_interfaces/msg/detail/dds_fastrtps/uart_data__type_support.cpp.o[0m
+[5.472s] [ 64%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robot_interfaces/msg/detail/velocity_data__type_support.c.o[0m
+[5.537s] [ 66%] [32m[1mLinking C shared library librobot_interfaces__rosidl_typesupport_introspection_c.so[0m
+[5.600s] [ 66%] Built target robot_interfaces__rosidl_typesupport_introspection_c
+[5.618s] [ 68%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robot_interfaces/msg/detail/dds_fastrtps/velocity_data__type_support.cpp.o[0m
+[5.950s] [ 71%] [32m[1mLinking CXX shared library librobot_interfaces__rosidl_typesupport_cpp.so[0m
+[6.041s] [ 71%] Built target robot_interfaces__rosidl_typesupport_cpp
+[6.075s] [ 73%] [32m[1mLinking CXX shared library librobot_interfaces__rosidl_typesupport_introspection_cpp.so[0m
+[6.140s] [ 73%] Built target robot_interfaces__rosidl_typesupport_introspection_cpp
+[6.288s] [ 75%] [32m[1mLinking CXX shared library librobot_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[6.357s] [ 75%] Built target robot_interfaces__rosidl_typesupport_fastrtps_c
+[6.411s] [ 77%] [32m[1mLinking CXX shared library librobot_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[6.467s] [ 77%] Built target robot_interfaces__rosidl_typesupport_fastrtps_cpp
+[6.493s] [ 77%] Built target robot_interfaces
+[6.518s] [ 80%] [34m[1mGenerating Python code for ROS interfaces[0m
+[6.904s] [ 80%] Built target robot_interfaces__py
+[6.929s] [ 84%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/robot_interfaces/msg/_velocity_data_s.c.o[0m
+[6.929s] [ 84%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/robot_interfaces/msg/_uart_data_s.c.o[0m
+[7.099s] [ 86%] [32m[1mLinking C shared library librobot_interfaces__rosidl_generator_py.so[0m
+[7.145s] [ 86%] Built target robot_interfaces__rosidl_generator_py
+[7.178s] [ 93%] [32mBuilding C object CMakeFiles/robot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/robot_interfaces/_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[7.178s] [ 93%] [32mBuilding C object CMakeFiles/robot_interfaces_s__rosidl_typesupport_c.dir/rosidl_generator_py/robot_interfaces/_robot_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[7.178s] [ 93%] [32mBuilding C object CMakeFiles/robot_interfaces_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/robot_interfaces/_robot_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[7.330s] [ 95%] [32m[1mLinking C shared module rosidl_generator_py/robot_interfaces/robot_interfaces_s__rosidl_typesupport_introspection_c.so[0m
+[7.335s] [ 97%] [32m[1mLinking C shared module rosidl_generator_py/robot_interfaces/robot_interfaces_s__rosidl_typesupport_c.so[0m
+[7.340s] [100%] [32m[1mLinking C shared module rosidl_generator_py/robot_interfaces/robot_interfaces_s__rosidl_typesupport_fastrtps_c.so[0m
+[7.380s] [100%] Built target robot_interfaces_s__rosidl_typesupport_introspection_c
+[7.383s] [100%] Built target robot_interfaces_s__rosidl_typesupport_c
+[7.389s] [100%] Built target robot_interfaces_s__rosidl_typesupport_fastrtps_c
+[7.402s] Invoked command in '/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces -- -j8 -l8
+[7.404s] Invoking command in '/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces
+[7.413s] -- Install configuration: ""
+[7.413s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/ament_index/resource_index/rosidl_interfaces/robot_interfaces
+[7.413s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/msg/UARTData.json
+[7.413s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/msg/VelocityData.json
+[7.413s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces
+[7.414s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg
+[7.414s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/uart_data.h
+[7.414s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail
+[7.414s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/uart_data__functions.h
+[7.414s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/uart_data__type_support.h
+[7.414s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_data__type_support.c
+[7.414s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/uart_data__description.c
+[7.415s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_data__functions.c
+[7.415s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/uart_data__type_support.c
+[7.415s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/uart_data__struct.h
+[7.416s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_data__struct.h
+[7.416s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/uart_data__functions.c
+[7.416s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_data__description.c
+[7.416s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_data__type_support.h
+[7.416s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_data__functions.h
+[7.416s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/velocity_data.h
+[7.417s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/rosidl_generator_c__visibility_control.h
+[7.417s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/environment/library_path.sh
+[7.417s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/environment/library_path.dsv
+[7.418s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_generator_c.so
+[7.418s] -- Set non-toolchain portion of runtime path of "/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_generator_c.so" to ""
+[7.419s] -- Up-to-date: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces
+[7.419s] -- Up-to-date: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg
+[7.419s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[7.419s] -- Up-to-date: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail
+[7.419s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_data__rosidl_typesupport_fastrtps_c.h
+[7.419s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/uart_data__rosidl_typesupport_fastrtps_c.h
+[7.419s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_fastrtps_c.so
+[7.420s] -- Set non-toolchain portion of runtime path of "/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_fastrtps_c.so" to ""
+[7.420s] -- Up-to-date: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces
+[7.421s] -- Up-to-date: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg
+[7.421s] -- Up-to-date: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail
+[7.421s] -- Up-to-date: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_data__type_support.c
+[7.421s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_data__rosidl_typesupport_introspection_c.h
+[7.421s] -- Up-to-date: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/uart_data__type_support.c
+[7.421s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/uart_data__rosidl_typesupport_introspection_c.h
+[7.421s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[7.421s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_introspection_c.so
+[7.422s] -- Set non-toolchain portion of runtime path of "/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_introspection_c.so" to ""
+[7.422s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_c.so
+[7.423s] -- Set non-toolchain portion of runtime path of "/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_c.so" to ""
+[7.423s] -- Up-to-date: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces
+[7.423s] -- Up-to-date: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg
+[7.423s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/velocity_data.hpp
+[7.424s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
+[7.424s] -- Up-to-date: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail
+[7.424s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_data__struct.hpp
+[7.424s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_data__type_support.hpp
+[7.425s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/uart_data__traits.hpp
+[7.425s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/uart_data__builder.hpp
+[7.425s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_data__builder.hpp
+[7.425s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/uart_data__struct.hpp
+[7.425s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_data__traits.hpp
+[7.426s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/uart_data__type_support.hpp
+[7.426s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/uart_data.hpp
+[7.426s] -- Up-to-date: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces
+[7.426s] -- Up-to-date: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg
+[7.426s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[7.426s] -- Up-to-date: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail
+[7.427s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/dds_fastrtps
+[7.427s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/uart_data__rosidl_typesupport_fastrtps_cpp.hpp
+[7.427s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_data__rosidl_typesupport_fastrtps_cpp.hpp
+[7.427s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[7.427s] -- Set non-toolchain portion of runtime path of "/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+[7.427s] -- Up-to-date: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces
+[7.428s] -- Up-to-date: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg
+[7.428s] -- Up-to-date: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail
+[7.428s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/uart_data__rosidl_typesupport_introspection_cpp.hpp
+[7.428s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_data__rosidl_typesupport_introspection_cpp.hpp
+[7.428s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/velocity_data__type_support.cpp
+[7.428s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/uart_data__type_support.cpp
+[7.429s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_introspection_cpp.so
+[7.429s] -- Set non-toolchain portion of runtime path of "/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_introspection_cpp.so" to ""
+[7.429s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_cpp.so
+[7.429s] -- Set non-toolchain portion of runtime path of "/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_cpp.so" to ""
+[7.430s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/environment/pythonpath.sh
+[7.430s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/environment/pythonpath.dsv
+[7.430s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces-0.0.0-py3.12.egg-info
+[7.431s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces-0.0.0-py3.12.egg-info/PKG-INFO
+[7.431s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces-0.0.0-py3.12.egg-info/SOURCES.txt
+[7.431s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces-0.0.0-py3.12.egg-info/dependency_links.txt
+[7.431s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces-0.0.0-py3.12.egg-info/top_level.txt
+[7.432s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces
+[7.432s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/msg
+[7.432s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/msg/_velocity_data_s.c
+[7.433s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/msg/__init__.py
+[7.433s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/msg/_uart_data.py
+[7.433s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/msg/_uart_data_s.c
+[7.433s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/msg/_velocity_data.py
+[7.433s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/robot_interfaces_s__rosidl_typesupport_fastrtps_c.so
+[7.434s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/__init__.py
+[7.434s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/robot_interfaces_s__rosidl_typesupport_c.so
+[7.434s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[7.434s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/_robot_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[7.435s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/robot_interfaces_s__rosidl_typesupport_introspection_c.so
+[7.435s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/_robot_interfaces_s.ep.rosidl_typesupport_c.c
+[7.481s] Listing '/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces'...
+[7.481s] Compiling '/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/__init__.py'...
+[7.481s] Listing '/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/msg'...
+[7.481s] Compiling '/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/msg/__init__.py'...
+[7.482s] Compiling '/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/msg/_uart_data.py'...
+[7.482s] Compiling '/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/msg/_velocity_data.py'...
+[7.490s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/robot_interfaces_s__rosidl_typesupport_fastrtps_c.so
+[7.490s] -- Set non-toolchain portion of runtime path of "/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/robot_interfaces_s__rosidl_typesupport_fastrtps_c.so" to ""
+[7.490s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/robot_interfaces_s__rosidl_typesupport_introspection_c.so
+[7.490s] -- Set non-toolchain portion of runtime path of "/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/robot_interfaces_s__rosidl_typesupport_introspection_c.so" to ""
+[7.491s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/robot_interfaces_s__rosidl_typesupport_c.so
+[7.491s] -- Set non-toolchain portion of runtime path of "/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/python3.12/site-packages/robot_interfaces/robot_interfaces_s__rosidl_typesupport_c.so" to ""
+[7.491s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_generator_py.so
+[7.492s] -- Set non-toolchain portion of runtime path of "/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/lib/librobot_interfaces__rosidl_generator_py.so" to ""
+[7.492s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/rust
+[7.492s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/rust/src
+[7.492s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/rust/src/msg
+[7.493s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/rust/src/msg/rmw.rs
+[7.493s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/rust/src/lib.rs
+[7.493s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/rust/src/msg.rs
+[7.493s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/rust/build.rs
+[7.493s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/rust/Cargo.toml
+[7.493s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/msg/UARTData.idl
+[7.494s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/msg/VelocityData.idl
+[7.494s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/msg/UARTData.msg
+[7.494s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/msg/VelocityData.msg
+[7.494s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/ament_index/resource_index/package_run_dependencies/robot_interfaces
+[7.494s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/ament_index/resource_index/parent_prefix_path/robot_interfaces
+[7.494s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/environment/ament_prefix_path.sh
+[7.494s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/environment/ament_prefix_path.dsv
+[7.495s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/environment/path.sh
+[7.495s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/environment/path.dsv
+[7.495s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/local_setup.bash
+[7.495s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/local_setup.sh
+[7.496s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/local_setup.zsh
+[7.496s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/local_setup.dsv
+[7.496s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/package.dsv
+[7.496s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/ament_index/resource_index/packages/robot_interfaces
+[7.496s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/export_robot_interfaces__rosidl_generator_cExport.cmake
+[7.497s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/export_robot_interfaces__rosidl_generator_cExport-noconfig.cmake
+[7.497s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/export_robot_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[7.497s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/export_robot_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[7.497s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[7.497s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[7.498s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfaces__rosidl_typesupport_cExport.cmake
+[7.498s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[7.498s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/export_robot_interfaces__rosidl_generator_cppExport.cmake
+[7.499s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/export_robot_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[7.499s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/export_robot_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[7.499s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[7.500s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[7.500s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfaces__rosidl_typesupport_cppExport.cmake
+[7.500s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[7.500s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/export_robot_interfaces__rosidl_generator_pyExport.cmake
+[7.501s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/export_robot_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[7.501s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/rosidl_cmake-extras.cmake
+[7.501s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[7.501s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[7.501s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[7.502s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[7.502s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[7.502s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[7.502s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/rosidl_cmake_aggregate_target-extras.cmake
+[7.503s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfacesConfig.cmake
+[7.503s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfacesConfig-version.cmake
+[7.503s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_interfaces/share/robot_interfaces/package.xml
+[7.507s] Invoked command in '/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces

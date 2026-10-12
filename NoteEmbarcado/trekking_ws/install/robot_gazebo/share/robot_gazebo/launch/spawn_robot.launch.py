@@ -24,7 +24,12 @@ def launch_setup(context, *args, **kwargs):
     pkg_robot_gazebo = get_package_share_directory('robot_gazebo')
     pkg_robot_description = get_package_share_directory('robot_description')
 
-    world_path = os.path.join(pkg_robot_gazebo, 'worlds', f'{world}.sdf')
+    # Aceita tanto o nome de um mundo do pacote (ex.: 'world') quanto um
+    # caminho absoluto para um .sdf (ex.: o trekking.sdf com as 4 bases).
+    if os.path.isabs(world) and world.endswith('.sdf'):
+        world_path = world
+    else:
+        world_path = os.path.join(pkg_robot_gazebo, 'worlds', f'{world}.sdf')
     
     headless = LaunchConfiguration('headless').perform(context).lower() in ('true', '1')
     gz_flags = '-s -r' if headless else '-r'
@@ -148,11 +153,17 @@ def launch_setup(context, *args, **kwargs):
         namespace=ns,
         arguments=[
             f'/{ns}/cmd_vel@geometry_msgs/msg/Twist]gz.msgs.Twist',
-            f'/{ns}/joint_states@sensor_msgs/msg/JointState[gz.msgs.Model'
+            f'/{ns}/joint_states@sensor_msgs/msg/JointState[gz.msgs.Model',
+            # IMU da RealSense D435i (Gazebo -> ROS)
+            f'/{ns}/realsense/imu@sensor_msgs/msg/Imu[gz.msgs.IMU',
+            # Odometria do plugin AckermannSteering (Gazebo -> ROS)
+            f'/{ns}/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry',
         ],
         remappings=[
-
+            # Topico nativo do Gazebo -> topico padrao do realsense2_camera
+            (f'/{ns}/realsense/imu', '/camera/imu/data'),
         ],
+        parameters=[{'use_sim_time': True}],
         output='screen'
     )
 
@@ -185,7 +196,7 @@ def generate_launch_description():
 
         SetParameter(name='use_sim_time', value=True),
         
-        DeclareLaunchArgument('world', default_value='', description='nome do mundo'),
+        DeclareLaunchArgument('world', default_value='world', description='nome do mundo em robot_gazebo/worlds ou caminho absoluto para um .sdf'),
         DeclareLaunchArgument('namespace', default_value='Margarete', description='nome do barco'),
 
         DeclareLaunchArgument('headless', default_value='false', description='true roda o Gazebo sem interface grafica'),

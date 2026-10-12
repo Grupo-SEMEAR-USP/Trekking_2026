@@ -1,0 +1,52 @@
+[0.026s] Invoking command in '/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_navigation -DCMAKE_INSTALL_PREFIX=/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation
+[0.134s] -- The C compiler identification is GNU 13.3.0
+[0.234s] -- The CXX compiler identification is GNU 13.3.0
+[0.260s] -- Detecting C compiler ABI info
+[0.402s] -- Detecting C compiler ABI info - done
+[0.422s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.424s] -- Detecting C compile features
+[0.425s] -- Detecting C compile features - done
+[0.446s] -- Detecting CXX compiler ABI info
+[0.625s] -- Detecting CXX compiler ABI info - done
+[0.644s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.644s] -- Detecting CXX compile features
+[0.645s] -- Detecting CXX compile features - done
+[0.653s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.944s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.139s] -- Found ament_lint_auto: 0.17.5 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[1.351s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.351s] -- Configured 'flake8' exclude dirs and/or files: 
+[1.355s] -- Added test 'lint_cmake' to check CMake code style
+[1.357s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.358s] -- Added test 'xmllint' to check XML markup files
+[1.360s] -- Configuring done (1.3s)
+[1.366s] -- Generating done (0.0s)
+[1.369s] -- Build files have been written to: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation
+[1.384s] Invoked command in '/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/src/robot_navigation -DCMAKE_INSTALL_PREFIX=/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation
+[1.385s] Invoking command in '/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation -- -j8 -l8
+[1.473s] Invoked command in '/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation -- -j8 -l8
+[1.475s] Invoking command in '/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation
+[1.495s] -- Install configuration: ""
+[1.496s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/config
+[1.496s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/config/waypoints.yaml
+[1.497s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/config/nav2_params.yaml
+[1.497s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/launch
+[1.498s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/launch/nav_launch.py
+[1.498s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/launch/waypoint_navigator.launch.py
+[1.498s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/lib/robot_navigation/waypoint_navigator.py
+[1.499s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/ament_index/resource_index/package_run_dependencies/robot_navigation
+[1.499s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/ament_index/resource_index/parent_prefix_path/robot_navigation
+[1.499s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/environment/ament_prefix_path.sh
+[1.499s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/environment/ament_prefix_path.dsv
+[1.500s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/environment/path.sh
+[1.500s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/environment/path.dsv
+[1.500s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/local_setup.bash
+[1.500s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/local_setup.sh
+[1.501s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/local_setup.zsh
+[1.501s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/local_setup.dsv
+[1.501s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/package.dsv
+[1.501s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/ament_index/resource_index/packages/robot_navigation
+[1.501s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/cmake/robot_navigationConfig.cmake
+[1.501s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/cmake/robot_navigationConfig-version.cmake
+[1.501s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/robot_navigation/share/robot_navigation/package.xml
+[1.534s] Invoked command in '/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_navigation

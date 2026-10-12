@@ -1,0 +1,9 @@
+/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/trekking_gazebo/CMakeFiles/uninstall.dir
+/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/trekking_gazebo/CMakeFiles/trekking_gazebo_uninstall.dir
+/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/trekking_gazebo/CMakeFiles/test.dir
+/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/trekking_gazebo/CMakeFiles/edit_cache.dir
+/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/trekking_gazebo/CMakeFiles/rebuild_cache.dir
+/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/trekking_gazebo/CMakeFiles/list_install_components.dir
+/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/trekking_gazebo/CMakeFiles/install.dir
+/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/trekking_gazebo/CMakeFiles/install/local.dir
+/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/trekking_gazebo/CMakeFiles/install/strip.dir

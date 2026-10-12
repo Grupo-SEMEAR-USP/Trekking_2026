@@ -14,3 +14,4 @@ extern float global_ros_servo_angle;
 
 extern uint32_t global_timer_miliseconds;
 extern uint32_t global_time_stamp_miliseconds;
+extern int64_t global_last_ros_cmd_time_us;

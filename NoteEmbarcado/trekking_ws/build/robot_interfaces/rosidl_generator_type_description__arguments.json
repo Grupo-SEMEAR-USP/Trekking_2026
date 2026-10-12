@@ -1,0 +1,8 @@
+{
+  "package_name": "robot_interfaces",
+  "output_dir": "/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces/rosidl_generator_type_description/robot_interfaces",
+  "idl_tuples": [
+    "/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces/rosidl_adapter/robot_interfaces:msg/UARTData.idl",
+    "/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/robot_interfaces/rosidl_adapter/robot_interfaces:msg/VelocityData.idl"
+  ]
+}

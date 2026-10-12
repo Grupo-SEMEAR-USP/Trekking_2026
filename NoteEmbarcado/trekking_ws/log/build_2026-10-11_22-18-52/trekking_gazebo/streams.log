@@ -1,0 +1,46 @@
+[0.034s] Invoking command in '/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/trekking_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/src/trekking_gazebo -DCMAKE_INSTALL_PREFIX=/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/trekking_gazebo
+[0.137s] -- The C compiler identification is GNU 13.3.0
+[0.248s] -- The CXX compiler identification is GNU 13.3.0
+[0.273s] -- Detecting C compiler ABI info
+[0.442s] -- Detecting C compiler ABI info - done
+[0.469s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.469s] -- Detecting C compile features
+[0.470s] -- Detecting C compile features - done
+[0.488s] -- Detecting CXX compiler ABI info
+[0.661s] -- Detecting CXX compiler ABI info - done
+[0.674s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.674s] -- Detecting CXX compile features
+[0.675s] -- Detecting CXX compile features - done
+[0.681s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.967s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.356s] -- Configuring done (1.3s)
+[1.361s] -- Generating done (0.0s)
+[1.362s] -- Build files have been written to: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/trekking_gazebo
+[1.371s] Invoked command in '/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/trekking_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/src/trekking_gazebo -DCMAKE_INSTALL_PREFIX=/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/trekking_gazebo
+[1.374s] Invoking command in '/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/trekking_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/trekking_gazebo -- -j8 -l8
+[1.451s] Invoked command in '/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/trekking_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/trekking_gazebo -- -j8 -l8
+[1.467s] Invoking command in '/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/trekking_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/trekking_gazebo
+[1.481s] -- Install configuration: ""
+[1.481s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/trekking_gazebo/share/trekking_gazebo/worlds
+[1.481s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/trekking_gazebo/share/trekking_gazebo/worlds/trekking.sdf
+[1.489s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/trekking_gazebo/share/trekking_gazebo/worlds/materials
+[1.489s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/trekking_gazebo/share/trekking_gazebo/worlds/materials/textures
+[1.489s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/trekking_gazebo/share/trekking_gazebo/worlds/materials/textures/wavy_terrain.png
+[1.489s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/trekking_gazebo/share/trekking_gazebo/launch
+[1.490s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/trekking_gazebo/share/trekking_gazebo/launch/spawn_robot.launch.py
+[1.490s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/trekking_gazebo/share/ament_index/resource_index/package_run_dependencies/trekking_gazebo
+[1.490s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/trekking_gazebo/share/ament_index/resource_index/parent_prefix_path/trekking_gazebo
+[1.490s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/trekking_gazebo/share/trekking_gazebo/environment/ament_prefix_path.sh
+[1.490s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/trekking_gazebo/share/trekking_gazebo/environment/ament_prefix_path.dsv
+[1.490s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/trekking_gazebo/share/trekking_gazebo/environment/path.sh
+[1.490s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/trekking_gazebo/share/trekking_gazebo/environment/path.dsv
+[1.491s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/trekking_gazebo/share/trekking_gazebo/local_setup.bash
+[1.491s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/trekking_gazebo/share/trekking_gazebo/local_setup.sh
+[1.491s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/trekking_gazebo/share/trekking_gazebo/local_setup.zsh
+[1.491s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/trekking_gazebo/share/trekking_gazebo/local_setup.dsv
+[1.491s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/trekking_gazebo/share/trekking_gazebo/package.dsv
+[1.491s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/trekking_gazebo/share/ament_index/resource_index/packages/trekking_gazebo
+[1.496s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/trekking_gazebo/share/trekking_gazebo/cmake/trekking_gazeboConfig.cmake
+[1.497s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/trekking_gazebo/share/trekking_gazebo/cmake/trekking_gazeboConfig-version.cmake
+[1.497s] -- Installing: /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/install/trekking_gazebo/share/trekking_gazebo/package.xml
+[1.498s] Invoked command in '/home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/trekking_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/vinicius-olirib/Downloads/Trekking/trekking_sim_ws/src/Trekking_2026/NoteEmbarcado/trekking_ws/build/trekking_gazebo

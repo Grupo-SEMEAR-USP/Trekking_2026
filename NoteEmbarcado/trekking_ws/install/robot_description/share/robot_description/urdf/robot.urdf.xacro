@@ -1,59 +1,168 @@
 <?xml version="1.0"?>
-<robot name="Margarete">
+<robot name="Margarete" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+  <!-- ============================================================== -->
+  <!-- Parâmetros Reais (Fusion 360 -> ROS REP-103)                   -->
+  <!-- ============================================================== -->
+  <!-- Entre-eixos (L) e Bitolas (W) -->
+  <xacro:property name="wheel_base" value="0.148245"/>        <!-- 148.245 mm entre-eixos real centro a centro -->
+  <xacro:property name="track_front" value="0.1245"/>         <!-- 124.5 mm bitola dianteira -->
+  <xacro:property name="track_rear" value="0.1680"/>          <!-- 168.0 mm bitola traseira -->
+  
+  <!-- Rodas -->
+  <xacro:property name="wheel_radius" value="0.033"/>         <!-- Raio: 33 mm -->
+  <xacro:property name="wheel_width_rear" value="0.0301"/>    <!-- Largura traseira: 30.1 mm -->
+  <xacro:property name="wheel_width_front" value="0.0260"/>   <!-- Largura dianteira: 26.0 mm -->
+  <xacro:property name="wheel_mass" value="0.08"/>            <!-- ~80 g por roda -->
+
+  <!-- Esterço (limite de 30 graus para o modelo de bicicleta Ackermann) -->
+  <xacro:property name="steer_limit" value="0.5236"/>         <!-- 30 deg em radianos -->
+  <!-- Limite mecânico das juntas das mangas (margem para a roda interna Ackermann que esterça mais que a média) -->
+  <xacro:property name="joint_steer_limit" value="0.65"/>     <!-- ~37.2 deg em radianos -->
+
+  <!-- Inércias aproximadas das rodas (cilindros de 33 mm) -->
+  <xacro:property name="wheel_iyy" value="${0.5 * wheel_mass * wheel_radius * wheel_radius}"/>
+  <xacro:property name="wheel_ixx_izz" value="${(1.0/12.0) * wheel_mass * (3 * wheel_radius * wheel_radius + wheel_width_rear * wheel_width_rear)}"/>
+
+  <!-- Dummy link para compatibilidade com KDL -->
+  <link name="dummy_link"/>
+  <joint name="dummy_joint" type="fixed">
+    <parent link="dummy_link"/>
+    <child link="base_link"/>
+  </joint>
+
+  <!-- ============================================================== -->
+  <!-- Chassi Principal                                               -->
+  <!-- ============================================================== -->
   <link name="base_link">
-    
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <!-- Rotação de -90 deg (-pi/2) em Z para alinhar com o eixo X do ROS -->
+      <!-- Ajuste os valores xyz para transladar a malha até o centro das rodas -->
+      <origin xyz="-0.0775 0.115 -0.171" rpy="0 0 ${-pi/2}"/>
       <geometry>
         <mesh filename="package://robot_description/meshes/Chassi.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="white">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
     </visual>
     
-    <collision name='base_link_collision'>
+    <!-- Caixa de colisão baseada na Bounding Box: 315 mm (X) x 201 mm (Y) x 177 mm (Z) -->
+    <!-- Z do centro = vão livre (20 mm) - raio da roda (33 mm) + metade da altura (88.5 mm) = 75.5 mm -->
+    <collision name="base_link_collision">
+      <origin xyz="0 0 0.07" rpy="0 0 0"/>
       <geometry>
-        <box size="0.5 0.3 0.2"/> 
+        <box size="0.20 0.08 0.08"/> 
       </geometry>
     </collision>
     
     <inertial>
-      <mass value="1.0"/>
-      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+      <origin xyz="0 0 0.05" rpy="0 0 0"/>
+      <mass value="2.78"/>
+      <inertia ixx="0.01853" ixy="0.0" ixz="0.0" 
+               iyy="0.03373" iyz="0.0" 
+               izz="0.03607"/>
     </inertial>
   </link>
 
-  <!-- eixo traseiro-->
-
-  <link name="roda_traseira_esquerda">...</link>  <!-- PLACEHOLDER: COLOCAR ARQUIVOS DAS PARTES MOVEIS-->
+  <!-- ============================================================== -->
+  <!-- Eixo Traseiro (Tração)                                         -->
+  <!-- ============================================================== -->
+  <!-- Roda Traseira Esquerda -->
+  <link name="roda_traseira_esquerda">
+    <inertial>
+      <mass value="${wheel_mass}"/>
+      <inertia ixx="${wheel_ixx_izz}" ixy="0.0" ixz="0.0" 
+               iyy="${wheel_iyy}" iyz="0.0" 
+               izz="${wheel_ixx_izz}"/>
+    </inertial>
+    <collision>
+      <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+      <geometry>
+        <cylinder radius="${wheel_radius}" length="${wheel_width_rear}"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+      <geometry>
+        <cylinder radius="${wheel_radius}" length="${wheel_width_rear}"/>
+      </geometry>
+    </visual>
+  </link>
   <joint name="junta_roda_traseira_esquerda" type="continuous">
     <parent link="base_link"/>
     <child link="roda_traseira_esquerda"/>
     <axis xyz="0 1 0"/> 
-    <origin xyz="-0.5 0.25 0" rpy="0 0 0"/> <!-- PLACEHOLDER -->
+    <origin xyz="-${wheel_base/2} ${track_rear/2} 0" rpy="0 0 0"/>
   </joint>
 
-  <link name="roda_traseira_direita">...</link> <!-- PLACEHOLDER: COLOCAR ARQUIVOS DAS PARTES MOVEIS-->
+  <!-- Roda Traseira Direita -->
+  <link name="roda_traseira_direita">
+    <inertial>
+      <mass value="${wheel_mass}"/>
+      <inertia ixx="${wheel_ixx_izz}" ixy="0.0" ixz="0.0" 
+               iyy="${wheel_iyy}" iyz="0.0" 
+               izz="${wheel_ixx_izz}"/>
+    </inertial>
+    <collision>
+      <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+      <geometry>
+        <cylinder radius="${wheel_radius}" length="${wheel_width_rear}"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+      <geometry>
+        <cylinder radius="${wheel_radius}" length="${wheel_width_rear}"/>
+      </geometry>
+    </visual>
+  </link>
   <joint name="junta_roda_traseira_direita" type="continuous">
     <parent link="base_link"/>
     <child link="roda_traseira_direita"/>
     <axis xyz="0 1 0"/>
-    <origin xyz="-0.5 -0.25 0" rpy="0 0 0"/> <!-- PLACEHOLDER -->
+    <origin xyz="-${wheel_base/2} -${track_rear/2} 0" rpy="0 0 0"/>
   </joint>
 
-  <!-- eixo dianteiro -->
-
-  <!-- manga eixo esquerdo -->
-  <link name="manga_eixo_dianteira_esquerda">...</link> <!-- PLACEHOLDER: COLOCAR ARQUIVOS DAS PARTES MOVEIS-->
+  <!-- ============================================================== -->
+  <!-- Eixo Dianteiro (Direção Ackermann)                            -->
+  <!-- ============================================================== -->
+  <!-- Manga de Eixo Esquerda -->
+  <link name="manga_eixo_dianteira_esquerda">
+    <inertial>
+      <mass value="0.05"/>
+      <inertia ixx="1e-5" ixy="0.0" ixz="0.0" iyy="1e-5" iyz="0.0" izz="1e-5"/>
+    </inertial>
+  </link>
   <joint name="junta_direcao_dianteira_esquerda" type="revolute">
     <parent link="base_link"/>
     <child link="manga_eixo_dianteira_esquerda"/>
     <axis xyz="0 0 1"/> 
-    <origin xyz="0.5 0.25 0" rpy="0 0 0"/> <!-- PLACEHOLDER -->
-    <limit lower="-0.6" upper="0.6" effort="10" velocity="1"/> 
+    <origin xyz="${wheel_base/2} ${track_front/2} 0" rpy="0 0 0"/>
+    <limit lower="-${joint_steer_limit}" upper="${joint_steer_limit}" effort="5.0" velocity="2.0"/> 
   </joint>
 
-  <!-- roda dianteira esquerda -->
-  <link name="roda_dianteira_esquerda">...</link> <!-- PLACEHOLDER: COLOCAR ARQUIVOS DAS PARTES MOVEIS-->
+  <!-- Roda Dianteira Esquerda -->
+  <link name="roda_dianteira_esquerda">
+    <inertial>
+      <mass value="${wheel_mass}"/>
+      <inertia ixx="${wheel_ixx_izz}" ixy="0.0" ixz="0.0" 
+               iyy="${wheel_iyy}" iyz="0.0" 
+               izz="${wheel_ixx_izz}"/>
+    </inertial>
+    <collision>
+      <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+      <geometry>
+        <cylinder radius="${wheel_radius}" length="${wheel_width_front}"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+      <geometry>
+        <cylinder radius="${wheel_radius}" length="${wheel_width_front}"/>
+      </geometry>
+    </visual>
+  </link>
   <joint name="junta_roda_dianteira_esquerda" type="continuous">
     <parent link="manga_eixo_dianteira_esquerda"/>
     <child link="roda_dianteira_esquerda"/>
@@ -61,18 +170,42 @@
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </joint>
 
-  <!-- manga de eixo direita -->
-  <link name="manga_eixo_dianteira_direita">...</link> <!-- PLACEHOLDER: COLOCAR ARQUIVOS DAS PARTES MOVEIS-->
+  <!-- Manga de Eixo Direita -->
+  <link name="manga_eixo_dianteira_direita">
+    <inertial>
+      <mass value="0.05"/>
+      <inertia ixx="1e-5" ixy="0.0" ixz="0.0" iyy="1e-5" iyz="0.0" izz="1e-5"/>
+    </inertial>
+  </link>
   <joint name="junta_direcao_dianteira_direita" type="revolute">
     <parent link="base_link"/>
     <child link="manga_eixo_dianteira_direita"/>
     <axis xyz="0 0 1"/> 
-    <origin xyz="0.5 -0.25 0" rpy="0 0 0"/> <!-- PLACEHOLDER -->
-    <limit lower="-0.6" upper="0.6" effort="10" velocity="1"/>
+    <origin xyz="${wheel_base/2} -${track_front/2} 0" rpy="0 0 0"/>
+    <limit lower="-${joint_steer_limit}" upper="${joint_steer_limit}" effort="5.0" velocity="2.0"/>
   </joint>
 
-  <!-- roda dianteira direita -->
-  <link name="roda_dianteira_direita">...</link> <!-- PLACEHOLDER: COLOCAR ARQUIVOS DAS PARTES MOVEIS-->
+  <!-- Roda Dianteira Direita -->
+  <link name="roda_dianteira_direita">
+    <inertial>
+      <mass value="${wheel_mass}"/>
+      <inertia ixx="${wheel_ixx_izz}" ixy="0.0" ixz="0.0" 
+               iyy="${wheel_iyy}" iyz="0.0" 
+               izz="${wheel_ixx_izz}"/>
+    </inertial>
+    <collision>
+      <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+      <geometry>
+        <cylinder radius="${wheel_radius}" length="${wheel_width_front}"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+      <geometry>
+        <cylinder radius="${wheel_radius}" length="${wheel_width_front}"/>
+      </geometry>
+    </visual>
+  </link>
   <joint name="junta_roda_dianteira_direita" type="continuous">
     <parent link="manga_eixo_dianteira_direita"/>
     <child link="roda_dianteira_direita"/>
@@ -80,36 +213,124 @@
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </joint>
 
+  <!-- ============================================================== -->
+  <!-- Intel RealSense D435i : Posição Real Medida no CAD            -->
+  <!-- ============================================================== -->
+  <xacro:property name="cam_x" value="0.087"/>   <!-- Y CAD: +75.3 mm à frente -->
+  <xacro:property name="cam_y" value="0.0"/>      <!-- X CAD: centralizada lateralmente -->
+  <xacro:property name="cam_z" value="0.127"/>    <!-- 127.0 mm acima do centro dos eixos (160 mm do chão considerando raio 33 mm) -->
 
+  <xacro:property name="imu_off_x" value="-0.01174"/>
+  <xacro:property name="imu_off_y" value="-0.00552"/>
+  <xacro:property name="imu_off_z" value="0.0051"/>
+
+  <link name="camera_link">
+    <visual>
+      <geometry>
+        <box size="0.025 0.090 0.025"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.025 0.090 0.025"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.072"/>
+      <inertia ixx="5.24e-5" ixy="0.0" ixz="0.0" iyy="7.5e-6" iyz="0.0" izz="5.24e-5"/>
+    </inertial>
+  </link>
+  <joint name="camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+    <origin xyz="${cam_x} ${cam_y} ${cam_z}" rpy="0 0 0"/>
+  </joint>
+
+  <link name="camera_imu_frame"/>
+  <joint name="camera_imu_joint" type="fixed">
+    <parent link="camera_link"/>
+    <child link="camera_imu_frame"/>
+    <origin xyz="${imu_off_x} ${imu_off_y} ${imu_off_z}" rpy="0 0 0"/>
+  </joint>
+
+  <link name="camera_imu_optical_frame"/>
+  <joint name="camera_imu_optical_joint" type="fixed">
+    <parent link="camera_link"/>
+    <child link="camera_imu_optical_frame"/>
+    <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}"/>
+  </joint>
+
+  <!-- Sensor IMU do Gazebo Sim -->
+  <gazebo reference="camera_imu_frame">
+    <sensor name="realsense_imu" type="imu">
+      <always_on>true</always_on>
+      <update_rate>200</update_rate>
+      <visualize>false</visualize>
+      <topic>/Margarete/realsense/imu</topic>
+      <gz_frame_id>camera_imu_frame</gz_frame_id>
+      <imu>
+        <angular_velocity>
+          <x><noise type="gaussian"><mean>0.0</mean><stddev>2.4e-3</stddev><bias_mean>5e-5</bias_mean><bias_stddev>1e-5</bias_stddev></noise></x>
+          <y><noise type="gaussian"><mean>0.0</mean><stddev>2.4e-3</stddev><bias_mean>5e-5</bias_mean><bias_stddev>1e-5</bias_stddev></noise></y>
+          <z><noise type="gaussian"><mean>0.0</mean><stddev>2.4e-3</stddev><bias_mean>5e-5</bias_mean><bias_stddev>1e-5</bias_stddev></noise></z>
+        </angular_velocity>
+        <linear_acceleration>
+          <x><noise type="gaussian"><mean>0.0</mean><stddev>1.5e-2</stddev><bias_mean>1e-3</bias_mean><bias_stddev>1e-4</bias_stddev></noise></x>
+          <y><noise type="gaussian"><mean>0.0</mean><stddev>1.5e-2</stddev><bias_mean>1e-3</bias_mean><bias_stddev>1e-4</bias_stddev></noise></y>
+          <z><noise type="gaussian"><mean>0.0</mean><stddev>1.5e-2</stddev><bias_mean>1e-3</bias_mean><bias_stddev>1e-4</bias_stddev></noise></z>
+        </linear_acceleration>
+      </imu>
+    </sensor>
+  </gazebo>
+
+  <!-- ============================================================== -->
+  <!-- Plugins do Gazebo Sim                                          -->
+  <!-- ============================================================== -->
   <gazebo>
+    <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"/>
 
-    <!-- Plugin Ackermann -->
+    <!-- Plugin Ackermann com Geometria Real -->
     <plugin filename="gz-sim-ackermann-steering-system" name="gz::sim::systems::AckermannSteering">
-      
       <left_joint>junta_roda_traseira_esquerda</left_joint>
       <right_joint>junta_roda_traseira_direita</right_joint>
-
       <left_steering_joint>junta_direcao_dianteira_esquerda</left_steering_joint>
       <right_steering_joint>junta_direcao_dianteira_direita</right_steering_joint>
       
-      <!-- Dimensões da Margarete -->
-      <wheel_base>1.0</wheel_base> <!-- Eixo traseiro - Eixo dianteiro -->
-      <wheel_separation>0.5</wheel_separation> <!-- Roda esquerda - Roda direita -->
-      <wheel_radius>0.1</wheel_radius>
-      <steering_limit>0.6</steering_limit> <!-- Limite de esterço em radianos -->
-
+      <wheel_base>${wheel_base}</wheel_base>
+      <wheel_separation>${track_rear}</wheel_separation>
+      <kingpin_width>${track_front}</kingpin_width>
+      <wheel_radius>${wheel_radius}</wheel_radius>
+      <steering_limit>${steer_limit}</steering_limit>
+      <steer_p_gain>10.0</steer_p_gain>
+      <odom_publish_frequency>50</odom_publish_frequency>
       
       <topic>/Margarete/cmd_vel</topic>
       <odom_topic>/Margarete/odom</odom_topic>
       <frame_id>odom</frame_id>
       <child_frame_id>base_link</child_frame_id>
-
     </plugin>
 
     <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
       <topic>/Margarete/joint_states</topic>
     </plugin>
+  </gazebo>
 
+  <!-- Fricção dos Pneus em Terreno Irregular -->
+  <gazebo reference="roda_traseira_esquerda">
+    <mu1>1.5</mu1>
+    <mu2>1.5</mu2>
+  </gazebo>
+  <gazebo reference="roda_traseira_direita">
+    <mu1>1.5</mu1>
+    <mu2>1.5</mu2>
+  </gazebo>
+  <gazebo reference="roda_dianteira_esquerda">
+    <mu1>1.5</mu1>
+    <mu2>1.5</mu2>
+  </gazebo>
+  <gazebo reference="roda_dianteira_direita">
+    <mu1>1.5</mu1>
+    <mu2>1.5</mu2>
   </gazebo>
 
 </robot>

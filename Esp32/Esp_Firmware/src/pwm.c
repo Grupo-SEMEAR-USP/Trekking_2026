@@ -38,6 +38,11 @@ void pwm_motors_init(){
     gpio_set_level(motor_choose_in_primary(DIR), 0); 
     gpio_set_level(motor_choose_in_secundary(DIR), 0);
 
+    // Initializing STAND_BY pin for H-Bridge driver
+    esp_rom_gpio_pad_select_gpio(STAND_BY);
+    gpio_set_direction(STAND_BY, GPIO_MODE_OUTPUT);
+    gpio_set_level(STAND_BY, 1);
+
     //initializing pwm for servo
 
     //timer_config = ledc_servo_timer_config_info(SERVO_PWM_TIMER);
@@ -71,15 +76,19 @@ void pwm_actuate(int channel, float duty){
         duty *= -1;
     }
 
-    /*if (duty > MAX_DUTY){
-        duty = MAX_DUTY;
+    if (duty < 1.0f) {
+        gpio_set_level(motor_choose_in_primary(channel), 0); 
+        gpio_set_level(motor_choose_in_secundary(channel), 0);
+        ledc_set_duty(LEDC_LOW_SPEED_MODE, channel_choose(channel), 0);
+        ledc_update_duty(LEDC_LOW_SPEED_MODE, channel_choose(channel));
+        return;
     }
-    else if (duty > 0 && duty < MAX_INERTIA_DUTY_LEFT){
+
+    if (duty > MAX_DUTY) {
+        duty = MAX_DUTY;
+    } else if (duty < MAX_INERTIA_DUTY_LEFT) {
         duty = MAX_INERTIA_DUTY_LEFT;
     }
-    else if (duty < 0 && duty > MIN_INERTIA_DUTY_LEFT){
-        duty = MIN_INERTIA_DUTY_LEFT;
-    }*/
 
     //define rotation direction 
     gpio_set_level(motor_choose_in_primary(channel), (clockwise) ? 0 : 1); 

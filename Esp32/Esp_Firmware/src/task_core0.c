@@ -199,38 +199,26 @@ void monitor_encoder_pid_calc(){
         }
 
         if(count_get_ros == GET_ROS_VAL_COUNTER_WAIT_PID_OP){
-            
-            if(xSemaphoreTake(xSemaphore_getRosSpeed,0) == pdTRUE) { //could be incremented in the first lock
-
-            local_ros_angular_speed_left = global_ros_angular_speed_left;
-            local_ros_angular_speed_right = global_ros_angular_speed_right;
-
-            local_servo_angle = global_ros_servo_angle;
-
-            xSemaphoreGive(xSemaphore_getRosSpeed);
-
-            ros_timeout_counter = 0;
-            
+            if(xSemaphoreTake(xSemaphore_getRosSpeed, pdMS_TO_TICKS(5)) == pdTRUE) {
+                local_ros_angular_speed_left = global_ros_angular_speed_left;
+                local_ros_angular_speed_right = global_ros_angular_speed_right;
+                local_servo_angle = global_ros_servo_angle;
+                xSemaphoreGive(xSemaphore_getRosSpeed);
             }
-
             count_get_ros = 0;
         }
 
-        else {
-            ros_timeout_counter++;
-        }
-
-    if(ros_timeout_counter >= ROS_TIMEOUT_CYCLES) {
-            // Se passou do tempo limite sem mensagens do ROS, força a parada
+        // Watchdog de segurança: se passou mais de 500ms sem comando novo do ROS, zera velocidades
+        int64_t now_us = esp_timer_get_time();
+        if (global_last_ros_cmd_time_us == 0 || (now_us - global_last_ros_cmd_time_us > 500000)) {
             local_ros_angular_speed_left = 0.0f;
             local_ros_angular_speed_right = 0.0f;
-            // Trava o contador no limite para não estourar a variável (overflow)
-            ros_timeout_counter = ROS_TIMEOUT_CYCLES; 
-    }
-        
-        //pwm_actuate(ESQ,8191.0*(7.5/34));
-        //pwm_actuate(DIR,8191.0*(22.0/37));
-        //iot_servo_write_angle(LEDC_LOW_SPEED_MODE, SERVO_PWM_CHANNEL, local_servo_angle);
+        }
+
+        // Escreve o angulo do servo motor com protecao de limites (0 a 180 graus)
+        if (local_servo_angle < 0.0f) local_servo_angle = 0.0f;
+        if (local_servo_angle > 180.0f) local_servo_angle = 180.0f;
+        iot_servo_write_angle(LEDC_LOW_SPEED_MODE, SERVO_PWM_CHANNEL, local_servo_angle);
         
         //printf("pwm_left: %f, pwm_right: %f / local_left: %f, local_right: %f\n", pid_result_duty_left, pid_result_duty_right, local_motor_angular_speed_left, local_motor_angular_speed_right);
 

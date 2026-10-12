@@ -1,0 +1,52 @@
+waypoint_navigator:
+  ros__parameters:
+    use_sim_time: false
+
+    # Bases reais medidas do croqui (Mapa Trekking):
+    # Dimensões da arena: ~34m (largura) x ~28m (altura)
+    # 1. base_east (16.80, 5.76)
+    # 2. base_south (5.00, -13.78)  <- Assimétrica (+5m a Leste)
+    # 3. base_west (-16.80, 6.12)
+    # 4. base_north (0.00, 13.80)   <- Ponto de largada / chegada
+    waypoints_x: [16.80, 5.00, -16.80, 0.0]
+    waypoints_y: [5.76, -13.78, 6.12, 13.80]
+    waypoint_names: ["base_east", "base_south", "base_west", "base_north"]
+
+    goal_tolerance: 0.15      # [m] raio de aceitação de alta precisão (15 cm)
+    dwell_time: 2.0           # [s] parada completa sobre cada base
+    loop: false
+
+    # Tópicos padrão (compatíveis tanto com o robô real quanto com o Gazebo)
+    odom_topic: /odom
+    imu_topic: /camera/imu/data
+    cmd_vel_topic: /cmd_vel
+    frame_id: odom
+
+    # Pose de spawn do robô no mundo (odom local -> referencial das bases na arena)
+    # Robô é instanciado em (0.0, 13.80, 0.0) com yaw 0.0 (apontando para +X / Leste)
+    origin_x: 0.0
+    origin_y: 13.80
+    origin_yaw: 0.0
+
+    use_imu_heading: true
+    align_imu_to_odom: true
+    use_imu_dead_reckoning: true  # Integra deslocamento com yaw da IMU para eliminar drift de pneu
+
+    control_rate: 20.0
+    data_timeout: 1.5
+    max_linear_speed: 0.45
+    min_linear_speed: 0.10
+    slowdown_radius: 1.2
+    max_accel: 0.6            # [m/s^2] rampa suave de aceleração (evita patinagem de rodas)
+    reverse_speed: 0.3
+    max_reverse_time: 4.0
+
+    # Ganhos do Controlador PID + Stanley (Rastreamento de Trajetória)
+    kp_heading: 2.2           # Ganho Proporcional do erro de rumo
+    ki_heading: 0.05          # Ganho Integral (elimina erro em regime estacionário)
+    kd_heading: 0.15          # Ganho Derivativo (amortece oscilações de esterço)
+    k_crosstrack: 0.8         # Ganho Stanley (puxa o robô de volta para a linha reta ideal)
+
+    # Geometria Ackermann real da Margarete
+    wheel_base: 0.148245      # [m] Entre-eixos real (148.245 mm)
+    max_steering_angle: 0.5236
