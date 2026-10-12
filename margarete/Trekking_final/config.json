@@ -1,0 +1,15 @@
+{
+  "model": "models/best.pt",
+  "confidence": 0.6,
+  "cone_class": 0,
+  "device": "cpu",
+  "camera_recess_m": 0.10,
+  "front_stop_m": 0.15,
+  "braking_margin_m": 0.02,
+  "slowdown_distance_m": 0.70,
+  "max_throttle": 0.18,
+  "steering_gain": 0.8,
+  "steering_sign": 1,
+  "max_frame_age_s": 0.25,
+  "hardware_calibrated": false
+}
