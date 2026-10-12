@@ -1,0 +1,20 @@
+{
+  "model": "models/best.pt",
+  "confidence": 0.6,
+  "cone_class": 0,
+  "device": "cpu",
+  "camera_recess_m": 0.05,
+  "front_stop_m": 0.15,
+  "braking_margin_m": 0.02,
+  "slowdown_distance_m": 0.7,
+  "max_throttle": 0.25,
+  "steering_gain": 1.6,
+  "steering_sign": 1,
+  "max_frame_age_s": 0.25,
+  "hardware_calibrated": true,
+  "webcam_distance_validated": true,
+  "webcam_source": 0,
+  "webcam_width": 640,
+  "webcam_height": 480,
+  "webcam_backend": "auto"
+}
