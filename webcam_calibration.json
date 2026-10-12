@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "pixel_meter": 175.5084228515625,
+  "reference_distance_m": 0.5,
+  "reference_height_px": 351.016845703125,
+  "image_size": [
+    640,
+    480
+  ],
+  "source": 1,
+  "backend": "msmf",
+  "model_sha256": "421269bb6ad2f45f3217b20f349e39fa3e4f25fc0474de92996dd6e34cd01c7d"
+}

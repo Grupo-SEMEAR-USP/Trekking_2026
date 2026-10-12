@@ -1,2 +1,5 @@
-/Jetson/catkin_ws/build
-/Jetson/catkin_ws/devel
+.venv/
+__pycache__/
+logs/
+validation/arduino_build/
+validation/*.exe
