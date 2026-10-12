@@ -1,4 +1,4 @@
-# Margarete — robo Ackermann que se aproxima do cone
+# Margarete =) - RMA 2026 
 
 Pacote reunido em 12/10/2026. O projeto executavel esta em `Trekking_final`.
 O computador detecta o cone com YOLO e envia comandos por USB para a ESP32.
