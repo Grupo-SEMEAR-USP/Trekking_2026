@@ -13,17 +13,28 @@ def generate_launch_description():
 
     params_file = LaunchConfiguration('params_file')
     use_sim_time = LaunchConfiguration('use_sim_time')
+    use_imu = LaunchConfiguration('use_imu')
 
     return LaunchDescription([
         DeclareLaunchArgument('params_file', default_value=default_params,
                               description='YAML com waypoints e ganhos'),
         DeclareLaunchArgument('use_sim_time', default_value='false',
                               description='Usar tempo de simulacao (true para Gazebo, false para robo real)'),
+        DeclareLaunchArgument('use_imu', default_value='true',
+                              description='Habilita uso da IMU RealSense (false para usar odometria pura)'),
         Node(
             package='robot_navigation',
             executable='waypoint_navigator.py',
             name='waypoint_navigator',
-            parameters=[params_file, {'use_sim_time': use_sim_time}],
+            parameters=[
+                params_file,
+                {
+                    'use_sim_time': use_sim_time,
+                    'use_imu_heading': use_imu,
+                    'use_imu_dead_reckoning': use_imu,
+                }
+            ],
             output='screen',
         ),
     ])
+

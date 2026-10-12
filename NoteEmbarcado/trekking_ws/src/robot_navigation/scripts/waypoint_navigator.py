@@ -370,13 +370,26 @@ class WaypointNavigator(Node):
 
         # 1) Checagem de segurança de sensores
         if not self.data_ok():
-            if self.state != NavState.WAITING_DATA:
-                self.get_logger().warn('Odometria/IMU indisponível ou atrasada: parando.')
+            now = self.get_clock().now()
+            fresh_odom = self.odom_stamp is not None and (now - self.odom_stamp).nanoseconds * 1e-9 < self.data_timeout
+            fresh_imu = self.imu_stamp is not None and (now - self.imu_stamp).nanoseconds * 1e-9 < self.data_timeout and self.imu_yaw_offset is not None
+
+            msg_parts = []
+            if not fresh_odom:
+                msg_parts.append('Odometria (/odom) NÃO recebida')
+            if self.use_imu_heading and not fresh_imu:
+                msg_parts.append('IMU (/camera/imu/data) NÃO recebida (para rodar sem câmera use: use_imu:=false)')
+
+            self.get_logger().warn(
+                f'Aguardando sensores para navegar: {" | ".join(msg_parts)}',
+                throttle_duration_sec=2.0
+            )
             self.state = NavState.WAITING_DATA
             self.publish_cmd(0.0, 0.0)
             self.prev_v = 0.0
             self.heading_integral = 0.0
             return
+
 
         if self.state == NavState.WAITING_DATA:
             self.state = NavState.DRIVING

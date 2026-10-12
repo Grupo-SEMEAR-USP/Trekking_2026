@@ -75,11 +75,14 @@ class UARTDevice(Node):
                 self.get_logger().warn(f"Porta {port_to_use} não encontrada. Usando /dev/ttyACM0 automaticamente!")
                 port_to_use = '/dev/ttyACM0'
 
+        self.port_to_use = port_to_use
+        self.baud_to_use = baud_to_use
+
         try:
-            self.get_logger().info(f"Conectando à ESP32 em {port_to_use} @ {baud_to_use} baud...")
+            self.get_logger().info(f"Conectando à ESP32 em {self.port_to_use} @ {self.baud_to_use} baud...")
             self.serial_port = serial.Serial(
-                port=port_to_use,
-                baudrate=baud_to_use,
+                port=self.port_to_use,
+                baudrate=self.baud_to_use,
                 timeout=0.1 
             )
             # Desativa DTR e RTS para evitar que a ESP32 fique travada em Reset ou Bootloader
@@ -90,7 +93,7 @@ class UARTDevice(Node):
                 pass
             self.get_logger().info("Conexão serial com a ESP32 estabelecida com sucesso!")
         except serial.SerialException as e:
-            self.get_logger().error(f"Falha ao abrir porta serial {port_to_use}: {e}")
+            self.get_logger().error(f"Falha ao abrir porta serial {self.port_to_use}: {e}")
             self.get_logger().error("Dica: verifique se a ESP32 está plugada e rode: sudo chmod 666 /dev/tty*")
             exit(1)
 
@@ -99,8 +102,9 @@ class UARTDevice(Node):
         self.timer = self.create_timer(0.02, self.update_loop)
 
         self.get_logger().info(
-            f"uart_comm pronto | Ouvindo {cmd_topic} -> converte Ackermann -> envia ESP32 @ {baud_to_use}bps"
+            f"uart_comm pronto | Ouvindo {cmd_topic} -> converte Ackermann -> envia ESP32 @ {self.baud_to_use}bps"
         )
+
 
     def calculate_checksum(self, data_bytes):
         return sum(data_bytes) & 0xFF
@@ -135,6 +139,12 @@ class UARTDevice(Node):
         self.ackr_commands[1] = w_right
         self.ackr_commands[2] = servo_angle
 
+        self.get_logger().info(
+            f"[/cmd_vel] v={v_x:.2f}m/s w={omega:.2f}rad/s -> w_L={w_left:.2f} w_R={w_right:.2f} servo={servo_angle:.1f}°",
+            throttle_duration_sec=1.0
+        )
+
+
     def callback_vel_legacy(self, msg: VelocityData):
         """Callback legado para caso algo publique em /velocity_command."""
         self.ackr_commands[0] = float(msg.angular_speed_left)
@@ -146,9 +156,16 @@ class UARTDevice(Node):
             if not self.serial_port.is_open:
                 return
 
+            if not self.first_packet_received:
+                self.get_logger().warn(
+                    f"Aguardando primeiro pacote da ESP32 em {self.port_to_use}... (Verifique se a ESP32 foi gravada via upload e se está alimentada)",
+                    throttle_duration_sec=3.0
+                )
+
             in_waiting = self.serial_port.in_waiting
             if in_waiting > 0:
                 self.rx_buffer.extend(self.serial_port.read(in_waiting))
+
 
             while len(self.rx_buffer) >= FRAME_SIZE_RX:
                 try:
